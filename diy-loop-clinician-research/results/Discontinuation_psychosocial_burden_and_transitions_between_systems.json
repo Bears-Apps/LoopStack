@@ -1,0 +1,293 @@
+{
+  "item_name": "Discontinuation, psychosocial burden and transitions between systems",
+  "research_date": "2026-11-13",
+  "issue_summary": "Few people stop open-source AID outright, but many change systems, and the clinic rarely hears about either in a structured way. In the US Loop Observational Study (LOS), 46 of 874 participants (5.3%) said they had stopped Loop during the 2019-2020 observation window (Wong et al. 2022). Lum et al. (2021) confirmed stops in only 15 of 558 new users (3%), but 77 (14%) stopped sending data within 6 months, and nobody knows how many of those had quit. Stopping was not about glucose: discontinuers had the same time in range (71% vs 70%), HbA1c and diabetes distress as continuers. They were older, more often adults, and less likely to trust Loop (86.7% vs 96.4%). Their reasons were wanting to try something else, Loop helping less than expected, the system not working properly, and too much time spent. Interviews described months of settings adjustment, mental and emotional strain, connectivity and hardware problems, and fear of hypoglycemia from Loop's predictions. One parent feared the endocrinologist's disapproval. For most users the psychosocial balance is positive: validated measures show less distress, less fear of hypoglycemia and better sleep (LOS n=239 adults; OPEN n=592; UK n=81). The cost is a new kind of load: building and maintaining the system, constant phone checking at the start, alarms (AID users report the heaviest alarm burden of any technology group), and support that comes from peers rather than the clinic. Transitions are now common. People move Loop to Omnipod 5, Control-IQ, MiniMed 780G or twiist; iAPS to Trio; and back again. Pregnancy sometimes moves people into supported open-source AID. Every move breaks continuity. Settings are re-entered by hand, and Trio says iAPS history will not transfer. Commercial algorithms use different parameters: Omnipod 5 derives its adaptive basal from a manual basal program assumed to be about half of total daily insulin, and target floors are higher than Loop's 87 mg/dL. Data move to a different cloud (Glooko, CareLink, Tandem Source instead of Nightscout or Tidepool). Care moves to manufacturer trainers. No study has looked at what happens to the patient-clinician relationship, or to safety, during these handovers.",
+  "who_is_affected": "Adults in their first months on open-source AID, especially older adults and those who do not fully trust the algorithm. Parents of children: children more often saw no glucose benefit, and parents carry the remote-alarm load. People switching systems (Loop to Omnipod 5, Control-IQ, 780G or twiist; iAPS to Trio) and pregnant women. Clinicians: endocrinologists and pediatric endocrinologists who prescribe the next system, diabetes educators/CDCES and manufacturer trainers who onboard it, obstetric teams. Primary care only when supplies or a backup plan are needed.",
+  "system_specificity": "All open-source AID, but the discontinuation data are Loop-only (Loop Observational Study, Omnipod Eros and Medtronic era, 2019-2020). There are no published discontinuation rates for Trio, iAPS, AndroidAPS or OpenAPS. Psychosocial data cover all systems (OPEN surveys: Loop, AAPS, OpenAPS). Switch data come from AndroidAPS (CODIAC extension) and Loop (BCDiabetes, case reports). History-migration problems are specific to iAPS to Trio, and to any DIY to commercial move.",
+  "care_setting": "Routine endocrinology visits, where a switch or a supply prescription is requested. Pump-start and educator visits (manufacturer trainers for Omnipod 5, Tandem and Medtronic). Pediatric clinics. Obstetric and preconception care. Clinic-run open-source programs (BCDiabetes) that follow users of all AID systems. Hospital admissions, when the system is suspended.",
+  "trigger_moment": "The first 3-6 months after starting, while settings are being tuned. A hardware or connectivity failure, or an app expiry. A new commercial or cleared system becoming available (Omnipod 5 in Canada, April 2025; twiist national launch, 2026). Device end-of-life (Omnipod Eros pods) or pump warranty renewal. An open-source app split or rewrite (iAPS to Trio). Pregnancy, in both directions. Repeated hypoglycemia or alarms disrupting sleep. Burnout from settings work. A clinician suggesting a licensed system.",
+  "key_sources": [
+    {
+      "title": "Wong JJ, Suttiratana SC, Lal RA, et al. Discontinued Use of the Loop Insulin Dosing System: A Mixed-Methods Investigation. Diabetes Technol Ther 2022;24(4):241-248",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9057870/",
+      "year": 2022,
+      "country": "USA (Loop Observational Study, enrolled Jan-Aug 2019, data to Apr 2020)",
+      "sample_size": "874 in cohort (277 existing, 597 new users); 46 self-identified discontinuers (5.3%); 45 surveys, 22 settings datasets, 19 interviews",
+      "relevance": "Core source. Discontinuers were older (mean 35.1 vs 27.3 years), more often adults (80.4% vs 59.4%) and less likely to trust Loop (86.7% vs 96.4%). They did not differ in TIR (71.4% vs 70.2%), HbA1c, diabetes distress (DDS4 1.83 vs 1.91), fear of hypoglycemia or income. Survey reasons (n=45; body text): wanted to try something else 33.3%, didn't help as much as expected 26.7%, not working properly 22.2%, spent too much time 22.2%, no glucose improvement 20.0%, didn't like it 15.6%, too complicated or lacked resources 13.3%, supplies 4.4%, cost 2.2%. Among non-trusters, 83.3% said Loop helped less than expected (vs 18.4% of trusters). Settings deviated widely from calculated values (ISF actual/calculated ratio 1.25, range 0.03-2.23). Interview themes: mental and emotional burden, prolonged settings adjustment, technical barriers, exercise, pregnancy, fear of hypoglycemia from predictions, interest in newer technology, and one parent's fear of the endocrinologist's disapproval. One adult wanted help from 'someone with credentials', not only a peer mentor. Authors call for clinical and technical support with settings, realistic expectations and emotional support."
+    },
+    {
+      "title": "Lum JW, Bailey RJ, Barnes-Lomen V, et al. A Real-World Prospective Study of the Safety and Effectiveness of the Loop Open Source Automated Insulin Delivery System. Diabetes Technol Ther 2021;23(5):367-375",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906/",
+      "year": 2021,
+      "country": "USA",
+      "sample_size": "799 new users enrolled, 558 analyzed (241 excluded, 93% for missing or insufficient data); ages 1-71",
+      "relevance": "Source of the 3% figure. 77 participants (14%) stopped providing Loop data in the first 6 months, and 15 (3%) confirmed they had discontinued. Whether the other 62 stopped is unknown. The most common reported issues were connectivity and communication (27% of issues) and hardware damage or failure (10%). Severe hypoglycemia fell from 181 to 18.7 events per 100 person-years, with no confirmed DKA. Twenty discontinuers were interviewed."
+    },
+    {
+      "title": "Wong JJ, Hood KK, Hanes SJ, Lal RA, Naranjo D. Psychosocial Effects of the Loop Open-Source Automated Insulin Delivery System. J Diabetes Sci Technol 2023;17(6):1440-1447",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35771004/",
+      "year": 2023,
+      "country": "USA",
+      "sample_size": "239 adults, 115 children, 243 parents (baseline, 3 and 6 months)",
+      "relevance": "Adults improved significantly from baseline to 3 and 6 months in diabetes distress, sleep quality, fear of hypoglycemia and hypoglycemia confidence. Parents' and children's sleep and parents' fear of hypoglycemia also improved. This counterweight matters: for those who stay, Loop lowers emotional burden. People who stopped are not in the 6-month sample."
+    },
+    {
+      "title": "Suttiratana SC, Wong JJ, Lanning MS, et al. Qualitative Study of User Experiences with Loop, an Open-Source Automated Insulin Delivery System. Diabetes Technol Ther 2022;24(6):416-423",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": 2022,
+      "country": "USA",
+      "sample_size": "72 focus-group participants (adults and parents); about 95% white, 94% privately insured, 73% household income at least US$100K",
+      "relevance": "Decreased burden (less worry, stress and cognitive effort) was the most endorsed benefit. Technical issues and settings calibration were the main challenges, with RileyLink most often blamed. Provider attitudes were mostly ambivalent or uninformed. Several participants switched providers after feeling unsupported, and one provider would prescribe supplies but said they would not touch the settings. The authors describe discontinuers as older, more often female and more often publicly insured. That conflicts with Wong 2022's non-significant insurance difference."
+    },
+    {
+      "title": "Schipp J, Hendrieckx C, Braune K, et al. Psychosocial Outcomes Among Users and Nonusers of Open-Source Automated Insulin Delivery Systems: Multinational Survey of Adults With Type 1 Diabetes. J Med Internet Res 2023;25:e44002",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10755653/",
+      "year": 2023,
+      "country": "Multinational (OPEN project; survey Sept-Nov 2020, English only)",
+      "sample_size": "592 adults (451 open-source AID users, 141 non-users)",
+      "relevance": "Users reported better emotional well-being, sleep, diabetes-specific quality of life and treatment satisfaction, and less diabetes distress (PAID) and fear of hypoglycemia (HFS-II). All effects were medium to large (Cohen d 0.5-1.5) after adjustment. The study is cross-sectional, so people who stopped are absent."
+    },
+    {
+      "title": "Cleal B, Chen Y, Waldchen M, et al. Examining the Emotional and Physical Health Impact in Users of Open-Source Automated Insulin Delivery and Sources of Support: Qualitative Analysis of Patient Narratives. J Med Internet Res 2025;27:e48406; Correction e72519 (24 Mar 2025)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11747533/",
+      "year": 2025,
+      "country": "Multinational (29 countries; OPEN DIWHY survey)",
+      "sample_size": "383 participants",
+      "relevance": "Most narratives were positive (sleep, quality of life, less time 'doing diabetes'). The negative codes were worry, caution and frustration about building and maintaining the system. One user often did not trust the loop and bolused manually or ignored temp basal suggestions. Another found the diabetologist's office support 'completely lost'. HCP support, where present, was more emotional than practical. Peers were the main source of practical and emotional help. The published correction (PMC11976169) changes author affiliations only, not findings."
+    },
+    {
+      "title": "Schipp J, Skinner T, Holloway E, et al. How Adults with Type 1 Diabetes Are Navigating the Challenges of Open-Source Artificial Pancreas Systems: A Qualitative Study. Diabetes Technol Ther 2021",
+      "url": "https://doi.org/10.1089/dia.2020.0652",
+      "year": 2021,
+      "country": "Australia (interviews Oct 2018-Jan 2019)",
+      "sample_size": "23 adults",
+      "relevance": "Users cope through peer support, self-sufficiency, deliberate risk management and trade-offs, which 'fill perceived gaps in professional and industry support'. The authors stress that health professionals need to show support and understanding."
+    },
+    {
+      "title": "O'Donnell S, Cooper D, Chen Y, et al. Barriers to uptake of open-source automated insulin delivery systems: socioeconomic factors and perceived challenges of adults with type 1 diabetes from the OPEN survey. Diabetes Res Clin Pract 2023;197:110235",
+      "url": "https://doi.org/10.1016/j.diabres.2022.110235",
+      "year": 2023,
+      "country": "Multinational (31 countries)",
+      "sample_size": "129 adult non-users",
+      "relevance": "Fear of losing healthcare provider support is a major barrier to starting and maintaining open-source AID, alongside sourcing components, low confidence in tech skills, and the time and energy required."
+    },
+    {
+      "title": "Huhndt A, Chen Y, O'Donnell S, et al. Barriers to Uptake of Open-Source AID Systems: Caregivers of Children and Adolescents (OPEN survey). Front Clin Diabetes Healthc 2022;3:876511",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10012142/",
+      "year": 2022,
+      "country": "Multinational",
+      "sample_size": "56 caregivers of non-using children",
+      "relevance": "Barriers were limited technical skills (50%), worry about not being able to maintain a system (43%) and lack of support from medical professionals (39%). Distrust of unapproved products or automation was not a decisive barrier."
+    },
+    {
+      "title": "Braune K, Krug N, Knoll C, et al. Emotional and Physical Health Impact in Children and Adolescents and Their Caregivers Using Open-source AID: Qualitative Analysis. J Med Internet Res 2022;24(7):e37120",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9335170/",
+      "year": 2022,
+      "country": "Multinational (16 countries)",
+      "sample_size": "60 families",
+      "relevance": "Remote Nightscout alarms gave caregivers security at night. Some caregivers described legal uncertainty: one family ran AndroidAPS only at home and switched back to the manufacturer app by day. Peer groups, not HCPs, built trust in the system."
+    },
+    {
+      "title": "Knoll C, Schipp J, O'Donnell S, et al. Quality of life and psychological well-being among children and adolescents with diabetes and their caregivers using open-source AID. Diabetes Res Clin Pract 2023;196:110153",
+      "url": "https://doi.org/10.1016/j.diabres.2022.110153",
+      "year": 2023,
+      "country": "Multinational (27 countries)",
+      "sample_size": "168 caregivers (119 users, 49 non-users)",
+      "relevance": "Caregivers of users reported better general well-being, sleep and pediatric diabetes quality of life. PAID (distress) did not differ significantly."
+    },
+    {
+      "title": "Cooper D, Ubben T, Knoll C, et al. Sleep-AID: subjective sleep quality, psychosocial measures and real-world glycemic outcomes in people using AID. Sleep Advances 2026",
+      "url": "https://doi.org/10.1093/sleepadvances/zpag066",
+      "year": 2026,
+      "country": "Multinational (OPEN 2020-2023)",
+      "sample_size": "529 adults (CGM subsample 60)",
+      "relevance": "AID users (open-source and commercial) slept better (PSQI median 5 vs 7) and feared hypoglycemia less (HFS-II 7 vs 13), but 43% of AID users still had poor sleep. AID eases night-time burden without removing it."
+    },
+    {
+      "title": "Liarakos AL, Crabtree TSJ, Hussain S, et al. Long-Term Improvements in Glycemia and User-Reported Outcomes Associated with Open-Source AID in Adults with T1D in the UK. Diabetes Technol Ther 2025",
+      "url": "https://doi.org/10.1089/dia.2024.0556",
+      "year": 2025,
+      "country": "UK (12 NHS centres; ABCD audit)",
+      "sample_size": "81 adults, mean follow-up 1.7 years",
+      "relevance": "Clinic-collected data. Diabetes distress fell by 0.9 points and impaired hypoglycemia awareness by 27.8% to 8.3%. All participants asked reported a positive effect on quality of life. Shows clinics can collect psychosocial outcomes for open-source users within routine care."
+    },
+    {
+      "title": "Huang Q, Ni Y, Lei M, et al. Experiences and opinions of adults with type 1 diabetes on the android-based open-source closed-loop system in China: a qualitative study. BMJ Open 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11751815/",
+      "year": 2025,
+      "country": "China (Guangdong; clinic-run AAPS trial)",
+      "sample_size": "20 adults",
+      "relevance": "Alarm disturbance was a subtheme: embarrassing alarms in quiet public places and alarms disrupting sleep. Users called AAPS 'reliable, convenient and trustworthy' and described good doctor-patient collaboration, with doctors watching glucose data and advising on settings. Authors warn that a gap between expectations ('artificial pancreas') and reality may lead to discontinuation."
+    },
+    {
+      "title": "Burnside M, Haitana T, Crocket H, et al. Interviews with Indigenous Maori with type 1 diabetes using open-source AID in the CREATE randomised trial. J Diabetes Metab Disord 2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10035484/",
+      "year": 2023,
+      "country": "New Zealand",
+      "sample_size": "10 interviews",
+      "relevance": "Trust built quickly but anxiously. One adult was 'obsessed' with checking the phone for the first 24-48 hours, then concluded the system did better than they did. Participants preferred support from their own healthcare professional by text or phone over online peer groups. One child withdrew from the trial at 12 weeks."
+    },
+    {
+      "title": "Everett E, Shaw E, Escobar Barrios B, et al. The Emotional Burden and Behavioral Impacts of Alarms and Alerts Across the Spectrum of Diabetes Technology Use. JMIR Diabetes 2026",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13472229/",
+      "year": 2026,
+      "country": "USA (UCLA Health, survey Aug 2024-Mar 2025)",
+      "sample_size": "838 adults with T1D",
+      "relevance": "Of AID users, 49% had alarms several times a day, against 35% on sensor-augmented pumps and 32% on CGM only. After adjustment, AID users had higher odds of alarm disruptiveness (OR 1.67), annoyance (1.65), ignoring alarms (1.86) and overcorrecting lows (1.61). Open-source users were not analysed separately [uncertain whether any were included]."
+    },
+    {
+      "title": "Messer LH, Berget C, Vigers T, et al. Real world hybrid closed-loop discontinuation: predictors and perceptions of youth discontinuing the 670G system in the first 6 months. Pediatr Diabetes 2020;21(2):319-327",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7204392/",
+      "year": 2020,
+      "country": "USA",
+      "sample_size": "92 youth",
+      "relevance": "Commercial comparator. 28 of 92 (30%) discontinued within 6 months, and higher baseline HbA1c predicted stopping. Calibrations, the number of alarms and the time needed were the most problematic aspects. Commercial-era discontinuation was far higher than Loop's reported 3-5%."
+    },
+    {
+      "title": "Roos T, Hermanns N, Heinemann L, et al. Automated Insulin Delivery Systems: Impact on Clinical Practice, Discontinuation, Rejection, and Reasons for Not Managing Well (dt-report 2025). J Diabetes Sci Technol 2026",
+      "url": "https://doi.org/10.1177/19322968261441314",
+      "year": 2026,
+      "country": "Germany, Austria, Switzerland, Spain (survey end of 2024)",
+      "sample_size": "1,294 HCPs and 2,535 people with diabetes",
+      "relevance": "HCPs estimated AID discontinuation at 8%, and 22% of eligible people rejected AID. Technical problems, lack of trust and unrealistic expectations predicted lower satisfaction and poorer management. This is mostly commercial AID, but it shows trust is measurable and predictive."
+    },
+    {
+      "title": "Do QD, Radovnicka L, Haskova A, et al. Switch of Open-Source AID System AndroidAPS to Commercially Available AID Systems in Type 1 Diabetes: The Extension of the CODIAC Study. Diabetes Technol Ther 2025",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40931793/",
+      "year": 2025,
+      "country": "Czech Republic",
+      "sample_size": "41 adults (AAPS, then Control-IQ n=25 or MiniMed 780G n=16, then AAPS)",
+      "relevance": "The only prospective switch study. TIR was the same (84.2% vs 85.0%), time in tight range was higher on AAPS (66.4% vs 63.4%), and time below 70 mg/dL was lower on commercial systems (2.2% vs 3.8%). The results held after switching back. A planned switch under clinical supervision was safe in both directions."
+    },
+    {
+      "title": "BCDiabetes (Dr Tom Elliott). Omnipod 5 vs Loop (clinic guidance, dated 26 June 2026)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Omnipod-5-vs-Loop.pdf",
+      "year": 2026,
+      "country": "Canada (British Columbia)",
+      "sample_size": "3,200+ clinic-supported Loop users; outcomes published for 1,442",
+      "relevance": "Clinic view on transitions. It recommends moving existing Loopers to Omnipod 5 only if they have not reached the control they want or find Loop's settings too complex. It notes that Omnipod 5's adaptive basal (which assumes a 50:50 basal:bolus split) 'may not be ideal for those who have tuned their settings well on Loop', and that the target range is limited to 6.1-8.3 mmol/L against Loop's 4.8-10.1, with no unlimited overrides. Omnipod 5 users are trained by Insulet educators and then 'returned to their usual endocrinologist'. BCDiabetes offers long-term follow-up to users of any AID system. Startup cost in Canada is up to CA$6,300 (CA$650 if an existing PDM is under warranty)."
+    },
+    {
+      "title": "Insulet (Omnipod HCP blog). Switching Patients from Other Automated Insulin Delivery (AID) Systems to Omnipod 5 (20 Jan 2026)",
+      "url": "https://www.omnipod.com/hcp/blog/tips-guidelines/switching-from-AID-to-Omnipod5",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "Not applicable (manufacturer guidance)",
+      "relevance": "Omnipod 5 estimates total daily insulin (TDI) at the first pod from the Manual Mode basal program, assuming basal is about 50% of TDI. A program covering much less, such as 30%, underestimates TDI and the adaptive basal. Clinicians are told to review actual delivery, including temp basals and missed boluses, before starting. After initiation, basal rates are used only in Manual Mode, and target glucose is the only setting that changes automated delivery. DIY or Loop users are not mentioned, although Loop users' scheduled basal often differs from what Loop actually delivers."
+    },
+    {
+      "title": "Trio documentation: Transition from other closed-loop solutions (community docs)",
+      "url": "https://oiaps-tmhastings.readthedocs.io/en/dev/Configuration/transition-qa.html",
+      "year": 2026,
+      "country": "International (open-source community)",
+      "sample_size": "Not applicable",
+      "relevance": "iAPS history will not transfer to Trio, and settings must be entered manually. Users are advised to wait 7 days before enabling dynamic settings. Basal profiles carried over from a pump should be used 'with consideration and caution'. A setting-name map exists for AAPS but not for Loop."
+    },
+    {
+      "title": "FDA 510(k) K203689: Tidepool Loop (cleared 23 Jan 2023)",
+      "url": "https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfpmn/pmn.cfm?ID=K203689",
+      "year": 2023,
+      "country": "USA",
+      "sample_size": "Not applicable (regulatory)",
+      "relevance": "In the cleared Loop lineage (Tidepool Loop, used in twiist), a healthcare provider supplies initial therapy settings when creating the prescription, including correction range and glucose safety limit. A move from DIY Loop to twiist therefore puts settings formally back in clinician hands. No documented path imports DIY Loop settings or history [uncertain]."
+    },
+    {
+      "title": "Bruttomesso D, Petrie JR, Evans M, et al. Challenges in and opportunities for individualising diabetes technology: a position statement by the EASD and ADA Diabetes Technology Working Group. Diabetologia 2026",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13109177/",
+      "year": 2026,
+      "country": "Europe/USA",
+      "sample_size": "Not applicable (professional guidance)",
+      "relevance": "States that people can trial a device or switch systems depending on coverage, and that a temporary break from technology is acceptable 'as long as there is a safe back-up plan'. Lists burnout, diabetes distress and unrealistic expectations as barriers clinicians should weigh. It does not address open-source systems specifically."
+    },
+    {
+      "title": "Crabtree TSJ, Choudhary P, Lumb A, et al. ABCD, DTN-UK and ACDC survey of UK healthcare professional attitudes towards open-source AID. Diabetes Ther 2022;13:341-353 (and 2020 ABCD poster)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": 2022,
+      "country": "UK (survey Feb-Apr 2019)",
+      "sample_size": "317 HCPs",
+      "relevance": "Grounds the fear of disapproval: 91% would not start an open-source AID discussion. In the earlier poster report, 13% (41/317) said they would stop consumables. The authors note many HCPs feel families should now be encouraged toward licensed systems, and that it is unknown how families would feel about being offered a switch."
+    },
+    {
+      "title": "Hawke K, Kabootari M, Elliott T. Supported Open-Source Automated Insulin Delivery for Management of Type 1 Diabetes in Pregnancy. J Diabetes Sci Technol 2026",
+      "url": "https://doi.org/10.1177/19322968251336779",
+      "year": 2026,
+      "country": "Canada (BCDiabetes, Jan 2023-Oct 2024)",
+      "sample_size": "10 pregnancies",
+      "relevance": "Transitions also run toward open source. Seven of 10 women started supported open-source AID during pregnancy because most commercial systems cannot reach pregnancy targets. Their 14-day TIR (63-140 mg/dL) rose from 52% to 71%, with no DKA or severe hypoglycemia."
+    },
+    {
+      "title": "CustomTypeOne (parent blog, sponsored by SugarPixel): Omnipod 5 'live brain stream' (8 Apr 2026)",
+      "url": "https://customtypeone.com/blogs/pixelpals/omnipod-5-live-brain-stream",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "1 child (anecdote)",
+      "relevance": "Community anecdote about a Loop to Omnipod 5 switch. The carb ratio had to be made much stronger (about 1:6.5-7.5 to 1:5), and a single ratio replaced Loop's schedules. After about 80 days, A1C and TIR were similar to Loop, the worst days were better, and the parent reported a large drop in mental burden. Real-time data were lost: Glooko is not real-time and a Nightscout bridge runs about 2 hours behind. No clinic involvement is described."
+    },
+    {
+      "title": "Fagerberg AR, Borch L, Kristensen K, Hjelle JS. Prevalence, Safety, and Metabolic Control Among Danish Children and Adolescents Using Open-Source AID. Diabetes Technol Ther 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11058411/",
+      "year": 2024,
+      "country": "Denmark",
+      "sample_size": "National pediatric cohort of current users",
+      "relevance": "The authors flag that excluding children who stopped may bias outcomes upward, and call for research on open-source AID discontinuation. This is evidence that the gap is recognised."
+    },
+    {
+      "title": "Lebbar M, Bonhoure A, Rabasa-Lhoret R, Wu Z. Switching From Open-source to Commercial Advanced AID: Glucose Management and Patient Perspective in an Adult Living With Type 1 Diabetes. Can J Diabetes 2025",
+      "url": "https://doi.org/10.1016/j.jcjd.2024.12.004",
+      "year": 2025,
+      "country": "Canada (Montreal)",
+      "sample_size": "1 adult (case report)",
+      "relevance": "The only published case report on an open-source to commercial switch with the patient's perspective. Full text was not accessible, so details of systems, settings and outcomes are not verified [uncertain]."
+    },
+    {
+      "title": "Diabetes Dialogue: Tech updates on twiist, MiniMed Go and more (HCPLive clinician podcast, 16 Jan 2026)",
+      "url": "https://www.hcplive.com/view/diabetes-dialogue-tech-updates-on-twiist-minimed-go-and-more",
+      "year": 2026,
+      "country": "USA/Canada",
+      "sample_size": "Not applicable (clinician commentary)",
+      "relevance": "Clinicians discussing twiist note that switching between algorithms would need safeguards against user error. Seen through search summaries and a sibling research item, not a full transcript [uncertain]."
+    },
+    {
+      "title": "Diabetes Canada Clinical Practice Guidelines Expert Working Group. Do-It-Yourself Automated Insulin Delivery: A Position Statement (2023)",
+      "url": "https://www.diabetes.ca/for-professionals/position-statements",
+      "year": 2023,
+      "country": "Canada",
+      "sample_size": "Not applicable (professional guidance)",
+      "relevance": "Says HCPs should support settings optimization at follow-up, and links discontinuation of DIY AID to difficulty fine-tuning settings, which better HCP education could reduce."
+    },
+    {
+      "title": "Braune K, Lal RA, Petruzelkova L, et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": 2022,
+      "country": "International",
+      "sample_size": "Not applicable (consensus statement)",
+      "relevance": "Clinicians stay responsible for safety advice, backup planning and documentation for open-source users. This is the baseline for clinic duties when a user pauses, stops or switches. Full text not re-read for this item, so it is cited through sibling research items."
+    }
+  ],
+  "evidence_strength": "Mixed. Discontinuation: peer-reviewed mixed-methods study from one US Loop cohort (Wong 2022, n=46 discontinuers) plus attrition data from the same cohort (Lum 2021). Nothing for Trio, iAPS, AAPS or OpenAPS. Psychosocial benefit: strong for a self-selected population, with validated measures (Wong 2023 n=597; Schipp 2023 n=592; Liarakos 2025 n=81; Cooper 2026 n=529) and qualitative work (Cleal 2025 n=383; Schipp 2021 n=23; Suttiratana 2022 n=72; Huang 2025 n=20). Alarm burden and trust: mostly evidence from commercial AID (Everett 2026 n=838; Messer 2020 n=92; Roos 2026 n=3,829), applied to open-source users by inference. Transitions: one prospective switch study (CODIAC extension, n=41), one case report, manufacturer and clinic guidance, and community anecdote.",
+  "prevalence_or_magnitude": "Discontinuation: 5.3% (46 of 874) self-identified stops over roughly 6-15 months in the Loop Observational Study, and 3% (15 of 558) confirmed in 6 months. Another 11% (62 of 558) went silent, with status unknown, so the true rate is probably between 3% and 14% at 6 months. For comparison, 30% of youth stopped MiniMed 670G within 6 months (Messer 2020), and German-speaking and Spanish HCPs estimate AID discontinuation at 8% (Roos 2026, mostly commercial). No rates exist for Trio, iAPS, AAPS or OpenAPS [uncertain]. Switching between systems is probably far more common than stopping. It is driven by 2025-2026 launches and end-of-life events (Omnipod 5 in Canada, twiist, Eros end-of-life, iAPS to Trio). No study counts it [uncertain]. Trust: 3.6% of continuing Loop users did not trust Loop, against 13.3% of discontinuers. Among non-trusters, 83.3% said Loop helped less than expected. Alarm burden: 49% of AID users get alarms several times a day, and they are 1.86 times as likely as CGM-only users to ignore alarms. Psychosocial benefit for those who stay: medium-to-large effects on distress, fear of hypoglycemia and sleep (d 0.5-1.5), but 43% of AID users still sleep poorly. Fear of provider disapproval: named by 1 of 19 interviewed discontinuers; lack of medical support is a barrier for 39% of non-using caregivers; 13% of UK HCPs (2019) said they would stop consumables. Switch outcomes: moving from AAPS to Control-IQ or 780G cut time below 70 mg/dL from 3.8% to 2.2% and cost about 3 points of time in tight range.",
+  "data_quality_caveats": "The discontinuation evidence comes from one US cohort, 2019-2020, on Omnipod Eros and old Medtronic pumps with RileyLink. It predates automatic bolus, Omnipod DASH support, Trio and every commercial alternative except Control-IQ. Stops were self-identified, and 241 of 799 enrolled Loop users never provided enough data to be analysed (survivorship bias). Wong 2022 has internal inconsistencies: the abstract gives 27.8% and 22.2% for the top two reasons, against 33.3% and 26.7% in the body, and gender percentages do not match counts. Wong 2022 and Suttiratana 2022 disagree on whether insurance type differs. Psychosocial surveys are cross-sectional, English-only, recruited from peer groups, and contain only current users. Alarm and trust data come mostly from commercial-system users. The Cleal 2025 correction concerns affiliations only. The switch evidence is one 41-person Czech study plus anecdotes.",
+  "clinician_perspective": "Clinicians see discontinuation and switching through the prescription pad. The first sign is often a request for a new pump, pods or a commercial system, not a conversation about why. What they say or fear: (1) Many would prefer users to be on licensed systems. UK HCPs largely would not start open-source discussions (91%), some would withdraw consumables (13% in 2019), and the UK survey authors note a view that families should now be steered to licensed systems. A user asking to switch can feel like a relief to the clinic, which risks an unexamined handover. (2) Clinic-run programs take a more nuanced line. BCDiabetes, with more than 3,200 Loop users, recommends moving to Omnipod 5 only if goals are not met or settings feel overly complex. It warns that Omnipod 5's adaptive basal may undo well-tuned Loop settings, and that commercial target floors are higher. (3) Clinicians are cautious about algorithm switching. HCPLive commentators on twiist (2026) said switching algorithms needs safeguards against user error, and Omnipod's own HCP guidance says Omnipod 5 initialization depends on an accurate estimate of total daily insulin. For a Loop user, that has to come from what Loop actually delivered (temp basals and automatic boluses), not the scheduled basal. (4) Clinicians rarely see psychosocial load in a DIY user. They see glucose, often good glucose. The LOS discontinuers had the same TIR as continuers, so a strong AGP can hide burnout, mistrust or settings fatigue. (5) Professional guidance accepts breaks and switches. EASD/ADA 2026 says a break from technology is acceptable with a safe backup plan. Diabetes Canada 2023 links discontinuation to difficulty fine-tuning settings, which clinician education could reduce. What clinicians need: a clear statement of why the person wants to stop or switch; their actual total daily insulin and basal/bolus split from the open-source system; the current settings, targets and safety limits; what will be lost (lower targets, overrides, remote control) so expectations are realistic; a backup plan; and a before/after view to judge whether the switch worked. In the CREATE trial (NZ) and in clinic-run AAPS in China, users with direct clinician support described trusting both the system and the team. That suggests clinician involvement shapes the psychosocial experience, not just glucose.",
+  "effect_on_relationship": "Discontinuation and switching are where the relationship either re-forms or quietly breaks. (1) Burden is usually carried outside the clinic. Users fill gaps in professional support with peers and self-reliance (Schipp 2021; Cleal 2025). Few providers adjust settings ('I am not messing with your settings', Suttiratana 2022). The people who struggle most with settings, the most common burden behind stopping, have the least clinical help. Discontinuers explicitly asked for expert or credentialed guidance (Wong 2022). (2) Fear of disapproval suppresses help-seeking. A parent feared the endocrinologist's reaction to Loop, and fear of losing provider support deters adults and caregivers (O'Donnell 2023; Huhndt 2022). A user who fears disapproval of Loop may also hide that they are struggling with it, so the clinic learns of problems only when the person has already quit or switched. (3) Mistrust of the algorithm is a relationship issue too. Non-trusters were the group most likely to say Loop disappointed them, but no clinic routinely asks about trust or watches for its signs (manual boluses on top of recommendations, ignored temp basals). (4) A switch to a commercial system re-centers the clinic and the manufacturer. The clinic prescribes, an Insulet, Tandem or Medtronic trainer onboards, and data move to Glooko, CareLink or Tandem Source. For many users this restores a normal, legitimate relationship and lowers burden (one parent reported a large drop in mental load). It also resets the user's expertise to zero: years of Loop history, tuned settings and override habits stay in Nightscout or Tidepool, which the new team does not look at. Some experienced users lose lower targets and overrides and feel the move as a downgrade. (5) Switching back to DIY after a commercial trial, or into DIY for pregnancy, can feel like defying the clinic unless the move is framed as a supported choice. BCDiabetes, which follows users of every AID system, shows the alternative: the clinic stays the constant while the device changes.",
+  "decision_ownership": "Stopping or switching is the user's (or parent's) decision, made mostly with peer input. The clinician controls the means: prescriptions for the next pump, pods or system, and supplies. Settings translation is done by the user, often with peer advice, with the manufacturer trainer for commercial systems, and sometimes with the clinic. Nobody owns it formally. Liability shifts on a switch to a cleared system: the device carries regulatory clearance, the clinician prescribes it and is responsible for starting settings (Tidepool Loop and twiist need clinician-entered initial settings), and the manufacturer provides support. While on DIY, the user carries the off-label risk, and the clinician remains responsible for safety advice, backup planning and documentation (2022 consensus; EASD/ADA). For a temporary break, EASD/ADA puts the onus on a jointly agreed backup plan.",
+  "disclosure_risk": "High during struggle, lower at the point of switching. Users who fear disapproval of DIY use are unlikely to tell the clinic they are burned out, mistrust the algorithm or are thinking of stopping, because that invites 'I told you so' or loss of supplies. The clinic finds out when a new prescription is requested. Reasons for stopping are rarely recorded. Switching to a commercial system is easy to disclose because it needs the clinic, but users may play down how well DIY worked or why they are leaving [uncertain: no direct study].",
+  "regulatory_status_dependency": "Partly. Moving to an FDA-cleared system (Omnipod 5, Control-IQ, 780G, twiist) removes fear of disapproval, adds manufacturer training, a support line and clinic data platforms, and puts starting settings formally in the clinician's hands. It does not remove alarm burden (AID users of all kinds report the most alarms), trust issues or settings work. Commercial discontinuation has historically been higher than Loop's (670G youth 30% at 6 months). twiist (Tidepool Loop) keeps the Loop algorithm lineage, so concepts carry over, but it lacks automatic bolus and has no documented import of DIY settings or history [uncertain]. A cleared option does not solve continuity of data and settings across the switch.",
+  "workarounds": "Users: screenshot or export settings (Loop Issue Report, Nightscout profile, AAPS preference export) and re-enter them by hand; use the Omnipod 5 Settings Transfer Guide (a paper form) for conversion; ask peer groups and parent bloggers how much stronger carb ratios or correction factors need to be on Omnipod 5; 'pause' DIY to trial a commercial system, keeping the old phone, app and pods so they can return; bridge Omnipod 5 data back into Nightscout (about 2-hour lag) to keep a familiar view; keep a backup pump or PDM and a long-acting insulin prescription; turn off or loosen CGM and app alerts to cope with alarm load; change clinicians when unsupported. Clinicians: rely on manufacturer trainers for commercial starts; follow manufacturer advice to review actual delivery before setting Omnipod 5 TDI; in clinic-run programs (BCDiabetes) or trials (CODIAC), plan switches and follow up at about 2 weeks; accept temporary breaks with a backup plan (EASD/ADA 2026); use Dexcom Clarity as the one continuous record across systems.",
+  "existing_tools": "Tidepool: Loop and twiist data, plus many commercial uploads, in a clinic workspace. It holds history if the user keeps uploading. Nightscout and Nightscout Reporter: Loop, Trio, AAPS and OpenAPS data, including profile (settings) history. Dexcom Clarity: CGM history that continues across any switch. Glooko, Medtronic CareLink and Tandem Source: data platforms for commercial systems. Glooko has displays for Control-IQ and Omnipod 5 but none for DIY systems. LoopFollow and Nightscout alarms: remote alerts for caregivers. In-app exports: Loop Issue Report, AAPS settings export, Trio's migration notes (AAPS setting map). Omnipod 5 Settings Transfer Guide and Insulet's HCP switching guidance. ADCES PANTHER AID comparison chart (July 2026) [uncertain: contents not verified]. Validated PROMs (DDS, PAID, HFS-II, PSQI) exist but live in research surveys, not in any of these tools.",
+  "existing_tool_coverage_gap": "No tool keeps one patient timeline across a system change, with the switch marked and before/after metrics compared. No tool translates open-source settings into a commercial system's parameters. That would mean working out true TDI and basal share from delivered insulin, and flagging target floors, lost overrides and adaptive-basal behaviour. Nothing records why someone stopped or switched. Nothing warns of likely dropout: early months, frequent settings changes, rising open-loop time, manual overrides of recommendations as a sign of mistrust. No tool counts alarm load (alerts per day or night, silenced or ignored) for the user or caregiver. No tool puts psychosocial measures (distress, trust, burden, sleep) next to glucose. Trio cannot import iAPS history. Commercial platforms (Glooko) are not real-time, and DIY history is invisible to the commercial team.",
+  "data_artifacts_involved": "Settings snapshot before and after (basal schedule, ISF, carb ratio, correction range or target, override presets, suspend threshold, max basal and bolus; Omnipod 5 basal program, TDI, target, IC, CF, insulin action). Settings change history. Delivered-insulin breakdown: scheduled vs temp basal vs automatic bolus vs manual bolus, and TDD. Override history. Closed-loop vs open-loop time. Alert and notification log. Continuous CGM and AGP history (Clarity). Switch or stop event with date and reason. Backup plan. PROM scores (DDS, HFS-II, PSQI, trust item).",
+  "unmet_need": "Continuity of care that does not depend on which system the person runs, plus a safe, non-judgmental channel to raise burden before it ends in quitting. Specifically: (1) An early-warning and support loop for the first months. The LOS discontinuers had good glucose but were worn down by settings work, mistrust and technical failures. They asked for credentialed guidance and nobody saw it coming. (2) A structured handover when someone moves between systems: true insulin needs, current settings and safety limits, what will be lost, a backup plan, and a follow-up check. Each translation is currently improvised by users, peers and trainers. (3) A persistent record that survives the switch, so the new team can see what worked on DIY, and the user can judge whether the switch helped and return if it did not. (4) A way to make psychosocial load (alarms, sleep, distress, trust) visible to the clinic alongside the AGP, because good numbers hide it. (5) Neutral language and workflow for stopping, pausing or switching, so disclosing a struggle does not feel like admitting the clinic was right.",
+  "implication_for_collaboration_tool": "1) Make the timeline system-agnostic. Model 'system episodes' (Loop 3.x on DASH, Trio 1.0, Omnipod 5, twiist, AAPS) on one patient timeline, anchored by continuous CGM. Ingest Nightscout and Tidepool for DIY and twiist, and accept Glooko, CareLink and Tandem Source exports where possible. Show before/after cards at each switch (TIR, TBR, time in tight range, GMI, CV) so both sides can judge a switch on evidence, as CODIAC did. 2) Generate a transition packet whenever a user marks 'switching' or 'pausing'. Include: actual TDD and basal/bolus split from delivered insulin, separating scheduled basal, temp basal and automatic bolus, with a warning when the scheduled basal would make Omnipod 5 underestimate TDI; current settings and safety limits; target-floor and feature differences for the destination system (Loop 87 mg/dL vs Omnipod 5 110 or 100, Control-IQ 112.5, 780G 100; overrides lost); a backup plan; a 2-week and 6-week review prompt. Present it as information for the clinician to sign off, never as dosing advice. 3) Watch for dropout risk, with consent. Flag the first 3-6 months, frequent settings changes, rising open-loop or communication-loss time, repeated manual boluses on top of recommendations or ignored temp basals (possible mistrust), and high alarm counts. Offer the user a 'request a settings check' button that reaches the clinic or a nominated educator. 4) Add light PROMs and a trust question. Ask DDS-2/4, a short fear-of-hypoglycemia item, a sleep item, 'How much do you trust the system?' and 'How many alarms wake you per week?' before visits. Trend them next to the AGP, as UK clinics already do for DIY users (Liarakos 2025). 5) Summarize alarm load. Show alerts per day and night by type, and silenced or ignored alerts, for users and caregivers (LoopFollow and Nightscout), so threshold changes are discussed rather than alarms just turned off. 6) Make stopping a supported choice. Provide a neutral 'pause, stop or switch' flow that records the reason (the Wong 2022 categories make a good starting list) and the backup plan, and keeps the record open for a return. 7) Treat twiist and Tidepool Loop as close relatives. Map DIY Loop settings onto Tidepool Loop terms so a prescribing clinician starts from the user's tuned values rather than from scratch. 8) Keep the user in control. The user owns the history and chooses what is shared, so fear of disapproval does not stop them sharing.",
+  "severity_rank": "High. Outright discontinuation is rare (3-5%), but transitions are increasingly common and burden goes unseen. These are the moments when users most need the clinic and are least likely to get structured help, and each switch erases the shared record.",
+  "safety_criticality": "Medium-high. Risk is concentrated at transitions: a mis-translated starting setup (TDI underestimated from a Loop basal schedule, carb ratio too weak or correction factor too strong), loss of caregiver remote alarms, and unplanned stops (app expiry, broken phone) with no backup plan, which risks hyperglycemia and DKA. Alarm fatigue leads people to ignore alarms (OR 1.86) and overcorrect lows. Planned, supervised switches were safe in CODIAC. No published harm data cover unsupervised DIY transitions [uncertain].",
+  "equity_impact": "Older adults are more likely to stop Loop. Children more often see no glucose gain, and parents carry the night-time alarm load. People on public insurance may be more likely to stop (Suttiratana 2022), though Wong 2022 found no significant difference [uncertain]. Switching to commercial systems costs money: up to CA$6,300 for an Omnipod 5 controller in Canada, plus insurer approval in the US, so low-income users may be stuck on a system that no longer suits them. Psychosocial evidence and migration documentation are English-only. Android-only users have AAPS with no discontinuation data. Pregnant women may have to switch into open-source AID to reach pregnancy targets. Indigenous users in CREATE preferred clinician support to online peer groups.",
+  "uncertain": [
+    "prevalence_or_magnitude",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "existing_tools",
+    "safety_criticality",
+    "equity_impact",
+    "key_sources"
+  ]
+}

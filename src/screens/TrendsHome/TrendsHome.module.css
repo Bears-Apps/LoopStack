@@ -1,0 +1,443 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-card);
+  background: var(--surface-0);
+  box-shadow: var(--shadow-card);
+  border-left: 3px solid var(--brand-primary);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+/* Status-driven accent — the left rail + numeric color tracks the classifier. */
+.hero_in_range {
+  border-left-color: var(--brand-primary);
+}
+
+.hero_elevated_rising {
+  border-left-color: var(--range-high);
+  background: linear-gradient(
+    180deg,
+    var(--range-high-soft) 0%,
+    var(--surface-0) 60%
+  );
+}
+
+/* Above range but visibly correcting. Amber, not red: the number is out of
+   range so it must not read as green — but a correction that is landing is a
+   different state from one that is not, and the hero used to render this case
+   with the in-range treatment. */
+.hero_high_falling {
+  border-left-color: var(--range-high);
+  background: linear-gradient(
+    180deg,
+    var(--range-high-soft) 0%,
+    var(--surface-0) 60%
+  );
+}
+
+.hero_urgent_high {
+  border-left-color: var(--range-low);
+  background: linear-gradient(
+    180deg,
+    var(--range-low-soft) 0%,
+    var(--surface-0) 60%
+  );
+}
+
+.hero_low {
+  border-left-color: var(--range-low);
+  background: linear-gradient(
+    180deg,
+    var(--range-low-soft) 0%,
+    var(--surface-0) 60%
+  );
+}
+
+.heroLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-500);
+  font-weight: 600;
+}
+
+.heroValue {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  font-size: var(--text-display);
+  line-height: var(--text-display-lh);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.hero_elevated_rising .heroValue,
+.hero_elevated_rising .trendArrow,
+.hero_high_falling .heroValue,
+.hero_high_falling .trendArrow {
+  color: #B57612;
+}
+
+.hero_urgent_high .heroValue,
+.hero_urgent_high .trendArrow {
+  color: #C7494A;
+}
+
+.hero_low .heroValue,
+.hero_low .trendArrow {
+  color: #C7494A;
+}
+
+.heroUnit {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 400;
+  color: var(--ink-500);
+  letter-spacing: 0;
+}
+
+.heroTrend {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+.trendArrow {
+  color: var(--brand-primary-hover);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.advisory {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--ink-200);
+  margin-top: var(--space-1);
+}
+
+.staleTag {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--ink-700);
+  margin-left: var(--space-2);
+}
+
+.skeleton {
+  background: var(--surface-1);
+  border: 1px dashed var(--ink-200);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skeletonLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.hero_urgent_high .advisory,
+.hero_high_falling .advisory,
+.hero_low .advisory {
+  color: var(--ink-900);
+  font-weight: 500;
+}
+
+.insightCard {
+  background: var(--surface-0);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+  border-left: 3px solid var(--brand-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.insightHeadline {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: -0.005em;
+}
+
+.insightMeta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.badge {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  /* The documented brand-pill pair is soft ground + --brand-primary-hover ink
+     (visual-system §5), and every other brand pill in the app uses it. This
+     one alone used --brand-primary on the same ground: a 2.0:1 contrast ratio
+     on 11px text, which is the least legible label on the home screen and the
+     one making a provenance claim. */
+  color: var(--brand-primary-hover);
+  background: var(--brand-primary-soft);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+.muted {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+/* Inline link inside the sample-data note. Matches .aiLink in CaptureFlow. */
+/* An inline link inside a sentence, so the 44pt floor cannot be met by making
+   it 44px tall — that would break the line it sits in. Padding buys the hit
+   area and a matching negative margin gives the space back to the layout, so
+   the text does not move. */
+.sampleLink {
+  background: none;
+  border: none;
+  padding: 10px 2px;
+  margin: -10px 0;
+  color: var(--brand-primary-hover);
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* Metrics dashboard layout */
+.groupStack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tileGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+/* Basal / bolus split (footer inside the Insulin tile) */
+.splitBar {
+  display: flex;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--surface-2);
+  gap: 1px;
+}
+
+.splitBasal { background: var(--ink-300); }
+.splitBolus { background: var(--graph-insulin); }
+
+.splitLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-1) var(--space-3);
+  margin-top: 6px;
+}
+
+.splitItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.splitDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  flex: none;
+}
+
+/* Loop-mode card */
+.loopEmpty {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+.overrideList {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-card);
+  padding: var(--space-2) var(--space-4);
+  box-shadow: var(--shadow-card);
+}
+
+.overrideRow {
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--ink-200);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.overrideRow:first-child {
+  border-top: none;
+}
+
+.overrideHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.overrideName {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.overrideVerdict {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+}
+
+.overrideVerdict_working {
+  color: var(--brand-primary-hover);
+  background: var(--brand-primary-soft);
+}
+
+.overrideVerdict_review {
+  color: #946800;
+  background: #FEF3DC;
+}
+
+.overrideVerdict_building {
+  color: var(--ink-500);
+  background: var(--surface-2);
+}
+
+.overrideNote {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.loopSuggestions {
+  margin: 0;
+  padding: 0 0 0 var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+.loopSuggestions li::marker {
+  color: var(--brand-primary);
+}
+
+/* ── Waiting on you ────────────────────────────────────────────────────────
+   Directly under the hero, above the range selector: the only rows on this
+   screen that ask for a decision rather than report one. Hidden entirely when
+   nothing is staged, so its presence is itself the signal. */
+.waiting {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--ink-200);
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.waitingRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: none;
+  background: var(--surface-0);
+  text-align: left;
+  cursor: pointer;
+  min-height: 44px;
+}
+
+.waitingRow:active {
+  background: var(--surface-1);
+}
+
+.waitingCount {
+  flex: none;
+  min-width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+  font-size: var(--text-small);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.waitingCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.waitingLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.waitingDesc {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+.waitingChevron {
+  margin-left: auto;
+  color: var(--ink-500);
+  font-size: var(--text-small);
+}

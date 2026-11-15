@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "loopstack-system": {
+      "command": "node",
+      "args": [
+        "scripts/system/mcp.mjs"
+      ]
+    }
+  }
+}

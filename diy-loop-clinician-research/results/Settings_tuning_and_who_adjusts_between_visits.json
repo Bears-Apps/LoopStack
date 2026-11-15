@@ -1,0 +1,250 @@
+{
+  "item_name": "Settings tuning and who adjusts between visits",
+  "research_date": "2026-11-13",
+  "issue_summary": "Open-source AID doses insulin from the user's own therapy settings: basal schedule, insulin sensitivity factor (ISF), carb ratio (CR), correction range and targets, plus AID-specific safety limits such as maximum basal, maximum bolus and the glucose safety limit or suspend threshold. Getting these right is the main ongoing task, and Loop itself has never had Autotune or any built-in settings recommendations. LoopTips says plainly that Loop does not adjust your settings and that the job stays with the user. Porting autosens or Autotune to Loop was discussed from 2017-2018, and a LoopKit developer said parameter estimation was being looked at, but none reached the main app. A 2026 AI 'LoopInsights' settings-advisor pull request was closed without merging and lives on only in a community fork. Trio removed Autotune in 2024-2025 because it cannot handle more than one CR/ISF or dynamic ISF. AndroidAPS keeps Autotune behind Engineering mode, and iAPS and OpenAPS still include it. In practice users and parents tune settings between visits, often after posting Nightscout data to peer groups. The clinician, seen a few times a year, usually reviews CGM summaries and may not know what changed, when, or why. Loop keeps no in-app history of settings changes. A history exists only when Nightscout (whose profile report is cluttered by override uploads) or Tidepool (Loop 3+, from March 2023, with 2026 reports of therapy settings not syncing) is set up. No published study measures how often DIY users change settings between appointments or how often the clinic finds out.",
+  "who_is_affected": "Adults who self-manage and parents or caregivers of children, who retune for growth, puberty and illness. New users in their first months are hit hardest (Loop discontinuers described months of constant adjusting). On the clinical side: endocrinologists, diabetes educators/CDCES, pump nurses and dietitians asked to review or approve settings. Primary care is rarely involved, and obstetric teams are involved during pregnancy.",
+  "system_specificity": "All open-source AID, but sharpest for Loop (no Autotune, no in-app settings history, Tidepool settings sync gaps) and Trio (Autotune removed 2024-2025; dynamic ISF adds settings that clinicians rarely know). AndroidAPS keeps Autotune in Engineering mode and records profile switches in-app and in Nightscout. iAPS and OpenAPS keep oref0 Autotune. In FDA-cleared Loop derivatives (Tidepool Loop, twiist) the user still changes settings between visits.",
+  "care_setting": "Routine endocrinology or diabetes clinic visits and educator/CDCES pump-optimization visits. Pediatric clinics (growth-driven changes) and obstetric care (tight pregnancy targets, rapid postpartum drop). Mostly between visits at home with online peer groups. Occasionally clinic-run DIY programs (BCDiabetes, Canada). Primary care rarely.",
+  "trigger_moment": "First days to weeks after closing the loop. Recurring overnight lows or highs, or post-meal spikes. Growth spurts, puberty, menstrual cycle, pregnancy and postpartum, illness, new medications (e.g. GLP-1 RA), weight or activity change, travel. Switching between systems (commercial to DIY, Loop to Trio), where settings must be translated. Rebuilds or new phones, where settings may be re-entered. The days before an appointment.",
+  "key_sources": [
+    {
+      "title": "Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals (Braune et al.)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": 2022,
+      "country": "International (multidisciplinary author group; endorsed by bodies including ISPAD and ABCD-DTN UK)",
+      "sample_size": "Not applicable (consensus statement)",
+      "relevance": "Says HCPs should give guidance on optimizing open-source AID settings if experienced, or refer to someone who can. Recommends documenting discussions and disclaimers. Notes open-source systems have more adjustable settings than commercial ones, and that using the guidance takes health literacy. Lists Autotune (run via AutotuneWeb plus Nightscout for non-OpenAPS users) as a settings tool."
+    },
+    {
+      "title": "Discontinued Use of the Loop Insulin Dosing System: A Mixed-Methods Investigation (Wong et al., Diabetes Technol Ther 24(4):241-248)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9057870/",
+      "year": 2022,
+      "country": "USA",
+      "sample_size": "874 in cohort; 46 discontinuers (5.3%); 45 surveys, 22 settings datasets, 19 interviews",
+      "relevance": "Adjusting settings was a prominent theme behind stopping. Participants described months of constant adjustment and wanted knowledgeable, credentialed help. Actual settings deviated widely from calculated values (ISF ratio range 0.03-2.23). One parent cited worry about the endocrinologist's reaction."
+    },
+    {
+      "title": "Qualitative Study of User Experiences with Loop (Suttiratana et al., Diabetes Technol Ther 24(6):416-423)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": 2022,
+      "country": "USA",
+      "sample_size": "72 focus-group participants (95% white, 73% household income >= $100K)",
+      "relevance": "'Personalizing settings' and 'providers' were 2 of 6 themes. Varied provider attitudes and knowledge complicated care and disclosure. Settings calibration challenges described as remediable."
+    },
+    {
+      "title": "A Real-World Prospective Study of the Safety and Effectiveness of the Loop Open Source Automated Insulin Delivery System (Lum et al., Loop Observational Study)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906/",
+      "year": 2021,
+      "country": "USA",
+      "sample_size": "558 analyzed (of 799 enrolled), ages 1-71",
+      "relevance": "Loop use was not standardized, and users started with community resources and no formal support. Therapy settings were collected monthly via Issue Reports, but no analysis of settings changes was published. Severe hypoglycemia was 18.7/100 person-years, with no DKA."
+    },
+    {
+      "title": "Optimizing basal, CIR and ISF formulas from Loop users' data (Lal et al., ATTD 2021 abstract)",
+      "url": "https://cslide.ctimeetingtech.com/attd2021/attendee/person/334",
+      "year": 2021,
+      "country": "USA",
+      "sample_size": "743 participants with settings data; 219 (29%) in the 'aspirational' cohort",
+      "relevance": "States that Loop relies on settings entered by users and providers, unlike commercial systems that derive internal values. Proposes new formulas using TDD, BMI and daily carbs. The abstract was cited in the 2022 consensus statement; no full paper was found."
+    },
+    {
+      "title": "Examining the Emotional and Physical Health Impact in Users of Open-Source AID and Sources of Support (Cleal et al., JMIR)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11747533/",
+      "year": 2025,
+      "country": "Multinational (29 countries; survey in English and German)",
+      "sample_size": "383",
+      "relevance": "'Adjusting and fine-tuning' was coded as a key challenge. For most users, fine-tuning help came from online peer communities. HCP support was often informal or emotional rather than practical, and one user said her diabetologists could not support her for legal reasons."
+    },
+    {
+      "title": "ABCD, DTN-UK and ACDC Survey of UK Healthcare Professional Attitudes Towards Open-Source AID (Crabtree et al., Diabetes Therapy)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": 2022,
+      "country": "UK (survey fielded Feb-Apr 2019)",
+      "sample_size": "317 HCPs",
+      "relevance": "91% uncomfortable initiating discussions. 63% cited their own limited knowledge and 67% the lack of regulation. 31.8% had indemnity concerns. Those unwilling to provide ongoing care (4%) said they felt ill-equipped to advise on the system. Free text included advice to seek help from other patients and social media."
+    },
+    {
+      "title": "Canadian Healthcare Providers' Attitudes Towards Automated Insulin Delivery Systems (Morrison et al., medRxiv preprint)",
+      "url": "https://www.medrxiv.org/content/10.1101/2022.06.02.22275169v1",
+      "year": 2022,
+      "country": "Canada (survey June-July 2021)",
+      "sample_size": "204 HCPs",
+      "relevance": "Less comfortable with DIY than commercial AID. Comfort tracked with the number of AID users in their practice. Unfamiliarity and medico-legal risk were the main barriers."
+    },
+    {
+      "title": "Using a Do-It-Yourself Artificial Pancreas: Perspectives from Patients and Diabetes Providers (Palmer et al., J Diabetes Sci Technol)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7753849/",
+      "year": 2020,
+      "country": "USA (surveys Feb-May 2019)",
+      "sample_size": "101 patients; 152 providers",
+      "relevance": "89% of patients but only 27% of providers rated DIY APS safe. Few patients described their providers as knowledgeable. Providers cited lack of experience and inability to troubleshoot."
+    },
+    {
+      "title": "Open-source AID systems and formal healthcare: challenges in the interaction between service-users and HCPs (Raimond et al., Chronic Illness)",
+      "url": "https://doi.org/10.1177/17423953221142341",
+      "year": 2023,
+      "country": "Denmark",
+      "sample_size": "5 users, 6 HCPs",
+      "relevance": "Users are reticent to disclose. Ethical responsibility for HCPs is unclear. HCPs fear the burden of rising technical expectations."
+    },
+    {
+      "title": "Practical Guidance on Open Source and Commercial AID Systems: A Guide for HCPs (Lewis & Hussain, Diabetes Therapy)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9399331/",
+      "year": 2022,
+      "country": "USA/UK",
+      "sample_size": "Not applicable (guidance)",
+      "relevance": "New AID users commonly need to change baseline settings. HCP guidance can help users change one setting at a time. Open-source systems change versions often, so visits need to cover version, settings and targets. Basal-to-bolus ratio should not drive AID setting changes."
+    },
+    {
+      "title": "Fully closed-loop systems: can people with type 1 diabetes just do it? Insights from open-source systems (Lal, Braune, Lewis et al., Diabetologia)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12881006/",
+      "year": 2026,
+      "country": "International",
+      "sample_size": "Not applicable (review)",
+      "relevance": "OpenAPS has more configurable parameters than any other AID. Optimal settings need expertise in physiology and the algorithm that few specialists have, though HCPs can be trained. If HCPs cannot guide settings, that is a significant barrier."
+    },
+    {
+      "title": "Comparison of Glucose Management Between Open-Source Loop and Tandem Control-IQ in Adults with T1D (Wu, Lebbar et al., Diabetes Obes Metab)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13146174/",
+      "year": 2026,
+      "country": "Canada (BETTER registry)",
+      "sample_size": "50 (24 Loop, 26 Control-IQ)",
+      "relevance": "Loop participants customized all settings themselves. The authors list as a limitation that they did not collect how often HCPs adjusted settings, which shows the evidence gap."
+    },
+    {
+      "title": "Clinical Management and Pump Parameter Adjustment of the Control-IQ Closed-Loop Control System (O'Malley et al., iDCL trial)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8114941/",
+      "year": 2021,
+      "country": "USA",
+      "sample_size": "168 participants; 607 parameter-change encounters over 6 months",
+      "relevance": "Commercial, clinician-managed benchmark: 3.4 adjustments per closed-loop participant over 6 months. Basal was changed in 69%, CR 68%, CF 44%. No overall TIR difference after changes, with gains in higher-HbA1c subgroups."
+    },
+    {
+      "title": "Automatic estimation of basals, ISF and carb ratio (Autotune) - OpenAPS ADA 2017 poster summary",
+      "url": "https://openaps.org/2017/06/10/automatic-estimation-of-basals-isf-and-carb-ratio-for-sensor-augmented-pump-and-hybrid-closed-loop-therapy-autotune-poster-presented-at-american-diabetes-association-scientific-sessions/",
+      "year": 2017,
+      "country": "International (community survey)",
+      "sample_size": "16 respondents",
+      "relevance": "75% changed at least one setting after Autotune. Basal suggestions averaged about 10% change. Most respondents discussed results with their provider and found providers supportive. Predates the 2018 time window; included as background."
+    },
+    {
+      "title": "Educator support facilitates safe use of do-it-yourself artificial pancreas (Healio report of Nally, ADCES 2020)",
+      "url": "https://www.healio.com/news/endocrinology/20200916/educator-support-facilitates-safe-use-of-doityourself-artificial-pancreas",
+      "year": 2020,
+      "country": "USA",
+      "sample_size": "Not applicable (expert talk)",
+      "relevance": "Clinician view: some users want to change settings daily. Advice is to wait a few days and change one or two settings with clinician help to avoid overshooting. Clinicians should help set max basal, suspend threshold and override presets."
+    },
+    {
+      "title": "Do-It-Yourself Automated Insulin Delivery: A Health-care Practitioner User's Guide (Diabetes Canada, Can J Diabetes 47(5):389-397)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37532366/",
+      "year": 2023,
+      "country": "Canada",
+      "sample_size": "Not applicable (guideline)",
+      "relevance": "Includes an 'Adjust' section on which parameters users can change. Stresses that core pump settings must match physiological needs, and that inaccurately high basal can make CR/ISF look weaker. Full text not retrieved; details limited to the key-messages page."
+    },
+    {
+      "title": "LoopTips: Settings overview, Adjust settings, Endocrinologist and Loop (LoopKit community documentation)",
+      "url": "https://loopkit.github.io/looptips/settings/overview",
+      "year": "Living documentation (accessed 2026-11)",
+      "country": "International (community docs)",
+      "sample_size": "Not applicable",
+      "relevance": "Loop does not adjust settings for you, so the responsibility stays with the user. Ideally users get provider input, and self-adjusting is fine if both are comfortable. Suspend threshold and max basal should be discussed with the endo. Users are told to bring Nightscout or Tidepool reports because standard pump downloads miss Loop data."
+    },
+    {
+      "title": "LoopDocs: Loop 3 Therapy Settings (guardrails)",
+      "url": "https://loopkit.github.io/loopdocs/loop-3/therapy-settings/",
+      "year": "Living documentation (accessed 2026-11)",
+      "country": "International (community docs)",
+      "sample_size": "Not applicable",
+      "relevance": "Changing settings needs Face ID or a passcode. Guardrails show values in color: black typical, yellow unusual, red at the limit. Users should work with their HCP on max basal and correction range. No mention of a change history."
+    },
+    {
+      "title": "Trio GitHub issues #258 and #501 (maintainer statements on Autotune removal)",
+      "url": "https://github.com/nightscout/Trio/issues/501",
+      "year": 2025,
+      "country": "International (open-source project)",
+      "sample_size": "Not applicable",
+      "relevance": "Sept 2024: the Trio team decided to remove Autotune (it suggested 0 U/hr basals and required a static CR/ISF). May 2025: confirmed removed because it does not fit multi-CR/ISF profiles or dynamic ISF."
+    },
+    {
+      "title": "AndroidAPS documentation: How to use Autotune plugin (dev only)",
+      "url": "https://androidapsdocs.readthedocs.io/en/latest/Usage/autotune.html",
+      "year": "Living documentation (accessed 2026-11)",
+      "country": "International (community docs)",
+      "sample_size": "Not applicable",
+      "relevance": "Autotune is available only in the dev branch with Engineering mode. It tunes basal plus a single IC and ISF. Users are warned to verify results over several days before enabling automatic profile switching."
+    },
+    {
+      "title": "LoopKit/Loop GitHub: issue #644 Auto Basals (2017-2018), issue #2234 settings history (2024-2026), issue #2496 Tidepool not syncing therapy settings (2026), PR #2405 LoopInsights (2026, closed)",
+      "url": "https://github.com/LoopKit/Loop/issues/2234",
+      "year": 2026,
+      "country": "International (open-source project)",
+      "sample_size": "Not applicable",
+      "relevance": "A user cannot recall what basal/ISF changes they made or when, and asks for a history. The maintainer's workarounds are the Nightscout profile report (noisy because each override uploads a profile) and the Loop and Learn Profiles customization. A parent screenshots every settings change. Tidepool therapy-settings sync failure reported on Loop 3.14.2. The LoopInsights AI settings advisor was closed upstream and moved to a community fork."
+    },
+    {
+      "title": "Looping at BCDiabetes (clinic program document) and outcomes papers (Samuel et al., Can J Diabetes 2024, n=248; ADA 2025 poster, n=1,442 / 1,840 patient-years)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Looping-at-BCDiabetes.pdf",
+      "year": 2026,
+      "country": "Canada",
+      "sample_size": "3,694 clinic-supported open-source AID installs to date; 248 in peer-reviewed cohort",
+      "relevance": "Clinic-run model: the clinic preloads basal/ICR/ISF into the client's Nightscout before closing the loop. Virtual follow-up at 1 day, 1 week, 1 month and 6 months, then annually, until clients are 'independent and comfortable making adjustments'. New users are directed to a 1,200-member Facebook group, and email support is offered during business hours."
+    },
+    {
+      "title": "Tidepool support: viewing twiist Loop settings in Tidepool; FDA clearance of Tidepool Loop (Jan 24, 2023)",
+      "url": "https://support.tidepool.org/hc/en-us/articles/36492372131604",
+      "year": 2025,
+      "country": "USA",
+      "sample_size": "Not applicable",
+      "relevance": "Tidepool's Devices view shows twiist settings as of midnight each day; exact timing requires an export. Tidepool Loop is prescription-only, with clinician-entered starting settings."
+    },
+    {
+      "title": "Interviews with Indigenous Maori using open-source AID in the CREATE trial (Burnside et al., J Diabetes Metab Disord)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10035484/",
+      "year": 2023,
+      "country": "New Zealand",
+      "sample_size": "10 interviews (5 children, 5 adults, with whanau)",
+      "relevance": "Some participants took time to tweak core settings, and some manipulated the system by entering extra carbs. Before the trial, families rationed CGM to test settings changes. Recommends extra clinical contacts to help optimize settings."
+    },
+    {
+      "title": "Improved Glycemia and Quality of Life Among Loop Users: single-center real-world data (Morrison et al., JMIR Diabetes)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9641512/",
+      "year": 2022,
+      "country": "Canada (Alberta)",
+      "sample_size": "24 Loop users",
+      "relevance": "Users saw Loop as safe only when settings are correct. Most reported 'passive encouragement' from clinicians. One switched providers after being discouraged."
+    },
+    {
+      "title": "TuDiabetes forum thread 'Loop: What reports to print?' (forum now closed)",
+      "url": "https://forum.tudiabetes.org/t/loop-what-reports-to-print/79857",
+      "year": "[uncertain] approx. 2019-2021",
+      "country": "USA (community forum)",
+      "sample_size": "Not applicable (anecdote)",
+      "relevance": "A Looper preparing for an endo who does not know about Loop notes that, with Loop's temp basals, the pump settings they could print are not very informative. Another says visits rest on CGM reports and rarely go deep into settings. Seen only in a search-engine snippet."
+    }
+  ],
+  "evidence_strength": "Mixed. Peer-reviewed qualitative and mixed-methods studies (Wong 2022, Suttiratana 2022, Cleal 2025, Raimond 2023, Morrison 2022), observational cohorts (Lum 2021, BCDiabetes), HCP surveys (Crabtree 2022, Morrison 2022 preprint, Palmer 2020), and professional guidance (2022 international consensus, Diabetes Canada 2023, Lewis & Hussain 2022). Community documentation and GitHub maintainer statements cover the Autotune and settings-history facts. No study directly measures how often DIY users change settings between visits or whether the clinic hears; that part rests on inference and anecdote.",
+  "prevalence_or_magnitude": "Self-tuning is near-universal and a recurring burden. Wong: adjusting settings was a prominent reason the 5.3% (46/874) of Loop users stopped. Among 22 discontinuers, settings deviated widely from calculated values (mean ISF ratio 1.25, range 0.03-2.23; basal 0.58-1.62; CIR 0.62-1.73), though deviations were not linked to TIR. Suttiratana: 'personalizing settings' was one of 6 themes among 72 users. Cleal: 'adjusting and fine-tuning' was a coded challenge across 383 users in 29 countries, solved mainly through peer communities. Lal ATTD 2021: only 219 of 743 (29%) Loop Observational Study participants with settings data met 'aspirational' outcome criteria, which suggests wide room for settings optimization (interpretive). Clinician capacity: UK 2019 (n=317) 63% cite limited knowledge and 91% are uncomfortable initiating discussion; US 2019 providers 27% vs patients 89% rate DIY safe; Canada 2021 (n=204) unfamiliarity and medico-legal risk are the top barriers. Commercial benchmark: a clinician-managed Control-IQ trial logged 3.4 settings-change encounters per participant over 6 months. Clinic-supported DIY at scale: BCDiabetes reports 3,694 installs, with follow-up tapering to annual once users self-adjust. [uncertain] How often DIY users actually change settings between appointments, and what share of changes the clinic learns about, is not measured in any study found. Wu 2026 explicitly did not collect HCP adjustment frequency. Anecdotes range from users adjusting constantly for months (Wong) to a 2026 developer claim that many Loopers leave settings unchanged for months (unverified).",
+  "data_quality_caveats": "Samples are self-selected, highly educated and high-income (Suttiratana 95% white, 73% income >= $100K, 87% above a bachelor's degree; Lum high SES). Survivorship bias: discontinuers are small groups. Outcomes are self-reported. HCP surveys date from 2019-2021, before the 2022 consensus and current ADA support. Qualitative samples are small (Raimond 5+6). The Autotune survey (n=16) was run by the tool's own community. Wong's abstract and tables disagree on some percentages. Community docs, GitHub statements and forum posts are not peer-reviewed. Diabetes Canada full text was not retrieved.",
+  "clinician_perspective": "Clinicians agree settings drive open-source AID safety and performance, but many feel unequipped to advise on them. Their main fears are uncontrolled, frequent or multi-setting changes. Nally (Yale, ADCES 2020) notes some users want to change settings daily; she advises waiting a few days, changing one or two settings at a time with clinician help to avoid overshooting, and helping set max basal, suspend threshold and override presets. Lewis & Hussain (2022) likewise recommend HCP guidance to change one setting at a time and warn against using basal:bolus ratio to drive AID changes. Knowledge and confidence gaps are large. In the UK survey (n=317), 63% cited their own limited knowledge and 91% felt uncomfortable initiating discussion. The 4% unable to continue care said they felt ill-equipped to advise on the system, and some told patients to seek help from other users and social media. US providers mostly cited lack of experience and inability to troubleshoot. Canadian HCPs (n=204) named unfamiliarity and medico-legal risk. Lal et al. (2026) say optimal configuration needs physiology plus algorithm expertise that few specialists have, and that HCPs who cannot guide settings are themselves a barrier, so training is needed. Liability shapes behavior: 31.8% of UK HCPs worried about indemnity. The consensus recommends documenting discussions and using disclaimers. Cleal reports diabetologists who were enthusiastic but would not help for legal reasons. Clinicians also struggle with system churn: several apps with different terms (Loop overrides, AAPS profile percentage, Trio dynamic ISF) and frequent version changes, so visits must first establish version, settings and targets. What they say they need: training, a standard settings view, documentation templates, and the ability to refer to experienced colleagues. The consensus asks HCPs to give settings guidance if experienced or refer. Diabetes Canada stresses that core settings must reflect physiological needs. Some clinics have embraced the work: BCDiabetes preloads settings into Nightscout and fine-tunes remotely until users are independent.",
+  "effect_on_relationship": "When the clinic cannot or will not engage on settings, tuning moves to peers and the clinician's role shrinks to encouragement and lab review. Cleal found HCP support was more often informal and emotional than practical. For many users the online community was the main or only source of fine-tuning help. Discontinuers in Wong wanted knowledgeable, credentialed help rather than informal mentors. One parent stopped Loop partly from worry about the endocrinologist's reaction and having no device data to download. Suttiratana found that varied provider attitudes and knowledge complicated clinical experience and disclosure. Raimond found users reticent to disclose, HCPs unsure of their ethical responsibility, and HCPs wary of rising technical expectations. Visit content drifts: clinicians look at CGM summaries while the real 'prescription' is the settings plus the algorithm. Loopers note that static settings printouts say little because of temp basals, and visits rarely go deep into settings (forum anecdote). This invites a two-track system in which the clinic's recommendations reference settings the user has already changed. Ownership friction cuts both ways. Some users refuse clinician edits so they always know what their settings are, and clinicians are uneasy endorsing peer-sourced changes they cannot see. Where the clinic engages (BCDiabetes; Alberta's 'passive encouragement'), users stay connected. One Alberta user switched providers after being discouraged. A shared artifact helps: most Autotune survey respondents discussed results with providers and found them interested and supportive.",
+  "decision_ownership": "Today the user or parent decides most between-visit changes. Input comes from peers (Facebook groups such as Looped and the 1,200-member BCDiabetes Loopers group, Zulip/Discord, shared Nightscout links), documentation (LoopTips, LoopDocs) and, increasingly, algorithmic or AI helpers (AAPS/iAPS Autotune, community AI forks). Clinicians usually set or approve values at onboarding or at visits. Truly shared ownership exists mainly in clinic-supported programs (BCDiabetes) and trials. LoopTips states the responsibility falls to the user, ideally with provider input. Liability: the software is unregulated. Consensus-style disclaimers say the clinic cannot take responsibility for the system, but HCPs keep a duty of care for any advice they give. The chain of accountability (regulators, device makers, clinics, HCPs, developers, users) is explicitly described as unclear. Peers and AI tools carry no formal accountability.",
+  "disclosure_risk": "Moderate to high. Users who expect disapproval or an unknowledgeable response tend to tune alone or with peers and may not report changes. Loop keeps no in-app change log, so users themselves forget what changed and when (GitHub #2234). Clinics without Nightscout or Tidepool access see no settings record. Users may also be reluctant to say a change came from a Facebook thread or an AI tool.",
+  "regulatory_status_dependency": "Partly. FDA-cleared Tidepool Loop (Jan 2023) and twiist make the clinician write a prescription with starting settings and route data to Tidepool clinic accounts. That formalizes the starting point and the data path and eases HCP liability concerns. But neither adds Autotune-style recommendations, and users still adjust settings between visits. [uncertain] Tidepool shows twiist settings only as daily midnight snapshots (exact times need an export), so the history problem is reduced, not solved. DIY builds, peer advice and AI forks stay unregulated.",
+  "workarounds": "Users: structured self-tests (basal fasting tests, ISF tests in open loop, test meals per LoopDocs and the BCDiabetes configuration guide). Changing one setting at a time and waiting days. Overrides and temporary targets for short-term shifts instead of base-setting changes. Screenshots or spreadsheets of every change (parents forwarding screenshots to their own phone). The Loop and Learn 'Profiles Save & Load' customization, naming profiles with dates. The Nightscout Profiles report. Running oref0 Autotune or AutotuneWeb on Nightscout data (Loop users), or AAPS Autotune in Engineering mode. Posting Nightscout links or screenshots to Facebook groups for peer review. Installing AI settings-advisor forks (2026). Clinicians: preloading settings into Nightscout and scheduled virtual check-ins (BCDiabetes), Tidepool clinic accounts with 'Copy as text' into the EHR, asking patients to bring Nightscout or Tidepool reports, referring to experienced colleagues, and documenting discussions with disclaimers per the 2022 consensus.",
+  "existing_tools": "Nightscout: Loop uploads its therapy settings as the 'Default' profile; there are Profiles, Treatments and Day-to-Day reports, and Nightscout Reporter for PDFs. Tidepool: Device Settings history for Loop 3+ via the Tidepool Service since March 2023, 'Copy as Text', and Tidepool+ clinic workspaces; twiist settings appear as daily snapshots. Dexcom Clarity: CGM only, no Loop settings. [uncertain] Glooko does not ingest DIY Loop settings. LoopFollow and LoopCaregiver: remote monitoring and remote commands, not tuning. Loop Issue Report: a settings snapshot and logs on demand. Autotune: oref0, AutotuneWeb, the AAPS plugin (Engineering mode) and iAPS Autotune. Loop and Learn Profiles customization. Community AI forks (LoopInsights / Loop PowerPack, 2026). Commercial reference points: Tandem has tested automated profile settings initialization and adaptation (Shah et al. 2024), and clinician-managed settings optimization is the norm in commercial-AID trials.",
+  "existing_tool_coverage_gap": "No tool gives the clinician a clean, timestamped diff of therapy settings (what changed, when, from what to what) tied to before-and-after outcomes. Nightscout's profile history is cluttered because every override uploads a new profile. Tidepool covers only Loop 3+ uploads since 2023, has a 2026 report of therapy settings not syncing, and shows twiist only as midnight snapshots. Clarity and most clinic platforms never see Loop settings. Nothing records who proposed a change (user, parent, peer, clinician, algorithm) or why, or whether a clinician has seen it. Autotune breaks with multiple CR/ISF schedules and dynamic ISF, Loop has no recommendation engine, and AI forks send data to third-party AI providers outside mainline review. Settings vocabulary differs across Loop, Trio, iAPS and AAPS with no normalized view. There is no asynchronous 'propose and review' channel, so changes wait for a visit or happen silently.",
+  "data_artifacts_involved": "Therapy settings snapshot (basal schedule, ISF, CR, correction and pre-meal ranges, glucose safety limit or suspend threshold, max basal, max bolus, insulin model). Settings change history and profile switches. Override and temp-target history. Temp-basal and automatic-bolus log. Treatments (carbs, boluses). CGM AGP and TIR by time block. Loop Issue Report. Autotune output. Nightscout profile documents. Tidepool device-settings records.",
+  "unmet_need": "A shared, trustworthy record of therapy settings over time that both the person with diabetes and the care team can see, annotate and reason about between visits. For every change it should show what changed, when, who suggested it (self, parent, peer, clinician, algorithm), why, and what happened to glucose in the following days. Nothing currently provides this for Loop: the app keeps no history, Nightscout's history is noisy, Tidepool's is partial and sometimes missing, and peer advice leaves no trace. The second need is a low-friction way to ask the clinic about a proposed change, or for the clinic to suggest one, without waiting for a 15-minute appointment months away. It needs safety framing (one setting at a time, sensible step sizes, safety limits highlighted) and shared documentation that eases clinician liability concerns. The third need is explainable, physiology-level settings insight to fill the gap left by Loop's lack of Autotune, presented as a suggestion for a human decision and not an automatic change. It must work across Loop, Trio, iAPS and AAPS so a non-specialist clinician does not need to learn each system's terms.",
+  "implication_for_collaboration_tool": "1) Auto-capture settings snapshots from Nightscout profiles, Tidepool and Loop Issue Reports. Remove override-generated noise and show a dated diff timeline ('since your last visit: basal 03:00-07:00 0.85 to 0.95 U/h, ISF 50 to 45'). 2) Attribution and rationale on every change: source (self, parent, peer thread, clinician, Autotune or AI), reason, and an optional link or note. Clinician 'seen/acknowledged' state, so the clinic knowably hears about changes. 3) A before/after outcome window per change (TIR, TBR, overnight and post-meal segments over the following 3-7 days) so both sides can judge a change on data, not memory. 4) A 'propose change' workflow in both directions with safety guards: flag multi-setting changes and large steps (>10-20%), highlight safety-limit edits (max basal, glucose safety limit), and keep an audit trail. The tool should never push settings to the pump itself. 5) A one-page visit-prep summary of what changed, why and the effect, with copy-to-EHR text and a documentation template matching the 2022 consensus (discussion recorded, unregulated-system disclaimer). 6) A cross-system glossary and normalized settings view across Loop, Trio, iAPS and AAPS, including overrides and dynamic ISF. 7) Explainable pattern flags (e.g. persistent overnight positive IOB or high temp basals suggesting basal too low, per LoopTips) labeled as prompts for discussion, processed privately and never auto-applied. 8) Role support for parents and caregivers, and tighter review cadence modes for pregnancy, puberty and the first weeks after starting AID.",
+  "severity_rank": "High. Therapy settings are the main lever a clinician still holds in AID. In DIY Loop that lever has moved to users and peers with no shared record, which drives non-disclosure, peer dependence and clinician disengagement.",
+  "safety_criticality": "Medium-high. Wrong basal/ISF/CR, an over-generous max basal or a low safety limit can cause hypoglycemia. Settings that are too weak cause persistent hyperglycemia, and multiple wrong settings can mask each other. Unvetted peer or AI advice adds risk. This is partly offset by Loop guardrails and automatic suspension. Lum reported severe hypoglycemia at 18.7/100 person-years, mostly not attributed to Loop, and Wong found settings deviations were not associated with TIR.",
+  "equity_impact": "Hardest on people with lower technical or health literacy, which the 2022 consensus notes is needed to use settings guidance. Non-English speakers: documentation and peer groups are largely English, the Cleal survey was English/German only, and a user cited language as a barrier. Older adults: older age was associated with Loop discontinuation. Families of young children face constant growth-driven retuning. People whose clinics decline to support DIY. Low-income families: CREATE Maori families rationed CGM to test settings changes, and CREATE recommended extra clinical contacts for Indigenous users. iPhone-only Loop and Trio users have no Autotune, while AAPS on Android keeps it in Engineering mode.",
+  "uncertain": [
+    "prevalence_or_magnitude",
+    "regulatory_status_dependency",
+    "existing_tools",
+    "key_sources"
+  ]
+}

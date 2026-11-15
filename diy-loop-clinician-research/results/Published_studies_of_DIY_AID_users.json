@@ -1,0 +1,278 @@
+{
+  "item_name": "Published studies of DIY AID users",
+  "issue_summary": "Since 2018 the published evidence on open-source AID users has grown large on glucose outcomes and stayed thin on the patient-clinician relationship. Five study families carry most of it. (1) The OPEN project surveys: Braune 2021 (JMIR, n=897 from 35 countries, motivations and self-reported outcomes); Cleal 2025 (JMIR, n=383 from 29 countries, qualitative narratives, drawn from the same Nov 2018-Mar 2019 DIWHY survey); Schipp 2023 (validated psychosocial measures, 451 users vs 141 non-users); and O'Donnell 2023 (barriers among 129 non-users). (2) The US Loop Observational Study (LOS): Lum 2021 (n=558 new Loop users), Wong 2022 on discontinuation (46 of 874, 5.3%), Suttiratana 2022 focus groups (n=72) and Wong 2023 psychosocial outcomes. (3) The New Zealand CREATE RCT (Burnside, NEJM 2022, n=97, plus a 48-week continuation in 2023). (4) British Columbia clinic-supported cohorts: Samuel 2024 (n=248), an ADA 2025 poster (n=1,442), Hejla 2026 pediatric (n=198) and Hawke 2026 pregnancy (n=10). (5) Newer comparisons with commercial AID (Canada, Czech Republic, UK, Israel, Denmark). Users consistently report better glucose control (time in range up 6 to 16 points), better sleep, less diabetes distress and less fear of hypoglycemia. Reported burdens are getting hardware, technical setup, connectivity failures, a steep learning curve on settings, and missing clinical support. Clinicians mostly appear as absent, ambivalent or legally constrained. Fear of provider disapproval is documented both as a barrier to starting (O'Donnell 2023) and as a reason to stop (Wong 2022). Samples are self-selected and skew White, highly educated, high income and already well controlled. The RCT and the BC cohorts were clinic-supported, not self-built. Correction to the outline: the '5.3% stopped' figure comes from Wong et al. 2022, not Lum et al. 2021. Lum reported 3% confirmed discontinuation, and 14% stopped providing data within 6 months.",
+  "who_is_affected": "Adults with T1D who loop: the bulk of every sample, mean age about 36 to 43. Parents and caregivers looping for children: 175 caregivers in OPEN, 243 parents in LOS, 429 pediatric clients in the BC poster, 198 youth in the BC pediatric cohort. Endocrinologists, diabetes educators and pediatric diabetes teams, who are asked to weigh this evidence when a patient discloses. Guideline writers and researchers. Primary care is essentially absent from these studies.",
+  "system_specificity": "All systems, but the evidence is uneven. Loop dominates US evidence (LOS, 90% on Omnipod) and the BC cohorts (Loop 78% in the 2025 poster; 108 of 248 in Samuel 2024). AndroidAPS and OpenAPS dominate OPEN (AndroidAPS 58%, Loop 28.5%, OpenAPS 18.8% of 897) and CREATE (modified AndroidAPS 2.8 with the OpenAPS 0.7.0 algorithm on a DANA-i pump). iAPS appears mainly in BC (114 of 248 in Samuel 2024; iAPS/Trio 9% in the 2025 poster). [uncertain] No published outcome study specific to Trio was found.",
+  "care_setting": "Mostly outside clinics: remote, self-enrolled online studies (OPEN, LOS). CREATE ran at 4 New Zealand trial sites with trial-team support. BC evidence comes from one specialist clinic (BCDiabetes, Vancouver) and BC Children's Hospital. The UK data come from 12 NHS specialist centres. Pediatric clinics and pregnancy (BC, n=10) are covered. Primary care, emergency and inpatient settings are essentially unstudied.",
+  "trigger_moment": "Starting OS-AID. Studies compare before and after, and severe hypoglycemia and dropout cluster in the first 3 months. Also: routine visits where HbA1c is checked; deciding whether to tell the care team; asking for a loopable pump prescription; pregnancy; and switching to or from a commercial system (CODIAC extension, OLIVER RCT).",
+  "key_sources": [
+    {
+      "title": "Braune K, et al. Why #WeAreNotWaiting: Motivations and Self-Reported Outcomes Among Users of Open-source Automated Insulin Delivery Systems: Multinational Survey. J Med Internet Res 2021;23(6):e25409",
+      "url": "https://www.jmir.org/2021/6/e25409",
+      "year": "2021 (survey fielded Nov 2018-Mar 2019)",
+      "country": "International, 35 countries (77% Europe)",
+      "sample_size": "897 (722 adults, 175 caregivers); motivation items answered by about 509 adults and 100 caregivers; HbA1c before and after from 310",
+      "relevance": "OPEN's core motivations study. Top motivations: better glucose control (93.5% of adults), fewer acute complications (87.2%), less interaction with devices (81.1%), better sleep (71.6% of adults; 94% of caregivers for their own sleep), and no commercial AID available (70.8%). Self-reported HbA1c fell from 7.14% to 6.24% and TIR rose from 63% to 80%. Recruited through the Looped and AndroidAPS Facebook groups and Twitter. Authors note outcomes were not checked against clinical records, TIR values were often rounded, and the research team includes users."
+    },
+    {
+      "title": "Cleal B, Chen Y, Wäldchen M, ... Braune K. Examining the Emotional and Physical Health Impact in Users of Open-Source AID and Sources of Support: Qualitative Analysis of Patient Narratives. J Med Internet Res 2025;27:e48406 (correction e72519, 24 Mar 2025)",
+      "url": "https://www.jmir.org/2025/1/e48406",
+      "year": "2025 (data from the Nov 2018-Mar 2019 DIWHY survey)",
+      "country": "International, 29 countries",
+      "sample_size": "383 adults",
+      "relevance": "Users report better glucose control, physical health, sleep and quality of life. The #WeAreNotWaiting community was the main source of knowledge and of practical and emotional support. Getting components and doing the technical setup were sometimes hard. Narratives describe support from the diabetologist's office being lost entirely, and diabetologists who were enthusiastic but said they could not help 'for legal reasons'. Others were refused a loopable pump prescription. Authors flag possible selection bias (survey in English and German only) and that the 2018-19 data may not reflect today, after the consensus guidance was published. The correction changed an author affiliation only."
+    },
+    {
+      "title": "Schipp J, et al. Psychosocial Outcomes Among Users and Nonusers of Open-Source AID Systems: Multinational Survey of Adults With T1D. J Med Internet Res 2023;25:e44002",
+      "url": "https://www.jmir.org/2023/1/e44002",
+      "year": "2023",
+      "country": "International, 47 countries",
+      "sample_size": "592 adults (451 OS-AID users, 141 non-users)",
+      "relevance": "Using 8 validated measures, users reported better well-being, sleep, diabetes quality of life and treatment satisfaction, and less distress and fear of hypoglycemia (Cohen d 0.5-1.5), still significant after adjustment. The survey was English-only, recruited partly through OPEN's HCP network, and drew users who were more often men with higher incomes. Authors acknowledge self-selection."
+    },
+    {
+      "title": "O'Donnell S, et al. Barriers to uptake of Open-Source AID Systems: socioeconomic factors and perceived challenges of adults with T1D from the OPEN survey. Diabetes Res Clin Pract 2023;197:110235",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36581143/",
+      "year": "2023",
+      "country": "International, 31 countries",
+      "sample_size": "129 non-users",
+      "relevance": "Major barriers to starting were sourcing components, low confidence in one's own technical skills, the time and energy needed, and fear of losing healthcare provider support. This is direct evidence that clinician attitudes shape who adopts."
+    },
+    {
+      "title": "Braune K, et al. Emotional and Physical Health Impact in Children and Adolescents and Their Caregivers Using Open-source AID: Qualitative Analysis. J Med Internet Res 2022;24(7):e37120",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35834298/",
+      "year": "2022",
+      "country": "International, 16 countries",
+      "sample_size": "60 families",
+      "relevance": "Caregivers worried less about night-time hypoglycemia, children gained autonomy, and sleep improved. Hardware and setup were hard. The community, not the clinic, was the main source of support."
+    },
+    {
+      "title": "Lum JW, et al. A Real-World Prospective Study of the Safety and Effectiveness of the Loop Open Source AID System. Diabetes Technol Ther 2021;23(5):367-375",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906/",
+      "year": "2021 (enrolled Jan-Aug 2019)",
+      "country": "USA",
+      "sample_size": "799 new users enrolled, 558 analyzed (ages 1-71); 481 provided Loop data at 6 months",
+      "relevance": "TIR rose from 67% to 73% and HbA1c fell from 6.8% to 6.5%. Severe hypoglycemia fell from 181 to 18.7 per 100 person-years: 51 events in 35 participants, 1 attributed to Loop. No confirmed DKA. Connectivity problems made up 27% of reported issues and hardware damage 10%. 77 (14%) stopped providing data within 6 months, of whom 15 (3%) confirmed they had stopped Loop. The study gave no guidance on use and no tech support, and data flowed through Apple Health to Tidepool. Recruited via websites and at RileyLink purchase. Participants were 91% White, 70% with household income of $100k or more, 94% privately insured and about 85% with a bachelor's degree or higher, with baseline HbA1c 6.8%. Authors name self-selection and no control group as the main limits. The Loop Observational Study was credited in Tidepool Loop's Jan 2023 FDA clearance."
+    },
+    {
+      "title": "Wong JJ, et al. Discontinued Use of the Loop Insulin Dosing System: A Mixed-Methods Investigation. Diabetes Technol Ther 2022;24(4):241-248",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34780283/",
+      "year": "2022",
+      "country": "USA (LOS)",
+      "sample_size": "874 LOS participants; 46 (5.3%) discontinued; 45 surveyed, 22 gave settings data, 19 interviewed",
+      "relevance": "Older age and not trusting Loop were linked to stopping. Top reasons: trying something else (27.8%) and less help than expected (22.2%). Main themes were mental and emotional burden and adjusting settings. Other reasons included fear of the diabetes provider's disapproval, trouble getting devices, and worry about pregnancy. Authors suggest technical help and expert guidance on calculating settings. [uncertain] One table snippet gives 33.3% and 20.0% for the top reasons, which conflicts with the abstract."
+    },
+    {
+      "title": "Suttiratana SC, et al. Qualitative Study of User Experiences with Loop. Diabetes Technol Ther 2022;24(6):416-423",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": "2022",
+      "country": "USA (LOS)",
+      "sample_size": "72 focus-group participants (adults and parents)",
+      "relevance": "Less burden was the most endorsed benefit and technical issues the most discussed challenge. Providers varied widely in attitude and knowledge about Loop, which complicated users' clinical experiences and their decisions to disclose. Participants were 95% White, 94% privately insured, 73% with income of $100k or more, with mean HbA1c 6.6%."
+    },
+    {
+      "title": "Wong JJ, Hood KK, Hanes SJ, Lal RA, Naranjo D. Psychosocial Effects of the Loop Open-Source AID System. J Diabetes Sci Technol 2023;17(6):1440-1447",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35771004/",
+      "year": "2023 (online 2022)",
+      "country": "USA (LOS)",
+      "sample_size": "239 adults, 115 children, 243 parents",
+      "relevance": "Adults improved in diabetes distress, sleep quality, fear of hypoglycemia and confidence managing hypoglycemia at 3 and 6 months. Parents' and children's sleep and parents' fear of hypoglycemia also improved. There was no control group."
+    },
+    {
+      "title": "Burnside MJ, Lewis DM, Crocket HR, et al. Open-Source Automated Insulin Delivery in Type 1 Diabetes (CREATE). N Engl J Med 2022;387(10):869-881",
+      "url": "https://www.nejm.org/doi/full/10.1056/NEJMoa2203913",
+      "year": "2022",
+      "country": "New Zealand (4 sites)",
+      "sample_size": "97 randomized (48 children aged 7-15, 49 adults aged 16-70; 44 AID vs 53 sensor-augmented pump)",
+      "relevance": "The only RCT of open-source AID. TIR went from 61.2% to 71.2% with AID and from 57.7% to 54.5% with the control pump, an adjusted difference of 14 points (about 3 h 21 min more in range per day), with no effect of age. No severe hypoglycemia or DKA. 2 AID participants withdrew because of connectivity problems. Participants did not build their own system: the trial supplied a modified AndroidAPS with a preproduction pump, with trial-team support."
+    },
+    {
+      "title": "Burnside MJ, et al. Extended Use of an Open-Source AID System: 24-Week Continuation Phase Following the CREATE RCT. Diabetes Technol Ther 2023;25(4):250-259",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36763345/",
+      "year": "2023",
+      "country": "New Zealand",
+      "sample_size": "94 in continuation (69 on a preproduction YpsoPump)",
+      "relevance": "Over 48 weeks, TIR was 12.2 points higher and HbA1c 0.5% lower with AID, with no new safety concerns and no difference by pump type."
+    },
+    {
+      "title": "Crocket H, et al. Learning challenges of healthcare professionals supporting open-source AID (CREATE). Diabet Med 2022;39(5):e14750",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34826158/",
+      "year": "2022",
+      "country": "New Zealand",
+      "sample_size": "254 team Slack conversations in the first 4 months",
+      "relevance": "The most common HCP learning challenge was pump and cannula problems (24% of conversations). OS-AID experts were involved in 83.3% of conversations, and problems with the algorithm itself more often needed expert input. Shows what clinics need when they take on support."
+    },
+    {
+      "title": "Burnside MJ, Haitana T, Crocket H, et al. Interviews with Indigenous Māori with T1D using open-source AID in the CREATE trial. J Diabetes Metab Disord 2023;22(1):861-871",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10035484/",
+      "year": "2023",
+      "country": "New Zealand",
+      "sample_size": "10 interviews (5 children, 5 adults, plus whānau)",
+      "relevance": "Participants felt empowered, and technical problems were manageable with HCP support. All named structural health-system barriers to equitable access."
+    },
+    {
+      "title": "Crocket H, et al. CREATE psychosocial sub-study (ESA-SRB-APEG-NZSE 2022 speed poster)",
+      "url": "https://esa-srb-apeg-nzse-2022.p.asnevents.com.au/days/2022-11-14/abstract/86063",
+      "year": "2022",
+      "country": "New Zealand",
+      "sample_size": "Trial surveys plus interviews with 8 adults, 6 children and 8 parents",
+      "relevance": "[uncertain] Conference abstract only. Questionnaire differences favoured AID but were not significant. All interviewees described improvements in quality of life and treatment burden."
+    },
+    {
+      "title": "Samuel P, Khan N, ... Elliott T. Open-source Artificial Pancreas Systems Are Safe and Effective When Supported In-clinic: Outcomes in 248 Consecutive T1D Clients. Can J Diabetes 2024;48(1):59-65",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37802366/",
+      "year": "2024 (starts Jul 2020-Nov 2022)",
+      "country": "Canada (British Columbia)",
+      "sample_size": "248 (Loop 108, iAPS 114, Android APS 24); mean age 36; 17-month follow-up",
+      "relevance": "TIR rose from 64% to 80%, TBR fell from 3.5% to 2.5%, and A1C fell from 7.2% to 6.7%, with 3 severe hypoglycemia events and no DKA. Quality of life improved. Clinic staff installed and maintained the systems at no cost to clients. It was offered only to 'moderately tech-savvy' clients who could pay for hardware and would sign a consent and waiver. Single-centre retrospective study by the program's own clinicians; the senior author disclosed honoraria from Dexcom and Abbott."
+    },
+    {
+      "title": "Alqahtani A, Khan N, Hawke K, Klein G, Elliott T. Improved Glycemia and Quality of Life With Open-Source AID: Real-World Data From 1840 Patient-Years (ADA 2025 poster)",
+      "url": "https://docs.google.com/presentation/d/1n_yWSlbS9yapJd4JsOT6eVDzxXSDPnifpBmtD_3YYBU/htmlpresent",
+      "year": "2025 (Jan 2020-Apr 2025 data)",
+      "country": "Canada (British Columbia)",
+      "sample_size": "1,442 clients (1,013 adults, 429 pediatric); quality-of-life subset 279 adults and 96 parents",
+      "relevance": "[uncertain] Poster, not peer reviewed. Systems: Loop 78%, AAPS 13%, iAPS/Trio 9%, with no glucose differences between them. Adult TIR was 58% at baseline, 73% at 1 month and 70% at 12 months; pediatric 52%, 63% and 62%. Adult Diabetes Distress Scale fell from 2.47 to 1.92 and device satisfaction rose from 6.37 to 8.27. 4 DKA episodes and 14 patient-reported severe hypoglycemia events in the full cohort, no deaths. Discontinuation not reported. BCDiabetes also presented a calculator that predicts TIR 90 days after starting Loop from baseline TIR and age (https://www.bcdiabetes.ca/bc-diabetes-at-ada-85-in-chicago/)."
+    },
+    {
+      "title": "Hejla D, Hawke K, Borovoi L, Elliott T, Panagiotopoulos C. OS-AID shows comparable glycemic outcomes to a commercial hybrid closed-loop system in real-world T1D pediatric care: retrospective cohort from British Columbia. Pediatr Diabetes 2026:e009",
+      "url": "https://www.maxapress.com/article/doi/10.48130/pedi-0026-0008",
+      "year": "2026",
+      "country": "Canada (British Columbia)",
+      "sample_size": "198 youth aged 19 or under (143 OS-AID: Loop, iAPS, AAPS; 55 Tandem t:slim)",
+      "relevance": "HbA1c fell from 7.40% to 6.96% on OS-AID versus 7.35% to 7.28% on t:slim. The adjusted difference was -0.51% at 12 months but not significant at 18 months, and TIR and GMI did not differ. 1 severe hypoglycemia event per group, no DKA. Limits: retrospective; only 14 OS-AID participants had HbA1c at 18 months; a 'tech-savvy', well-controlled population; 33% of the OS-AID group missing deprivation data; no stated non-inferiority margin."
+    },
+    {
+      "title": "Hawke K, Kabootari M, Elliott T. Supported Open-Source AID for Management of T1D in Pregnancy. J Diabetes Sci Technol 2026;20(1):31-37",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40380800/",
+      "year": "2026",
+      "country": "Canada (British Columbia)",
+      "sample_size": "10 pregnancies",
+      "relevance": "No DKA or severe hypoglycemia. Pregnancy-range TIR (63-140 mg/dL) was 68-70% in trimesters 2 and 3. Clinics can configure tighter pregnancy targets that commercial systems do not allow."
+    },
+    {
+      "title": "Hawke K, Elliott T. Supported Open-source Artificial Pancreas Systems in T1D With Suboptimal Glycemia. Can J Diabetes 2024;48(8):551-553",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39270931/",
+      "year": "2024",
+      "country": "Canada (British Columbia)",
+      "sample_size": "[uncertain] about 77 (59 adults, 18 youth), from a search snippet only",
+      "relevance": "[uncertain] A short report on clinic-supported starters with above-target baseline glucose. Abstract not available, so results are unverified."
+    },
+    {
+      "title": "OLIVER: Omnipod 5 vs Loop head-to-head 12-week RCT (BCDiabetes study page)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/OLIVER-Omnipod-5-vs-Loop-RCT.pdf",
+      "year": "2025-2026 (recruiting)",
+      "country": "Canada (British Columbia)",
+      "sample_size": "Not stated",
+      "relevance": "First planned head-to-head RCT of commercial versus open-source AID (Loop on Omnipod DASH vs Omnipod 5, ages 2 and up). After the study, participants return to their local endocrinologist. No results yet."
+    },
+    {
+      "title": "Liarakos AL, Crabtree TSJ, Hussain S, ... Wilmot EG. Long-Term Improvements in Glycemia and User-Reported Outcomes Associated with OS-AID in Adults with T1D in the UK. Diabetes Technol Ther 2025;27(4):283-291",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39866104/",
+      "year": "2025 (data Dec 2019-Nov 2023)",
+      "country": "UK (12 NHS centres)",
+      "sample_size": "81 adults (90.1% White British)",
+      "relevance": "Over 1.7 years, HbA1c fell from 7.3% to 6.5%, diabetes distress fell 0.9 points, and impaired hypoglycemia awareness fell from 27.8% to 8.3%. Everyone asked said OS-AID improved their quality of life. Hospital admissions were low. Clinician-collected routine-care data."
+    },
+    {
+      "title": "Wu Z, Lebbar M, ... Rabasa-Lhoret R. Open-Source Versus Commercial AID: Prospective Observational Comparative Study from Canada. Diabetes Technol Ther 2025;27(7):517-526",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40100927/",
+      "year": "2025",
+      "country": "Canada (Montreal)",
+      "sample_size": "78 adults (26 OS-AID, 52 commercial AID)",
+      "relevance": "Blinded CGM showed OS-AID non-inferior on TIR (78.3% vs 71.2%), but with more time below 70 mg/dL (3.9% vs 1.8%). OS-AID users had less fear of hypoglycemia; other patient-reported outcomes were similar. Technical issues occurred at similar rates."
+    },
+    {
+      "title": "Do QD, et al. Switch of AndroidAPS to Commercially Available AID Systems: Extension of the CODIAC Study. Diabetes Technol Ther 2025;27(11):928-936",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40931793/",
+      "year": "2025",
+      "country": "Czech Republic",
+      "sample_size": "41 adults",
+      "relevance": "The only prospective switch study: AAPS, then Control-IQ or 780G, then back to AAPS. TIR was similar (85% vs 84.2%). AAPS gave more time in tight range but more hypoglycemia (3.8% vs 2.2% below 70 mg/dL)."
+    },
+    {
+      "title": "Jeyaventhan R, Gallen G, Choudhary P, Hussain S. A real-world study of user characteristics, safety and efficacy of open-source closed-loop systems and Medtronic 670G. Diabetes Obes Metab 2021;23(8):1989-1994",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33999488/",
+      "year": "2021",
+      "country": "UK",
+      "sample_size": "68 adults (30 OS-AID, 38 670G)",
+      "relevance": "OS-AID users were younger, had shorter diabetes duration and more education. The authors stress these differences when reading real-world OS-AID results."
+    },
+    {
+      "title": "Fagerberg AR, et al. Prevalence, Safety, and Metabolic Control Among Danish Children and Adolescents Using OS-AID. Diabetes Technol Ther 2024;26(5):287-297",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38386435/",
+      "year": "2024",
+      "country": "Denmark",
+      "sample_size": "56 users identified of 2,950 children with T1D (1.89%); 31 included",
+      "relevance": "The only national prevalence estimate found. TIR rose from 62% to 70%, with no safety signal. Parents slept better."
+    },
+    {
+      "title": "Dreifuss K, et al. Bridging the Digital Divide: Real-World Efficacy of Commercial and Open-Source AID in a Diverse, Low-Resource Pediatric Population. J Diabetes Sci Technol 2026 (online Aug 2026)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/42642831/",
+      "year": "2026",
+      "country": "Israel",
+      "sample_size": "61 children (31 AndroidAPS, 30 MiniMed 780G)",
+      "relevance": "A clinic-supported low-resource cohort. Both groups improved (TIR from 56.6% to 69.3%), with no severe hypoglycemia or DKA. Evidence that clinic support can extend OS-AID beyond tech-savvy, affluent users."
+    },
+    {
+      "title": "Schipp J, et al. How Adults with T1D Are Navigating the Challenges of Open-Source APS: A Qualitative Study. Diabetes Technol Ther 2021;23(8):546-554",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33720767/",
+      "year": "2021 (interviews Oct 2018-Jan 2019)",
+      "country": "Australia",
+      "sample_size": "23 adults",
+      "relevance": "Users relied on peer support, self-sufficiency, risk management and trade-offs to fill perceived gaps in professional and industry support. Authors call for health professionals to show support and understanding."
+    },
+    {
+      "title": "Raimond LH, O'Donnell S, et al. Open-source AID systems and formal healthcare: challenges in interaction between service-users and HCPs. Chronic Illness 2023;19(4):836-847",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36437583/",
+      "year": "2023",
+      "country": "Denmark",
+      "sample_size": "5 adult users and 6 HCPs",
+      "relevance": "Users are reticent to disclose. HCPs see their ethical responsibility as unclear and fear the burden of rising technical expectations."
+    },
+    {
+      "title": "Knoll C, et al. Real-world evidence on clinical outcomes of people with T1D using open-source and commercial AID systems: systematic review. Diabet Med 2022;39(5):e14741",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34773301/",
+      "year": "2022",
+      "country": "International",
+      "sample_size": "21 studies (2018-2021); 4 open-source-only",
+      "relevance": "Open-source and commercial AID both improved TIR and HbA1c, with minimal severe hypoglycemia. Shows how few open-source studies existed before 2022."
+    },
+    {
+      "title": "Tidepool Announces FDA Clearance of Tidepool Loop (press release, 24 Jan 2023)",
+      "url": "https://secure.businesswire.com/news/home/20230124006085/en/Tidepool-Announces-FDA-Clearance-of-Tidepool-Loop",
+      "year": "2023",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "Tidepool credited Loop Observational Study participants for the clearance, and its documents page lists the JAEB LOS public dataset. Shows DIY-user evidence feeding a regulated product."
+    }
+  ],
+  "evidence_strength": "Peer-reviewed and stronger than for most DIY topics on glucose outcomes and safety: one multicentre RCT (CREATE, n=97, 24 weeks plus a 24-week continuation), one large prospective observational cohort (LOS, n=558), several retrospective clinic cohorts (BC n=248 and n=198; UK n=81) and small comparative studies against commercial AID (n=41-198). User-reported motivations, burdens and psychosocial outcomes rest on peer-reviewed self-selected online surveys (OPEN n=897, n=592, n=383, n=129) and qualitative studies (n=72, 60 families, 23, 19, 11). Evidence about the clinician relationship is qualitative only. No quantitative study of disclosure, clinic involvement or relationship outcomes was found. The largest BC cohort (n=1,442) is a conference poster.",
+  "prevalence_or_magnitude": "Motivations (OPEN, 2018-19): better glucose 93.5% of adults / 95% of caregivers; fewer acute complications 87.2% / 96%; fewer long-term complications 83.3% / 91%; less device interaction 81.1% / 86%; longer life 75.1% / 84%; curiosity 73.0% / 47%; better sleep 71.6% / 80% (94% of caregivers for their own sleep); no commercial AID 70.8% / 80%; therapy goals unmet 68.4% / 69%; commercial systems did not suit them 63.5% of adults. Outcomes: self-reported HbA1c 7.14% to 6.24% (n=310). LOS TIR 67% to 73% and HbA1c 6.8% to 6.5%. CREATE +14 TIR points against control. BC TIR 64% to 80% (n=248) and adult 58% to 70% at 12 months (n=1,013, poster). UK HbA1c 7.3% to 6.5%. Psychosocial effects in OPEN users vs non-users were medium to large (d 0.5-1.5). Safety: LOS severe hypoglycemia 18.7 per 100 person-years (1 of 51 events attributed to Loop), 0 DKA. CREATE 0 and 0. BC 3 severe hypoglycemia and 0 DKA in 248 over 17 months; 14 and 4 DKA in 1,840 patient-years (poster). In two comparison studies, OS-AID had more time below 70 mg/dL than commercial systems (3.9% vs 1.8%; 3.8% vs 2.2%). Burdens: connectivity made up 27% and hardware damage 10% of LOS issue reports; 2 of 44 CREATE AID participants withdrew over connectivity. Discontinuation: 3% confirmed and 14% stopped sharing data at 6 months (Lum); 5.3% of 874 over the observation window (Wong). Prevalence: 1.89% of Danish children with T1D (2024); up to 9,000 Loop users by RileyLink orders (2020); more than 10,000 OS-AID users worldwide (OPEN estimate). [uncertain] No study reported what share of users told their clinician, or how often clinics were involved in settings.",
+  "data_quality_caveats": "Self-selection and survivorship. OPEN and LOS recruited from online communities (Looped and AndroidAPS Facebook groups, Twitter, RileyLink buyers), so people who struggled, dropped out early or hid DIY use from clinics are underrepresented. Skewed demographics: LOS was 91% White, 70% with income of $100k or more and 94% privately insured; Suttiratana's sample was 95% White; baseline HbA1c was already about 6.6-7.2%. Self-report: OPEN HbA1c and TIR were not checked against records, and TIR values were often rounded. Old data: Cleal 2025 and Braune 2021 use the same 2018-19 survey, before Trio and iAPS existed and before consensus guidance. Researcher-user overlap: OPEN authors include OS-AID users, Tidepool staff co-authored LOS, and BC studies are written by the clinic that runs the program (with industry honoraria disclosed). No controls in most cohorts. CREATE and the BC cohorts were supported (trial-supplied hardware and preproduction pumps; clinic-installed apps), so they do not represent self-built DIY. Missing data: 241 of 799 LOS enrollees were excluded mostly for missing data, and only 14 BC pediatric OS-AID patients had 18-month HbA1c. Language: surveys were English or German only. Published correction: Cleal 2025 (JMIR e72519, affiliation only). Conflicting figures: the outline's attribution of 5.3% to Lum is wrong (it is Wong 2022), and Wong's abstract and table give different percentages.",
+  "clinician_perspective": "These studies are mostly about users, so the clinician view comes second-hand or from a few HCP-focused sub-studies. (1) Users describe clinicians as ambivalent, poorly informed or legally constrained. In OPEN narratives (Cleal 2025), diabetologists were impressed by results but said they could not support the user for legal reasons. Some users felt the diabetologist's support was lost completely, and some had loopable pump prescriptions refused. Suttiratana 2022 found a 'range of provider attitudes and knowledge' that complicated care and disclosure. (2) Clinicians fear workload and unclear responsibility. Raimond 2023 (Denmark) found HCPs fear the burden of rising technical expectations and see their ethical responsibility as unclear. (3) When clinicians do take on support, they need expert backup. In CREATE, the multidisciplinary team logged 254 Slack conversations in 4 months. A quarter were about pump and cannula problems, OS-AID experts joined 83% of them, and algorithm questions especially needed experts (Crocket 2022). (4) Some clinicians have chosen to own it. BCDiabetes physicians and physician assistants install, maintain and fine-tune Loop, iAPS and AAPS at no cost to the client, behind a signed consent and waiver. They publish outcomes as strong as commercial AID (Samuel 2024; Hejla 2026) and run the OLIVER head-to-head RCT. UK NHS centres collect OS-AID outcomes through a national audit (Liarakos 2025). (5) Clinician-authors stress the limits of generalizing: OS-AID users are younger, more educated and better controlled (Jeyaventhan 2021). They also note more hypoglycemia with OS-AID in head-to-head comparisons (Wu 2025; CODIAC 2025). What clinicians appear to need from this literature: a short evidence summary they can cite (the CREATE RCT, LOS and BC data), expert escalation for algorithm questions, legal or institutional cover, and patient data in a familiar format.",
+  "effect_on_relationship": "The literature consistently shows care moving from the clinic to the peer community. OPEN users name the #WeAreNotWaiting community as their main source of knowledge and of practical and emotional support (Braune 2021 and 2022; Cleal 2025), and Australian users rely on peers and self-sufficiency to fill gaps in professional support (Schipp 2021). Users also take over settings. Cleal 2025 notes that settings are normally set by HCPs for commercial devices, but OS-AID users must learn to tune them, against a steep learning curve. In LOS, settings work was a main burden behind discontinuation (Wong 2022). The clinician shifts from therapy lead to gatekeeper of prescriptions and hardware (pump refusals in Cleal 2025; sourcing components as the top barrier in O'Donnell 2023). Fear of disapproval runs through the relationship. Fear of losing HCP support stops non-users from starting (O'Donnell 2023). Fear of the provider's disapproval was one reason some LOS users stopped (Wong 2022). Users are reticent to disclose (Raimond 2023), and varied provider attitudes complicated disclosure (Suttiratana 2022). Where the clinic joins in, the relationship changes. In CREATE, Māori participants found technical problems manageable with HCP support. BC clients get clinic-run installation and tuning with good outcomes and improved quality of life. Discontinuers themselves said 'expert guidance' would have helped (Wong 2022), which is a role the clinic could fill. Since 2022, the RCT and cohort evidence has given users and sympathetic clinicians something to cite. Commentators titled the CREATE response 'the evidence is out there' (Lancet Diabetes Endocrinol 2022). [uncertain] This framing is a synthesis of qualitative findings. No study measured relationship quality before and after starting.",
+  "decision_ownership": "Self-built (OPEN, LOS): the user or caregiver decides to start, builds the app, and sets and tunes settings with peer help. LOS deliberately gave no guidance on how to use Loop. Clinicians mostly control prescriptions and HbA1c checks, and some decline involvement on legal grounds. Supported models: in CREATE the trial team configured and supported the system under protocol and ethics approval, so ownership was shared. At BCDiabetes the clinic installs and maintains the app and adjusts settings, while the client signs a consent and waiver, which shifts some risk to the user. Liability: user narratives and Raimond 2023 show HCPs treating liability and ethical responsibility as unclear. Users say they accept responsibility for an unregulated system. No study clarifies legal liability.",
+  "disclosure_risk": "Moderate to high. Fear of provider disapproval is documented as a reason to stop (Wong 2022), fear of losing HCP support as a barrier to starting (O'Donnell 2023), and reticence as a pattern (Raimond 2023; Suttiratana 2022). Research samples likely under-represent people who hide DIY use. [uncertain] No published study measured how many users disclose.",
+  "regulatory_status_dependency": "Partly. LOS evidence from DIY Loop users was credited in Tidepool Loop's FDA clearance (23 Jan 2023, ages 6 and up), so part of the DIY evidence base now backs a regulated product. That may ease clinicians' legal hesitation, which users describe as the main reason clinicians decline to help. Comparisons with commercial AID show OS-AID non-inferior on TIR but with somewhat more hypoglycemia (Wu 2025; CODIAC 2025; Hejla 2026). The OLIVER RCT (Loop vs Omnipod 5) is recruiting. [uncertain] No published outcome or relationship study of Tidepool Loop / twiist users was found, so whether clinic acceptance actually changes after clearance is untested.",
+  "workarounds": "Users: peer communities (Looped and AndroidAPS Facebook groups, local groups) for building and settings help; self-study of documentation; explicit risk management and trade-offs (Schipp 2021); switching to more supportive providers (Suttiratana 2022); sharing outcome data through Tidepool and Nightscout; taking part in research such as LOS and OPEN, which turns their own data into evidence. Clinics: supported OS-AID programs with consent and waiver documents and clinic-run installation (BCDiabetes); national clinician-run audits (UK ABCD OS-AID audit); trial-team Slack channels with OS-AID experts (CREATE); and setting tighter pregnancy targets (BC). Researchers: pooled datasets (OpenAPS Data Commons, OPEN data set) and validated questionnaires to make user-reported benefit visible.",
+  "existing_tools": "Data routes used in the studies: Loop to Apple Health to Tidepool (LOS), plus a monthly Loop Issue Report export carrying therapy settings and version; Nightscout (OPEN data, BC clinic workflow); the OpenAPS Data Commons and the OPEN data set (n=122 and n=75 in Cooper 2025); and the NHS secure web audit tool (UK). Validated questionnaires used: Diabetes Distress Scale, PAID-20, Hypoglycemia Fear Survey II, PSQI, DTSQ, WHO-5, DAWN Impact of Diabetes Profile, INSPIRE, DIDS and Gold score. Clinic tools: the BCDiabetes TIR prediction calculator (predicts TIR 90 days after starting Loop from baseline TIR and age) and consent and waiver forms. [uncertain] It is not confirmed that any of these questionnaire instruments are built into Tidepool, Nightscout, Clarity or Glooko for routine visits.",
+  "existing_tool_coverage_gap": "Existing tools carry glucose and insulin data but not the outcomes users say matter most, or the burdens that predict dropout. No routine tool collects sleep, distress or fear-of-hypoglycemia questionnaires alongside DIY data. None logs connectivity failures, hardware damage or settings struggles, and none records relationship events (disclosure, prescription refusal, who made a settings change). Research datasets (LOS on Tidepool, the OPEN and OpenAPS Data Commons) are not visit tools and exclude people who don't share. Nothing lets an individual user show the clinic their own before-and-after (baseline vs current TIR, HbA1c, severe hypoglycemia, questionnaire scores) in the form the studies use. Nothing gives the clinician the published evidence matched to the patient's system and age, with its caveats. The BC calculator and consent workflows belong to one clinic and are not portable.",
+  "data_artifacts_involved": "Baseline (pre-start) 14-day CGM and AGP; HbA1c (lab or mailed kit); TIR, TBR, GMI and CV; Loop Issue Report (therapy settings, version); Tidepool and Nightscout uploads; adverse event logs (severe hypoglycemia, DKA, hospitalizations); device issue reports (connectivity, hardware); questionnaire scores; discontinuation reasons; consent and waiver records; pregnancy target settings.",
+  "unmet_need": "The research shows open-source AID works and is valued by users, but no tool or study connects that to the individual patient-clinician relationship. (1) No quantitative evidence on disclosure, clinic involvement or relationship outcomes exists. The field cannot say how many users hide their system, how often settings change without the clinic, or whether clinic support improves persistence and safety, though BC and CREATE suggest it does. (2) Individual users have no clinic-ready 'my own evidence' packet: baseline vs current glucose, HbA1c, severe hypoglycemia and DKA history, questionnaire scores and system uptime, presented the way studies report it. Such a packet could offset a clinician's legal and safety worries. (3) Clinicians lack a short, current evidence brief tied to the patient's system and age that states the caveats honestly: self-selected samples, supported rather than self-built cohorts, and slightly more hypoglycemia versus commercial AID in some comparisons. (4) Users heading toward dropout (early months, older, low trust, struggling with settings, connectivity problems) are not spotted, and the 'technical assistance and expert guidance' discontinuers asked for has no channel that includes the clinic. (5) The benefits users value most (sleep, less distress, less fear of hypoglycemia) are almost never measured in routine care, so clinicians see only HbA1c and AGP.",
+  "implication_for_collaboration_tool": "1) Capture a baseline. At onboarding (ideally before starting or switching systems), snapshot 14-day CGM metrics, latest HbA1c, recent severe hypoglycemia and DKA, and 3-4 short validated questionnaires (for example diabetes distress, a fear-of-hypoglycemia short form, a sleep item and INSPIRE). Then produce a one-page before-and-after report modelled on the LOS, BC and CREATE outcome tables, so each patient's results read like the published evidence. 2) Ship a clinician evidence brief: one screen summarizing CREATE (RCT), LOS, OPEN and the BC cohorts, matched to the patient's system and age, with the caveats stated plainly (self-selection, supported cohorts, higher time below range than commercial AID in two comparisons). Cite sources and keep it current; the OLIVER results are due later. 3) Track the burdens that predict dropout: connectivity outages and loop-not-running time, hardware failures, settings changes and their effect, and a trust or confidence check-in. Flag users in their first 3 months and older users, and route 'needs expert guidance' to the clinic or a designated expert instead of leaving it to Facebook. 4) Make disclosure low-risk. Use neutral, clinical framing, let the patient choose what to share, and keep a record that the clinic was informed and what it reviewed. This targets the documented fear of disapproval without forcing exposure. 5) Support clinic-run models like BC: consent and waiver records, installation and version log, settings-change history with who changed what, and pregnancy-target documentation. A clinic should be able to run supported OS-AID without building its own tooling. 6) Cover AAPS and iAPS/Trio as well as Loop, since AAPS dominates the international evidence (58% in OPEN) and appears in CREATE and pediatric cohorts. 7) Keep anonymized, opt-in aggregate outcomes so the tool can eventually produce the missing relationship data (disclosure, clinic involvement, persistence). [uncertain] The research-data angle needs ethics and consent design.",
+  "severity_rank": "Medium. The published evidence does not itself break the relationship, but it is the main lever clinicians and users cite to accept or refuse DIY, and its blind spot on the relationship leaves clinics without guidance.",
+  "safety_criticality": "Low to medium in the studied populations. Severe hypoglycemia and DKA rates fell or stayed low in LOS, CREATE and the BC cohorts (1 of 51 LOS severe events attributed to Loop; 4 DKA in 1,840 BC patient-years). However, time below range was higher than with commercial AID in two comparisons, severe events cluster in people with prior events, and events are often self-reported.",
+  "equity_impact": "Evidence comes mostly from White, high-income, privately insured, highly educated users with near-target baseline HbA1c (LOS, Suttiratana). Surveys were English or German only. The BC program requires the client to pay for hardware and be 'moderately tech-savvy'. Māori participants named structural barriers. Older age predicted stopping (Wong 2022). Android users dominate international studies but are a minority in US and BC data. A low-resource Israeli pediatric cohort (2026) suggests clinic support can close the gap. [uncertain] Groups likely hit hardest: low-income, non-English-speaking, Indigenous and older users, and families without a supportive clinic.",
+  "uncertain": [
+    "system_specificity",
+    "key_sources",
+    "prevalence_or_magnitude",
+    "effect_on_relationship",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "existing_tools",
+    "implication_for_collaboration_tool",
+    "equity_impact"
+  ]
+}

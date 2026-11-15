@@ -1,0 +1,230 @@
+{
+  "item_name": "Peer community as substitute care",
+  "research_date": "2026-11-13",
+  "issue_summary": "For most people on Loop, Trio, iAPS, AndroidAPS or OpenAPS, the first and often the only place to get help is a volunteer peer network, not the diabetes clinic. The main channels are: the Looped Facebook group, founded in November 2016 by a parent (Kate Farnsworth), with national offshoots such as Looped UK, Looped-DE, Looped-NL-BE, Looped Norge and Looped Sweden; Loop and Learn, which runs a Facebook group with active mentors, a Discord backup, Zoom 'Open Mic' sessions, a newsletter, build scripts and a user-submitted directory of DIY-supportive clinicians; the volunteer-written LoopDocs and LoopTips (LoopTips explicitly covers therapy settings changes) and the Trio, AndroidAPS and OpenAPS docs; the AndroidAPS Users and Trio Facebook groups and Discord servers; Loop Zulipchat; CGM in the Cloud for Nightscout; and general forums such as Reddit and TuDiabetes, which closed in 2026. Users go there for build and hardware problems, and also for settings fine-tuning, overrides, puberty, pregnancy and exercise, and for advice on what to tell their clinician. Studies agree that the #WeAreNotWaiting community is the main source of practical and emotional support. Clinician support, where it exists, is mostly encouragement rather than hands-on help (Cleal 2025, n=383; Braune 2022, 60 families). The community's own docs now treat peers as the free default and clinicians as optional paid support (Trio docs). This changes the clinic's role. The clinic narrows to prescriptions, supplies, labs and a CGM summary, while peers set the day-to-day agenda and shape what gets disclosed. Some clinicians deliberately hand technical support to the community: UK clinicians signpost other patients and social media, and Loop and Learn moderators report more newcomers referred by their clinicians as of 2024. A few clinics have built hybrids: BCDiabetes runs a staff-monitored loopers group, and the CREATE trial team leaned on open-source AID experts. Peer advice is not accountable, not documented in the medical record and not visible to the care team. It depends on unpaid volunteers who burn out and on platforms that can change the rules (Facebook stripped external links from the AAPS group) or shut down. Since 2025-2026 a third advisor has appeared: general AI chatbots and paid AI settings apps. Tests show their answers vary from one run to the next.",
+  "who_is_affected": "Adults who self-manage. Parents and caregivers of children, who are heavy users of the groups (80.9% of the 1,268 CGM in the Cloud survey respondents were caregivers). New users in their first months of fine-tuning. Would-be users, for whom fear of losing clinician support and limited tech skills are named barriers. The unpaid mentors, moderators and documentation writers who carry the load. On the clinical side: endocrinologists and pediatric endocrinologists, diabetes educators/CDCES and diabetes nurses, nurse practitioners and PAs. Primary care is mostly bypassed, and school nurses also meet these systems.",
+  "system_specificity": "All open-source AID. Loop, Trio and iAPS (iOS) users rely on Looped, Loop and Learn, the Trio Facebook group and Discord, Loop Zulip, LoopDocs and LoopTips. AndroidAPS users follow a documented escalation path (docs, then the AndroidAPS Users Facebook group, then Discord, then GitHub) and have many national-language groups. OpenAPS relies on Looped and its docs. Nightscout users rely on CGM in the Cloud. The FDA-cleared Loop derivatives (Tidepool Loop, Sequel twiist) add manufacturer training and support. Loop and Learn already hosted a Sequel twiist session in May 2025, which suggests the peer layer extends to cleared products too. [uncertain] No data were found on how much twiist users rely on peer groups.",
+  "care_setting": "Mostly outside the clinic: at home, in round-the-clock online groups, and at in-person meetups and build events. Peer-derived changes surface at routine endocrinology and educator visits and in pediatric clinics. Primary care is rarely involved. Clinic-run programs blend peer and clinical care (BCDiabetes in Canada; the CREATE trial in New Zealand). Paid private CDCES services offer setup and tuning (Integrated Diabetes Services). Schools are another setting, where school nurses and some school boards (British Columbia) decline to support supported open-source AID.",
+  "trigger_moment": "Deciding whether to start and choosing a system. The build, and later rebuilds or app expiry. The first weeks of fine-tuning. Pod, pump, CGM or app errors (e.g. Omnipod DASH 203 errors, which a 2026 Loop and Learn newsletter linked to a target-range workaround). Recurring overnight lows or highs. Growth spurts, puberty, menstrual cycle, pregnancy, illness and exercise. Switching systems (Loop to Trio, iAPS to Trio). The days before an appointment: deciding what to disclose and which reports to bring. When a clinician refuses, is unfamiliar or is unavailable: nights, weekends, long waits for a new endocrinologist. Moving clinics or looking for a DIY-supportive provider.",
+  "key_sources": [
+    {
+      "title": "Examining the Emotional and Physical Health Impact in Users of Open-Source AID and Sources of Support: Qualitative Analysis of Patient Narratives (Cleal et al., J Med Internet Res 27:e48406; correction e72519)",
+      "url": "https://www.jmir.org/2025/1/e48406",
+      "year": 2025,
+      "country": "Multinational (29 countries; OPEN project, Denmark/Germany/Ireland)",
+      "sample_size": "383 adults (of 722 DIWHY survey adults) giving 645 open-ended responses; data collected Nov 2018 - Mar 2019",
+      "relevance": "The #WeAreNotWaiting community was the main source of knowledge and of practical and emotional support. Online forums gave fast, real-time help, and for the majority this replaced face-to-face help. One participant called the Looper online community her biggest and only help with fine-tuning settings. Clinician support was more often informal and emotional than practical, with diabetologists enthusiastic but citing legal reasons for not helping. Many challenges were resolved through the community. Recruitment used the Looped (>6,000 members) and AndroidAPS Users (>1,800, Nov 2018) Facebook groups."
+    },
+    {
+      "title": "Emotional and Physical Health Impact in Children and Adolescents and Their Caregivers Using Open-source AID (Braune et al., J Med Internet Res 24(7):e37120)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9335170/",
+      "year": 2022,
+      "country": "Multinational (16 countries)",
+      "sample_size": "60 families (children aged 3-20)",
+      "relevance": "Codes for sources of support: community peer support 45, web-based resources 19, individual role models 15, health care professionals 8. 'Lacking health care provider support' was coded 14 times. The community was the primary source of practical and emotional support, and the amount and quality of peer support shaped the decision to start. Clinician non-support mostly took the form of passivity rather than active opposition. A German family hid the loop after a fight over a pump prescription, and a parent felt they knew more than the doctors at their center."
+    },
+    {
+      "title": "Why #WeAreNotWaiting - Motivations and Self-Reported Outcomes Among Users of Open-source AID Systems: Multinational Survey (Braune et al., J Med Internet Res 23(6):e25409)",
+      "url": "https://www.jmir.org/2021/6/e25409",
+      "year": 2021,
+      "country": "Multinational (35 countries)",
+      "sample_size": "897 (722 adults, 175 caregivers)",
+      "relevance": "Community spirit and peer support were named as reasons to start and stay on open-source AID. O'Donnell & Quigley (2026) cite this study as showing that users often rate the care they get from the community above that from manufacturers and clinicians."
+    },
+    {
+      "title": "How Adults with Type 1 Diabetes Are Navigating the Challenges of Open-Source Artificial Pancreas Systems: A Qualitative Study (Schipp et al., Diabetes Technol Ther)",
+      "url": "https://doi.org/10.1089/dia.2020.0652",
+      "year": 2021,
+      "country": "Australia",
+      "sample_size": "23 adults (interviews Oct 2018 - Jan 2019)",
+      "relevance": "Peer support and self-sufficiency were used to fill perceived gaps in professional and industry support. One challenge was being unable to get support from clinicians or industry. The authors call for clinicians to show support and understanding."
+    },
+    {
+      "title": "Peer Mentoring in the Do-it-Yourself Artificial Pancreas System Community (Crocket, J Diabetes Sci Technol 14(6):1022-1027)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7645136/",
+      "year": 2020,
+      "country": "New Zealand / international community",
+      "sample_size": "9 mentors (4 with diabetes, 5 family members)",
+      "relevance": "In the DIY community, users depend on peers for the education and training that clinicians provide in standard care. Mentors are motivated by altruism, and online forums spread the workload. Challenges are repeated questions already answered in the docs, conflict and workload. Most mentors did not see mentoring as risky but took steps to make users responsible for their own systems. The author is a community member."
+    },
+    {
+      "title": "Motivations for Participation in an Online Social Media Community for Diabetes (White et al., J Diabetes Sci Technol 12(3))",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6154236/",
+      "year": 2018,
+      "country": "USA-led, international Facebook group (CGM in the Cloud)",
+      "sample_size": "1,268 members (80.9% caregivers, 92.1% non-Hispanic white, 74.8% female)",
+      "relevance": "Respondents trusted peers more than health professionals in many health situations. Nearly 40% said they had been helped by following advice from the group, and 99% reported no harm (self-reported). Members used the group for medical recommendations as well as technical support."
+    },
+    {
+      "title": "Using a Do-It-Yourself Artificial Pancreas: Perspectives from Patients and Diabetes Providers (Palmer et al., J Diabetes Sci Technol 14(5):860-867)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7753849/",
+      "year": 2020,
+      "country": "USA",
+      "sample_size": "101 users (recruited via Facebook/Twitter, Feb 2019); 152 providers (ADE and PES lists, Apr-May 2019)",
+      "relevance": "Reports that the Looped group had more than 20,000 members from 99 countries by January 2020, up from about 5,700 fifteen months earlier. Most users felt encouraged by their provider but described few providers as knowledgeable. 89% of users vs 27% of providers rated DIY APS safe. Providers' main challenges were inexperience and being unable to troubleshoot."
+    },
+    {
+      "title": "A scoping review of Do-It-Yourself Automated Insulin Delivery system (DIY AID) use in people with type 1 diabetes (Morrison et al., PLoS One 17(8):e0271096)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9371307/",
+      "year": 2022,
+      "country": "Canada (review of international studies)",
+      "sample_size": "Scoping review",
+      "relevance": "Finds social media, especially Facebook and Twitter, to be a large part of the support structure for DIY AID users. Reports the Looped group at more than 28,000 members. Notes that recruiting through these groups biases the evidence."
+    },
+    {
+      "title": "ABCD, DTN-UK and ACDC Survey of UK Healthcare Professional Attitudes Towards Open-Source AID Systems (Crabtree et al., Diabetes Therapy 13:633-648)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": 2022,
+      "country": "UK",
+      "sample_size": "317 HCPs (Feb-Apr 2019)",
+      "relevance": "91% would not start a conversation about open-source AID. 63% cited limited knowledge and 31.8% professional indemnity. 94% felt able to continue care. The 4% who did not said they felt ill-equipped to advise on the system. 10.7% had been unable to provide pump consumables. Free-text answers show clinicians telling patients that the team is limited and pointing them to other patients, social media and wikis for system help."
+    },
+    {
+      "title": "Learning challenges of healthcare professionals supporting open-source automated insulin delivery (Crocket et al., Diabetic Medicine 39(5):e14750)",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/dme.14750",
+      "year": 2022,
+      "country": "New Zealand (CREATE trial)",
+      "sample_size": "254 Slack conversations among trial HCPs over 4 months",
+      "relevance": "Open-source AID experts took part in 83.3% of the clinical team's conversations. Even trained trial clinicians relied on community-derived expertise, especially for algorithm questions. 24% of conversations concerned DANA-i pump and cannula problems."
+    },
+    {
+      "title": "Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals (Braune et al., Lancet Diabetes Endocrinol 10:58-74)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": 2022,
+      "country": "International",
+      "sample_size": "Not applicable (consensus)",
+      "relevance": "Acknowledges that open-source AID has no company training or helpline but notes broad community support, peer-support networks on social media and at meetups, translated resources, national subgroups, and groups for caregivers and pregnancy. Asks clinicians to respect the person's choice, keep providing regulated devices and support glucose review and dosing adjustment."
+    },
+    {
+      "title": "Transformations in Diabetes Care: Lessons From Commons-Based, Peer-Produced Citizen Science (O'Donnell & Quigley, Sociology of Health & Illness)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12828094/",
+      "year": 2026,
+      "country": "Ireland/UK (conceptual analysis; first author is a community member)",
+      "sample_size": "Not applicable (theoretical, draws on prior studies)",
+      "relevance": "Describes a 'diabetes commons' in which building, using and follow-up care are blended. Cites a Loop and Learn moderator (Dec 2024) reporting a rising number of newcomers sent to the community by their clinicians. Notes that maintainers and moderators are burning out or leaving for industry, that unpaid non-coding work (forums, docs, conflict management) falls mostly on women, and that the community's sustainability is at risk."
+    },
+    {
+      "title": "Barriers to uptake of open-source AID: adults (O'Donnell et al., Diabetes Res Clin Pract 2023) and caregivers (Huhndt et al., Front Clin Diabetes Healthc 2022)",
+      "url": "https://doi.org/10.1016/j.diabres.2022.110235",
+      "year": 2023,
+      "country": "Multinational (31 countries for adults)",
+      "sample_size": "129 adult non-users; 56 caregiver non-users",
+      "relevance": "Fear of losing clinician support was a major barrier for adults. Among caregivers, 50% cited limited technical skills, 39% lack of support from medical professionals and 43% worry about maintaining the system. The authors suggest peer support may overcome some of these barriers over time."
+    },
+    {
+      "title": "Qualitative Study of User Experiences with Loop (Suttiratana et al., Diabetes Technol Ther 24(6)) and Discontinued Use of Loop (Wong et al., Diabetes Technol Ther 24(4))",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": 2022,
+      "country": "USA",
+      "sample_size": "72 focus-group users; 874 cohort with 46 discontinuers",
+      "relevance": "Users described being introduced to 'Loop communities' and said varied provider attitudes and knowledge complicated care and disclosure. Discontinuers cited fear of provider disapproval and said better technical help and expert guidance could ease the burden, which suggests informal peer help is not enough for everyone."
+    },
+    {
+      "title": "A Real-World Prospective Study of the Safety and Effectiveness of the Loop Open Source AID System (Lum et al., Diabetes Technol Ther 23(5))",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906/",
+      "year": 2021,
+      "country": "USA",
+      "sample_size": "558 analyzed",
+      "relevance": "Participants started Loop on their own or with community-developed resources, with no study guidance and no formal support. TIR rose from 67% to 73% without more hypoglycemia. This is the main evidence that community-led onboarding can be safe."
+    },
+    {
+      "title": "As DIY 'loopers' reinvent artificial pancreas, endocrinologists confront safety, liability concerns (Endocrine Today/Healio) and Educator support facilitates safe use of DIY artificial pancreas (Healio)",
+      "url": "https://www.healio.com/news/endocrinology/20200916/educator-support-facilitates-safe-use-of-doityourself-artificial-pancreas",
+      "year": 2020,
+      "country": "USA",
+      "sample_size": "Not applicable (news coverage of clinician talks)",
+      "relevance": "2018: a Vanderbilt CDE described a round-the-clock, global, self-supported group (Looped, CGM in the Cloud and others) with a strong safety message. Endocrinologists cited liability as a reason to discourage DIY, and one advised referring patients to a comfortable colleague. 2020: a pediatric endocrinologist (Nally) advised clinicians to join Looped (then 22,800 members, created Nov 2016) to learn, to name clinic champions, and to help set max basal and suspend threshold. Edelman said adults are largely on their own and that he had never met a CDCES who knew these systems."
+    },
+    {
+      "title": "User and Healthcare Professional Perspectives on DIY APS: A Need for Guidelines (Shepard et al., J Diabetes Sci Technol 16(1):224-227)",
+      "url": "https://doi.org/10.1177/1932296820957728",
+      "year": 2022,
+      "country": "International (ATTD 2020 stakeholder commentary)",
+      "sample_size": "Not applicable (commentary)",
+      "relevance": "[uncertain: details from a search-engine excerpt; full text not accessed] Reports that most users do not expect clinicians to give technical support because they get it from peer mentoring, but still want ongoing medical support such as prescriptions. Clinicians cite liability and off-label component use as their main barriers."
+    },
+    {
+      "title": "Community documentation: LoopDocs (community and how-to pages), AndroidAPS 'Where can I get help?', Trio docs 'Resources'",
+      "url": "https://androidaps.readthedocs.io/en/latest/GettingHelp/WhereCanIGetHelp.html",
+      "year": 2026,
+      "country": "International",
+      "sample_size": "Not applicable",
+      "relevance": "LoopDocs: help comes from unpaid volunteers. Looped is described as the original DIY looping group and Loop and Learn as having active mentors. Users are told to search the docs and their group first. AAPS: escalate from docs to the Facebook group, then Discord, then GitHub. Crossposts are deleted and Facebook has removed external links from the group. Lists national groups (UK, DE, NL-BE, NO, SE, PL, CZ, FR, AU). Trio (nightscout/trio-docs): 'Community Support (Free Support)' on Discord and Facebook vs 'Healthcare Providers (Paid Support)', which links to the Loop and Learn provider list, Integrated Diabetes Services and the BCDiabetes Slack."
+    },
+    {
+      "title": "Loop and Learn: HCP Recommendations directory and newsletters (11 May 2025; 14 Feb 2026)",
+      "url": "https://www.loopandlearn.org/hcp-recommendations/",
+      "year": 2026,
+      "country": "International (mostly USA)",
+      "sample_size": "412 user-recommended providers in 29 countries (266 US, 31 Canada, 18 Germany, 14 Australia) as of 13 Nov 2026; 209 endocrinologists, ~72 pediatric endocrinologists, 42 NPs, 28 diabetologists",
+      "relevance": "Users find supportive clinicians through a peer-curated, unverified list rather than through health-system channels. Newsletters advertise English Zoom Open Mics twice a month and an Italian one monthly, a Sequel twiist presentation (May 2025), Trio help channels, and community workarounds that touch therapy settings (a narrower target range to reduce Omnipod DASH 203 errors)."
+    },
+    {
+      "title": "TuDiabetes forum thread 'Talking with Doctors about Looping' (June 2019) and forum closure notice",
+      "url": "https://forum.tudiabetes.org/t/talking-with-doctors-about-looping/77982",
+      "year": 2019,
+      "country": "USA/Canada (forum)",
+      "sample_size": "Anecdotal (about 20 posts)",
+      "relevance": "Peers coach each other on visits. Advice includes bringing data to persuade, and if the endocrinologist is unsupportive, not mentioning looping and sharing only what is needed for prescriptions. TuDiabetes later closed and now redirects to the Beyond Type 1 community app; the notice was live by April 2026. [uncertain] Exact closure date."
+    },
+    {
+      "title": "BCDiabetes Loop program: information for clinicians",
+      "url": "https://loop.bcdiabetes.ca/clinicians",
+      "year": 2025,
+      "country": "Canada",
+      "sample_size": "Not stated on page (other BCDiabetes material reports >500 children under 13 on Loop)",
+      "relevance": "A clinic-run model. The clinic supports Loop configuration itself, primary care is not expected to, and it runs an online staff-monitored support group. Shows peer support brought inside clinical governance."
+    },
+    {
+      "title": "The world's first 'digital endo' that asks AI to fix your AID settings, and why you should keep your money (Diabettech)",
+      "url": "https://www.diabettech.com/the-worlds-first-digital-endo-that-asks-ai-to-fix-your-aid-settings-and-why-you-should-keep-your-money/",
+      "year": 2026,
+      "country": "UK (blog review)",
+      "sample_size": "50 repeated runs per model on one record",
+      "relevance": "Reviews TuneMyBG, a £4.49/month Android app that sends Nightscout and AAPS profile data to consumer chatbots for settings advice. One model proposed max IOB limits from 4 to 15 U, giving 18 different safety-limit pairs. Another changed ISF in 20 of 48 runs to 14 different values. The app's checks verify format, not clinical sense. Cites DTN-UK guidance that AI-suggested insulin changes need careful checking."
+    },
+    {
+      "title": "Diabetes Canada Clinical Practice Guidelines: DIY automated insulin delivery chapter and user's guide",
+      "url": "https://guidelines.diabetes.ca/cpg/diy-aid",
+      "year": 2023,
+      "country": "Canada",
+      "sample_size": "Not applicable (guideline)",
+      "relevance": "[uncertain: seen only in a search excerpt; the page now redirects] Describes Looped as a community-run support group of people with diabetes, caregivers, clinicians and researchers, with 2,575 Canadian members."
+    },
+    {
+      "title": "Integrated Diabetes Services: DIY services and support",
+      "url": "https://integrateddiabetes.com/diy-services-support/",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "Not applicable",
+      "relevance": "A paid professional alternative to peer help: 3-month packages for Loop, Trio and AAPS covering build help, onboarding, settings optimization and question review within 24 hours. Price is not listed. Shows a market filling the educator role that clinics leave empty."
+    }
+  ],
+  "evidence_strength": "Mixed, and mostly qualitative or survey-based. Peer-reviewed qualitative studies: Cleal 2025, Braune 2022, Schipp 2021, Crocket 2020, Suttiratana 2022. Cross-sectional surveys: White 2018, Palmer 2020, Braune 2021, Crabtree 2022, O'Donnell 2023, Huhndt 2022. A scoping review (Morrison 2022), international and national guidance (2022 consensus, Diabetes Canada), trial process data (Crocket 2022, CREATE) and a sociological analysis (O'Donnell & Quigley 2026). Also community documentation, newsletters, forum threads, trade press and a blog test of AI tools. No study measures what share of settings decisions come from peers versus clinicians, how often peer advice is passed on to the clinic, or what happens clinically after peer advice.",
+  "prevalence_or_magnitude": "Reliance on peers is near-universal among open-source AID users and is the default support model. Looped group size: about 5,700 (late 2018), more than 6,000 (Nov 2018), more than 20,000 from 99 countries (Jan 2020), 22,800 (2020) and more than 28,000 (2022). That is larger than the estimated user base (more than 10,000 open-source AID users worldwide in the 2022 consensus; more than 9,000 Loop users in 2021), because members include prospective users, caregivers, clinicians and researchers. AndroidAPS Users had more than 1,800 members in Nov 2018. Diabetes Canada counts 2,575 Canadians in Looped. [uncertain] No current (2025-2026) membership figures were found for Looped, Loop and Learn, Trio or AAPS groups. Weight of peer vs clinician support: in Braune 2022 (60 families), community peer support was coded 45 times vs 8 for clinician support. In White 2018 (n=1,268), nearly 40% had been helped by following group advice and 99% reported no harm (self-report), with higher trust in peers than in health professionals in many situations. Clinician side: 91% of UK HCPs would not start the conversation, 63% cite limited knowledge, and 4% felt unable to continue care because they were ill-equipped (Crabtree, n=317). In Palmer, 27% of US providers vs 89% of users rated DIY safe. Even trained CREATE trial clinicians drew on open-source AID experts in 83.3% of team conversations. Supportive-clinician supply: the Loop and Learn directory lists 412 user-recommended providers across 29 countries (266 in the US) as of Nov 2026. Among non-users, 39% of caregivers cite lack of medical support as a barrier (Huhndt 2022).",
+  "data_quality_caveats": "Most surveys recruited through the same Facebook groups they describe (Looped, AndroidAPS Users, CGM in the Cloud), which likely overstates reliance on and satisfaction with peers. Samples are self-selected, mostly white, high-income and tech-literate (CGM in the Cloud 92.1% white; Suttiratana 95% white, 73% income >= $100K). The OPEN surveys were English and German only. Much of the data dates from 2018-2019, before the 2022 consensus, wider commercial AID and the Tidepool Loop and twiist clearances. Group sizes come from secondary reports, are dated and include non-users. The Facebook groups are closed, so the quality of advice inside them has not been systematically studied. Harm data are self-reported (White 2018). Some authors are community members (Crocket 2020; O'Donnell 2026), which is an insider perspective. Cleal 2025 has a published correction. Shepard 2022 and Diabetes Canada details were seen only in search excerpts. Reddit could not be accessed for this research, and forum evidence is anecdotal.",
+  "clinician_perspective": "Many clinicians accept, sometimes with relief, that the community does technical support, and some say so to patients. UK free-text responses (Crabtree 2022) describe telling families that the team cannot help with the 'rig' and pointing them to other patients, social media and wikis, while promising to keep providing general diabetes care. The barriers are knowledge and liability: 91% would not raise the topic, 63% cite limited knowledge and 31.8% indemnity. US providers cite inexperience and being unable to troubleshoot (Palmer 2020). Edelman (2020) said adults on these systems are largely on their own and that he had never met a CDCES who knew the systems. Clinicians who engage recommend learning from the community rather than competing with it. Nally (pediatric endocrinologist) advises joining Looped, reading the Loop and OpenAPS docs, naming clinic champions, setting max basal and suspend threshold with the family, and changing one or two settings at a time because some families want to readjust daily. Others advise referring to a colleague who is comfortable rather than disengaging (Peters, Pettus, 2018). The CREATE trial team needed community experts in 83.3% of its internal conversations, so even supportive clinicians depend on community knowledge. Fears about the peer layer: advice given without the full clinical picture (pregnancy, comorbidities, hypo unawareness), frequent or stacked settings changes, advice they cannot see or verify, and blurred liability. Barnard et al. (2018) warned that clinicians advising on unregulated systems, and caregivers who set them up, could be liable. The 2022 consensus treats community support as a legitimate resource and asks clinicians to keep providing devices and glucose and dosing review. UK diabetes technology clinicians (DTN-UK) caution that AI-suggested insulin changes need careful checking. What clinicians need: training, a way to see what the community advised and what the patient changed, and clear boundaries on what the clinic does versus the community.",
+  "effect_on_relationship": "1) The clinic shrinks to gatekeeper. Peers do troubleshooting, fine-tuning and emotional support. The clinic writes prescriptions, orders labs and reviews a CGM summary. In Cleal, clinician support was mostly encouragement, with diabetologists enthusiastic but legally unable to help. 2) Peers shape disclosure. Community threads coach users on how to approach the clinic: bring data to persuade, and if the endocrinologist is unsupportive, say nothing and share only what is needed for refills (TuDiabetes 2019). A German family hid their loop after fighting for a pump. 3) Authority shifts. Users trust peers more than clinicians in many situations (White 2018). Parents feel they know more than the clinic (Braune 2022), and some rate community care above clinical care (Braune 2021). 4) Care splits. Users no longer expect technical help from clinicians but still want medical support and prescriptions (Shepard 2022 [uncertain]). The clinic becomes one advisor among several and often does not know what the others advised, which creates two sources of truth. 5) Users shop for clinicians. Peer-curated lists (412 providers) and stories of 'firing' unsupportive endocrinologists let users choose clinicians by DIY stance. Supportive clinicians gain loyalty, and unsupportive ones lose visibility into care. 6) The relationship can also be repaired. Clinicians now refer newcomers to Loop and Learn (O'Donnell 2026). Clinic-run groups (BCDiabetes) and trial teams (CREATE) put peers inside clinical governance. 7) Peers are not enough for everyone. Loop discontinuers wanted more technical help and expert guidance (Wong 2022). Paid CDCES services, and lately AI apps, fill the gap for those who can pay or take the risk.",
+  "decision_ownership": "Today the user or caregiver decides. Peers, mentors, documentation and increasingly AI tools advise, but none carries formal responsibility. Mentors deliberately push responsibility back to the user (Crocket 2020), and docs state that the user owns the system. Clinicians own prescriptions, the medical record and any advice they give. Many limit their advice because liability is unclear: advising on unregulated systems may create liability for clinicians and for the caregivers who build them (Barnard 2018), and 31.8% of UK HCPs worry about indemnity. Peer volunteers are unpaid, anonymous to the clinic and have no duty of care. AI apps add a commercial advisor without regulatory classification (Diabettech 2026). Shared ownership exists mainly where the clinic hosts or moderates the peer space (BCDiabetes) or in trials. The 2022 consensus recommends documenting discussions and disclaimers.",
+  "disclosure_risk": "High. Peer groups are where users rehearse and decide what to tell the clinic, and some community advice recommends minimal disclosure to unsupportive clinicians. Changes sourced from Facebook threads or chatbots are rarely reported, because users fear the clinician will dismiss non-professional advice and nothing records where a change came from. Supportive-clinician directories and clinics that openly endorse the community lower this risk.",
+  "regulatory_status_dependency": "Partly. Tidepool Loop (cleared Jan 2023) and twiist (launched 2025-2026) come with a prescribing clinician, manufacturer training and customer support. That moves build and hardware support back into formal channels and eases clinician liability worries. But the settings logic is the same, the clinic still sees little between visits, and the peer layer is already reaching cleared products (Loop and Learn's twiist session, May 2025). Trio, iAPS, AndroidAPS and OpenAPS have no cleared equivalent, so peer reliance stays structural for them. [uncertain] No data were found on whether twiist users depend less on peer groups.",
+  "workarounds": "Users: search docs and group archives first, then post screenshots, Nightscout links or logs, and mark threads RESOLVED (LoopDocs etiquette). Follow escalation paths (AAPS: docs, then Facebook, then Discord, then GitHub, then a developer email for personal data). Join Zoom Open Mics, ask mentors, attend meetups and build events, and use national-language groups. Find a supportive clinician through the Loop and Learn HCP directory or peer recommendations, and switch or 'fire' unsupportive ones. Bring CGM data to visits to win clinician acceptance, or share only what refills require. Pay private CDCES services (Integrated Diabetes Services packages) for build and settings help. Ask general AI chatbots or paid AI apps. Clinicians: join Looped or read the docs to learn, name a clinic champion, refer to experienced colleagues, and signpost patients to the community for technical issues while keeping general care. Some run moderated peer groups (BCDiabetes staff-monitored group; Slack per Trio docs), use community experts (CREATE), and document discussions and disclaimers per the 2022 consensus.",
+  "existing_tools": "Peer platforms: Facebook groups (Looped and national Looped groups, Loop and Learn, AndroidAPS Users, Trio: DIY Diabetes App Support, CGM in the Cloud, AAPSCombo), Discord (Trio, AAPS, Loop and Learn backup), Loop Zulipchat, WhatsApp and local groups, Reddit, and the Beyond Type 1 community app (TuDiabetes closed in 2026 [uncertain exact date]). Knowledge bases: LoopDocs, LoopTips, Trio docs, AAPS docs, OpenAPS docs, Loop and Learn guides, YouTube recordings and the newsletter. Matching: the Loop and Learn HCP Recommendations directory (user-submitted, unverified). Data-sharing used in peer help: Nightscout URLs and reports, Loop Issue Reports, AAPS logs, Dexcom Clarity and Tidepool reports, and LoopFollow and LoopCaregiver for caregivers. Clinic-run spaces: the BCDiabetes staff-monitored group (Slack per Trio docs [uncertain]) and the CREATE trial Slack. Paid professional support: Integrated Diabetes Services. AI: general chatbots, the TuneMyBG app (AAPS/Nightscout) and community AI forks for Loop.",
+  "existing_tool_coverage_gap": "Nothing connects the peer layer to the clinic. Advice lives in closed Facebook threads or Discord channels that clinicians cannot see. It is not exported to the record, and there is no trace of who suggested a change, what data they saw, or what happened next. No tool lets a clinician review, endorse or annotate a peer-suggested change, or tells a user which questions their clinic will handle. Advice quality is not verified, and the HCP directory is self-reported. Sharing often means public or long-lived Nightscout links and screenshots, which is a privacy risk. Platforms are fragile: Facebook removed links in the AAPS group and TuDiabetes closed. Volunteer capacity is finite and response times stretch at nights, weekends and across time zones. AI tools are inconsistent and unregulated. Help in languages other than English is uneven. [uncertain] No clinician-facing community equivalent to Looped was found.",
+  "data_artifacts_involved": "Peer thread text and links. Shared Nightscout URLs and screenshots. CGM AGP/Clarity reports. Loop Issue Report and AAPS logs. Settings or profile snapshots (basal, ISF, CR, targets, max basal or max IOB, glucose safety limit). Override and temp-target history. Change history (often missing). AI chatbot or TuneMyBG outputs. Tidepool reports. HCP directory entries.",
+  "unmet_need": "A bridge between the round-the-clock peer layer and the clinic. Users need a low-risk way to bring a peer-, mentor- or AI-sourced suggestion into a shared, documented space where the clinic can see it, comment and record the outcome, without the user being judged for where the idea came from. Clinicians need a readable view of what the community advised and what the patient actually changed, translated out of each system's jargon and linked to the relevant docs. Then they can stay medically responsible without having to troubleshoot builds. Users and clinicians both need an explicit, agreed split of who handles what: technical and build questions with peers; therapy settings, safety limits, pregnancy and children with the clinic. That makes peer help complement the clinic rather than substitute for it. There also needs to be an accessible expert tier between unpaid volunteers and a 15-minute visit months away, which discontinuers asked for. And there need to be privacy-preserving ways to share data with a mentor or clinician instead of public links.",
+  "implication_for_collaboration_tool": "1) Do not try to replace the community. Design for split care and say so in the product: build and hardware questions route to peers and docs, and therapy settings and safety limits get a clinic lane. 2) A 'save for my care team' capture. Let users log a suggestion from a peer thread, mentor, docs page or AI tool as a proposed or applied change, with a neutral, optional source tag, the data snapshot they shared, and an automatic before-and-after outcome window. The clinician sees it and can acknowledge or comment. 3) Design for disclosure without judgment. Use neutral wording and default framing that says community help is normal (citing the 2022 consensus), so attribution does not feel like a confession. 4) Clinic stance card. Let each clinic declare what it will and will not support for open-source AID (prescriptions, settings review, no build help) and its preferred channels. Users then know which questions to bring, which reduces hidden care and clinician-shopping. 5) Translator for clinicians: map community vocabulary (overrides, dynamic ISF, SMB, max IOB, glucose safety limit) and link to the exact LoopDocs, LoopTips, Trio or AAPS pages a suggestion came from. 6) Scoped, expiring, redacted share links to replace public Nightscout URLs and screenshots, usable for a mentor, a clinician or both. 7) Safety rails on outside advice: flag stacked or large changes and edits to safety limits, never auto-apply, and keep an audit trail. Label AI-sourced suggestions and show how variable they are. 8) A visit-prep summary of community-sourced changes since the last visit and their effect. 9) Optional clinic-moderated group threads on the BCDiabetes model, without adding unpaid work for volunteers, and without scraping or mirroring Facebook groups. 10) Caregiver roles, multiple languages, and asynchronous review so between-visit questions do not default to Facebook.",
+  "severity_rank": "High. The peer community now does the day-to-day support work that used to define the clinic relationship, and it decides what reaches the clinic, which drives non-disclosure and clinician disengagement.",
+  "safety_criticality": "Medium. Most peer help is technical, the community has a strong safety culture, and community-led onboarding proved safe in the Loop Observational Study (Lum 2021). Self-reported harm from group advice is rare (99% no harm, White 2018). Risk rises with settings advice given without full clinical context (pregnancy, children, hypo unawareness), conflicting or stacked changes, slow answers at night or on weekends, and AI tools that suggest wildly different safety limits (max IOB 4-15 U across runs). [uncertain] The real harm rate is unknown.",
+  "equity_impact": "Hardest on people who cannot use, or do not want, Facebook or Discord, and on non-English speakers: help is mostly English, with uneven national groups and an Italian Open Mic. Also hard on people with lower tech literacy (50% of non-using caregivers cite limited skills; 39% lack of medical support), older adults, and families in time zones away from the volunteers. Paid professional alternatives favor those who can pay. The supportive-clinician directory is 65% US. Unpaid moderation and documentation work falls mostly on women. Study samples skew white and high-income. Children depend on their caregivers' access to the groups, and some school boards refuse to support supported open-source AID (British Columbia).",
+  "uncertain": [
+    "prevalence_or_magnitude",
+    "key_sources",
+    "regulatory_status_dependency",
+    "existing_tools",
+    "existing_tool_coverage_gap",
+    "system_specificity",
+    "safety_criticality",
+    "effect_on_relationship"
+  ]
+}

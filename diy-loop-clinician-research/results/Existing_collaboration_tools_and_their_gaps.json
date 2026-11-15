@@ -1,0 +1,279 @@
+{
+  "item_name": "Existing collaboration tools and their gaps",
+  "issue_summary": "Each tool a Loop user can share data through covers part of the picture, and none fits how clinics actually review data. Clinics run their day from portals built around population triage and a one-page AGP: Dexcom Clarity (patient list sortable by 14-day GMI, a one-page Overview, the licensed AGP report), Glooko (Population Tracker with default flags and, since September 2025, a risk dashboard modelled on Stanford's TIDE) and Tidepool+ (patient list, AGP PDF printable from the list, TIDE dashboard). Reviewers check data sufficiency first, then hypoglycemia, then time in range, then the AGP curve, then daily views. For AID they add time in automation and bolusing. Remote review takes about 1-2 minutes per patient (Stanford, 2021). DIY data fit this routine only in part. Glooko's clinic instructions list Basal-IQ, Control-IQ, Omnipod 5 and CamAPS FX as AID systems with special displays, and no DIY system. Clarity shows only CGM for a Loop user, and only when the Dexcom app is uploading. Tidepool is the only clinic platform that takes in Loop dosing and settings (Loop 3.2+, with Trio recognized as its own device in 2026), but only if the patient sets up the upload and turns on CGM upload. Nightscout and Nightscout Reporter hold the richest DIY data but are patient-hosted, use non-standard layouts, and have no clinic login or patient list. LoopFollow is a caregiver app whose clinic PDF report was proposed in 2026 and not merged. Autotune tools have shrunk: Loop never had one, Trio removed it in 2025, AutotuneWeb was discontinued in 2026, and AAPS hides its plugin behind a file flag. No tool gives the clinician four things: a 'since your last visit' settings log showing who made each change; a standard AID block (time looping, automatic vs manual insulin, overrides) next to the AGP; a place to record or send back agreed changes; or a way for DIY patients to appear in population triage next to commercial-AID patients.",
+  "who_is_affected": "Adults and parents running Loop, Trio, iAPS, AAPS or OpenAPS. Endocrinologists, NPs/PAs and CDCES/diabetes educators who triage and review data, often CDEs doing remote review between visits. Clinic staff who manage portals, share codes and downloads. Pediatric teams running remote-monitoring programs. Primary care clinicians, who usually have no diabetes data platform.",
+  "system_specificity": "All DIY systems, unevenly. Loop: Tidepool service (Loop 3.2+, settings history from March 2023), Nightscout, LoopFollow, Apple Health; never had autotune. Trio: Nightscout native; Tidepool upload with therapy settings merged May 2026; Tidepool web added Trio as a recognized device (code merged May 2026); LoopFollow remote control; autotune removed in Trio 0.5 (2025). iAPS: Nightscout; autotune module still in the code. AAPS: Nightscout; Tidepool with about a 3-hour delay; Autotune plugin hidden by default since 3.4; no LoopFollow (an iOS app for Loop and Trio only). OpenAPS: Nightscout and the original oref0-autotune. No DIY system is supported by Glooko or has dosing data in Dexcom Clarity.",
+  "care_setting": "Routine endocrinology and diabetes-educator visits (in person and telehealth); asynchronous review between visits and remote patient monitoring (TIDE-style triage); pediatric diabetes clinics; primary care supply-refill visits; clinic population-health and quality work.",
+  "trigger_moment": "Setting up a clinic share at the first visit after starting to loop. Each pre-visit data pull. Weekly or monthly population triage, where DIY patients drop out of view. Settings changes between visits, including autotune runs. Switching DIY systems (Loop to Trio) or moving from DIY to commercial (for example to Omnipod 5 on Glooko), which changes the platform the clinic must use.",
+  "key_sources": [
+    {
+      "title": "Ferstad JO, Vallon JJ, ... Prahalad P, Maahs DM, Johari R, Scheinker D. Population-level management of type 1 diabetes via continuous glucose monitoring and algorithm-enabled patient prioritization (medRxiv preprint May 2021; published in Pediatric Diabetes 2021)",
+      "url": "https://www.medrxiv.org/content/10.1101/2021.05.04.21256647v1",
+      "year": "2021",
+      "country": "USA (Stanford pediatric T1D clinic)",
+      "sample_size": "53-225 enrolled patients per study period; 58 patients received remote review; CDE time self-reported",
+      "relevance": "The only measured clinician review times found. Patients needed at least 75% CGM wear to be eligible. Flags: TIR <65%, time <54 mg/dL >1%, time <70 mg/dL >4%; patients ranked by number of flags, then by lowest TIR. CDEs spent about 2 minutes reviewing a flagged patient's CGM in Dexcom Clarity, which fell to about 1 minute once the dashboard showed the AGP inline, plus about 3 minutes per contact (EHR message and chart). Time per eligible patient per week fell from 3.2 to 1.3 minutes (60%), an estimated 147% capacity gain. Patients who got remote review had +8.8 percentage points TIR."
+    },
+    {
+      "title": "Scheinker D, et al. Algorithm-enabled, personalized glucose management for type 1 diabetes at the population scale: prospective evaluation in clinical practice. JMIR Diabetes 2022;7(2):e27284",
+      "url": "https://diabetes.jmir.org/2022/2/e27284",
+      "year": "2022",
+      "country": "USA",
+      "sample_size": "Simulation on 8 external CGM datasets plus the Stanford clinic data",
+      "relevance": "Shows TIDE triage keeps the workload manageable (fewer than 0.25 personalized TIR flags per patient per review period). It is the basis for both Tidepool's and Glooko's 2025-2026 triage dashboards. Read via abstract and search excerpts."
+    },
+    {
+      "title": "Tidepool: TIDE product page and support article 'Navigating the TIDE Dashboard'",
+      "url": "https://www.tidepool.org/providers/tide",
+      "year": "accessed Nov 2026",
+      "country": "USA",
+      "sample_size": "n/a (vendor)",
+      "relevance": "TIDE is the proactive-care and remote-monitoring layer of Tidepool+, developed with Stanford. Marketing claims: 86% reduction in provider screen time and 147% more clinic capacity. The support article (https://support.tidepool.org/hc/en-us/articles/43685251819796-Navigating-the-TIDE-Dashboard, HTTP 403, read via search excerpts) lists priority-ordered categories: time <54 mg/dL >1%, time <70 mg/dL >4%, high-glucose categories, large drop in TIR (>15%), low CGM wear (<70%) and meeting targets. Each patient appears only in their highest category. Filters cover tags, data recency and days to summarize. No mention of DIY systems."
+    },
+    {
+      "title": "Tidepool+ clinic plans page",
+      "url": "https://www.tidepool.org/providers/tidepoolplus/plans",
+      "year": "accessed Nov 2026",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "Base: no cost for up to 250 patient accounts, with interactive views and PDF reports including AGP. Professional (custom pricing) adds the Population Health Dashboard and patient tags, upload reminders, EHR integration and SSO. So the triage features clinics rely on are paid."
+    },
+    {
+      "title": "Tidepool press release: Tidepool adds Ambulatory Glucose Profile (AGP) to the Tidepool Data Platform (26 April 2023); Tidepool+ Direct Connect in Epic Showroom (27 May 2026)",
+      "url": "https://www.businesswire.com/news/home/20230426005471/en",
+      "year": "2023; 2026",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "The captūrAGP report from the International Diabetes Center is in Tidepool PDFs, printable from the patient list (14 or 30 days of CGM). The 2026 Epic integration (https://businesswire.com/news/home/20260527780274/en) lets clinicians open Tidepool+ from inside Epic."
+    },
+    {
+      "title": "Tidepool open-source visualization code (tidepool-org/viz): device.js and constants.js; PR #603 'nightscout trio support' (merged 7 May 2026)",
+      "url": "https://github.com/tidepool-org/viz",
+      "year": "2025-2026",
+      "country": "USA (open source)",
+      "sample_size": "n/a (source code)",
+      "relevance": "Tidepool treats DIY Loop, Tidepool Loop and twiist as Loop devices with automated basal and automated bolus. It labels DIY Loop automated delivery 'Automation', overrides 'Preset', and computes 'Time In Automation' (automated basal duration over total basal duration). Trio became a recognized device (bundle id org.nightscout.Trio) in a March 2026 commit. Evidence that Tidepool is the one clinic platform actively modelling DIY data."
+    },
+    {
+      "title": "LoopTips: Tidepool (community documentation)",
+      "url": "https://loopkit.github.io/looptips/data/tidepool",
+      "year": "living document, accessed Nov 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "What a clinician sees for Loop in Tidepool: automatic vs manual temp basals and boluses on hover, recommended vs given bolus, carbs and ICR, settings history after March 2023 (Loop 3+ Tidepool service). CGM upload is off by default. Desktop Chrome or Edge only. The clinic is shared by email or clinic account. Overrides are not listed as viewable."
+    },
+    {
+      "title": "Glooko for Clinics, Instructions for Use (IFU-0054-en-CA 09, issue date 2026-01, Web 25.4)",
+      "url": "https://docs.glooko.com/Glooko+for+Clinics/Web+25.4/ENGLISH-CA+-+IFU-0054-en-CA+09+Glooko+for+Clinics.pdf",
+      "year": "2026",
+      "country": "Canada edition (Glooko international)",
+      "sample_size": "n/a (vendor IFU)",
+      "relevance": "Clinic Dashboard: top-10 CGM risk list with time worn, average BG, TIR, TIR trend, TBR <3.9 and <3.0 mmol/L, TAR >10.0 and >13.9 mmol/L. Priority categories: >1% <3.0; >4% <3.9; >5% very high (printed as '3.9', apparently meaning 13.9); TIR drop >15% vs previous 2 weeks; >25% >10.0; TIR <65%; CGM worn <50%. Population Tracker has default flags (Hypo Risk, Hyper Risk, Dropout Risk, Marked High, Marked Low) and custom cohort flags updated daily. Appendix lists AID 'System Details' only for Basal-IQ, Control-IQ, Omnipod 5 (cloud, about 1-hour delay) and CamAPS FX. No DIY system."
+    },
+    {
+      "title": "Glooko blog: The future of diabetes management - Glooko's new clinic dashboard streamlines population health (29 Sep 2025); Glooko support: Population Tracker default flags",
+      "url": "https://glooko.com/new-glooko-diabetes-population-health-dashboard/",
+      "year": "2025",
+      "country": "USA / international",
+      "sample_size": "n/a",
+      "relevance": "The dashboard is 'based on TIDE metrics' and ranks patients by clinical risk, with sections for population metrics, CGM risk stratification and engagement (sync method over 90 days). The support article (https://support.glooko.com/hc/en-us/articles/1500004782341, HTTP 403, read via search excerpt) describes default flags such as Marked Low (a reading <54 mg/dL in the past 7 days) and Hypo Rate (default 10% of readings <70 mg/dL over 14 days). [uncertain] Thresholds read from a search excerpt only."
+    },
+    {
+      "title": "Dexcom Clarity User Guide for Clinics (LBL014292 Rev 032, 2025/11)",
+      "url": "https://productstore.clarity.dexcom.eu/Documentation/en/Dexcom_Clarity_User_Guide_Clinic.pdf",
+      "year": "2025",
+      "country": "EU edition",
+      "sample_size": "n/a (vendor manual)",
+      "relevance": "Patient list: search, or sort by name, DOB, patient ID or 'GMI % (14 days)', 10 patients per page. No risk flags. Overview report: average glucose, GMI, SD, CV, time in ranges (70-180, >250, <54), sensor usage (days with data, time active), insulin only from logged events or Dexcom-compatible connected insulin devices, fasting and post-meal, up to four patterns and a Best Day. The licensed IDC AGP report. Patterns, Overlay, Daily and Compare views. CSV export. Dexcom's US provider site says the printed one-page Overview contains what is needed to bill CPT 95251."
+    },
+    {
+      "title": "Ekhlaspour L, Tabatabai I, Buckingham B. A Review of Continuous Glucose Monitoring Data Interpretation in the Age of Automated Insulin Delivery. J Diabetes Sci Technol 2019;13(4):645-663",
+      "url": "https://escholarship.org/uc/item/3nf7970h",
+      "year": "2019",
+      "country": "USA (Stanford)",
+      "sample_size": "Narrative review",
+      "relevance": "States that AID has no standard report format: each system's reports differ. Gives a stepwise review: report length (14 days), sensor use, TIR/TBR, mean glucose, CV, then AID-specific items (time in closed loop, goal >80%; reasons for exits; automated vs preset basal; suspensions; correction boluses; set-point use). Then asks whether problems are meal- or basal-related and modifiable. Notes Glooko and Diasend did not support AID then, and that clinicians should ask DIY patients to share Nightscout (Day to day, Daily stats, Percentile, Treatments) at visits."
+    },
+    {
+      "title": "PANTHER Program tool for Omnipod 5 (created with ADCES danatech support; file dated Oct 2024-Feb 2025)",
+      "url": "https://www.omnipod.com/sites/default/files/omnipod-5_panthertool_mgdl_qa-en.pdf",
+      "year": "2024-2025",
+      "country": "USA",
+      "sample_size": "n/a (clinical worksheet)",
+      "relevance": "A concrete record of how clinicians are taught to review AID data. Settings: Glooko reports, 2 weeks, 70-180 range. Step 1 Big Picture: CGM active ≥90%, Automated Mode ≥90%, Automated:Limited ≤5%, ≥3 diet entries/day, then TIR >70%, TBR <4%, TAR <25% and AGP patterns; fix lows first if TBR >4%. Step 2 Small Picture: week view for reasons. Step 3 Plan: target glucose, I:C, correction factor. Advises not to overthink automated basal delivery. No equivalent worksheet was found for any DIY system."
+    },
+    {
+      "title": "Healio (10 Sep 2026): Q&A - What you need to know about automated insulin delivery algorithms (Erin Henry, FNP, BC-ADM, ADCES26)",
+      "url": "https://www.healio.com/news/endocrinology/20260910/qa-what-you-need-to-know-about-automated-insulin-delivery-algorithms",
+      "year": "2026",
+      "country": "USA",
+      "sample_size": "Expert interview",
+      "relevance": "Calls time in automation 'the most helpful data' (it appears on the AGP report). Then reviews total daily dose and the basal/bolus split, plus at least a week of daily reports. Review cadence: every 3 months if doing well, 4-6 weeks if not, weekly in pregnancy. Says clinicians must now understand several algorithms. No mention of DIY systems."
+    },
+    {
+      "title": "HealthPartners Institute / International Diabetes Center: CGM-Guided Glucose Management (clinical workflow)",
+      "url": "https://www.healthpartners.com/institute/wp-content/uploads/2025/05/CGM-Guided-Glucose-Management.pdf",
+      "year": "2025",
+      "country": "USA",
+      "sample_size": "n/a (clinical guide)",
+      "relevance": "Three-step AGP review: (1) TIR >70% and TBR <4%; (2) the AGP curve to see where action is needed; (3) daily profiles for specific days. Read via search excerpt."
+    },
+    {
+      "title": "NHS Tayside Paediatrics: Pump data interpretation using Tidepool (last reviewed 05/09/2025)",
+      "url": "https://rightdecisions.scot.nhs.uk/nhs-tayside-paediatrics-pathways/paediatric-diabetes/pump-data-interpretation-using-tidepool",
+      "year": "2025",
+      "country": "UK (Scotland)",
+      "sample_size": "n/a (clinic pathway)",
+      "relevance": "A clinic's actual Tidepool review sequence: data sufficiency, boluses/day (≥7), sets, suspends, TDD with a basal 30-40% / bolus 60-70% heuristic, averages and TIR/TBR, GMI, Trends (median and percentiles), CV, Daily view, then Device settings. Shows the pump heuristics a clinician would apply that do not hold under Loop's temp basals and automatic boluses. No mention of closed loop or DIY."
+    },
+    {
+      "title": "Battelino T, et al. Clinical Targets for Continuous Glucose Monitoring Data Interpretation: Recommendations From the International Consensus on Time in Range. Diabetes Care 2019;42(8):1593-1603",
+      "url": "https://doi.org/10.2337/dci19-0028",
+      "year": "2019",
+      "country": "International",
+      "sample_size": "Consensus panel",
+      "relevance": "The targets every clinic tool is built on (TIR >70%, TBR <4%, <54 mg/dL <1%, TAR <25%, CV ≤36%, 14 days with ≥70% data). Recommends a standard report such as the AGP."
+    },
+    {
+      "title": "Kompala T, Wong JC, Neinstein AB. Diabetes specialists value CGM despite challenges in prescribing and data review process. J Diabetes Sci Technol 2022/2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10563522",
+      "year": "2022 (survey fielded 2020)",
+      "country": "USA",
+      "sample_size": "182 clinicians (70.6% endocrinologists)",
+      "relevance": "97.7% review CGM at every visit; 45% have enough time; most rely on staff downloads; 14.1% review between visits without a prompt. This is the workflow DIY data have to fit into."
+    },
+    {
+      "title": "Healio (2017): Diabetes data hold hidden clues, but time, costs complicate clinic downloads; Wong JC, et al. Pilot study of Tidepool in a multidisciplinary pediatric setting. Diabetes Technol Ther 2018;20(12)",
+      "url": "https://escholarship.org/uc/item/1fp8m9rt",
+      "year": "2017; 2018",
+      "country": "USA (UCSF)",
+      "sample_size": "Interview; 15 HCPs over 6 months",
+      "relevance": "One clinician estimated 10-15 minutes of a 30-minute visit went on downloads (https://cm.healio.com/news/endocrinology/20170911/diabetes-data-hold-hidden-clues-but-time-costs-complicate-clinic-downloads). With Tidepool, upload time and visit length did not change, but HCPs referred to device data more often (2.8 to 6.1 times per visit)."
+    },
+    {
+      "title": "Mullen DM, Bergenstal RM, et al. AGP Reports for Glucose and Insulin Devices Qualitative Study: What Patients and Clinicians Want. Sci Diabetes Self Manag Care 2025;51(3):333-344",
+      "url": "https://scholarlycommons.henryford.com/endocrinology_articles/179",
+      "year": "2025",
+      "country": "USA",
+      "sample_size": "139 survey + 17 interview participants",
+      "relevance": "Clinicians prefer a standardized one-page report. Adding insulin data reduced correct interpretation (only 38% read a combined CGM+insulin AGP accurately). A caution for how any Loop insulin page is designed."
+    },
+    {
+      "title": "Nightscout documentation for clinicians (home and reports) and cgm-remote-monitor source (report plugins; v15.0.9, 21 Oct 2026)",
+      "url": "https://nightscout.readthedocs.io/en/latest/clinicians/reports.html",
+      "year": "living document; code accessed Nov 2026",
+      "country": "International (open source)",
+      "sample_size": "n/a",
+      "relevance": "Clinicians open a read-only tokened URL per patient, and hospital IT may block domains. Reports: Day to day, Daily stats, Distribution, Hourly stats, Percentile chart, Week to week, Profiles (one visible IC/ISF per day), Treatments, and Loopalyzer, a Loop performance report capped at two weeks with a meal time-shift (https://github.com/nightscout/cgm-remote-monitor/tree/master/lib/report_plugins). No clinic account, patient list or standard AGP."
+    },
+    {
+      "title": "Nightscout Reporter (zreptil/nightscout-reporter-angular) and T1Pal support article on Nightscout reporting",
+      "url": "https://github.com/zreptil/nightscout-reporter-angular",
+      "year": "repository active Oct 2026",
+      "country": "Germany-origin, international",
+      "sample_size": "n/a (14 GitHub stars; single maintainer)",
+      "relevance": "Generates PDFs 'for diabetes doctors' from Nightscout. Form modules in the code: analysis, basal rate, CGP (comprehensive glucose pentagon), daily analysis/glucose/graphic/hours/log/profile/statistics, glucose distribution, percentile, profile, TDD and weekly graphic. Needs CORS enabled on the Nightscout site. T1Pal (https://t1pal.freshdesk.com/support/solutions/articles/67000745305-nightscout-reporting) says the glucose pentagon 'really gets their attention' with clinicians."
+    },
+    {
+      "title": "LoopFollow documentation and repository: v8.0.0 release notes (2 Nov 2026); Statistics PR #516 (March 2026); Endocrinologist Visit Report PR #671 (opened 5 Jun, closed unmerged 28 Aug 2026)",
+      "url": "https://github.com/loopandlearn/LoopFollow/pull/671",
+      "year": "2026",
+      "country": "International (open source)",
+      "sample_size": "n/a (154 GitHub stars)",
+      "relevance": "A caregiver monitoring app for Loop and Trio (Nightscout or Dexcom Share) with alarms, remote commands (bolus, carbs, overrides, Loop profile switching) and an in-app Statistics view: AGP, average glucose, SD, TDD, programmed vs actual basal, positive/negative basal. The PR argued Clarity and Tidepool 'don't have visibility into Loop/Trio-specific data'. A maintainer asked for smaller, validated steps because an 'official report from the OS-AID' must be correct. Docs: https://loopfollowdocs.org/"
+    },
+    {
+      "title": "OpenAPS Autotune documentation; AutotuneWeb repository (MarkMpn/AutotuneWeb, discontinued and archived)",
+      "url": "https://github.com/MarkMpn/AutotuneWeb",
+      "year": "2017-2026",
+      "country": "International (open source)",
+      "sample_size": "n/a",
+      "relevance": "Autotune suggests basal, ISF and CR from Nightscout data, moving 20% (basal) or 10% (ISF/CR) toward the target per run, within autosens caps. It assumes one ISF and one CR and needs complete carb logging (https://openaps.readthedocs.io/en/latest/docs/Customize-Iterate/autotune.html). AutotuneWeb was the easiest route for non-OpenAPS users. Its README now says 'Discontinued'; the repo is archived (last push June 2026), 2025 issues report stuck jobs, and the site returned HTTP 503 on 13 Nov 2026."
+    },
+    {
+      "title": "AndroidAPS documentation: Autotune plugin; 'For Clinicians - A General Introduction and Guide to AAPS'",
+      "url": "https://androidaps.readthedocs.io/en/latest/AdvancedOptions/Autotune.html",
+      "year": "living documents, accessed Nov 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Autotune has been in AAPS since 3.4 but is hidden unless an 'enable_autotune' file is created. It averages multiple IC/ISF values and calls itself 'just an help'. The clinician guide (https://androidapsdocs.readthedocs.io/en/latest/Resources/clinician-guide-to-AndroidAPS.html) calls reviewing Autotune results 'the natural link to the clinician'. No tool delivers them to one."
+    },
+    {
+      "title": "Trio documentation: migration from Trio 0.2.x ('Autotune Removed'); Trio issue #501 (May 2025)",
+      "url": "https://github.com/nightscout/trio-docs/blob/dev/docs/configuration/migration/trio-02x-migration.md",
+      "year": "2025",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Autotune was removed because it 'has not performed well' with Dynamic ISF and multiple ISF/CR schedules. A maintainer confirmed this when closing the request for an autotune covering Preferences (https://github.com/nightscout/Trio/issues/501). Trio users have no in-app tuning aid to bring to a clinician."
+    },
+    {
+      "title": "ADCES danatech: Optimizing Open-Source AID Systems - Translating Data into Decisions",
+      "url": "https://www.adces.org/education/danatech/insulin-pumps/diy-looping-open-source/translating-data-into-decisions-for-open-source-aid-systems",
+      "year": "accessed Nov 2026 (HTTP 403; read via search excerpts)",
+      "country": "USA",
+      "sample_size": "n/a (professional education)",
+      "relevance": "Professional-body guidance to use Nightscout ('richest source'), Tidepool (FDA-registered, clinic portal) and in-app reports. A three-step approach starting with patterns. Notes the systems are not FDA-approved and clinicians do not prescribe them."
+    },
+    {
+      "title": "Braune K, et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": "2021/2022",
+      "country": "International",
+      "sample_size": "Consensus statement (48 authors)",
+      "relevance": "Advises clinicians to familiarize themselves with Nightscout and Tidepool, review data, and document discussions. Notes data-protection barriers to patient-chosen platforms."
+    },
+    {
+      "title": "Sequel twiist: Tidepool Data Platform page; Tidepool Loop device partners",
+      "url": "https://www.twiist.com/tidepool-data-platform",
+      "year": "accessed Nov 2026",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "The FDA-cleared Loop-based system sends data to Tidepool+ automatically at no added cost to clinics. Tidepool says every Loop device partnership includes direct Tidepool+ integration (https://www.tidepool.org/providers/loop-device-partners). The regulated path gets the clinic plumbing that DIY Loop must set up by hand."
+    },
+    {
+      "title": "Trio pull request #975: Add therapy settings upload to Tidepool",
+      "url": "https://github.com/nightscout/Trio/pull/975",
+      "year": "2026 (merged 14 May 2026)",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Override presets and active overrides are uploaded and present in Tidepool's API, but the PR says Tidepool's web UI does not display them."
+    },
+    {
+      "title": "DreaMed Advisor Pro FDA De Novo authorization (June 2018) and Glooko integration agreement (2016)",
+      "url": "https://www.fiercebiotech.com/medtech/fda-approves-dreamed-s-diabetes-software-for-personalized-insulin-recommendations",
+      "year": "2018",
+      "country": "USA / Israel",
+      "sample_size": "n/a",
+      "relevance": "The regulated equivalent of autotune for clinicians: it recommends basal, CR and CF from CGM and pump data for HCP review, inside Glooko. It covers commercial pumps only, and its FDA summary notes it detects AID closed-loop mode. Not usable for DIY systems."
+    }
+  ],
+  "evidence_strength": "Mostly vendor documentation, product source code and community docs. These are strong for describing what each tool does as of November 2026. On review workflow there are a few peer-reviewed studies of general CGM review (Ferstad 2021 and Scheinker 2022 on Stanford TIDE; Wong 2018; Kompala 2022; Mullen 2025) and clinician guidance (Ekhlaspour 2019; the PANTHER tool; Battelino 2019; ADCES). No peer-reviewed study was found on how clinicians review DIY AID data inside these platforms.",
+  "prevalence_or_magnitude": "Review time: in the Stanford pediatric clinic (2021), CDE review of a flagged patient's CGM in Clarity took about 2 minutes, about 1 minute once the AGP was embedded in the triage dashboard, plus about 3 minutes per patient contacted. Time per eligible patient per week fell from 3.2 to 1.3 minutes (60% less, an estimated 147% capacity gain). Tidepool markets TIDE as an 86% cut in provider screen time. In-visit downloads were estimated at 10-15 minutes of a 30-minute visit (one UCSF clinician, 2017). US survey (n=182, fielded 2020): 97.7% review CGM at every visit, 45% have enough time, 14.1% review between visits without a prompt. Platform coverage: Glooko's January 2026 clinic instructions name four AID systems with dedicated displays (Basal-IQ, Control-IQ, Omnipod 5, CamAPS FX) and no DIY system. Tidepool supports 85+ devices and is the only clinic platform whose code explicitly handles DIY Loop and Trio. Clarity's clinic patient list sorts by 14-day GMI and has no risk flags. Triage thresholds have converged: Tidepool and Glooko both use Stanford TIDE-style categories (TBR <54 >1%, TBR <70 >4%, TIR drop >15%, TIR <65%, low wear <50-70%). Autotune: of the five DIY systems, only AAPS (hidden since 3.4), iAPS and OpenAPS still ship it. Loop never had it, Trio removed it in 2025, and AutotuneWeb, the web route for everyone else, was discontinued in 2026. Community tooling is small: Nightscout Reporter has one maintainer (14 GitHub stars); LoopFollow has 154 stars and two clinic-report PRs closed unmerged in 2026. [uncertain] No source gives the share of DIY users who share via each platform, or the share of clinics on Tidepool+ vs Glooko vs Clarity.",
+  "data_quality_caveats": "Tool descriptions come from vendor documentation and source code, which show what a product can do, not how clinics use it. Review times come from one academic pediatric clinic's self-reported CDE estimates and one clinician's 2017 anecdote. Tidepool's 86% figure is marketing that cites that work. The general clinician survey predates broad AID use. Several Tidepool, Glooko and ADCES pages returned HTTP 403 and were read only through search excerpts. The Tidepool TIDE article words its high-glucose categories inconsistently, and the Glooko IFU prints '3.9 mmol/L' where 13.9 appears meant. Clarity details come from the EU clinic guide (Rev 032, Nov 2025); the US portal may differ. Open-source tool status (LoopFollow, Trio, AutotuneWeb) changes month to month.",
+  "clinician_perspective": "How clinicians actually review, day to day. (1) Triage comes before review. Population tools decide who gets looked at. Stanford's TIDE (2021) required ≥75% CGM wear, flagged TIR <65%, time <54 mg/dL >1% and time <70 mg/dL >4%, and ranked patients by number of flags, then by lowest TIR. Tidepool's TIDE dashboard and Glooko's Clinic Dashboard (September 2025, 'modelled after Stanford's TIDE') now use near-identical priority-ordered categories: very low >1%, low >4%, very high >5%, TIR drop >15% vs the prior 2 weeks, high >25%, TIR <65% (Glooko), and low CGM wear (<50% in Glooko, <70% in Tidepool). [uncertain] The exact Tidepool category order and high-glucose wording could not be confirmed. Glooko's Population Tracker adds default flags (Dropout Risk, Hypo, Hyper, Marked High, Marked Low) and custom cohort flags such as 'type 1 patients with <40% TIR'. Clarity's clinic list only searches and sorts (name, DOB, ID, 14-day GMI), so clinics that live in Clarity triage by GMI or by appointment. (2) What they look at first. Data sufficiency (14 days, sensor wear ≥70%), then hypoglycemia (TBR <4%, <54 mg/dL <1%), then TIR >70%, mean glucose or GMI, and CV ≤36% (Battelino 2019). HealthPartners/IDC teaches three steps: TIR and TBR, then the AGP curve to find where to act, then daily profiles. The PANTHER tool for Omnipod 5 starts with system use (CGM active ≥90%, Automated Mode ≥90%, Automated:Limited ≤5%, ≥3 meal boluses a day). Then TIR/TBR/TAR and the AGP. If TBR >4%, fix lows first. Step 2 uses the Week View to find reasons; Step 3 changes target, I:C or correction factor. Ekhlaspour 2019 adds AID-specific checks after the AGP: time in closed loop (goal >80%), reasons for exits, automated vs preset basal, suspensions, correction boluses and set-point use. An ADCES 2026 speaker calls time in automation 'the most helpful data', then looks at TDD and the basal/bolus split, with at least a week of daily reports. (3) Layouts they rely on: the one-page AGP (IDC captūrAGP in Tidepool since April 2023, licensed AGP in Clarity); Clarity's one-page Overview, which Dexcom says contains what is needed to bill CPT 95251; Glooko's CGM Summary, Week View and Devices; Tidepool's Basics, Daily, Trends and Device settings. (4) How long: about 1-2 minutes per patient for asynchronous CGM review, plus about 3 minutes to message and chart. Cadence: every 3 months if stable, 4-6 weeks if not, weekly in pregnancy. What this means for DIY data. Ekhlaspour notes there is no standard AID report and each system's report differs, and that Nightscout 'provides multiple excellent reports' but must be shown by the patient. ADCES calls Nightscout the richest DIY source and Tidepool the clinic-portal option. Heuristics built for pumps mislead under Loop: Tayside's basal 30-40% / bolus 60-70% rule assumes the patient's own boluses, and Mullen 2025 found only 38% read a combined CGM+insulin AGP correctly. PANTHER's advice to 'avoid overthinking the automated basal delivery' fits Loop too. But no PANTHER-style worksheet exists for Loop, Trio or AAPS, and clinicians must learn several vocabularies: Loop presets/overrides, Trio/AAPS temp targets and SMB, max basal, suspend threshold.",
+  "effect_on_relationship": "When a Loop user's data lands in the clinic's own routine (CGM in Clarity, or Tidepool with CGM upload on), the visit looks like any AID visit: the clinician reads the AGP and TIR. Community reports describe endos pulling up their own Clarity report and reacting well. When it doesn't, the clinician cannot use the 1-2 minute triage habit. Review becomes an ad hoc tour of a patient-hosted Nightscout site, screenshots or printouts. The clinician depends on the patient to explain what the algorithm did, and the conversation narrows to A1C, lows and supply prescriptions. Population tools widen the gap between visits. Commercial-AID patients on Glooko or Tidepool+ are flagged and contacted when TIR drops or lows rise (the Stanford model contacted flagged patients weekly). A DIY patient who shares only Nightscout never appears on a triage list, so between-visit outreach and remote-monitoring workflows skip them. [uncertain] This is inference from tool behaviour; no study measured it. In every tool the patient starts the share (Clarity share code, Tidepool share or invite, Glooko ProConnect code, Nightscout token). That keeps the patient in control but leaves the clinic's view partial and dependent on the patient's set-up. Settings tuned with peers or autotune happen outside any shared record, so the clinician sees outcomes without knowing which settings produced them, and may hesitate to advise on settings they did not see change. The counter-example is BCDiabetes: the relationship improves when the clinic adopts the patient's platform (clinic-hosted Nightscout, short virtual fine-tuning visits) instead of asking the patient to fit the clinic's portal.",
+  "decision_ownership": "Data access: in every platform the patient decides (Clarity share code, Tidepool share or clinic code, Glooko ProConnect, Nightscout token) and can revoke at will. The clinic decides which platform it will open, and many accept only their existing portal. Settings: with DIY, the user changes settings in the app, often on peer advice. Autotune output goes to the user, never to a clinician. AAPS docs call reviewing autotune results 'the natural link to the clinician', but no tool routes them there. Commercial decision aids (PANTHER worksheets, DreaMed Advisor Pro in Glooko) give the clinician the settings-recommendation role, but only for commercial pumps. Liability: open-source projects disclaim responsibility ('use at your own risk'). Tidepool+ offers clinics a BAA. The 2022 consensus advises clinicians to document discussions, but no tool records who decided a change. [uncertain] No source says whether a clinician's liability differs when reviewing DIY data in Tidepool vs on a patient's Nightscout site.",
+  "disclosure_risk": "Moderate. Clarity and Glooko show only CGM (or nothing) for DIY users, so a user can share CGM through the clinic's usual portal without revealing that they loop. Disclosure happens only if they also share Nightscout or Tidepool, which expose settings and every algorithm action. [uncertain] This is inferred from how the tools behave; no study measured whether users pick a CGM-only share to avoid disclosure.",
+  "regulatory_status_dependency": "Strong. FDA-cleared Loop-based systems are first-class in clinic tools. Tidepool says every Loop device partnership includes direct Tidepool+ integration, and Sequel's twiist sends data to Tidepool+ automatically at no added cost; since May 2026 that also reaches Epic through Tidepool+ Direct Connect. Commercial AID gets Glooko 'System Details' cards (Control-IQ, Omnipod 5, CamAPS FX), PANTHER review worksheets and, for pumps, DreaMed Advisor Pro. DIY Loop shares Tidepool's data model (the code treats DIY Loop, Tidepool Loop and twiist alike as Loop devices) but needs patient set-up and has no clinical review aids. [uncertain] Whether twiist data also reach Glooko is unconfirmed.",
+  "workarounds": "Users: turn on Loop's Tidepool service and CGM upload, then share with the clinic's Tidepool+ code. Keep the Dexcom app uploading so CGM still reaches Clarity. Print Nightscout reports to PDF, or generate Nightscout Reporter PDFs (analysis, percentile, daily graphics, basal rate, profile, TDD, glucose pentagon). Screenshot LoopFollow Statistics (AGP, TDD, programmed vs actual basal). Bring printed Clarity AGP alongside Tidepool printouts or handwritten insulin logs, and state the target range used. For tuning: AAPS users enable the hidden Autotune plugin; iAPS and OpenAPS users run built-in autotune; Loop and Trio users rely on peers, Loopalyzer or their own analysis now that AutotuneWeb is gone. Clinicians: open a free Tidepool+ Base workspace (up to 250 patients) as the intake point for DIY patients. Triage DIY patients by their Clarity CGM and open Tidepool or Nightscout only at the visit. Use commercial-AID checklists (PANTHER, Ekhlaspour) as a mental template. Ask IT to allow Nightscout domains. In the most developed model, BCDiabetes hosts Nightscout for its clients.",
+  "existing_tools": "Tidepool / Tidepool+ clinic workspace: free for patients. The Base plan is free up to 250 patients, with interactive views and PDF reports including the AGP (added April 2023, printable from the patient list, 14 or 30 days). Professional adds the Population Health Dashboard, tags, upload reminders, EHR integration (Epic Direct Connect, 2026) and SSO; the TIDE triage dashboard sits on Tidepool+. Loop 3.2+ uploads dosing, carbs and settings history (from March 2023). Hovering shows automatic vs manual temp basals and boluses and the recommended bolus. Tidepool's code labels DIY Loop automation 'Automation' and overrides 'Preset', and computes 'Time In Automation'. Trio was added as a recognized device in 2026. AAPS syncs with about a 3-hour delay. Glooko (including diasend): Population Tracker with default flags (Dropout Risk, Hypo, Hyper, Marked High, Marked Low) and custom cohort flags; a TIDE-style Clinic Dashboard (Web 25.2, September 2025); AID 'System Details' for Basal-IQ, Control-IQ, Omnipod 5 and CamAPS FX. PANTHER worksheets are built on Glooko reports, and DreaMed Advisor Pro is integrated for pump settings. No DIY support is documented. Dexcom Clarity clinic: patient shares by code; the patient list sorts by 14-day GMI. The one-page Overview has average glucose, GMI, SD, CV, TIR, sensor usage, insulin only from logged events or Dexcom-connected insulin devices, fasting and post-meal glucose (January 2025), up to four patterns and a Best Day. Clarity also has the AGP report, Patterns, Overlay, Daily, Compare and export. For Loop users it shows CGM only, and only while the Dexcom app is uploading. [uncertain] Users who feed Loop from Libre or xDrip-type sources have no Clarity data. Nightscout (v15.0.9, October 2026): patient-hosted, shared as a read-only token URL. Reports: Day to day, Daily stats, Distribution, Hourly stats, Percentile, Week to week, Profiles, Treatments, and Loopalyzer (Loop-specific, two weeks maximum). Nightscout Reporter (Angular rewrite, one maintainer, active October 2026): PDF forms for analysis, percentile, glucose pentagon (CGP), daily graphic, log, profile and statistics, basal rate, profile, TDD and weekly graphic. LoopFollow (v8.0.0, November 2026): a Loop and Trio caregiver app with alarms and remote commands. Since March 2026 it has a Statistics view (AGP, average glucose, SD, TDD, programmed vs actual basal). Its clinic PDF report PRs were closed unmerged. Autotune: OpenAPS oref0-autotune; AutotuneWeb (discontinued and archived in 2026); the AAPS Autotune plugin (hidden since 3.4); iAPS autotune; none in Loop; removed from Trio 0.5. Others: Apple Health; Gluroo (supports Omnipod 5 and DIY Loop); Perceptus Dash (legacy, built on the now-closed mLab) [uncertain]; LibreView, CareLink and Tandem Source cover commercial devices only.",
+  "existing_tool_coverage_gap": "(1) Triage fit. Glooko and Clarity, the portals many clinics live in, cannot put a DIY user's dosing data on their population lists. DIY users appear by CGM only (Clarity, if the Dexcom app uploads) or not at all (Glooko). Only Tidepool can triage them, and only if the user has set up CGM upload and shares with a clinic that pays for Tidepool+ population features. (2) No standard AID page. No tool gives DIY systems the AID block clinicians check after the AGP: time looping vs open loop, loop failures, automatic vs manual insulin, meal entries per day, override use, laid out like the AGP. Nightscout and Nightscout Reporter are non-standard and patient-controlled, and LoopFollow's AGP stays inside the app. (3) No change history across visits. Tidepool's settings history (March 2023 onward) shows what the settings were, not who changed them, why, or what autotune suggested. [uncertain] Tidepool's Devices view shows one midnight snapshot per day for twiist; this may also apply to DIY Loop. Nightscout's Profiles view shows one IC/ISF value for the whole day. (4) No tuning loop with the clinician. Autotune output goes only to the user, AutotuneWeb is gone, Loop and Trio have no autotune, and nothing records suggested vs adopted vs approved changes. (5) No DIY review aid. PANTHER-type worksheets exist for Omnipod 5 and other commercial AID, but none for Loop, Trio or AAPS, and there is no vocabulary map across systems. (6) No return channel. No tool lets the clinician send agreed settings or notes back to the patient or record the decision. (7) Trust. The community's own clinic report (LoopFollow, 2026) stalled because maintainers wanted validated numbers before calling it 'an official report from the OS-AID'.",
+  "data_artifacts_involved": "CGM series and sensor-wear %; the 14-day AGP with TIR/TBR/TAR, GMI and CV; temp-basal log (automatic vs manual) and scheduled vs delivered basal; automatic boluses/SMBs vs manual boluses with the recommended amount; carb entries and absorption times; override/preset and temp-target history; loop status (closed loop, open loop, failures); therapy-settings snapshot (basal, ISF, CR, correction range, suspend threshold, max basal and bolus, insulin model); settings change history; autotune reports; TDD; population triage flags.",
+  "unmet_need": "A layer that makes a DIY user's data behave like a commercial-AID patient's data inside the clinic's existing routine, plus the DIY-specific context clinicians lack. Concretely: (a) the patient appears on the clinic's triage list with the same TIDE-style flags as everyone else, without the clinic adopting a new portal; (b) a one-page, AGP-first summary a clinician can read in the 1-2 minutes they spend per patient, followed by an AID block like the ones commercial reports show (time looping, automatic vs manual insulin, meal entries per day, override use); (c) a 'since your last visit' log of settings changes, each tagged with its source (self, peer, autotune, clinic) and what happened to glucose afterwards; (d) a structured way for the clinician to propose or approve settings and for the patient to see what was agreed, replacing the autotune-to-user path that has largely disappeared. Nothing today does all four for Loop, Trio, iAPS and AAPS. Tidepool comes closest on data but lacks change provenance, DIY review aids and a return channel. Nightscout tools have the data but not the clinic workflow. Glooko and Clarity have the workflow but not the data.",
+  "implication_for_collaboration_tool": "1) Meet clinics where they triage. Compute the TIDE categories for DIY users (time <54 mg/dL >1%, <70 mg/dL >4%, very high >5%, TIR drop >15% vs the prior 2 weeks, TAR >25%, TIR <65%, wear <70%) and deliver them as a weekly digest or a PDF/FHIR document into the EHR. Integrate with Tidepool (read from it, or write to it) rather than compete, and never require another clinician login. 2) Page one is the standard AGP: 14 days, consensus ranges fixed at 70-180 mg/dL whatever the user's Loop targets, sensor wear shown first, TBR above TIR. Mirror the order of the Clarity Overview and captūrAGP so the review stays at 1-2 minutes. 3) Page two is an 'AID block' in commercial terms with a DIY mapping: % time closed loop vs open loop or failing; automatic vs manual insulin; meal entries per day and missed-bolus signals; TDD; scheduled vs delivered basal; hours of override, preset and temp-target use. Leave out or caveat the basal/bolus split (Mullen 2025; LoopFollow reviewers). 4) A 'since your last visit' section: settings diffs with date and source (self, peer, autotune, clinic), and TIR/TBR before and after each change. 5) A PANTHER-style worksheet for Loop, Trio and AAPS (Big Picture, then Reasons, then Plan) naming which setting to change (correction range, CR, ISF, max basal) in plain language, with one glossary across systems. 6) A suggest-and-approve loop: the patient attaches a tuning suggestion (autotune-style or LoopStack's own analysis) for the clinician to sign off; the clinician returns agreed changes and notes; both are kept as the record the consensus statement asks for. 7) Take in Nightscout, Tidepool and Apple Health so Trio, iAPS and AAPS are covered, and label each system correctly (Tidepool only began recognizing Trio separately in 2026). 8) Earn trust: publish how each statistic is calculated (as Tidepool annotates its stats) and check the numbers against Tidepool and Clarity, since LoopFollow maintainers would not merge an unvalidated report. 9) Support the cadence clinicians use: a pre-visit packet every 3 months, 4-6 weeks when control is poor, weekly in pregnancy.",
+  "severity_rank": "High: these tools decide whether a clinician can use their normal 1-2 minute triage and review routine on a DIY patient at all. Where they can't, the clinic's role shrinks to prescriptions and the patient drops out of between-visit outreach.",
+  "safety_criticality": "Medium. The harm is indirect. Hypoglycemia patterns in DIY users can go unflagged between visits because they are not on triage lists. Settings changed through peers or autotune without review can cause severe hypoglycemia or hyperglycemia and DKA. Pump heuristics such as the basal/bolus split can prompt wrong advice. Autotune's per-run caps (10-20%) limit the risk but do not remove it.",
+  "equity_impact": "Hit hardest: AAPS (Android) users, who have no LoopFollow, a 3-hour Tidepool lag, and mostly Nightscout-only sharing. Patients of clinics standardized on Glooko or Clarity (common in large health systems and, through diasend, in Europe), where DIY dosing is invisible. Patients of small or under-resourced clinics without paid Tidepool+ population features. Families who cannot pay for Nightscout hosting or manage the set-up. Older adults and patients managed in primary care, whose clinicians have no diabetes platform. [uncertain] Non-English speakers, since most DIY documentation and tools are in English.",
+  "uncertain": [
+    "key_sources",
+    "prevalence_or_magnitude",
+    "clinician_perspective",
+    "effect_on_relationship",
+    "decision_ownership",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "existing_tools",
+    "existing_tool_coverage_gap",
+    "equity_impact"
+  ]
+}

@@ -1,0 +1,174 @@
+.card {
+  background: var(--surface-0);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.kicker {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  font-weight: 600;
+  color: var(--accent-info-ink);
+}
+
+.today {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.empty {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+.summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.total {
+  display: flex;
+  align-items: baseline;
+  gap: 5px;
+}
+
+.total .num {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 680;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+}
+
+.totalUnit {
+  font-size: var(--text-small);
+  color: var(--ink-500);
+  font-weight: 500;
+}
+
+.breakdown {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.legItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--text-small);
+  color: var(--ink-700);
+  font-variant-numeric: tabular-nums;
+}
+
+.legItem .num {
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex: 0 0 auto;
+}
+
+.dotBasal { background: var(--ink-300); }
+.dotBolus { background: var(--graph-insulin); }
+
+/* 24-column stacked bars: basal (grey, background) under bolus (orange, active). */
+.chart {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 2px;
+  align-items: end;
+  height: 88px;
+}
+
+.col {
+  min-width: 0;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.track {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: var(--surface-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.bolus {
+  width: 100%;
+  background: var(--graph-insulin);
+  border-radius: 3px 3px 0 0;
+  min-height: 0;
+}
+
+.basal {
+  width: 100%;
+  background: var(--ink-300);
+  min-height: 0;
+}
+
+/* A faint baseline mark for hours with no delivery, so the axis reads as
+   continuous rather than gapped. */
+.emptyMark {
+  width: 100%;
+  height: 2px;
+  background: var(--ink-200);
+  align-self: flex-end;
+}
+
+.axis {
+  position: relative;
+  height: 14px;
+}
+
+.axisTick {
+  position: absolute;
+  transform: translateX(-2px);
+  font-size: var(--text-label);
+  line-height: 1;
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.takeaway {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.takeaway b {
+  color: var(--ink-900);
+  font-weight: 600;
+}

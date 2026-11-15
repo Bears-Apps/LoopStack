@@ -1,0 +1,243 @@
+{
+  "item_name": "Meals, absorption and exercise",
+  "issue_summary": "Open-source AID automates basal and correction insulin but is still a hybrid system. The user still has to estimate carbs, choose how fast they will absorb, time the pre-bolus, cover fat and protein, remember to announce every meal and plan exercise ahead. Each system does this differently. Loop uses dynamic carb absorption with emoji absorption times (lollipop 30 min, taco 3 h, pizza 5 h, or custom), overrides that scale 'insulin needs' by a percentage, Pre-Meal and Workout presets, missed-meal notifications (since Loop 3.2, March 2023) and an optional Automatic Bolus. It has no extended bolus, so high-fat meals are covered with 'fake carbs' or long absorption times. The oref1 systems (OpenAPS, AAPS, Trio/iAPS) use SMB/UAM, a hard Max Meal Absorption Time cut-off, eCarbs or fat-protein conversion, temp targets and profile-switch percentages. AAPS and Trio can also run as a 'full closed loop' with no meal bolus. Most acute errors happen here: duplicate or wrongly timed carb entries, a past meal entered as 'now', fake carbs causing early lows, a carbs-on-board cliff at the absorption cut-off, insulin on board at the start of exercise, and remote carb plus bolus stacking. Even a clinic that runs Loop for its patients (BC Diabetes) calls meals the hardest part of the transition. Clinicians rarely see any of these decisions. Overrides and absorption choices live in the phone app, not the pump download. Professional exercise guidance (EASD/ISPAD position statement, published 2025) covers only commercial systems. Exercise accommodation is one of the reasons Loop users give for stopping. A newer development is that the published evidence now supports running without meal announcements (the CLOSE IT RCT). That shifts what clinicians should counsel on, from precise carb counting to meal regularity and carbohydrate quality, and few clinicians are prepared for it.",
+  "who_is_affected": "Adults and caregivers of children using any open-source AID, especially active people and athletes, people on low-carb, high-fat or high-protein diets, and children eating at school or whose carbs are entered remotely by parents. On the clinician side: diabetes educators (CDCES/DSN) and dietitians, who own carb-counting and exercise teaching (dietitians were 32.8% of a 204-person Canadian clinician survey), endocrinologists reviewing post-meal and exercise patterns, and pediatric teams and school nurses. Primary care is affected only indirectly, for example when prescribing a GLP-1 receptor agonist used to make no-announcement looping work.",
+  "system_specificity": "All systems, with different controls and vocabulary. Loop (iOS) and the FDA-cleared Tidepool Loop and twiist share the carb-entry plus absorption-time model and presets. Trio/iAPS (iOS), AAPS (Android) and OpenAPS share oref1 (SMB/UAM, max meal absorption time, temp targets, profile %, optional full closed loop). The same pattern needs a different fix depending on the system.",
+  "care_setting": "Routine endocrinology visits and educator or dietitian sessions (carb ratio, absorption and exercise plans). Pediatric clinics and schools (carb entry by staff or remote parents). Sports camps. Obstetric care (the consensus statement recommends override presets by trimester). ED visits after exercise-related or entry-error hypoglycaemia, which is plausible but poorly documented. Inpatient stays, where hospital meals and nil-by-mouth periods break the carb-entry workflow.",
+  "trigger_moment": "Starting open-source AID, when meals are the hardest adjustment. Starting a new sport, a camp or a tournament. Unexplained post-meal highs or lows that prompt a request to change the carb ratio or ISF. Hypoglycaemia after exercise or after a duplicate or remote carb entry. Choosing to stop meal announcements (switching to full closed loop or UAM) or adding a GLP-1 receptor agonist. Moving between systems (for example Loop to Trio), where the meal and exercise controls change. Pregnancy. Starting school.",
+  "key_sources": [
+    {
+      "title": "Braune K et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": "2022",
+      "country": "International (authors from DE, US, UK, DK, CZ, NL and others)",
+      "sample_size": "n/a (consensus statement)",
+      "relevance": "The only professional guidance with meal and exercise rules specific to open-source AID: long absorption (about 3 h) for large or high-fat meals, enter all carbs including hypo treatments, bolus before eating, unannounced-meal mode causes post-meal highs unless diet is strict. For prolonged aerobic exercise it advises a temp target of at least 126 mg/dL (7 mmol/L) plus about a 50% insulin reduction, started at least 60 min before. For anaerobic exercise, about a 20% increase. HCPs should review at least 2 weeks of data (for example in Nightscout), document discussions and refer if inexperienced."
+    },
+    {
+      "title": "Lal R, Braune K, Lewis DM. Fully closed-loop systems: can people with type 1 diabetes just do it? Insights from open-source systems. Diabetologia 2026;69(3):557-567",
+      "url": "https://doi.org/10.1007/s00125-025-06644-8",
+      "year": "2026",
+      "country": "International (US/DE)",
+      "sample_size": "Review (cites CLOSE IT n=73, Pancreas4ALL n=16, Cai et al. n=32, and real-world data)",
+      "relevance": "Open-source AID on the OpenAPS algorithm is the only real-world option for dosing without meal announcements. Configuring it needs expertise, and few experts exist. HCP training is mostly industry-funded, so open-source AID is under-covered. Exercise is hard to predict and still has to be announced, usually with temp targets. The system works better with smaller, less frequent, lower-carb meals. Clinicians are described as mainly supportive, and the authors call for ongoing clinician engagement."
+    },
+    {
+      "title": "CLOSE IT RCT (Wilkinson T, Nanayakkara N et al.): open-source AID (oref/AndroidAPS) as fully closed loop vs hybrid closed loop. Protocol in BMJ Open 2024; results reported 2025",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10882371/",
+      "year": "2024 (protocol); 2025 (results)",
+      "country": "Australia",
+      "sample_size": "73 randomised (36 FCL, 37 HCL), 12 weeks after a 12-week run-in",
+      "relevance": "Time in range 66% (SD 8) without meal announcement vs 69% (SD 13) with it. Adjusted difference -2.2 points (95% CI -6.2 to 1.7), meeting non-inferiority. Low-carb dieters were excluded. [uncertain] The full peer-reviewed results paper and its journal were not confirmed; figures come from Lal et al. 2026, the Baker Institute repository and a press release."
+    },
+    {
+      "title": "Psychosocial impacts of cessation of meal announcement in a randomised controlled trial of a fully closed-loop system (CLOSE IT sub-study, conference abstract)",
+      "url": "https://airdrive.eventsair.com/eventsairseasiaprod/production-tcc-public/7bbdbbde1bf2442eb1207883487eefab",
+      "year": "[uncertain] about 2025",
+      "country": "Australia",
+      "sample_size": "73 questionnaire respondents; 10 FCL-arm interviews",
+      "relevance": "System Usability Scale 85 (FCL) vs 75 (HCL), difference 9.1 (95% CI 2.8 to 15). INSPIRE scores favoured FCL on ease in social situations and HCL on perceptions of hyperglycaemia. Interviewees reported less cognitive burden and more meal flexibility, but also perceived weight gain and higher post-meal glucose. These are the concerns clinicians would raise."
+    },
+    {
+      "title": "Petruzelkova L et al. Excellent glycemic control maintained by open-source hybrid closed-loop AndroidAPS during and after sustained physical activity. Diabetes Technol Ther 2018;20(11):744-750",
+      "url": "https://doi.org/10.1089/dia.2018.0214",
+      "year": "2018",
+      "country": "Czech Republic",
+      "sample_size": "22 children aged 6-15 at an all-day alpine ski camp (AndroidAPS vs MiniMed SmartGuard)",
+      "relevance": "Time in range 63% in both arms. Time below 3.9 mmol/L was 5% (AAPS) vs 3% (SmartGuard), not significant. Mean glucose was lower with AAPS (7.2 vs 7.7 mmol/L). AAPS had more cannula failures and there was no severe hypoglycaemia. One of very few controlled exercise studies of open-source AID."
+    },
+    {
+      "title": "Muller-Korbsch M et al. Prolonged exercise with an open-source AID system: data of the Exercise Camp 2022 Austria. J Diabetes Sci Technol 2023;17(3):857-859",
+      "url": "https://doi.org/10.1177/19322968231161637",
+      "year": "2023",
+      "country": "Austria",
+      "sample_size": "[uncertain] not retrieved (short report; abstract unavailable)",
+      "relevance": "Camp-based data on prolonged exercise with open-source AID. The findings could not be verified."
+    },
+    {
+      "title": "Lum JW et al. A real-world prospective study of the safety and effectiveness of the Loop open source AID system. Diabetes Technol Ther 2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906",
+      "year": "2021",
+      "country": "USA",
+      "sample_size": "558 (ages 1-71)",
+      "relevance": "Meal bolus methods: bolus calculator 43%, carb counting 41%, experience 12%. 16% followed a low-carb diet. Severe hypoglycaemia 18.7 per 100 person-years, with causes not categorised (only 1 of 51 events attributed to Loop). No DKA. The study reported nothing on exercise or override use, and there was no standard way of using Loop and no clinician oversight. 91% of participants were White and 70% had household income of $100k or more."
+    },
+    {
+      "title": "Wong JJ et al. Discontinued use of the Loop insulin dosing system: a mixed-methods investigation. Diabetes Technol Ther 2022;24(4):241-248",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9057870",
+      "year": "2022",
+      "country": "USA",
+      "sample_size": "874 enrolled; 46 (5.3%) discontinued; 19 interviews",
+      "relevance": "People who stopped cited Loop not accommodating specific exercise regimens. One adult was afraid to bolus for meals because predictions showed steep falls, and one parent stopped partly from fear of the endocrinologist's disapproval. An adult wanted a mentor with credentials rather than a peer. Older age and not trusting Loop were associated with stopping."
+    },
+    {
+      "title": "Lewis DM, Hussain S. Practical guidance on open source and commercial automated insulin delivery systems. Diabetes Ther 2022;13(9):1683-1699",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9399331",
+      "year": "2022",
+      "country": "USA / UK",
+      "sample_size": "n/a (clinician guidance)",
+      "relevance": "Advises pre-bolusing or a lower 'eating soon' target, and setting temp targets ahead of activity with awareness of insulin on board. Warns that users unaware of insulin the system has already delivered may stack manual doses. Notes that early unannounced-meal approaches traded off time in range. Says HCPs have a responsibility to learn every option, should not limit choices to their own comfort level, and should reinforce behaviour change."
+    },
+    {
+      "title": "Moser O, Zaharieva DP et al. The use of automated insulin delivery around physical activity and exercise in type 1 diabetes: EASD/ISPAD position statement. Diabetologia 2025;68:255-280",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11732933/",
+      "year": "2025 (online Dec 2024)",
+      "country": "Europe / international",
+      "sample_size": "n/a (position statement)",
+      "relevance": "Gives system-specific exercise advice (higher target 1-2 h before, a 25-33% cut to the pre-exercise meal bolus, carbs if below 7.0 mmol/L) for commercial systems only (iLet, CamAPS FX, Diabeloop, Omnipod 5, 780G, Control-IQ). The main text has no open-source table. [uncertain] The supplementary material reportedly notes Tidepool Loop as the commercial version of Loop. Recommends discussing individual responses with the HCP team."
+    },
+    {
+      "title": "Laugesen C et al. Impact of missed and late meal boluses on glycemic outcomes in AID-treated children and adolescents. Diabetes Technol Ther 2024;26(12):897-907",
+      "url": "https://research.regionh.dk/da/publications/impact-of-missed-and-late-meal-boluses-on-glycemic-outcomes-in-au/",
+      "year": "2024",
+      "country": "Denmark / USA",
+      "sample_size": "189 youths aged 6-21 (Control-IQ and 780G; commercial, not open-source)",
+      "relevance": "Shows the size of the missed-bolus problem in AID generally: 2.2 missed or late meal boluses per day on average. Each extra one per day was associated with 9.7 points less time in range. Only 1.4% of the highest-missed-bolus quartile reached time in range above 70%, vs 74.8% of the lowest quartile. No equivalent open-source study was found."
+    },
+    {
+      "title": "LoopDocs: Carb entry; Loop release notes (3.0.0 Jan 2023, 3.2.0 Mar 2023); LoopDocs remote commands",
+      "url": "https://loopkit.github.io/loopdocs/operation/features/carbs/",
+      "year": "living documents, accessed 2026",
+      "country": "International (US-led community)",
+      "sample_size": "n/a",
+      "relevance": "Loop 3 absorption defaults are 30 min, 3 h and 5 h, with a confirmation warning above 99 g. Carbs are saved even if the bolus fails. Entering a past meal as 'now' leads to too much insulin. Loop 3.2.0 added missed-meal notifications and capped automatic dosing at an insulin on board of 2x max bolus. Remote carbs and bolus are flagged as experimental: assume an earlier remote command was delivered, send bolus before carbs, offset duplicate timestamps. Release notes: https://github.com/LoopKit/Loop/releases ; remote overview: https://loopkit.github.io/loopdocs/nightscout/remote-overview"
+    },
+    {
+      "title": "LoopTips: Exercise, Extended/combo bolus, and Endocrinologist and Loop pages",
+      "url": "https://loopkit.github.io/looptips/how-to/exercise",
+      "year": "living documents, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Start the exercise override 1-2 h ahead, with a target about 50 mg/dL above normal, and keep it running for hours afterwards. Avoid heavy carb meals in the 3 h before intense exercise. For high-fat meals, count about 25% of fat and 50% of protein as carbs with a long absorption time. The 'talk with your endo' page (https://loopkit.github.io/looptips/how-to/endo/) covers basal, ISF, carb ratio, suspend threshold, max basal and prescriptions, but says nothing about meals, overrides or exercise. Bolus page: https://loopkit.github.io/looptips/how-to/bolus"
+    },
+    {
+      "title": "BC Diabetes: Loop app configuration (clinic handout, updated 2022-06-26)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Loop-app-configuration.pdf",
+      "year": "2022",
+      "country": "Canada",
+      "sample_size": "n/a (clinic protocol)",
+      "relevance": "An example of a clinic running Loop for its patients. It calls meals the hardest part of moving to closed loop. Its default leaves the Workout preset disabled and suggests about a 10-20% insulin cut for an hour of brisk walking. It gives rules for changing absorption time: early high temp basals followed by a low mean shorten it, early suspensions followed by a high mean lengthen it. The clinic's ADA 2025 poster (1,442 clients; Loop 78%, AAPS 13%, iAPS/Trio 9%) is at https://docs.google.com/presentation/d/1n_yWSlbS9yapJd4JsOT6eVDzxXSDPnifpBmtD_3YYBU/htmlpresent"
+    },
+    {
+      "title": "AAPS documentation: Full Closed Loop; Trio documentation: Temporary Targets",
+      "url": "https://androidaps.readthedocs.io/Usage/FullClosedLoop.html",
+      "year": "living documents, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "AAPS says full closed loop needs a well-tuned hybrid loop first and highly individual tuning, and that erratic snacking on fast carbs is a problem. Trio says to raise the target about 2 h before exercise, enable 'High Temptarget Raises Sensitivity' and disable 'Allow SMB With High Temptarget'. Trio temp targets: https://oiaps-tmhastings.readthedocs.io/en/dev/operate/temptarget.html"
+    },
+    {
+      "title": "GitHub issues: LoopKit/Loop #2415 (duplicate child carb entries, Mar 2026); nightscout/Trio #827 (Max Meal Absorption Time cliff, Oct 2025); Trio #626 (docs should not prescribe exercise treatment, Jun 2025); Trio #1146 (temp targets/overrides older than 24 h, May 2026); Trio PR #975 (Tidepool upload, merged May 2026)",
+      "url": "https://github.com/LoopKit/Loop/issues/2415",
+      "year": "2025-2026",
+      "country": "International",
+      "sample_size": "Single-user reports (anecdotal)",
+      "relevance": "Loop #2415: a parent found three identical 40 g entries, with 6 U delivered, after an 8-year-old entered dinner once. Trio #827 (https://github.com/nightscout/Trio/issues/827): during long exercise or a high-fat meal, carbs on board fell from 96 g to 2 g at the absorption cut-off with 7.3 U on board, followed by a low. Maintainers said this works as designed. Trio #626 (https://github.com/nightscout/Trio/issues/626): community docs avoid prescribing exercise treatment. Trio PR #975 (https://github.com/nightscout/Trio/pull/975) removed override and temp-target upload to Tidepool before merge, and noted Tidepool Web did not display them."
+    },
+    {
+      "title": "Crabtree TSJ et al. ABCD/DTN-UK/ACDC survey of UK HCP attitudes towards open-source AID. Diabetes Ther 2022",
+      "url": "https://link.springer.com/article/10.1007/s13300-022-01203-5",
+      "year": "2022 (fielded Feb-Apr 2019)",
+      "country": "UK",
+      "sample_size": "317 HCPs",
+      "relevance": "73.5% rated themselves 'somewhat confident' or less at describing open-source AID setup. 91% were uncomfortable starting the conversation (lack of regulation 67%, own lack of knowledge 63%). This is the baseline knowledge gap clinicians bring to meal and exercise advice."
+    },
+    {
+      "title": "Canadian healthcare providers' attitudes towards AID systems (medRxiv preprint)",
+      "url": "https://www.medrxiv.org/content/10.1101/2022.06.02.22275169v1",
+      "year": "2022 (fielded Jun-Jul 2021)",
+      "country": "Canada",
+      "sample_size": "204 (32.8% dietitians, 31.9% nurses, 28.4% endocrinologists)",
+      "relevance": "Comfort was lowest for DIY AID, with more barriers than for commercial AID (unfamiliarity, medico-legal risk). About 60% would support a patient's choice. Respondents asked for AID education. A third of respondents were dietitians, the professionals closest to meal management."
+    },
+    {
+      "title": "NOMAD: No-Meal Announcement in AID (open-source and commercial) systems, NCT07758647",
+      "url": "https://clinicaltrials.gov/study/NCT07758647",
+      "year": "2026 (registered; start Oct 2026)",
+      "country": "Canada (IRCM, with Stanford and University of Alberta)",
+      "sample_size": "33 planned (crossover)",
+      "relevance": "First head-to-head trial of unannounced meal challenges on Loop, AAPS or OpenAPS vs Control-IQ or Omnipod 5. Primary outcome is time in range in the 4 h after the meal. Not yet recruiting."
+    },
+    {
+      "title": "Akcan T et al. High-potency GLP-1 receptor agonists with OpenAPS eliminate need for meal announcements (ADA 2025 abstract 944-P; Diabetes Care 2026;49(3):e36-e37 letter)",
+      "url": "https://www.consultant360.com/conference-coverage/reducing-diabetes-burden-through-algorithmic-automation-and-glp-1-therapy",
+      "year": "2025-2026",
+      "country": "USA (Stanford)",
+      "sample_size": "9",
+      "relevance": "Semaglutide or tirzepatide with iAPS or AndroidAPS and no meal boluses gave close to 80% time in range, and all participants were above 70%, with no DKA or severe hypoglycaemia. Off-label adjunct therapy needs a prescriber, which pulls the clinician into a DIY meal strategy. Very small and early."
+    },
+    {
+      "title": "Tidepool receives Breakthrough T1D grant to develop AID without meal announcements",
+      "url": "https://pulse2.com/tidepool-receives-breakthrough-t1d-research-grant-to-develop-automated-insulin-delivery-technology-without-meal-announcements/",
+      "year": "2026 (Oct 23)",
+      "country": "USA",
+      "sample_size": "n/a (planned randomised crossover trial)",
+      "relevance": "An investigational unannounced-meal feature for Tidepool Loop 3.0, intended for a future FDA submission. It confirms that no regulated Loop-family product currently removes the meal-announcement burden."
+    },
+    {
+      "title": "Tidepool Loop FDA clearance (K203689) and twiist AID system",
+      "url": "https://www.tidepool.org/blog/tidepool-loop-has-received-fda-clearance",
+      "year": "2023 (clearance Jan 24); twiist US launch Jul 2025",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "The cleared Tidepool Loop keeps Loop's carb entry with emoji absorption times and adds configurable Pre-Meal and Workout presets with guardrails (https://510k.innolitics.com/device/K203689). twiist uses an algorithm based on Tidepool Loop, with a pre-meal preset and emoji absorption (https://diatribe.org/diabetes-technology/fda-clears-twiist-automated-insulin-delivery-system). [uncertain] No twiist exercise or workout preset was confirmed."
+    },
+    {
+      "title": "Lakshman R et al. Lived experience of fully closed-loop insulin delivery in adults with type 1 diabetes (CLEAR sub-study). Diabetes Technol Ther 2024",
+      "url": "https://doi.org/10.1089/dia.2023.0394",
+      "year": "2024",
+      "country": "UK",
+      "sample_size": "11 interviews (commercial CamAPS HX; not open-source)",
+      "relevance": "Adjacent evidence on what clinicians worry about with no-announcement systems: easier meals, but more snacking and difficulty going back to carb counting afterwards (deskilling)."
+    },
+    {
+      "title": "Cleal B et al. Emotional and physical health impact in users of open-source AID and sources of support. J Med Internet Res 2025;27:e48406 (erratum e72519)",
+      "url": "https://jmir.org/2025/1/e48406",
+      "year": "2025",
+      "country": "29 countries",
+      "sample_size": "383",
+      "relevance": "The #WeAreNotWaiting community, not clinicians, was the main source of knowledge and of practical and emotional support. That is where meal and exercise know-how currently sits."
+    },
+    {
+      "title": "Tidepool at ADA 2026: meal-logging behaviour study with Stanford and Replica Health",
+      "url": "https://www.drugdeliverybusiness.com/tidepool-ada-2026-aid-womens-health/",
+      "year": "2026 (Jun 6)",
+      "country": "USA",
+      "sample_size": "[uncertain] not reported (40-day study)",
+      "relevance": "Repeating the same meals was associated with better post-meal outcomes even when carb counting was approximate. This supports counselling on consistency over precision and favourite-meal libraries."
+    },
+    {
+      "title": "Chambers et al. Do-It-Yourself Automated Insulin Delivery: A Health-care Practitioner User's Guide. Can J Diabetes 2023;47(5):389-397",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37532366/",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "n/a (guidance)",
+      "relevance": "A Diabetes Canada guide written for clinicians. It has an 'Adjust' section on user-adjustable parameters and warns that it will go out of date quickly as code branches change. [uncertain] Its exercise and meal content could not be retrieved."
+    }
+  ],
+  "evidence_strength": "Mixed and thin where it matters most. Peer-reviewed RCT evidence covers only the meal-announcement question (CLOSE IT n=73; Pancreas4ALL n=16, a randomised crossover). Exercise evidence for open-source AID is limited to small pilots and camps (Petruzelkova 2018 n=22; Austria camp 2023). Large observational cohorts (Lum 2021 n=558; BC Diabetes n=1,442) do not break down meal or exercise behaviour. Qualitative and survey work exists (Wong 2022; CLOSE IT sub-study; OPEN surveys). Professional guidance specific to open-source AID is limited to the 2022 consensus, Lewis and Hussain 2022 and Diabetes Canada 2023. EASD/ISPAD exercise guidance excludes open-source systems. Most practical know-how is community documentation and anecdote (LoopDocs, LoopTips, Trio/AAPS docs, GitHub issues). No study measures how clinicians and open-source AID users jointly manage meals or exercise.",
+  "prevalence_or_magnitude": "Meal handling: in the Loop Observational Study (n=558), meal boluses were dosed by bolus calculator (43%), carb counting (41%) or experience (12%), and 16% ate low-carb. These are self-selected, highly educated users. Missed or late boluses: in commercial-AID youth (n=189), 2.2 per day on average, with -9.7 points of time in range per extra missed bolus per day and -22.9 points between top and bottom quartiles. [uncertain] There is no open-source-specific estimate. Tandem data show about 10% of 291,769 Control-IQ users had 7 or more days in a row without boluses, which illustrates that bolus skipping is common in AID generally. No meal announcement: CLOSE IT gave 66% vs 69% time in range (non-inferior), and usability rose from 75 to 85. Pancreas4ALL found 79.9-83.3% time in range across announcement modes. GLP-1 plus OpenAPS (n=9) reached about 80%. Exercise: AAPS ski camp time in range was 63%, with 5% below range. 5.3% of 874 Loop users discontinued, with exercise accommodation among the reasons given (frequency not quantified). Severe hypoglycaemia in Loop users was 18.7 per 100 person-years, cause not categorised. [uncertain] No figures exist for how often overrides or temp targets are used, how often carbs are duplicated or entered with errors, or how often exercise-related hypoglycaemia occurs in open-source AID. Burden context: Tidepool cites more than 180 extra health decisions a day, with mealtimes a large share. Clinician readiness: 73.5% of 317 UK HCPs were 'somewhat confident' or less, and DIY AID drew the least comfort among 204 Canadian HCPs.",
+  "data_quality_caveats": "Strong self-selection: the Loop cohort was 91% White and 70% had household income of $100k or more, and OPEN survey respondents are community-engaged. Self-reported bolus methods. CLOSE IT excluded low-carb dieters, and its main results were available only via conference, review and press summaries. Missed-bolus magnitudes come from commercial AID in youth and may not transfer to Loop's dynamic absorption or oref1 UAM. Exercise studies are small, camp-based and pediatric. Discontinuation figures are probably undercounted (self-identified), and the Wong 2022 abstract and body text give different percentages. GitHub and forum reports are single cases chosen because something went wrong. Cleal 2025 has a published erratum. Community documentation changes quickly, so feature details can go stale within months.",
+  "clinician_perspective": "What clinicians are told: the 2022 international consensus gives concrete open-source meal and exercise rules. These are long absorption times for large or high-fat meals, logging all carbs including hypo treatment, and bolusing before eating. For aerobic exercise, a temp target of at least 126 mg/dL with about a 50% insulin reduction at least 60 min before, and for anaerobic exercise about a 20% increase. It asks HCPs to review at least 2 weeks of data (for example in Nightscout) and to refer if they are inexperienced. Lewis and Hussain 2022 add awareness of insulin on board before activity and warn about stacking manual doses on top of automated corrections. They also say HCPs should learn every option rather than limit choices to their own comfort level. EASD/ISPAD (2025) gives system-by-system exercise advice for commercial AID only, so clinicians have no equivalent table for Loop overrides, oref temp targets or profile percentages. Lal, Braune and Lewis (2026) note that HCP training is mostly industry-funded and leaves open-source AID out. They say configuring no-announcement looping needs scarce expertise and exercise remains hard to predict. They also say the algorithm works better with smaller, less frequent, lower-carb meals, which moves counselling from carb arithmetic to meal pattern and carbohydrate quality. In clinic practice, BC Diabetes calls meals the hardest part of starting Loop and gives conservative defaults (Workout preset disabled; 10-20% cuts for walking). What clinicians fear: exercise or entry-error hypoglycaemia in unregulated software. With no-announcement modes they fear higher post-meal glucose, weight gain, snacking and loss of carb-counting skill (CLOSE IT and CLEAR interviewees raised all of these). They are also uneasy about off-label GLP-1 receptor agonists used to make no-announcement looping work. Survey data show a general knowledge gap: 73.5% of 317 UK HCPs were 'somewhat confident' or less, and 91% were uncomfortable starting the conversation. 204 Canadian HCPs, a third of them dietitians, were least comfortable with DIY AID. What clinicians need: to see carb entries with their absorption choices, missed and late boluses, override and temp-target history, and insulin on board at the start of exercise. They also need a translation between Loop, oref and commercial exercise modes, so they can apply carb-counting and exercise expertise they already have without having to master each app. [uncertain] The exercise and meal content of the Diabetes Canada 2023 practitioner guide was not verified.",
+  "effect_on_relationship": "Meals and exercise are where open-source users rely most on peers and documentation, and where the clinic is most absent. The main community 'talk with your endo' page prepares users to discuss basal, ISF, carb ratio, suspend threshold, max basal and prescriptions, but not meals, overrides or exercise. So those topics rarely come up at the visit. Overrides exist only in the Loop app and are not written to the pump, and standard pump or Clarity downloads omit Loop carbs and overrides. A clinician reading a standard download can therefore misattribute a post-meal or post-exercise pattern to the carb ratio, ISF or basal, and suggest changes that clash with how the user actually manages food and activity. Users then conclude that the clinician 'doesn't understand my system', which reinforces reliance on peers (Cleal 2025: the community is the main source of support). Discontinuation interviews show the cost. Some people stopped Loop because it did not fit their exercise, one adult wanted a credentialed mentor rather than a peer, and one parent stopped to avoid a difficult endocrinology conversation. On the other hand, meals and exercise are the least contentious common ground. Dietitians' and educators' skills (carb estimation, fat and protein dosing, exercise physiology) apply whatever the algorithm, so clinicians can engage without endorsing the DIY system. In the Māori CREATE sub-study, technical problems were manageable with HCP support when clinicians were involved. Community docs deliberately avoid prescribing exercise treatment (Trio #626), which leaves room for clinicians, but nobody currently owns the individual exercise or meal plan. Moving to no meal announcement or to a GLP-1 adjunct contradicts standard teaching, and may either open a new conversation or be kept from the clinic.",
+  "decision_ownership": "The user or caregiver decides day to day: carb estimates, absorption time, fat-protein handling, pre-meal targets, override or temp-target timing and percentage, whether to enable SMB/UAM or run full closed loop, and remote carb or bolus entries for children. These decisions draw on LoopDocs, LoopTips, Trio and AAPS docs and peer groups. Clinicians usually set or endorse the carb ratio and ISF and prescribe insulin, supplies and any GLP-1 receptor agonist. They rarely co-design the exercise plan. The shared decision-making that EASD/ISPAD recommends is seldom put into practice for open-source users. Liability: open-source AID is unregulated, developers make no safety claims (for example for remote commands), and the 2022 consensus advises HCPs to document discussions and consider disclaimers. In practice the user carries the risk of meal and exercise decisions. With cleared Tidepool Loop or twiist, the manufacturer's labelling defines the presets and guardrails and carries device liability, but meal and activity decisions still sit with the user. No regulated system supports dosing without meal announcements.",
+  "disclosure_risk": "Moderate. Users rarely hide routine carb counting, but several behaviours are less likely to be raised: skipping meal boluses (full closed loop or UAM), 'fake carbs', aggressive overrides, remote child dosing errors and off-label GLP-1 use. These conflict with standard education or look unsafe out of context, and fear of provider disapproval is documented (Wong 2022). [uncertain] No study measures concealment of meal or exercise behaviour specifically. The bigger problem is invisibility rather than concealment: override and absorption data do not reach standard clinic downloads.",
+  "regulatory_status_dependency": "Partly. The cleared Tidepool Loop (January 2023, ages 6 and up) and twiist (US launch July 2025) keep Loop's carb-entry and absorption-time model and add labelled Pre-Meal and Workout presets with guardrails. They also come with manufacturer training and Tidepool reporting, which makes the features 'official' and easier for clinicians to teach and document. The core burden is unchanged: carb estimates, absorption choices, missed boluses and pre-planning exercise. EASD/ISPAD still names only other commercial systems. Removing meal announcements is available only in DIY systems (AAPS/Trio/OpenAPS full closed loop). No system had regulatory clearance for that use as of the 2026 review, and Tidepool's unannounced-meal feature for Tidepool Loop 3.0 was only grant-funded in October 2026. For now, the users who most want relief from carb counting have to stay on unregulated software, which keeps clinician hesitancy in play. [uncertain] Whether twiist has a workout or exercise preset, and whether Tidepool Web displays Loop presets or overrides, could not be confirmed.",
+  "workarounds": "Users: count about 25% of fat and 50% of protein as 'fake carbs' with long absorption (pizza icon, 5 h or more), or split entries. Trio's fat-protein conversion with delay and AAPS eCarbs. Pre-Meal preset or 'eating soon' temp target. Loop 3.4 Favorite Foods and repeated familiar meals. Partial or approximate boluses, or full closed loop with UAM/SMB. Some add GLP-1 receptor agonists. Lengthen absorption time when early high temps end in a low, shorten it when early suspensions end in a high. Exercise: an override or temp target 1-2 h before with a target about 50 mg/dL higher, reduced insulin needs, kept on for hours afterwards. Disable 'SMB with high temp target' and enable 'high temp target raises sensitivity' (Trio/AAPS). Avoid big pre-exercise boluses. Remote care: follow the 'assume it was delivered' rule, send bolus before carbs, offset duplicate timestamps, lock caregiver phones. Clinicians: apply consensus-statement rules, clinic default protocols (BC Diabetes), Nightscout review and referral to experienced colleagues. Many simply defer meal and exercise questions to the community.",
+  "existing_tools": "Nightscout: careportal treatments (carbs, boluses, temp basals, overrides and temp targets), carbs and insulin on board, prediction lines, Loop and OpenAPS status pills, reports (daily stats, distribution, treatments list), and remote commands. Nightscout Reporter (PDF summaries). Tidepool Web: carbs, boluses and basals for Loop, twiist and Trio (Trio upload since May 2026). Dexcom Clarity: CGM plus Dexcom-app events only. LoopFollow and LoopCaregiver: remote viewing of carbs and insulin on board and overrides, plus remote carbs, bolus and overrides. In-app views: Loop's carb absorption screen, AAPS temp-target line and profile-switch markers, Trio Live Activity. Autotune and Nightscout-based carb-ratio estimation. Research datasets (OpenAPS Data Commons, OPEN). [uncertain] Glooko and manufacturer clinic portals do not ingest open-source AID meal or override data.",
+  "existing_tool_coverage_gap": "None gives a clinician a summarised view of meals and activity. Nightscout shows raw treatment lists and timelines, not meal-type outcomes or patterns. No tool groups meals by absorption choice, fat-protein handling or announced vs unannounced status, and links them to post-meal time in range. Missed and late bolus metrics, duplicate or back-timed carb entries, carbs-on-board cliffs and remote carb-plus-bolus stacking are not detected or reported. Override, temp-target and profile-switch history is not aligned with exercise sessions, workouts or steps and the following 24 h of glucose. Trio dropped override and temp-target upload to Tidepool, and Tidepool Web did not display them. Clarity and pump downloads omit Loop carbs and overrides altogether. No cross-system vocabulary maps Loop overrides to oref temp targets and profile percentages, or to commercial 'exercise modes'. No tool holds a shared, versioned exercise or meal plan, or compares a full-closed-loop period against the earlier hybrid period. Data-protection status is unclear for some self-hosted options.",
+  "data_artifacts_involved": "Carb entries (amount, timestamp, absorption time, edits, deletions, remote origin). Carbs on board and dynamic absorption curves. Bolus records (manual vs automatic or SMB; failed or partial). Temp-basal log. Override, temp-target and profile-switch history with insulin-needs %. Pre-Meal and Workout preset activations. Missed-meal notifications. Insulin on board at the start of exercise. CGM and post-meal windows. Settings snapshot (carb ratio, ISF, max meal absorption time, fat-protein conversion, SMB/UAM flags, max bolus, max insulin on board). Remote command audit. HealthKit workouts and step counts.",
+  "unmet_need": "A shared, system-neutral record of how a person actually handles food and activity, and what happens afterwards. It would show which meals were announced and how (amount, absorption time, fat-protein handling), which were missed, late or duplicated, and which overrides or temp targets were used around exercise with what glycaemic result over 24 h. It would summarise this so an educator or dietitian can act on it in a short visit, and frame it so the user trusts it will not be used against them. Today nobody owns this layer. Community docs refuse to prescribe. Clinicians lack open-source-specific exercise guidance (EASD/ISPAD excludes these systems) and lack the data, because overrides and absorption choices never reach standard downloads. Users carry the full cognitive load (Tidepool estimates more than 180 extra decisions a day, many at mealtimes). A related unmet need is a jointly owned meal and exercise plan expressed in the user's own system's controls (Loop override %, oref temp target and profile %). It also needs supported, monitored transitions to no-announcement looping, now that RCT evidence shows it can work but regulated products cannot offer it.",
+  "implication_for_collaboration_tool": "1) Meal ledger: pull Loop, Trio and AAPS data via Nightscout, Tidepool or HealthKit. Rebuild each eating event as announced, partial or unannounced (inferred from UAM/SMB activity or Loop missed-meal notifications), with carb amount, absorption choice and fat-protein handling. Show the post-meal outcome at 0-4 h. Group by favourite or repeated meals so clinicians see patterns, not raw lists. 2) Activity sessions: align override, temp-target and profile-switch history with HealthKit workouts or steps and the following 24 h of glucose. Show insulin on board at the start, how far ahead the override was set, and any late lows. 3) Cross-system translation: show settings in neutral language ('target raised to X, insulin reduced Y%, started Z min before') alongside each system's own control name. Show consensus reference points (temp target of at least 126 mg/dL and about a 50% reduction at least 60 min before aerobic exercise). That lets an educator who knows Omnipod 5 activity mode understand a Loop override. 4) Safety flags, not dose advice: duplicate carb entries within minutes, past meals entered as 'now', very large entries, carbs-on-board cliffs at max absorption, remote carb-plus-bolus stacking, repeated post-exercise or post-meal lows, rising late-bolus frequency. 5) Shared plan: a clinician or dietitian writes a meal or exercise plan in plain language. The user accepts it and makes the change in their own app. Keep a version history linked to outcomes. Do not push settings or recommend doses, which would make the tool regulated dosing software and blur liability. 6) Non-punitive framing: present missed boluses and no-announcement periods as information, with user-controlled sharing and annotations ('tournament day', 'sick', 'GLP-1 started'), to protect disclosure. 7) No-announcement support: compare a full-closed-loop or UAM period with the earlier hybrid period (time in range, post-meal peaks, weight if logged). This gives dietitians a basis to counsel on meal regularity and carb quality. 8) Pediatric and school mode: show who entered what (child, parent remotely, school staff), and audit remote commands. 9) Accessibility: low-numeracy visuals, plain language and multiple languages, and make Android and AAPS first-class rather than Loop-only.",
+  "severity_rank": "Medium (upper end). Meals and exercise drive most day-to-day glucose variation and user burden, and they are the least contentious ground where clinicians can add value. But they rarely cause clinician conflict on their own. Their relationship impact comes from invisibility: misread downloads lead to wrong settings advice, and peers fill the gap.",
+  "safety_criticality": "High. Duplicate or remote carb entries, past meals entered as 'now', fake carbs and carbs-on-board cliffs can cause rapid insulin overdelivery and severe hypoglycaemia, especially in children (for example three 40 g entries with 6 U delivered). Exercise with insulin on board or a mistimed override causes acute and delayed (6-24 h) lows. Missed or late boluses and no-announcement modes cause sustained hyperglycaemia and higher post-meal peaks. DKA risk is indirect, mainly from site failure during prolonged high glucose. Loop 3.2's cap on automatic insulin on board (2x max bolus) and its large-meal warnings reduce but do not remove these risks.",
+  "equity_impact": "Hardest hit: people with low numeracy or literacy and non-English speakers, because carb estimation and absorption choices are numeric and the Loop and Trio docs are mainly in English. No-announcement modes could help them but need scarce expert configuration. Children and caregivers: school-day entries, remote dosing and duplicate-entry risk. Low-income users, since the adjuncts (GLP-1 receptor agonists) and spare devices cost money and the Loop cohort was 70% $100k-plus household income. Android-only users: Loop is iOS-only, and AAPS uses different exercise vocabulary than the Loop-centric resources clinicians may know. Older adults: exercise-related hypoglycaemia, app complexity, and older age was linked to stopping Loop. Low-carb dieters, who were excluded from the CLOSE IT evidence. Indigenous and minority groups, who face structural access barriers (CREATE Māori sub-study).",
+  "uncertain": [
+    "key_sources",
+    "prevalence_or_magnitude",
+    "clinician_perspective",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "existing_tools"
+  ]
+}

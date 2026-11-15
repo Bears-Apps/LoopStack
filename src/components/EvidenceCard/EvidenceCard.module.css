@@ -1,0 +1,70 @@
+.card {
+  background: var(--surface-1);
+  border-radius: var(--radius-input);
+  border: 1px solid var(--ink-200);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  gap: var(--space-3);
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.summary {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.chevron {
+  color: var(--ink-500);
+  transition: transform var(--dur-fast) var(--ease);
+  flex-shrink: 0;
+}
+
+.open {
+  transform: rotate(180deg);
+}
+
+.body {
+  padding: 0 var(--space-4) var(--space-4);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  border-top: 1px solid var(--ink-200);
+  padding-top: var(--space-3);
+}
+
+.body p {
+  margin: 0;
+}
+
+.body ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  padding-left: var(--space-4);
+  list-style: disc;
+}

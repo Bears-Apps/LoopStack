@@ -1,0 +1,243 @@
+.empty {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+.markAll {
+  flex: none;
+  padding: 6px var(--space-3);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-button);
+  background: var(--surface-1);
+  color: var(--ink-700);
+  font-size: var(--text-label);
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.markAll:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+/* ── carbs on board ──────────────────────────────────────────────────────── */
+
+.cobCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-4);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--radius-card);
+  background: var(--brand-primary-soft);
+  cursor: pointer;
+  text-align: left;
+}
+
+.cobCard:hover {
+  background: var(--brand-primary-soft);
+  border-color: var(--brand-primary-hover);
+}
+
+.cobMain {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  min-width: 0;
+}
+
+.cobValue {
+  font-size: var(--text-display);
+  line-height: var(--text-display-lh);
+  letter-spacing: var(--text-display-tracking);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-900);
+}
+
+.cobUnit {
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--ink-500);
+  margin-left: 2px;
+}
+
+.cobLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.cobRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  flex: none;
+}
+
+.cobCta {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+  text-align: right;
+}
+
+.cobChevron {
+  color: var(--brand-primary-hover);
+  font-size: var(--text-body);
+  flex: none;
+}
+
+/* ── routes to fix log / commit log ──────────────────────────────────────── */
+
+.routes {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.route {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-card);
+  background: var(--surface-0);
+  cursor: pointer;
+  text-align: left;
+}
+
+.route:hover {
+  border-color: var(--brand-primary);
+}
+
+.routeCount {
+  flex: none;
+  min-width: 28px;
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-900);
+}
+
+.routeCopy {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+  min-width: 0;
+}
+
+.routeLabel {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.routeDesc {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+/* ── findings ────────────────────────────────────────────────────────────── */
+
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  padding: var(--space-3) 0;
+  border: none;
+  border-bottom: 1px solid var(--ink-200);
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.itemUnread .itemTitle {
+  color: var(--ink-900);
+}
+
+.item:not(.itemUnread) .itemTitle,
+.item:not(.itemUnread) .itemBody {
+  color: var(--ink-500);
+}
+
+.itemHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.itemTitle {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  min-width: 0;
+}
+
+.dot {
+  flex: none;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  align-self: center;
+}
+
+.itemWhen {
+  flex: none;
+  font-size: var(--text-label);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.itemBody {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.itemCategory {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-300);
+}
+
+.itemLink {
+  display: block;
+  margin-top: var(--space-1);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--accent-info-ink);
+}

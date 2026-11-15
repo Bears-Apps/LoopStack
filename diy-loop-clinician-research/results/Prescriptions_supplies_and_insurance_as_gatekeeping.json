@@ -1,0 +1,221 @@
+{
+  "item_name": "Prescriptions, supplies and insurance as gatekeeping",
+  "issue_summary": "Open-source AID is free software, but it only runs on regulated hardware and drugs that someone has to prescribe and someone has to pay for. That means pods or a compatible pump, CGM sensors, rapid-acting insulin and backup long-acting insulin. Because looping usually needs supplies the person did not have before (Omnipod pods, or reservoirs and sets for an old Medtronic pump), the first Loop conversation with a clinician is often a supply request rather than a request for advice. So the clinician's main lever is the prescription pad, not the settings. Around that lever sit other gatekeepers: insurers and pharmacy benefit managers (prior authorization, 4-year starter-kit limits, pod quantity caps, endocrinologist-only rules, renewals every 6 to 12 months), manufacturers (Medtronic does not sell supplies without a registered pump, Insulet trainers sign off pod training, Eros end of life), DME suppliers and community pharmacists who can refuse to dispense. The fear that telling the clinic, or the pharmacy, will close one of these gates shapes what users disclose. Published evidence suggests outright refusal is uncommon: most UK HCPs would keep supplying, and access problems are more often about local availability than about punishing looping. But documented refusals exist, and they are told and retold in peer groups, so many users disclose in stages, only after supplies are secured, or not at all. The landscape is shifting. Loop and Trio have supported Omnipod 5 pods since September 2026, so a routine prescription for a commercial AID system can now feed a DIY loop. The FDA-cleared twiist turns the Loop algorithm itself into a pharmacy prescription, but only for commercially insured US patients.",
+  "who_is_affected": "Adults with T1D who loop and parents looping for children, especially those starting from MDI, on public insurance, on older or out-of-warranty hardware, or outside BC-style supported clinics. On the clinical side: endocrinologists (often required by payers as prescriber), primary care physicians (fallback insulin prescribers), diabetes educators and pump trainers (training sign-off), clinic staff who complete prior authorizations, and community pharmacists who dispense insulin and pods.",
+  "system_specificity": "All open-source AID systems, through the hardware they depend on. Loop, Trio and iAPS (iOS): Omnipod Eros (US supply ended Dec 2023; Canada and UK ended 30 Jun 2026), DASH and, since Sep 2026, Omnipod 5 pods; older Medtronic x22/x23 pumps. Loop also has Medtrum and experimental Dana support. AndroidAPS: Dana, Medtrum, Omnipod, old Medtronic and Accu-Chek pumps (Roche consumables in the UK and Ireland being phased out by Jan 2026 [uncertain: search summary only]); Omnipod 5 still in beta. The cleared twiist (Tidepool Loop algorithm) is prescribed as a whole system. Evidence is mostly from Loop in the US (90% of Loop study users were on Omnipod).",
+  "care_setting": "Routine endocrinology and diabetes clinic visits (adult and pediatric); primary care for insulin and refill prescriptions; diabetes educator and manufacturer pump-training appointments; clinic back office (prior authorizations, letters of medical necessity); community pharmacy, DME suppliers and specialty pharmacy; public pump programmes (Alberta IPTP, BC PharmaCare, NHS, NDSS).",
+  "trigger_moment": "Deciding to start looping from MDI or a non-loopable pump. Supply refills and prescription renewals. Prior authorization expiry (often 6 or 12 months) and plan or formulary changes. The 4-year starter-kit or pump warranty cycle. Device end of life or recall (Eros, Medtronic 2019 cybersecurity recall, DASH lot recall 2026, Accu-Chek exit). A move to a new clinic, insurer or province. Switching pod type (DASH to Omnipod 5). Pharmacy pickup when the pharmacist learns of looping. Pregnancy or hospital admission, when the hardware a person uses becomes visible.",
+  "key_sources": [
+    {
+      "title": "LoopTips: Endocrinologist and Loop (community documentation, LoopKit)",
+      "url": "https://loopkit.github.io/looptips/how-to/endo",
+      "year": "Living document, accessed Nov 2026",
+      "country": "US-centred (international readership)",
+      "sample_size": "n/a (community guidance)",
+      "relevance": "Source of the framing for this item. Because looping usually needs pump supplies a person did not have before, the first Loop conversation with an endocrinologist is often a request for Medtronic or Omnipod supply prescriptions. Advises honesty, objective information, a plan for sending Loop data (a pump or PDM download is not enough), a backup pump and an active long-acting insulin prescription. Says nothing about insurance or what to do if the clinician refuses."
+    },
+    {
+      "title": "LoopDocs: Compatible Pump and Omnipod FAQs (LoopKit)",
+      "url": "https://loopkit.github.io/loopdocs/build/pump/ ; https://loopkit.github.io/loopdocs/faqs/omnipod-faqs/",
+      "year": "Living documents, accessed Nov 2026",
+      "country": "International (US-heavy)",
+      "sample_size": "n/a (community documentation)",
+      "relevance": "Describes the supply chain the clinic controls. Medtronic usually will not sell supplies to someone without a registered pump, so people with used x22/x23 pumps get reservoirs and sets through a DME supplier that coordinates prescriptions and insurance approval with the doctor's office. Used pumps are sourced from friends, endocrinologists, Facebook groups and Craigslist (with fraud warnings). Insulet stopped providing Eros pods in the US at the end of December 2023. A DASH PDM is not needed to loop, but a PDM serial number registered with Insulet is likely needed to get failed pods replaced. Omnipod 5 pods are supported from Loop 3.14.7 (3.14.11+ recommended), and switching 'may be affected by your ability to change prescriptions and get insurance coverage'."
+    },
+    {
+      "title": "Nightscout / OmnipodKit: Omnipod 5 for Loop and Trio (release page and Omnipod 5 compatibility FAQ)",
+      "url": "https://nightscout.github.io/omnipod-five/ ; https://nightscout.github.io/omnipod-five/compatibility.html",
+      "year": "2026 (released in Loop and Trio main branches 15 Sep 2026; page updated 22 Oct 2026)",
+      "country": "International",
+      "sample_size": "n/a (developer documentation)",
+      "relevance": "Shows the gate moving to Omnipod 5 prescriptions. Users must ask their doctor for the Omnipod 5 pod variant that matches their CGM. A controller is technically not needed, but the care team may insist on a proper Omnipod 5 start, and if the trainer will not sign off training the user cannot order pods. A registered controller serial helps with pod replacements. AndroidAPS Omnipod 5 support was still in open beta."
+    },
+    {
+      "title": "Lum JW, Bailey RJ, Barnes-Lomen V, et al. A Real-World Prospective Study of the Safety and Effectiveness of the Loop Open Source Automated Insulin Delivery System. Diabetes Technol Ther 2021;23(5):367-375",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906/",
+      "year": "2021",
+      "country": "US (mostly)",
+      "sample_size": "558 analysed (age 1-71)",
+      "relevance": "Quantifies hardware dependence. 90% used only Omnipod, 6% only a Medtronic pump and 4% both, so for most Loop users the pod prescription is the gate. 94% had private insurance and 6% public. 70% reported household income of $100,000 or more. Omnipod became a Loop option only in April 2019."
+    },
+    {
+      "title": "Wong JJ, Suttiratana SC, Lal RA, et al. Discontinued Use of the Loop Insulin Dosing System: A Mixed-Methods Investigation. Diabetes Technol Ther 2022;24(4):241-248",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9057870/",
+      "year": "2022",
+      "country": "US",
+      "sample_size": "874 Loop Observational Study participants; 46 (5.3%) discontinued; 45 surveyed; 19 interviewed",
+      "relevance": "The abstract lists both 'barriers to acquiring component devices' and fear of the diabetes provider's disapproval among reasons for stopping Loop. Prevalence of each reason was not reported in the abstract."
+    },
+    {
+      "title": "Suttiratana SC, Wong JJ, Lanning MS, et al. Qualitative Study of User Experiences with Loop, an Open-Source Automated Insulin Delivery System. Diabetes Technol Ther 2022;24(6):416-423",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": "2022",
+      "country": "US",
+      "sample_size": "72 focus-group participants (95% white, 94% privately insured, 73% household income of $100K or more)",
+      "relevance": "Provider attitudes and knowledge ranged widely and complicated care and disclosure. [uncertain: examples come from an earlier full-text extraction and were not re-read here; the abstract confirms only the provider theme] Examples include a third endocrinologist who would prescribe strips and supplies but would not touch settings, and an endocrinologist who, after seeing a very flat overnight trace, helped write a prescription for a compatible pump. Shows that the prescription relationship can persist without any settings relationship."
+    },
+    {
+      "title": "Crabtree TSJ, Choudhary P, Lumb A, et al. ABCD, DTN-UK and ACDC Survey of UK Healthcare Professional Attitudes Towards Open-Source Automated Insulin Delivery Systems. Diabetes Ther 2022;13:395-408",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": "2022 (survey Feb-Apr 2019)",
+      "country": "UK",
+      "sample_size": "317 HCPs (adult and paediatric)",
+      "relevance": "The best HCP-side data on supplies. HCPs 'would not routinely discontinue insulin pump supplies'. 34/317 (10.7%) had been unable to provide pump consumables to someone wishing to use OS-AID, mostly because the right pump or CGM was not available locally; one respondent refused deliberately, citing warranty invalidation. 28% (88/317) worried about invalidating the warranty of an NHS pump and 31.8% about professional indemnity. Some said they might manage consumables or pump renewals differently for people they saw as higher risk."
+    },
+    {
+      "title": "Roberts JTF, Moore V, Quigley M. Prescribing unapproved medical devices? The case of DIY artificial pancreas systems. Med Law Int 2021;21(1):42-68",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8053740/",
+      "year": "2021",
+      "country": "UK",
+      "sample_size": "n/a (legal analysis)",
+      "relevance": "Argues that GMC guidance does not stop UK doctors from discussing or even prescribing DIY APS. Notes that patients may hide their plans for fear of losing prescriptions for pumps, CGM or consumables, and that these fears are not unfounded: it cites the Crabtree survey as 41/317 (13%) clinicians who would refuse to supply devices for DIY use [uncertain: this figure differs from the 10.7% in the published survey, probably because it is from an earlier interim analysis or a different question]. Under the MHRA definition, using a pump with a DIY controller is off-label use."
+    },
+    {
+      "title": "Elezzabi YA. Balancing continuity of care and liability concerns: one community pharmacy experience of a person with type 1 diabetes using a do-it-yourself automated insulin delivery system. Can Pharm J 2025;158(6):344-346",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12571788/",
+      "year": "2025",
+      "country": "Canada (Alberta)",
+      "sample_size": "1 patient (interview-based case)",
+      "relevance": "The clearest documented case of a supply gate closing after disclosure. After 4 years on Alberta's pump program waitlist, a patient with a supportive endocrinologist told their long-time pharmacist they would be looping. The pharmacist refused to fill insulin lispro, citing liability, flagged the file and called the clinic. The patient ran down to the insulin in the pump, got a new prescription from their family physician, told the pharmacy they would not loop, and now no longer discloses to pharmacists."
+    },
+    {
+      "title": "Huhndt A, Chen Y, O'Donnell S, et al. Barriers to Uptake of Open-Source Automated Insulin Delivery Systems: Analysis of Socioeconomic Factors and Perceived Challenges of Caregivers of Children and Adolescents With Type 1 Diabetes From the OPEN Survey. Front Clin Diabetes Healthc 2022;3:876511",
+      "url": "https://www.frontiersin.org/articles/10.3389/fcdhc.2022.876511/full",
+      "year": "2022",
+      "country": "Multinational (OPEN survey)",
+      "sample_size": "56 caregivers of non-using children (49 in socioeconomic analysis)",
+      "relevance": "Of 27 interested caregivers, 9 (33.3%) did not know where to source components; of those, 6 (66.7%) lacked a source for a loopable pump. 3/28 (10.7%) worried about losing the child's health insurance and 11/28 (39.3%) about losing HCP support; 7/28 (25%) said their team discouraged them. The discussion notes loopable pumps are prescription-only in some countries, out-of-warranty pumps are hard to find, and insurers limit how often pump prescriptions can be renewed."
+    },
+    {
+      "title": "O'Donnell S, Cooper D, Chen Y, et al. Barriers to uptake of Open-Source automated insulin delivery Systems: Analysis of socioeconomic factors and perceived challenges of adults with type 1 diabetes from the OPEN survey. Diabetes Res Clin Pract 2023;197:110235",
+      "url": "https://doi.org/10.1016/j.diabres.2022.110235",
+      "year": "2023 (survey Sep-Nov 2020)",
+      "country": "31 countries",
+      "sample_size": "129 adult non-users",
+      "relevance": "Sourcing compatible insulin pumps and access to CGM was the most significant structural barrier; fear of losing healthcare provider support was a major individual barrier. [uncertain] Exact percentages were not retrieved (full text paywalled)."
+    },
+    {
+      "title": "Braune K, Lal RA, Petruzelkova L, et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": "2021 (online) / 2022",
+      "country": "International (48 authors)",
+      "sample_size": "n/a (consensus)",
+      "relevance": "Directly addresses the gate: HCPs should continue to support and provide access to regulated devices (pumps, CGM) to meet reimbursement criteria even when the person intends to use open-source AID. Recommends in-warranty devices where possible and warns users about second-hand devices. Asks manufacturers to allow secure remote commands on modern in-warranty pumps."
+    },
+    {
+      "title": "Kietaibl AT, Schuetz-Fuhrmann I, Bozkurt L, et al. (Austrian Diabetes Society technology committee). Positionspapier: Open-source-Technologie in der Behandlung von Menschen mit Diabetes mellitus. Wien Klin Wochenschr 2024;136(Suppl 9):S467-S477",
+      "url": "https://doi.org/10.1007/s00508-024-02400-x",
+      "year": "2024",
+      "country": "Austria",
+      "sample_size": "n/a (professional position paper)",
+      "relevance": "The most explicit professional guidance on prescribing: prescribing approved components (pumps, CGM) for open-source AID users is permitted, and continued support should be ensured by continuing to prescribe them. Documentation should record that the person knows the system is unapproved and that neither the doctor nor the clinic takes responsibility for it. Enough pen material must be available as a backup."
+    },
+    {
+      "title": "Diabetes Australia (2018) and Diabetes UK position statements on DIY closed loop",
+      "url": "https://www.diabetesaustralia.com.au/wp-content/uploads/DIY-solution-position-statement.pdf ; https://www.diabetes.org.uk/professionals/position-statements-reports/do-it-yourself-closed-loop",
+      "year": "2018 (Australia); undated, revision expected early 2027 (UK)",
+      "country": "Australia; UK",
+      "sample_size": "n/a",
+      "relevance": "Both say people who build DIY systems must keep receiving support and care from their diabetes team and the health system, while users act at their own risk and HCPs cannot recommend unapproved systems. Neither says anything explicit about prescriptions or consumables."
+    },
+    {
+      "title": "Diabetes Canada Clinical Practice Guidelines Expert Working Group (Halperin IJ, et al.). Do-It-Yourself Automated Insulin Delivery: A Position Statement. Can J Diabetes 2023;47(5)",
+      "url": "https://guidelines.diabetes.ca/cpg/diy-aid ; https://doi.org/10.1016/j.jcjd.2023.05.006",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "n/a",
+      "relevance": "Clinicians should support people in whichever insulin delivery method they choose. [uncertain: wording from a guideline-page excerpt; full text paywalled] It warns clinicians that their assumptions and biases can lead to 'inappropriate gatekeeping' that keeps people from helpful technologies, and notes that access to commercial systems varies by province."
+    },
+    {
+      "title": "CVS Caremark. Disposable Insulin Pumps (Pharmacy Dispensed) Initial Prior Authorization with Quantity Limit, form 3762-C (P04-2025 v3)",
+      "url": "https://info.caremark.com/content/dam/enterprise/caremark/microsites/dig/pdfs/pa_forms_default/3762-C_Disposable-Insulin-Pumps.pdf",
+      "year": "2025",
+      "country": "US",
+      "sample_size": "n/a (payer policy)",
+      "relevance": "Shows the US pharmacy-benefit gate. It covers Omnipod (DASH, Omnipod 5) and twiist. New pump starts need MDI, completion of a comprehensive diabetes education programme, and CGM use or testing at least 4 times a day. An Omnipod starter kit is allowed once in 4 years (twiist 3 years). Extra pods need more than 200 units of insulin per 72 hours. The prescriber has to supply all of this."
+    },
+    {
+      "title": "Centene / Delaware First Health clinical policy DE.PHAR.534 Insulin Delivery Systems (Omnipod)",
+      "url": "https://www.delawarefirsthealth.com/content/dam/centene/delaware/Policies/DrugPolicies/DrugPoliciesI/DE.PHAR.534%20Insulin%20Delivery%20Systems%20(Omnipod)_R.pdf",
+      "year": "2025 (effective 9/2025, reviewed 5/2025)",
+      "country": "US (Medicaid managed care)",
+      "sample_size": "n/a (payer policy)",
+      "relevance": "DASH and Omnipod 5 must be 'prescribed by or in consultation with an endocrinologist', so primary care alone cannot open the gate. Pods are capped at 10 a month without extra justification, and devices at 1 per 4 years. Initial approval lasts 6 months. Renewal requires that the member is responding to therapy and is adherent to provider follow-up visits and training, so the clinic has to attest to engagement again every year."
+    },
+    {
+      "title": "Center for Health Care Strategies (Scannelli Jacobs L, Melo N, Howe G). Medicaid Opportunities to Improve Access to Automated Insulin Delivery Devices",
+      "url": "https://www.chcs.org/resource/medicaid-opportunities-to-improve-access-to-automated-insulin-delivery-devices/",
+      "year": "Oct 2025",
+      "country": "US",
+      "sample_size": "n/a (policy report)",
+      "relevance": "Medicaid members face inconsistent state coverage policies for AID devices, burdensome prior authorization and limited education. This sets the background for why loopable hardware is harder to get on public insurance."
+    },
+    {
+      "title": "AJMC. After Long Wait, Omnipod Achieves Coverage Through Medicare Part D",
+      "url": "https://www.ajmc.com/newsroom/After-Long-Wait-Omnipod-Achieves-Coverage-Through-Medicare-Part-D",
+      "year": "2018 (12 Jan)",
+      "country": "US",
+      "sample_size": "n/a (news)",
+      "relevance": "CMS classed Omnipod as a supply for injecting insulin rather than Part B durable medical equipment, so it is covered under Part D through pharmacies. This is why Omnipod pods, the main Loop hardware, come through the pharmacy benefit (PA, formulary, coinsurance) while tubed pumps go through DME."
+    },
+    {
+      "title": "Addala A, Hanes S, Naranjo D, Maahs DM, Hood KK. Provider Implicit Bias Impacts Pediatric Type 1 Diabetes Technology Recommendations in the United States: Findings from The Gatekeeper Study. J Diabetes Sci Technol 2021; and Odugbesan O, et al. Implicit Racial-Ethnic and Insurance-Mediated Bias to Recommending Diabetes Technology. Diabetes Technol Ther 2022;24(9)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8442183/ ; https://pmc.ncbi.nlm.nih.gov/articles/PMC9422789/",
+      "year": "2021; 2022",
+      "country": "US",
+      "sample_size": "39 pediatric providers; 109 adult and pediatric providers at 7 centers",
+      "relevance": "Not DIY-specific, but it names providers as 'gatekeepers' to diabetes technology. Insurance-mediated bias appeared in 84.6% (33/39) of pediatric providers and 61% (66/109) in the larger cohort, and racial-ethnic bias in 34% (37/109). The same gate that controls pump and pod prescriptions controls who can loop at all."
+    },
+    {
+      "title": "BCDiabetes (Dr Tom Elliott). 'Omnipod 5 vs Loop' handout and 'Minimum Required Omnipod 5 & Dash training for Looping'",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Omnipod-5-vs-Loop.pdf ; https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Minimal-Omnipod-Dash-training-for-Looping.pdf",
+      "year": "2026 (handout dated 26 Jun 2026)",
+      "country": "Canada (British Columbia)",
+      "sample_size": "Clinic reports 3,200+ clients looping with clinic staff (self-reported)",
+      "relevance": "A worked example of a clinic that opens the gate. In BC both DASH and Omnipod 5 pods are covered by PharmaCare, subject to the deductible. Loopers pay $0 for a PDM because none is needed, while Omnipod 5 starters pay up to $6,300 toward the deductible for the controller, and anyone whose current pump is still in warranty pays $650 out of pocket. DASH pods cost about $30 and Omnipod 5 pods about $36. Insulet educators must train MDI starters on pods first. The clinic requires a physician referral and a signed looping waiver and consent, and has applied to Health Canada for investigational testing authorization (May 2026)."
+    },
+    {
+      "title": "Sequel Med Tech twiist (FDA-cleared AID with the Tidepool Loop algorithm): coverage and pharmacy channel materials",
+      "url": "https://twiist.com/prescribing-twiist ; https://www.eversensecgm.com/globalassets/eversensecgmcomsharedblocks/partners/twiist/twiist_national_campaign_slim_jim_brochure.pdf",
+      "year": "2025-2026 (cleared Mar 2024; limited launch Jul 2025; broad US availability reported by Feb 2026)",
+      "country": "US",
+      "sample_size": "n/a (manufacturer materials)",
+      "relevance": "The regulated Loop path turns the algorithm itself into a prescription. It runs through the pharmacy channel, with a savings programme ($0 starter kit, refills of $50 or less) limited to commercial insurance; Medicare and Medicaid enrollees are excluded from the programme. [uncertain] No confirmed Medicare Part D coverage was found."
+    },
+    {
+      "title": "Insulet notices: Omnipod Eros end of life (Canada and UK, 30 Jun 2026) and DASH pod field safety notice (27 May 2026)",
+      "url": "https://www.omnipod.com/en-gb/eros-eol ; https://www.omnipod.com/en-is/fsn-5-26",
+      "year": "2026",
+      "country": "UK, Canada, international",
+      "sample_size": "DASH notice: 24 serious adverse events worldwide, 2 lots",
+      "relevance": "Supply shocks that force a new prescription conversation. Eros users must see their HCP about DASH or another option, because Eros pods do not fit DASH or Omnipod 5. A DASH pod recall (cannula tear, under-delivery, DKA risk) requires lot checks and replacements, which go more smoothly with a registered PDM or controller."
+    }
+  ],
+  "evidence_strength": "Moderate for the existence of the gate, weak for how often it closes. Evidence comes from: peer-reviewed surveys (UK HCPs n=317; OPEN non-users n=129 and caregivers n=56; Loop Observational Study n=558 and discontinuation n=46 of 874); a single published pharmacy case report; legal and ethical analysis; professional guidance (2022 consensus, Austrian 2024, Diabetes Canada 2023, Diabetes UK, Diabetes Australia); payer policy documents; and community documentation (LoopDocs, LoopTips, OmnipodKit). No study directly measures how many users hide looping to protect prescriptions.",
+  "prevalence_or_magnitude": "(1) Dependence is near-universal. In the Loop Observational Study (n=558), 90% used only Omnipod, 6% only Medtronic and 4% both, so almost every Loop user needs an ongoing pod prescription (plus CGM and insulin).\n(2) HCP refusal is uncommon but real. In the UK (2019, n=317), 10.7% (34/317) had been unable to provide consumables for OS-AID, mostly because of local pump or CGM access, and one refused deliberately (warranty). 28% worried about invalidating an NHS pump warranty, and 31.8% about indemnity. Roberts et al. cite 13% (41/317) who would refuse to supply devices [uncertain: conflicts with the published figure].\n(3) Fear of the gate is larger than the gate. Among 56 caregiver non-users, 39.3% feared losing HCP support, 25% were discouraged by their team, and 10.7% feared losing the child's insurance. Of 9 interested caregivers stuck on sourcing, 6 lacked a loopable pump. Among 129 adult non-users, sourcing pumps and CGM was the top structural barrier [uncertain: percentages not retrieved]. 'Barriers to acquiring component devices' and fear of provider disapproval were both reasons some of the 46 of 874 (5.3%) Loop users stopped.\n(4) The payer gate is structural. US pharmacy-benefit criteria (CVS Caremark 2025; Centene 2025) require diabetes education, CGM or testing at least 4 times a day, a 4-year starter-kit limit, pod caps (10 a month, or more only above 200 U per 72 h), endocrinologist involvement, and renewal every 6 to 12 months tied to adherence to follow-up visits.\n(5) Provider gatekeeping is biased. 61% of 109 US providers showed insurance-mediated bias in recommending technology, and 84.6% of 39 pediatric providers.\n(6) Who gets through skews privileged: 94% of Loop study participants had private insurance and 70% household income of $100K or more.",
+  "data_quality_caveats": "Surveys are self-selected (online DIY communities, professional mailing lists) and mostly from 2019-2021, before Omnipod 5, twiist and the 2024-2026 guideline shifts. The UK figures conflict (10.7% versus 13%). Caregiver sub-samples are tiny (n=27-28). Payer policies are examples, not a census, and change yearly. The pharmacy refusal is a single case told from the patient's side only. Community documentation is current but not peer-reviewed. Users who were refused supplies and never started looping are invisible to user studies (survivorship bias).",
+  "clinician_perspective": "Most clinicians do not want to be the gate, but they hold it. UK HCPs said they wished to support users and would not routinely stop pump supplies (Crabtree 2022). Their stated reasons for not providing kit were mostly practical: the right pump or CGM was not available locally. Concerns attached to the prescription itself: invalidating the warranty of an NHS pump (28%), professional indemnity (31.8%), seeing OS-AID as 'risky in the wrong hands' (43%), and a stated temptation to manage consumables or pump renewals differently for patients they see as higher risk. US and Canadian clinicians share the medico-legal worry (Canadian HCP survey, Morrison et al., n=204: 64.4% cited medico-legal risk as a barrier for DIY versus 9.7% for commercial AID [uncertain: taken from a secondary summary of the thesis, not re-read here]). Professional guidance now largely separates prescribing components from endorsing the algorithm. The 2022 international consensus says keep providing regulated devices so reimbursement criteria are met. The Austrian Diabetes Society (2024) says prescribing approved components is permitted, and is the way to ensure continued care, alongside documentation that the person knows the system is unapproved and that the clinic does not take responsibility. ADCES DANAtech says clinicians do not prescribe open-source AID itself. Diabetes Canada (2023) warns that clinician bias can amount to 'inappropriate gatekeeping'. Pharmacists, with little training in DIY AID, may read looping as unauthorized use of a prescription (Elezzabi 2025). Clinicians also carry the paperwork: prior authorizations, letters of medical necessity, renewal attestations (adherent to follow-ups and training), training sign-off, and repeat PAs when a person switches pod type or insurer. With twiist the clinician prescribes the whole system and enters starting settings, which restores a familiar prescriber role.",
+  "effect_on_relationship": "The gate turns the relationship into a transaction. For many loopers the clinic becomes a supply desk: they come for prescriptions, labs and PA renewals, while settings advice comes from peers (Suttiratana 2022; Cleal et al., JMIR 2025, n=383). Because the clinician controls life-sustaining supplies, the user has strong reasons to manage what the clinic learns. Common patterns are staged disclosure that starts with a supply request (LoopTips), framing the request as 'pods for a pump' without naming the controller, waiting until supplies are secured, or never telling the pharmacist (Elezzabi 2025). One bad encounter, with a pharmacist, an endocrinologist or a story from a peer group, generalises into silence. The result is an incomplete chart: no record that an algorithm is dosing, which matters in hospital, in pregnancy and when the pharmacy reconciles medications. Clinicians who keep prescribing while declining to advise ('support but do not advise') preserve the supply line but leave the user without expert settings input, and trust stays shallow. On the positive side, prescribing itself is a quiet form of support, and some clinicians adapt orders to fit looping, such as a consultant who changed the consumables order (Marshall 2019 [uncertain: not re-read for this item]) or an endocrinologist who wrote a prescription for a compatible pump after seeing the results (Suttiratana 2022 [uncertain]). Payer renewal rules that require 'adherence to provider follow-up' keep users coming to visits, which keeps a thread of contact open even when trust is thin. Omnipod 5 support in Loop (Sep 2026) may reduce friction, since a standard Omnipod 5 prescription no longer signals DIY, but it may also deepen non-disclosure [uncertain].",
+  "decision_ownership": "Split, with no shared view. The user (or parent) decides to loop and chooses the algorithm and settings, and accepts 'own risk' (Diabetes UK, Diabetes Australia, Austrian position). The clinician decides whether to prescribe and sign PAs for regulated components, and some payers require an endocrinologist. The insurer or PBM decides coverage, quantity and renewal. The manufacturer decides who can buy supplies (Medtronic needs a registered pump) and who passes pod training (Insulet trainers). The pharmacist decides whether to dispense. Liability: clinicians fear warranty invalidation and indemnity exposure from knowingly prescribing for off-label use (MHRA definition), although legal analysis (Roberts 2021) and professional guidance say prescribing approved components is permissible and recommend documenting informed choice. For twiist and Tidepool Loop, the clinician is a conventional prescriber and the manufacturer carries device responsibility.",
+  "disclosure_risk": "High. This is the item where the cost of disclosure is most concrete: losing pods, pump supplies, CGM or insulin, or being flagged at the pharmacy. Users have a rational incentive to disclose only after supplies are secured, to disclose to the endocrinologist but not the pharmacist, or to present the request as ordinary pump therapy. Caregivers add fear of losing the child's insurance (10.7%) and HCP support (39.3%). The new ability to run Loop on Omnipod 5 pods lowers the visible signal and may make silence easier [uncertain].",
+  "regulatory_status_dependency": "Partly. With twiist (FDA-cleared, Tidepool Loop algorithm), the algorithm itself is prescribed, covered through the pharmacy channel and supported by manufacturer training, so the disclosure dilemma largely disappears. But twiist is US-only, its savings programme is limited to commercial insurance (Medicare and Medicaid excluded; Part D status [uncertain]), it runs an older Loop, and it supports only Libre 3 Plus and Eversense. DIY users, including those running Loop or Trio on prescribed Omnipod 5 pods, still depend on component prescriptions for an unapproved use. In Canada, BCDiabetes' Health Canada investigational testing authorization application (May 2026) could create a sanctioned path [uncertain: outcome unknown].",
+  "workarounds": "Users:\n- Disclose in stages, asking for pods or supplies first (LoopTips).\n- Request DASH or, since Sep 2026, Omnipod 5 pods as standard therapy.\n- Keep a registered PDM or controller serial for pod replacements.\n- Get Medtronic supplies through DME suppliers.\n- Buy used x22/x23 pumps from friends, Facebook groups or Craigslist, or receive them from clinicians (LoopDocs; KFF 2019 reported about $600 each on what a parent called a 'black market').\n- Keep an active long-acting insulin prescription and a backup pump.\n- Get insulin from a family physician or another pharmacy after a refusal, and stop telling pharmacists (Elezzabi 2025).\n- Switch to known-friendly clinics found through peer groups, or to supported programmes (BCDiabetes, with physician referral and waiver).\n- Time switches to warranty and starter-kit cycles.\n- Use manufacturer support (Insulet ASPN pharmacy, CoverMyMeds) for PAs.\nClinicians:\n- Prescribe components while declaring the algorithm outside their responsibility, and document informed choice (Austrian 2024; consensus 2022).\n- Adapt consumable orders to the user's hardware.\n- Refer to colleagues with OS-AID experience.\n- Use the twiist or Omnipod 5 path when a regulated option fits.",
+  "existing_tools": "- Prescribing and coverage: EHR e-prescribing; CoverMyMeds and Insulet's ASPN pharmacy team for Omnipod PAs; Insulet's prior authorization resource guide; DME supplier portals for Medtronic supplies; twiist savings programme and Sequel coverage line; payer PA forms (CVS Caremark 3762-C, Centene CP.PHAR.534).\n- Evidence for medical necessity: Dexcom Clarity, Tidepool, Glooko and Nightscout reports supply CGM wear, TIR and AGP.\n- Hardware details: Loop's Omnipod pump manager shows pod details, and LoopFollow shows status remotely.\n- Community guidance: LoopDocs and OmnipodKit pages explain sourcing.\n- Supported-clinic paperwork: BCDiabetes registration, waiver and consent, and referral.\n- Professional guidance: consensus, Austrian, Diabetes Canada and Diabetes UK statements that clinicians can cite.",
+  "existing_tool_coverage_gap": "No tool links the user's actual hardware and supply needs to what the clinic must document for payers. Nothing tracks, in one place, which pod type and CGM variant is prescribed, PA approval and expiry dates, starter-kit and warranty windows, controller or PDM serials, recall lots, insulin use per 72 hours against quantity limits, or backup prescriptions. Glucose platforms show outcomes but do not turn them into payer-ready evidence (for example 'CGM use replaces 4 BG tests a day', 'responding positively to therapy', 'adherent to follow-up'). Nothing records the informed-choice or own-risk documentation that lets a clinician prescribe components comfortably. Nothing gives pharmacists or primary care a short, credible explanation that looping uses prescribed insulin in a prescribed pump. Nothing warns about supply shocks (end of life, recalls, formulary changes). Nothing lets users disclose in graded levels (supplies only, then system, then settings) without losing the record.",
+  "data_artifacts_involved": "Prescriptions (pods by type and CGM variant, PDM or controller, CGM sensors, rapid and long-acting insulin, Medtronic reservoirs and sets). Prior authorization approvals and expiry dates. Starter-kit and warranty dates. Device serial numbers and pod lot numbers. Training sign-off. CGM wear and TIR or AGP summaries for medical necessity. Total daily dose and insulin per 72 hours. Informed-consent or waiver documents. Backup or sick-day plan. Settings snapshot when handing over to a new prescriber.",
+  "unmet_need": "A safe, low-risk way for a looper and the people who control their supplies to agree on what is being prescribed, why it is medically necessary, and who is responsible for what, without either side having to pretend. Today the user carries the risk of disclosure (losing pods, pump supplies or insulin), the clinician carries the paperwork and a vague liability worry (warranty, indemnity, off-label use), and payers demand evidence of engagement and need that neither side can easily produce from Loop data. Specifically missing: (1) a clear split between 'components I am prescribing' and 'the algorithm the patient runs at their own informed risk', documented so clinicians feel safe prescribing (as the Austrian and consensus guidance recommends); (2) payer-ready documentation generated from the user's own data, such as CGM use, outcomes, insulin need against pod quantity limits, education and follow-up adherence, so PAs and renewals stop being a yearly hurdle; (3) a single view of the supply chain (pod type, CGM variant, serials, PA and warranty clocks, recalls, end-of-life dates, backup insulin) so lapses are caught before they become emergencies; (4) something to show pharmacists and primary care so a dispensing refusal does not cut off insulin; (5) graded disclosure that lets trust build without the first step being a gamble on supplies.",
+  "implication_for_collaboration_tool": "LoopStack+ should treat supply access as a first-class part of the collaboration, not an afterthought to glucose review:\n1. Hardware and prescription ledger: current pump or pod type (Eros, DASH, Omnipod 5 and its CGM variant, Medtronic model and firmware, Dana or Medtrum), controller or PDM serial, CGM, insulins, backup long-acting and pens. Add PA approval and expiry dates, starter-kit and warranty windows, and pod lot numbers. Use it to send renewal and recall reminders to both user and clinic.\n2. Payer-ready evidence export: a one-page summary mapped to common criteria (CGM wear in place of BG testing, TIR and hypoglycaemia, total daily dose and units per 72 hours against pod caps, education completed, visit adherence, responding to therapy) that the clinic can attach to a PA, renewal or letter of medical necessity.\n3. Separation of roles with documented informed choice: a clinician-facing statement of 'components prescribed by clinic' versus 'open-source controller chosen and operated by the patient', with a dated acknowledgement that matches professional guidance (2022 consensus, Austrian 2024, Diabetes UK). This reduces the clinician's liability fear and the user's fear of losing prescriptions.\n4. Pharmacist and primary-care card: a short, shareable explanation that looping uses prescribed insulin in a prescribed pump, plus the current insulin and supply list and the specialist contact, to prevent refusals like the Alberta case.\n5. Graded disclosure controls: let the user share the supply ledger first, then system identity, then settings and algorithm data, with clear defaults and an audit of what each clinician has seen. Never make supply documentation depend on full disclosure.\n6. Supply-shock monitoring: flag end-of-life dates, recalls and formulary changes against the user's ledger, and propose the prescription change to discuss (for example DASH to Omnipod 5 pods).\n7. Regulated-path parity: support twiist and Omnipod 5 users with the same ledger so clinics see one consistent view whatever the controller.\nThe tool should not advise on insurance strategy or help evade payer rules. It should make legitimate need and responsibility visible.",
+  "severity_rank": "High. It controls whether the system can run at all, it is the usual first contact about looping, it recurs at every refill and renewal, and fear of losing supplies is the main reason users manage or withhold disclosure.",
+  "safety_criticality": "Medium to high. Supply loss forces abrupt reversion to injections or rationing. Running out of insulin after a refusal risks DKA (Elezzabi 2025). Workarounds push users toward second-hand, out-of-warranty or recalled hardware. Hidden looping leaves hospitals and pharmacies unaware that an algorithm is dosing. Direct overdose risk from the gate itself is low.",
+  "equity_impact": "Hits hardest:\n- People on Medicaid or other public insurance: inconsistent coverage, heavy PAs, provider insurance bias in 61-85% of providers; 94% of Loop study users were privately insured.\n- Medicare beneficiaries: Part D coinsurance; twiist savings programme excluded.\n- People in jurisdictions with pump waitlists or high upfront costs (Alberta 4-year waitlist case; up to $6,300 controller costs outside BC).\n- People whose loopable hardware is going away (Eros, Accu-Chek).\n- US Android users, who have fewer AAPS-compatible pumps available.\n- Children, whose caregivers fear losing insurance.\n- People without a supportive endocrinologist where payers require one.\n- Racially minoritized patients (34% racial-ethnic bias in technology recommendations).\n[uncertain] No data were found for non-English speakers or older adults specifically.",
+  "uncertain": [
+    "system_specificity",
+    "key_sources",
+    "prevalence_or_magnitude",
+    "clinician_perspective",
+    "effect_on_relationship",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "equity_impact"
+  ]
+}

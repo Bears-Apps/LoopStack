@@ -1,0 +1,57 @@
+.activity-strip {
+  border-radius: 16px;
+  padding: 16px;
+  background: var(--color-surface-elevated);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.activity-strip__header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.activity-strip__eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+}
+
+.activity-strip__confidence {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.activity-strip__chips,
+.activity-strip__suspected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.activity-strip__chip {
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: var(--color-accent-soft);
+  color: var(--color-text-strong);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.activity-strip__suspected-chip {
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+}
+
+.activity-strip__advisory {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}

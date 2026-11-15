@@ -1,0 +1,269 @@
+{
+  "item_name": "Clinician knowledge gap and what clinicians say they need",
+  "issue_summary": "Most diabetes clinicians say they do not know enough about open-source AID to discuss it, advise on it or troubleshoot it. They also say training is the thing they want most. In the UK ABCD/DTN-UK/ACDC survey (n=317, fielded Feb-Apr 2019), 91% would not start a conversation about OS-AID. Their reasons were lack of regulation (67%) and their own limited knowledge (63%). 59% felt uncomfortable giving ongoing support, and only 8.8% felt 'extremely confident' describing how a system is set up. Yet 96.5% said HCPs should learn more, and 47% would use OS-AID themselves. In the Canadian survey (n=204, June-July 2021), 72.7% were comfortable supporting commercial AID but only 21.6% DIY AID. The top DIY barriers were no access to staff trained on the systems (85.3%), unfamiliarity (73.4%) and medico-legal risk (64.4%). Over 95% asked for HCP and user education, and 93.9% of endocrinologists wanted medico-legal guidance. Guidance has since appeared: the 2021/2022 international consensus, the Diabetes Canada 2023 position statement and HCP user's guide, and the ADCES danatech open-source pages and webinars. But it is static, written mainly for Loop/AndroidAPS/OpenAPS, and goes out of date quickly. Diabetes Canada says its guide could be out of date as soon as it is published. The burden is growing because there are now several active systems built on two algorithm families: Loop on one side, and oref in AndroidAPS, Trio, iAPS and OpenAPS on the other. Each has its own settings and vocabulary: Glucose Safety Limit (formerly Suspend Threshold), Correction Range, overrides and Automatic Bolus in Loop; Max IOB, SMB, UAM, autosens, Dynamic ISF, temp targets, profile switches and Trio 'Profiles' in oref. Diabetes Canada notes this vocabulary 'does not build on existing CSII language', which makes it hard for HCPs to help optimize settings. Commercial systems come with industry training and point-of-care tools (e.g., PANTHER/CARES forms). No such infrastructure exists for DIY systems.",
+  "who_is_affected": "Clinicians: endocrinologists, diabetes specialist nurses/CDCES/CDEs, dietitians, pediatric diabetes teams, endocrinology trainees, and, even less prepared, primary care, school nurses (46% had no prior knowledge of DIY systems), hospital/inpatient staff and obstetric teams. Patients: adults who loop and parents who loop for children, who end up teaching their own clinicians or doing without clinical input on settings. People considering DIY AID are also affected, because lack of HCP support is itself a barrier to starting.",
+  "system_specificity": "All open-source systems, unevenly. Loop is the best documented for clinicians (LoopDocs/LoopTips endo pages, Diabetes Canada guide, BC Diabetes resources, Diabetes Educators Calgary). AndroidAPS and OpenAPS have official clinician guides and are covered by Diabetes Canada. Trio is covered by ADCES danatech ('Big 3' with Loop and AAPS) but postdates the Diabetes Canada guide. iAPS is explicitly out of scope in Diabetes Canada and flagged for caution by danatech. The FDA-cleared Loop derivative (Tidepool Loop in twiist) goes through commercial training channels, so its knowledge gap is narrower.",
+  "care_setting": "Routine endocrinology/diabetes clinic visits (adult and pediatric), CDCES/DSN/dietitian education visits, primary care (supply prescriptions, general care), schools (school nurses), inpatient/ED and perioperative care (BC Diabetes publishes a 'Looping in hospital' letter for staff), and pregnancy care. Clinics with low DIY volume (rural, community, small pump services) are where the gap is widest.",
+  "trigger_moment": "When a patient first mentions DIY AID or asks for pump/CGM prescriptions to build a system; at visits where settings changes are discussed and the clinician meets unfamiliar parameters (max IOB, SMB, glucose safety limit, dynamic ISF); when a patient switches systems (Loop to Trio, iAPS to Trio, DIY to twiist or another commercial system) or updates to a version with new features; after a hypoglycemia/DKA event when the clinician has to judge the system's role; and at hospital admission, school enrolment or pregnancy, when staff with no exposure must decide whether the system can stay on.",
+  "key_sources": [
+    {
+      "title": "Crabtree TSJ, Choudhary P, Lumb A, et al. ABCD, DTN-UK and ACDC Survey of UK Healthcare Professional Attitudes Towards Open-Source Automated Insulin Delivery Systems. Diabetes Ther 2022;13(2):341-353",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": "2022 (survey fielded Feb-Apr 2019)",
+      "country": "UK",
+      "sample_size": "317 HCPs (146 consultants [46%], 90 DSNs, 32 dietitians, 24 specialist registrars, 25 other; 210 adult, 85 paediatric, 22 joint; England 204, Scotland 80, Wales 27)",
+      "relevance": "Main UK HCP survey. 91% would not initiate OS-AID discussions (not regulated 67%, own limited knowledge 63%, indemnity 31.8%, pump warranty 28%). Self-rated confidence 'somewhat' or less: set-up 73.5%, risks 77.9%, benefits 81.4%. Only 8.8%/3.7%/5.3% were 'extremely confident'. 59.0% were not comfortable giving ongoing support. Consultants were more confident than DSNs, and confidence rose with the number of OS-AID users in the service. 63.1% knew of fewer than 2 users. 96.5% said HCPs should learn more and 95.9% wanted to learn. Preferred formats: classroom 75.7%, online 62.8%, lectures 37.8%, distance 28.3%. 94% would keep providing care. 47% would use OS-AID themselves."
+    },
+    {
+      "title": "Crabtree TSJ et al. Diabetes HCP perspectives on DIY artificial pancreas systems: DTN-UK national survey 2019 (ABCD poster); short communication in Lancet Diabetes Endocrinol 2020;8(3):186-187",
+      "url": "https://abcd.care/sites/default/files/site_uploads/Posters/Posters_ABCDDecember2020/Poster_Crabtree_103.pdf",
+      "year": "2020",
+      "country": "UK",
+      "sample_size": "317 HCPs",
+      "relevance": "Early report of the same survey. Only 2% (7/317) saw DIY APS as dangerous, and 43% saw it as 'risky in the wrong hands'. 13% (41/317) would stop consumables. Many cited their own lack of knowledge as the barrier to troubleshooting. 97% (308/317) said HCPs should learn more."
+    },
+    {
+      "title": "Morrison AE, Farnsworth K, Witteman HO, Lam A, Senior PA. Canadian Healthcare Providers' Attitudes Towards Automated Insulin Delivery Systems (medRxiv preprint)",
+      "url": "https://www.medrxiv.org/content/10.1101/2022.06.02.22275169v1",
+      "year": "2022 (survey 25 June-30 July 2021)",
+      "country": "Canada",
+      "sample_size": "204 HCPs (32.8% RDs, 31.9% RNs, 28.4% endocrinologists; 54.9% CDEs; 85.7% urban)",
+      "relevance": "Comfort supporting commercial AID 72.7% vs DIY AID 21.6%, and 33% were 'not at all comfortable' with DIY. Comfort correlated with experience (DIY r=0.45). Respondents reported more barriers for DIY than for commercial AID (p=0.001). Respondents asked for HCP and user education. Not found as a peer-reviewed journal article; the full data are in the 2022 University of Alberta thesis below. [uncertain: publication status after 2022]"
+    },
+    {
+      "title": "Morrison AE. Automated Insulin Delivery System Use in Canada: Incorporating Perspectives of Both Users and Healthcare Providers (MSc thesis, University of Alberta), Chapter 3",
+      "url": "https://doi.org/10.7939/r3-yre5-ms28",
+      "year": "2022",
+      "country": "Canada",
+      "sample_size": "204 HCPs",
+      "relevance": "Full results of the Canadian survey. DIY barriers: lack of access to staff trained on the system 85.3%, few approved options 83.6%, unfamiliarity/lack of exposure 73.4%, patient tech skill 73.4%, patient literacy/numeracy 72.3%, medico-legal risk 64.4% (vs 9.7% for commercial), lack of high-quality data 62.1%, too time-consuming 42.4%. 48.5% never start DIY discussions, yet 60.2% would probably or definitely support a patient's decision. 14.4% would refer the patient elsewhere rather than continue care. 33.5% (55/164) were actively involved in DIY care (data review, settings changes). Enablers for DIY: user education 95.7%, HCP education 95.1%; 93.9% of endocrinologists wanted medico-legal guidance. Practices: 22.5% had no DIY users, 37.7% had 1-5, 16.2% were unsure."
+    },
+    {
+      "title": "Morrison A, Senior P, Bubela T, Farnsworth K, Witteman H, Lam A. Do it yourself and commercial automated insulin delivery systems in type 1 diabetes: an uncertain area for Canadian healthcare providers. Can J Diabetes 2022 (doi:10.1016/j.jcjd.2022.06.003), via AJMC summary",
+      "url": "https://www.ajmc.com/view/diy-automated-insulin-delivery-systems-bring-unique-challenges-to-hcps",
+      "year": "2022",
+      "country": "Canada",
+      "sample_size": "n/a (commentary/review)",
+      "relevance": "Attributes clinician uncertainty to 'a lack of legal, ethical, and regulatory guidance'. Notes patients may avoid raising DIY AID because they are unsure of the provider's knowledge or views, and calls for best-practice guidance and targeted education."
+    },
+    {
+      "title": "Diabetes Canada Clinical Practice Guidelines Expert Working Group (Halperin IJ et al.). Do-It-Yourself Automated Insulin Delivery: A Position Statement. Can J Diabetes 2023;47(5):381-388",
+      "url": "https://www.diabetes.ca/for-professionals/position-statements",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "n/a (professional guidance)",
+      "relevance": "Opens by stating that HCPs 'have limited knowledge of DIY AID' and are hesitant. Says HCPs must discuss all evidence-based options including DIY AID, but 'do not need to become experts in the setup and building'. They should support settings optimization at follow-up and 'prioritize learning the key system characteristics'. Argues liability is greater for refusing support without an effective referral than for giving it, and adapts a CMPA table on documenting consent for off-label use. Notes that newer algorithm branches use terminology that does not build on CSII language, and asks developers to consult diabetes educators. Links discontinuation to difficulty fine-tuning settings, which better HCP education could reduce."
+    },
+    {
+      "title": "Chambers A, Mackay D, Farnsworth K, Morrison AE, Witteman HO, Senior P, Halperin IJ. Do-It-Yourself Automated Insulin Delivery: A Health-care Practitioner User's Guide. Can J Diabetes 2023;47(5):389-397.e8 (erratum Oct 2023)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37532366/",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "n/a (clinician guide)",
+      "relevance": "The most practical clinician guide. Applies the CARES framework (Calculate, Adjust, Revert, Educate, Sensor/share) to Loop, AndroidAPS and OpenAPS. Table 1 gives settings checks: compare actual vs programmed basal; too-strong ISF causes a 'roller coaster'; max basal no more than 3-4x the average basal rate; max bolus; suspend threshold. Table 4 maps where to find settings, AGP and daily views in Nightscout vs Tidepool; Tidepool device settings were then 'not currently available with Loop'. Says iAPS (FreeAPS X) settings are beyond its scope, and that the guide may be out of date as soon as it is published. Low-volume HCPs may not realistically become AID experts and should refer."
+    },
+    {
+      "title": "Braune K, Lal RA, Petruželková L, et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": "2021/2022",
+      "country": "International (OPEN HCP network; endorsed by ADCES, ABCD-DTN and others)",
+      "sample_size": "n/a (consensus)",
+      "relevance": "Says industry trains HCPs on commercial AID but open-source AID 'require active learning... staying on top of developments and software changes for multiple systems'. HCPs should learn about all options, and those who are unfamiliar, lack resources or face legal concerns should cooperate with or refer to colleagues who can provide support. Notes the absence of official onboarding programmes and helplines."
+    },
+    {
+      "title": "Lewis DM, Hussain S. Practical Guidance on Open Source and Commercial Automated Insulin Delivery Systems: A Guide for Healthcare Professionals. Diabetes Ther 2022;13(9):1683-1699",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9399331/",
+      "year": "2022",
+      "country": "US/UK",
+      "sample_size": "n/a (guidance)",
+      "relevance": "Describes the 'steep learning curve' for HCPs as commercial and open-source systems multiply and change quickly. Offers a conversational framework for assessing AID options. Warns providers not to limit the choices offered because of their own discomfort or lack of knowledge."
+    },
+    {
+      "title": "Murray JA, Clayton MF, Litchman ML. Health Care Provider Knowledge and Perceptions of FDA-Approved and Do-It-Yourself Automated Insulin Delivery. J Diabetes Sci Technol 2020;14(6):1017-1021",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31876176/",
+      "year": "2020 (epub Dec 2019)",
+      "country": "USA",
+      "sample_size": "Phase 1: 43 HCPs; Phase 2: 137 HCPs (91% nurses/nutritionists)",
+      "relevance": "74.4% said their lack of knowledge of how DIY AID works was the greatest barrier to answering patient questions. 64.5% would use a comparison fact sheet. Per Morrison's review, 11.6% were comfortable answering DIY questions vs 34.9% for commercial systems [uncertain: figures taken from a secondary summary]. Negative attitudes were low."
+    },
+    {
+      "title": "Palmer W, Greeley SAW, Letourneau-Freiberg LR, Naylor RN. Using a Do-It-Yourself Artificial Pancreas: Perspectives from Patients and Diabetes Providers. J Diabetes Sci Technol 2020;14(5):860-867",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32680447/",
+      "year": "2020 (surveys Feb-May 2019)",
+      "country": "USA",
+      "sample_size": "152 providers (via AADE newsletter and Pediatric Endocrine Society; ~69% physicians) and 101 patients",
+      "relevance": "27% of providers rated DIYAPS 'safe' or 'very safe' vs 89% of patients. Providers named lack of experience and inability to troubleshoot as their biggest challenges. Patients felt encouraged by providers but few described them as knowledgeable."
+    },
+    {
+      "title": "March CA, Oyetoro R, Adams J, Rodriguez H, Albanese-O'Neill A. School Nurse Perspectives on Do-It-Yourself Automated Pancreas Systems in the School Setting. Diabetes Technol Ther 2021;23(10):705-709",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33900843/",
+      "year": "2021",
+      "country": "USA",
+      "sample_size": "National survey of school nurses (n=104 per Morrison 2022 review) [uncertain: n not in abstract]",
+      "relevance": "23% had DIY APS experience at school and 46% had no prior knowledge of the technology. 82% said children should be allowed to use them. Nurses asked for guidelines and training and reported fear of liability."
+    },
+    {
+      "title": "Raimond LH, O'Donnell S, Bøggild-Damkvist T, Filges T, Lomborg K. Open-source automated insulin delivery systems and formal healthcare: a qualitative study. Chronic Illness 2023;19(4):836-847",
+      "url": "https://doi.org/10.1177/17423953221142341",
+      "year": "2023 (epub Nov 2022)",
+      "country": "Denmark",
+      "sample_size": "5 adult users, 6 HCPs (interviews)",
+      "relevance": "HCPs 'fear the burden associated with the rising technical expectations'. Ethical responsibility is unclear, and users are reticent about disclosing. Future care needs better HCP knowledge and an open-minded approach to user-driven initiatives."
+    },
+    {
+      "title": "Suttiratana SC, Wong JJ, Lanning MS, et al. Qualitative Study of User Experiences with Loop, an Open-Source Automated Insulin Delivery System. Diabetes Technol Ther 2022;24(6):416-423",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": "2022",
+      "country": "USA",
+      "sample_size": "72 Loop users (focus groups/interviews)",
+      "relevance": "'A range of provider attitudes and knowledge about Loop complicated users' clinical experiences and disclosure.'"
+    },
+    {
+      "title": "Huhndt A, Chen Y, O'Donnell S, et al. Barriers to Uptake of Open-Source AID Systems: caregivers of children and adolescents from the OPEN survey. Front Clin Diabetes Healthc 2022;3:876511",
+      "url": "https://www.frontiersin.org/articles/10.3389/fcdhc.2022.876511/full",
+      "year": "2022 (survey Sep-Nov 2020)",
+      "country": "Multinational",
+      "sample_size": "56 caregivers not using OS-AID",
+      "relevance": "39% saw lack of support from medical professionals as a major barrier. 44.4% (12/27) had no support from their team, citing its 'limited expertise in diabetes technology'. 39.3% feared losing HCP support and 25% said their team discourages building. 88.9% would be motivated if their HCP recommended OS-AID."
+    },
+    {
+      "title": "O'Donnell S, Cooper D, Chen Y, et al. Barriers to uptake of Open-Source AID Systems: adults with type 1 diabetes from the OPEN survey. Diabetes Res Clin Pract 2023;197:110235",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36581143/",
+      "year": "2023",
+      "country": "Multinational (31 countries)",
+      "sample_size": "129 adult non-users",
+      "relevance": "Fear of losing healthcare provider support is one of the major barriers to uptake, alongside sourcing components and lack of confidence in one's own technical skills."
+    },
+    {
+      "title": "Shepard JA, Breton M, Nimri R, et al. User and Healthcare Professional Perspectives on Do-It-Yourself Artificial Pancreas Systems: A Need for Guidelines. J Diabetes Sci Technol 2022;16(1):224-227",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33000636/",
+      "year": "2022 (ATTD Feb 2020 workshop)",
+      "country": "International",
+      "sample_size": "n/a (commentary)",
+      "relevance": "Noted there were no guidelines to help users and HCPs handle DIY APS in routine care. Diabetes Canada cites this workshop's conclusion that people may stop attending care if HCPs do not support DIY AID."
+    },
+    {
+      "title": "ADCES danatech: Open-Source AID resources ('What Clinicians Need to Know About Open-Source AID', 'Open-Source AID Systems Comparisons and Basic Set Up', 'Advanced Features', 'Making Sense of Data / Translating Data into Decisions', 'A Guide to Open-Source AID Outcomes', 'How to Help Patients Start and Succeed', 'Case Studies')",
+      "url": "https://www.adces.org/education/danatech/insulin-pumps/diy-looping-open-source",
+      "year": "living pages, accessed 2026 (full pages blocked to automated fetch; content from search excerpts)",
+      "country": "USA",
+      "sample_size": "n/a (professional education)",
+      "relevance": "Free educator-facing pages covering the 'Big 3' (AndroidAPS, Loop, Trio). Main messages: clinicians do not prescribe these systems but can support safe use; Nightscout is the usual data platform; open-source systems lack some commercial 'guardrails'; frame settings changes as normal optimization. Advises DCESs to 'approach iAPS with caution' because it is less mature. Cites the 2024 ADA Standards of Care saying open-source AID can be safe and effective with education and oversight. [uncertain: page text verified only through search excerpts]"
+    },
+    {
+      "title": "ADCES recorded webinar: Open-Source AID Systems (Loop and APS), Rayhan Lal MD; plus live 'Introduction to the Basics of Open-Source AID Systems' (Loop, Trio, AAPS)",
+      "url": "https://adces.org/store/online-education/detail/open-source-aid-systems-(loop-and-aps)-publication-no-ce",
+      "year": "recorded (date not shown); live session Sept 2025 [uncertain]",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "Free 45-minute recording with no CE credit, covering algorithm logic, data, consensus guidance and initial setup/tuning. It is one of the few structured clinician trainings on open-source AID, compared with ADCES's seven-part CE series on commercial AID."
+    },
+    {
+      "title": "Anandhakrishnan A, Liarakos AL, Dhatariya K, et al. Hybrid closed-loop systems in UK type 1 diabetes care: national survey of HCP awareness, confidence and training needs. Diabetes Obes Metab 2025;27(11):6353-6366",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40843855/",
+      "year": "2025 (survey Jul-Nov 2024)",
+      "country": "UK",
+      "sample_size": "637 HCPs across 135 organisations",
+      "relevance": "Comparison point. For commercial HCL, confidence was 'encouraging', credited to recent educational initiatives (industry courses, CPD-approved Glooko Academy modules). Even so, 73.3% wanted more training, preferring remote modules (52.3%), and 41% of pregnancy-care HCPs had no confidence advising on CamAPS FX. OS-AID was not surveyed, and no newer OS-AID HCP survey was found."
+    },
+    {
+      "title": "Evaluation of a New Clinic Tool for health care professionals caring for persons using the Control-IQ system. J Diabetes Sci Technol 2022 (PMID 35227129)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35227129/",
+      "year": "2022",
+      "country": "USA",
+      "sample_size": "29 clinicians, 89 encounters",
+      "relevance": "Evidence that a structured point-of-care tool closes system-specific knowledge gaps. About 10 minutes of use per encounter, SUS usability at the 90th-95th percentile, significant gains in familiarity (p=.009) and confidence (p<.001), and 90% said it would change their care. No equivalent exists for DIY systems."
+    },
+    {
+      "title": "PANTHER Program / ADCES AID Device Comparison Chart (CARES), July 2026",
+      "url": "https://www.adces.org/docs/default-source/panthertools/aid-comparison-carese_july-2026.pdf",
+      "year": "2026",
+      "country": "USA",
+      "sample_size": "n/a (clinic tool)",
+      "relevance": "Point-of-care comparison of commercial AID systems (MiniMed 780G, Omnipod 5, t:slim X2/Mobi Control-IQ, twiist, iLet), with matching CARES assessment forms. Open-source systems do not appear. [uncertain: chart content seen only through search excerpts]"
+    },
+    {
+      "title": "AndroidAPS documentation: For Clinicians - A General Introduction and Guide to AAPS (adapted from the OpenAPS clinician guide)",
+      "url": "https://androidapsdocs.readthedocs.io/en/latest/Resources/clinician-guide-to-AndroidAPS.html",
+      "year": "living document, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Developer-written clinician primer: algorithm inputs, prediction lines, SMB, Autotune, and changing one setting at a time and watching 2-3 days. It does not define UAM, autosens, max IOB or dynamic ISF, so clinicians must go to the full user documentation."
+    },
+    {
+      "title": "LoopDocs (algorithm overview and glossary) and LoopTips 'Endocrinologist and Loop'",
+      "url": "https://loopkit.github.io/looptips/how-to/endo",
+      "year": "living documents, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Loop 3 renamed 'Suspend Threshold' to 'Glucose Safety Limit' (https://loopkit.github.io/loopdocs/operation/algorithm/overview). LoopTips notes that some providers are comfortable and some distrusting, and that the suspend threshold and max basal are not part of normal pump therapy and should be explained to the endo, so the job of educating the clinician falls on the user."
+    },
+    {
+      "title": "Open-iAPS/Trio community documentation: 'Transition from other closed-loop solutions'",
+      "url": "https://oiaps-tmhastings.readthedocs.io/en/dev/Configuration/transition-qa.html",
+      "year": "living document, accessed 2026 (community docs branch, not confirmed as the official triodocs.org page)",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Says 'If you find it difficult to understand how Loop works, Trio is even more complex.' Trio (forked from iAPS 2.3.3) uses oref, unlike Loop: carbs counted as absorbed, dynamic ISF/CR, SMB/UAM, and 'Profiles' instead of Loop overrides. Shows how much clinicians must relearn across systems."
+    },
+    {
+      "title": "BC Diabetes Loop program: clinician FAQ (loop.bcdiabetes.ca/clinicians)",
+      "url": "https://loop.bcdiabetes.ca/clinicians",
+      "year": "living page, accessed 2026",
+      "country": "Canada (British Columbia)",
+      "sample_size": "n/a",
+      "relevance": "Shared-care model that concentrates expertise in one clinic. BC Diabetes installs, configures and updates Loop. Referring doctors are 'encouraged to learn how to adjust Loop settings', but primary care is 'not expected to provide support with the patient's loop configuration'."
+    },
+    {
+      "title": "Diabetes Educators Calgary: Loop DIY AID guide for healthcare providers",
+      "url": "https://diabeteseducatorscalgary.ca/devices/insulin-pumps/loop-diy-aid.html",
+      "year": "content last checked against LoopDocs 2025-05-04",
+      "country": "Canada",
+      "sample_size": "n/a",
+      "relevance": "Educator-built, Loop-only translation layer covering settings, confusing terms (e.g., 'Non-pump insulin'), TDD from Apple Health and troubleshooting checklists. It shows clinicians building their own references because no maintained cross-system one exists."
+    },
+    {
+      "title": "Diabetotech: How to help people on open-source AID systems (summary of Diabetes Canada guidance with quotes from Dr Ilana Halperin)",
+      "url": "https://www.diabetotech.com/blog/how-to-help-people-on-open-source-automated-insulin-delivery-systems",
+      "year": "2023",
+      "country": "Canada/International",
+      "sample_size": "n/a (blog)",
+      "relevance": "Quotes the framing 'I'm your diabetes doctor, I'm not your tech support', and notes people avoid DIY AID partly because they worry their healthcare team doesn't support them."
+    },
+    {
+      "title": "OPEN project (dedoc) page",
+      "url": "https://www.dedoc.org/open",
+      "year": "accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "The only HCP-facing output listed is the 2021 consensus statement. No OPEN courses, e-learning or toolkits for HCPs are listed."
+    }
+  ],
+  "evidence_strength": "Moderate. Two national cross-sectional HCP surveys give the core numbers: UK n=317, peer-reviewed in Diabetes Therapy 2022; Canada n=204, available only as a preprint and MSc thesis. Smaller US surveys (Murray 2020, n=43+137; Palmer 2020, n=152) and a US school-nurse survey (March 2021) support them. Qualitative studies (Raimond 2023, n=11; Suttiratana 2022, n=72) and OPEN user/caregiver surveys add the patient side. Professional guidance is strong and consistent (2022 international consensus, Diabetes Canada 2023 position statement and user's guide, ADCES danatech). Evidence on the multi-system terminology burden is professional guidance plus community documentation, not measured data. No HCP survey on OS-AID fielded after 2021 was found.",
+  "prevalence_or_magnitude": "Knowledge/confidence: UK 2019, 73.5% at most 'somewhat confident' describing set-up, 77.9% for risks, 81.4% for benefits; only 3.7-8.8% 'extremely confident'. Canada 2021, 21.6% comfortable supporting DIY AID vs 72.7% commercial; 73.4% cite unfamiliarity and 85.3% cite lack of staff trained on the systems. US: 74.4% name their own lack of knowledge as the main barrier to answering questions (Murray 2020); 27% of providers rate DIY as safe vs 89% of users (Palmer 2020); 46% of school nurses had no prior knowledge (March 2021). Engagement: 91% (UK) would not initiate a discussion, and 48.5% (Canada) never do. 59% (UK) are not comfortable giving ongoing support. 14.4% (Canada) would hand care to another clinic. Only 33.5% of Canadian respondents were actively involved in DIY care. Demand: 96.5% (UK) say HCPs should learn more; 95.1% (Canada) want HCP education; 93.9% of Canadian endocrinologists want medico-legal guidance. Exposure: 63.1% of UK respondents knew of fewer than 2 OS-AID users in their service; in Canada 22.5% had none and 37.7% had 1-5. Confidence rises with exposure in both countries. Patient side: 39% of non-using caregivers name lack of HCP support as a major barrier, and 44.4% report no available team support because of limited expertise (OPEN 2022). System burden: at least 4 actively maintained systems (Loop, Trio, AndroidAPS, iAPS; plus legacy OpenAPS) across 2 algorithm families, each with several releases a year. Diabetes Canada's 2023 guide covers 3 of them, and danatech covers 3 of the 4 active ones. [uncertain: release frequency is a general observation, not counted]",
+  "data_quality_caveats": "Both national surveys are self-selected, distributed to invested specialist networks (pump MDTs, snowball sampling), with unknown response rates, so they likely overstate interest and support compared with the wider HCP population. Confidence is self-rated, not tested. The UK data (2019) predate the 2021 consensus, Diabetes Canada 2023, ADA's more open Standards of Care, Trio, and wide commercial AID rollout, so current knowledge may be higher, or lower for newer systems. The Canadian survey appears not to have been published in a peer-reviewed journal [uncertain]. Some US figures come from a thesis's secondary summary. Qualitative samples are very small. Diabetes Canada's user's guide has a published erratum (Oct 2023). The danatech and PANTHER content was verified only through search excerpts because the pages block automated access. Community docs change often, so terminology details may drift.",
+  "clinician_perspective": "What clinicians say: (1) They do not know how these systems work well enough to explain, advise on or troubleshoot them. 63% of UK respondents gave this as a reason not to raise OS-AID. UK free-text responses said HCPs felt 'ill-equipped to advise on management of the system', and some framed support as general diabetes care only, saying that if there were issues with the actual rig 'we would not be able to help'. (2) They fear liability and lack regulatory cover: 67% (UK) cite non-approval, 31.8% indemnity, and 28% pump warranty. In Canada 64.4% cite medico-legal risk, and endocrinologists are the most worried. (3) They lack exposure. With 0-5 DIY patients per practice, they never build familiarity, and confidence correlates with patient volume. (4) They lack trained colleagues. 85.3% of Canadians name access to staff with system training as a barrier, the top DIY barrier. (5) Burden and expectations: Danish HCPs 'fear the burden associated with the rising technical expectations', and the consensus says open-source AID requires 'staying on top of developments and software changes for multiple systems'. Diabetes Canada adds that newer algorithm branches use terms that do not map onto CSII language. (6) Patient-selection worries: Canadian endocrinologists were 'very concerned' about DIY AID for people monitoring infrequently (70%), not using a bolus calculator (56%), with HbA1c >10% (54%) or recent unexplained DKA (50%). What they say they need: HCP education (95%+). UK preferences were classroom (75.7%) and online (62.8%); in the 2024 UK survey on commercial systems, remote modules were preferred (52.3%). They also want user education (95.7%), clinical practice guidelines and medico-legal guidance (93.9% of endocrinologists), and a fact sheet comparing systems (64.5% would use one). Diabetes Canada and danatech answer these needs with guides. Clinician-written resources (BC Diabetes, Diabetes Educators Calgary) show some clinicians building their own references. Positive signals: few see DIY as dangerous (2% UK), most would keep providing care (94% UK), 60.2% (Canada) would support a patient's choice, and 47% of UK HCPs would use OS-AID themselves.",
+  "effect_on_relationship": "The knowledge gap flips the usual expert/learner roles. Diabetes Canada notes that 'some clinicians may feel threatened by the role reversal where the PWD is the expert'. Users often end up teaching their clinician (LoopTips tells them to explain suspend threshold and max basal to the endo), or they stop asking. Common outcomes: (a) 'Permissive support'. The clinician keeps prescribing supplies and managing general diabetes care but steps back from settings ('I'm your diabetes doctor, I'm not your tech support'). The visit then shrinks to refills and HbA1c review, and settings decisions move to peers (Looped group, Discord). (b) Avoidance or withdrawal. 91% (UK) and 48.5% (Canada, 'never') do not start the conversation, and 14.4% of Canadian HCPs would hand care to another clinic, which confirms patients' fear of disclosing. (c) Users judge competence. Palmer found patients felt encouraged, but few described providers as knowledgeable. Suttiratana found that varied provider knowledge 'complicated users' clinical experiences and disclosure'. Users then share selectively, and trust drops in both directions. (d) Where the clinician is engaged and informed (BC Diabetes, the 33.5% of Canadians actively involved), the relationship can become collaborative settings tuning. Lack of HCP support also deters people from starting (39% of caregivers), and Diabetes Canada cites the risk that people stop attending care when HCPs are unsupportive.",
+  "decision_ownership": "Today: the user, often with peers, owns system choice, build, version, enabled features and most settings changes. Clinicians own prescriptions for regulated components (pump, CGM, insulin) and general diabetes care. Guidance asks for shared decision-making: Diabetes Canada recommends HCPs and PWD 'agree on how to review the data and make joint decisions'. In practice the knowledge gap leaves settings decisions largely with users, and clinicians may decline to weigh in on system-specific parameters. Liability: users carry responsibility for the software and hardware; Diabetes Canada says build/coding 'should not be the responsibility of the clinician'. Clinicians fear negligence claims, but Diabetes Canada's legal review argues liability is greater for refusing support without an effective referral. It recommends documenting consent, rationale, questions and monitoring (CMPA off-label framework). The consensus statement suggests unfamiliar HCPs cooperate with or refer to experienced colleagues, which spreads ownership across clinics. Courts have not tested DIY AID in Canada; in other jurisdictions this is unclear [uncertain].",
+  "disclosure_risk": "High. Users who expect their clinician not to understand the system, or to disapprove, are less likely to disclose it or share full data. The Canadian survey's 14.4% who would withdraw care 'confirm patient fears of disclosing'. Raimond (2023) found users reticent about disclosure, and Suttiratana (2022) linked provider knowledge directly to disclosure. Morrison et al. (2022) note patients may avoid raising DIY AID because they are unsure of the provider's knowledge or views. Partial disclosure, such as sharing CGM data only, hides the system-specific settings an informed clinician would need to see.",
+  "regulatory_status_dependency": "Partly. Lack of approval is the single biggest stated reason clinicians stay out (67% UK), and commercial systems come with industry training, reps, CE courses and point-of-care tools. The 2024 UK HCL survey credits these for 'encouraging' confidence. FDA clearance of Tidepool Loop (Jan 2023) and its use in Sequel's twiist (US launch reported July 2025) brings a Loop-family algorithm into that channel. ADCES lists an 'Introducing the twiist AID system' course, and PANTHER includes twiist in its CARES comparison [uncertain: CARES content seen only in excerpts]. This narrows the gap for clinicians whose patients use twiist and may make Loop concepts more familiar. It does not cover DIY Loop builds, whose features and settings may differ from the cleared version [uncertain]. It also does not cover the oref-based systems (Trio, iAPS, AndroidAPS, OpenAPS), which have no cleared counterpart, so the multi-system terminology burden remains.",
+  "workarounds": "Clinicians: limit their role to standard diabetes care, supplies and core pump settings (basal, ISF, CR), and leave system-specific questions to the online community. Refer to an experienced colleague or a virtual clinic, as the consensus and Diabetes Canada advise. Use the Diabetes Canada CARES framework and its Table 1/Table 4 checklists, and ask the patient to show the app home screen and explain what it is doing. Teach themselves from danatech pages, the free ADCES webinar, LoopDocs/AAPS/Trio docs and the Diabetes Canada 'Diabetes Deep Dives' webinar. Build local reference pages (Diabetes Educators Calgary). Centralize expertise in one clinic (BC Diabetes installs and configures Loop for referred patients, and referrers are not expected to handle configuration). Users: bring LoopTips/LoopDocs pages, the Diabetes Canada guide or danatech links to the visit; prepare explanations of non-CSII settings; ask peers (Looped Facebook group, Discord, Loop and Learn) for settings advice; switch to a DIY-friendly clinician or clinic; or disclose only partly. System design helps a little: AndroidAPS 'objectives' force users to learn features before automation is unlocked.",
+  "existing_tools": "Guidance and education: 2021/2022 international consensus (Lancet D&E); Diabetes Canada 2023 position statement and HCP user's guide (CARES framework, settings Table 1, Nightscout/Tidepool review Table 4); Lewis & Hussain 2022 practical guide; ADCES danatech open-source AID pages (Loop, Trio, AAPS; caution on iAPS) and webinars (free 45-minute Rayhan Lal recording, no CE; live 'basics' session covering Loop/Trio/AAPS); AndroidAPS and OpenAPS clinician guides; LoopDocs/LoopTips (including 'Endocrinologist and Loop'); Loop and Learn; BC Diabetes clinician and hospital-letter resources; Diabetes Educators Calgary Loop guide. Data platforms used for review: Nightscout (profiles, day-to-day, percentile, distribution reports; prediction lines; temp basal/SMB logs), Tidepool (daily/trends/basics; Loop 3+ settings history), and Dexcom Clarity (CGM only). Clinician tools for commercial AID that show what is possible: PANTHER/ADCES CARES forms and the AID comparison chart (commercial systems including twiist), the Control-IQ Clinic Tool, Glooko Academy CPD modules (UK), and industry training. Earlier UK clinician infrastructure: the ABCD DIYAPS audit (launched 2020; clinicians entered user outcomes; Diabetes UK-endorsed).",
+  "existing_tool_coverage_gap": "No maintained, system-agnostic, version-aware reference translates each system's settings and features into CSII terms for clinicians. The Diabetes Canada guide is a 2023 PDF covering Loop/AAPS/OpenAPS that excludes iAPS, predates Trio's rise, and says itself it may be out of date when published. Danatech covers the 'Big 3' as web articles, not a point-of-care tool, and is US- and educator-oriented. Developer clinician guides are system-specific and leave key terms undefined (the AAPS guide does not define UAM, autosens, max IOB or dynamic ISF). There is no PANTHER/CARES-style visit form or comparison chart for any DIY system, even though a similar tool raised Control-IQ confidence in about 10 minutes per visit. Data platforms show raw data but do not tell the clinician which system and version is running, which advanced features are on (SMB, UAM, dynamic ISF, autosens, automatic bolus), or what a setting means and whether it has a CSII equivalent. Tidepool did not show Loop device settings when the 2023 guide was written. No accredited, CE-bearing curriculum on open-source AID was found. Nothing covers non-specialist settings: primary care, school nurses, inpatient staff, obstetrics. No documentation template exists for consent and shared decisions (the CMPA-style table is advice, not a tool). No current measurement exists: no HCP survey on OS-AID since 2021.",
+  "data_artifacts_involved": "System identity (app name, version, algorithm family Loop vs oref); enabled-feature flags (Loop dosing strategy Automatic Bolus vs Temp Basal Only, Integral Retrospective Correction; oref SMB, UAM, autosens min/max, dynamic ISF/CR and adjustment factor, Autotune); therapy settings snapshot (basal, ISF, CR, correction range/target, pre-meal range, insulin model/DIA, max basal, max bolus, max IOB, glucose safety limit/suspend threshold); override presets, temp targets and profiles/profile switches with history; programmed vs actual basal and temp-basal log; automatic boluses/SMBs vs manual boluses; IOB/COB and prediction curves; TDD and basal %; settings change history; consent/discussion documentation.",
+  "unmet_need": "A point-of-care translation layer for clinicians that covers all systems and stays current with versions. In a few minutes it should tell a clinician which system and version the patient runs and which advanced features are on. It should explain each setting in familiar CSII terms, and flag settings with no CSII equivalent and their safety role (max IOB, SMB, glucose safety limit, max basal multiple, dynamic ISF factor). It should show what the algorithm actually did (programmed vs delivered basal, automatic dosing, overrides/profiles). Clinicians should get this in the structured CARES/PANTHER format they already use for commercial AID, inside the visit, so they do not have to self-study five sets of community documentation. Alongside it: concise just-in-time learning for each term, a way to document consent and shared settings decisions to address liability worries, and a referral path to experienced clinicians when needs exceed local expertise. Nothing current combines system-aware data with clinician-language explanation and documentation, and all existing guidance is static and partial (Loop/AAPS/OpenAPS-centric, iAPS excluded, Trio partly covered).",
+  "implication_for_collaboration_tool": "1) Detect the system from the data. Read Nightscout devicestatus/profile and Tidepool metadata to identify Loop vs Trio vs iAPS vs AndroidAPS vs OpenAPS, the version and the enabled features. Show this as a plain-language 'system card' at the top of every visit view. 2) Use one shared settings glossary across systems. Map each system's setting names to a CSII-equivalent concept (e.g., Glucose Safety Limit = suspend threshold; Loop override = oref profile/temp target + %), and clearly mark settings with no CSII equivalent and their safety role. Link each term to its source doc and a 'last verified' date, so content tracks releases instead of going stale like a PDF. 3) Structure the clinician view on CARES (Calculate, Adjust, Revert, Educate, Sensor/share), matching Diabetes Canada and the PANTHER forms clinicians already know. Aim for about 10 minutes, the time the Control-IQ Clinic Tool needed to raise confidence. 4) Turn the Diabetes Canada practice tips into review prompts, not dosing advice: consistently positive temp-basal adjustment suggests basal may be low; a glucose 'roller coaster' with no food suggests too-strong ISF; flag max basal set above 3-4x the average basal rate. Label these as discussion points to avoid medical-device decision-support claims [uncertain: regulatory classification]. 5) Build role-specific views: endocrinologist/CDCES (settings and behavior), primary care (supplies, sick-day and backup plan, when to refer), school nurse and hospital (what the system does when offline, how to suspend or revert to open loop). 6) Make documentation part of the workflow: a consent/discussion record following the CMPA-style checklist, a settings-change log recording who proposed and who agreed to each change, and a shared plan. This directly addresses the medico-legal worry (64.4% Canada; 93.9% of endocrinologists). 7) Prepare the patient side: a pre-visit packet in clinician language, so users no longer have to teach their clinician from LoopDocs. 8) Offer a directory of DIY-experienced clinicians/virtual clinics for referral, as the consensus and Diabetes Canada recommend. 9) Treat twiist/Tidepool Loop as one more profile in the same glossary, so clinicians carry concepts between cleared and DIY Loop while differences are flagged.",
+  "severity_rank": "High: clinician knowledge decides whether the clinician engages with the system at all. It is the top or near-top barrier in both national surveys (UK 63% own knowledge; Canada 73.4% unfamiliarity, 85.3% lack of trained staff), and it drives non-disclosure and the shift of settings advice to peers.",
+  "safety_criticality": "Medium (indirect). No published harm events were found that are directly attributed to clinician unfamiliarity [uncertain]. Plausible harm paths: a clinician applying CSII intuition to an oref system (e.g., strengthening ISF or raising max IOB while SMB/dynamic ISF is on) could cause hypoglycemia; safety limits (max basal, max bolus, glucose safety limit) can go unreviewed; inpatient or school staff may mishandle a system they do not understand; and users left without clinical input, or who disengage from care, lose a safety net. Diabetes Canada and the consensus both stress prioritizing hypoglycemia prevention and reviewing safety settings.",
+  "equity_impact": "Hardest hit, partly by inference: patients at low-volume, rural or community clinics and small pump services, where confidence is lowest (UK small centers; Canada confidence tracks exposure). People without access to T1D specialists, whom Diabetes Canada names as a reason for DIY uptake. Users of less-documented systems (iAPS, Trio) and possibly AndroidAPS users in iOS/Loop-dominant clinics [uncertain]. Children at school (46% of school nurses had no prior knowledge). Pregnant users (even for licensed CamAPS FX, 41% of UK pregnancy-care HCPs had no confidence) [uncertain extrapolation to DIY]. Patients seen mainly by nurses or dietitians, who rated lower confidence than consultants in the UK. Non-English speakers, since most clinician-facing guidance is English-only (AAPS docs are multilingual) [uncertain]. Patients whose clinicians gatekeep on assumed capability, a risk Diabetes Canada warns against.",
+  "uncertain": [
+    "key_sources",
+    "prevalence_or_magnitude",
+    "data_quality_caveats",
+    "decision_ownership",
+    "regulatory_status_dependency",
+    "implication_for_collaboration_tool",
+    "safety_criticality",
+    "equity_impact"
+  ]
+}

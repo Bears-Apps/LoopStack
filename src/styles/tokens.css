@@ -1,0 +1,220 @@
+:root {
+  /* Brand — LoopStack. Loop-inspired green. The brand color is the in-range
+     color: the product nudges you toward in-range. Deliberate overlap with
+     --range-in. See docs/visual-system.md + docs/brand.md. */
+  --brand-primary: #5CC25C;
+  --brand-primary-hover: #48A848;
+  --brand-primary-soft: #E8F6E8;
+  --brand-on-primary: #FFFFFF;
+
+  /* Loop-green glass (DESIGN.md › Glass, GLASS-1 to GLASS-6). Subtle on
+     purpose: a light green tint, a soft blur of what sits behind, one
+     hairline highlight on top. Only on the surfaces GLASS-1 names. Text on
+     glass is --ink-900. --glass-solid is the fallback under Reduce
+     Transparency and where backdrop-filter isn't supported. */
+  /* 14% over white lands on #E8F6E8, the same as a solid bubble, so the CTA
+     rests at 22% and presses at 30%; 14% is for larger surfaces only. */
+  --glass-green-fill: rgba(92, 194, 92, 0.14);
+  --glass-green-fill-strong: rgba(92, 194, 92, 0.22);   /* primary CTA at rest */
+  --glass-green-fill-pressed: rgba(92, 194, 92, 0.30);
+  --glass-green-border: rgba(72, 168, 72, 0.32);
+  --glass-highlight: linear-gradient(180deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0) 55%);
+  --glass-neutral-fill: rgba(255, 255, 255, 0.62);       /* nav bar, sheets */
+  --glass-neutral-border: rgba(14, 18, 22, 0.08);
+  --glass-blur: 20px;
+  --glass-saturate: 140%;
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 6px 20px rgba(31, 122, 46, 0.08);
+  --glass-solid: #E8F6E8;                                /* = --brand-primary-soft */
+  --glass-neutral-solid: #FFFFFF;                        /* nav bar and sheet fallback */
+  --glass-focus-ring: #0E1216;                           /* green rings fail 3:1 on --surface-1 */
+
+  /* Secondary accent — calm azure. NEW (2026-07). Brand green is overloaded: it
+     means both "primary action" and "in range", so green can't also carry
+     "informational / insight / secondary-interactive" without muddying either.
+     This azure fills that gap. It is NOT a semantic status color (that's the
+     --range-* / --confidence-* families) and never competes with green for the
+     primary action. Use for: insight/takeaway emphasis, trend framing, tappable
+     secondary cues, in-app links. Withings-adjacent, tuned to sit calmly beside
+     the green rather than pop against it. */
+  --accent-info: #3E6FA8;
+  --accent-info-hover: #325B8A;
+  --accent-info-soft: #EAF0F7;
+  --accent-info-ink: #2B527D;      /* text-safe on light grounds (AA on white) */
+
+  /* Mark-only gradient (logo mark, never UI) */
+  --mark-gradient-start: #6DCE3F;
+  --mark-gradient-end: #1F7A2E;
+
+  /* Ink (text) — Withings-tuned neutrals */
+  --ink-900: #0E1216;
+  --ink-700: #3C434A;
+  --ink-500: #7A828A;
+  /* Between 500 and 300. Added because components were already referencing it
+     (LoopScheduleSettings' range dash), and an undefined custom property is
+     invalid at computed-value time: `color: var(--ink-400)` fell back to
+     `inherit`, so a separator meant to recede rendered at full body ink. */
+  --ink-400: #9AA2AA;
+  --ink-300: #BEC3CA;
+  --ink-200: #E3E5E8;
+  /* Between 700 and 500. GLASS-3 already names it for inactive tab labels on
+     glass (about 6:1 on the lightest glass); added so LoopStack+ can use it
+     without a raw hex. Not for body text below 15px on white (COL-4). */
+  --ink-600: #5F676F;
+
+  /* "What Loop did" hour states (LoopStack+, VIS-A2). "More than scheduled"
+     reuses --graph-insulin and "suspended" reuses --ink-700; these three are
+     the less-than-scheduled tints the boards use, which no token covered.
+     Always drawn with the down-triangle glyph (COL-5). */
+  --hour-less: #F6DAC0;        /* grid cell fill */
+  --hour-less-mark: #E8B98C;   /* histogram segment and morning bars */
+  --hour-less-dot: #C76A14;    /* per-day dot in the hours table sparkline */
+
+  /* Surface */
+  --surface-0: #FFFFFF;
+  --surface-1: #F6F7F8;
+  --surface-2: #EDEEF0;
+
+  /* Confidence ring tiers — red → orange → yellow-green → green.
+     Used anywhere a confidence signal is shown (insights, memories,
+     observed-metric drift, fix-log items). */
+  --confidence-learning: #C65A2C;
+  --confidence-building: #D98628;
+  --confidence-actionable: #7A9420;
+  --confidence-ready: #48A848;
+
+  /* Glucose-range semantic (Loop-style, used in graphs + range chips).
+     --range-in is unified with --brand-primary by design. */
+  --range-in: #5CC25C;
+  --range-in-soft: rgba(92, 194, 92, 0.12);
+  --range-high: #F0B429;
+  --range-high-soft: rgba(240, 180, 41, 0.14);
+  --range-low: #FC5E5E;
+  --range-low-soft: rgba(252, 94, 94, 0.12);
+  /* Extra bands for the 5-band Time-in-Range distribution (AGP consensus):
+     very-low <54, low 54–70, in-range 70–180, high 180–250, very-high >250. */
+  --range-very-low: #C0392B;
+  --range-very-high: #E07B1F;
+
+  /* Absorption graph series — carbs (green) + insulin (orange) overlay. */
+  --graph-carb: #48A848;
+  --graph-carb-soft: rgba(92, 194, 92, 0.18);
+  --graph-insulin: #E07B1F;
+  --graph-insulin-soft: rgba(224, 123, 31, 0.18);
+  /* Exercise series. Violet because every nearer hue is taken on the screens
+     it shares with glucose: green is in-range and carbs, orange is insulin,
+     yellow and red are high and low, and blue is the alert-stretch shading. */
+  --graph-activity: #7654B8;
+  --graph-activity-soft: rgba(118, 84, 184, 0.24);
+
+  /* Interaction — semantic roles, not raw values, so focus and hit areas stay
+     consistent across every control instead of being re-decided per component. */
+  --focus-ring: var(--brand-primary);
+  --focus-ring-width: 2px;
+  --focus-ring-offset: 2px;
+  /* iOS Human Interface minimum. Any control the user taps should reach this,
+     via padding or min-height — see references/core-ui-elements/accessibility. */
+  --tap-target-min: 44px;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --text-display: 34px;
+  --text-display-lh: 40px;
+  --text-display-tracking: -0.015em;
+  --text-title: 22px;
+  --text-title-lh: 28px;
+  --text-title-tracking: -0.01em;
+  --text-body: 15px;
+  --text-body-lh: 22px;
+  --text-small: 13px;
+  --text-small-lh: 18px;
+  --text-label: 11px;
+  --text-label-lh: 14px;
+  --text-label-tracking: 0.08em;
+
+  /* Aliases, not new steps in the scale.
+     Three names were in use across components without ever being defined here:
+     --text-h3 (FavoriteMealCard's given→needed figures), --text-caption (six
+     declarations in MealStrategySheet), --text-button (ErrorBoundary's CTAs).
+     An undefined custom property is invalid at computed-value time, so every
+     one of those `font-size` declarations was dropped and the text inherited
+     body size — which is why the strategy sheet's captions, disclaimer and
+     reasoning all rendered at 15/22 and pushed its Close button below the fold.
+     Mapped onto the documented scale (docs/visual-system.md §2) rather than
+     given values of their own, so the scale itself stays six steps. */
+  /* The one genuinely new step: a mid heading between Title and Body, for a
+     number that has to lead a row without owning the card. Title (22) makes
+     FavoriteMealCard's given→needed row wrap and leaves the arrow dangling. */
+  --text-h3: 18px;
+  --text-h3-lh: 24px;
+  --text-caption: var(--text-small);
+  --text-caption-lh: var(--text-small-lh);
+  --text-button: var(--text-body);
+  --text-button-lh: 18px;
+
+  /* Spacing scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-12: 48px;
+
+  /* Radius — Withings-tuned. Buttons are pills. */
+  --radius-input: 14px;
+  --radius-button: 999px;
+  --radius-card: 20px;
+  --radius-pill: 999px;
+
+  /* Elevation — whisper only */
+  --shadow-card: 0 2px 12px rgba(13, 20, 26, 0.04);
+  --shadow-floating: 0 6px 18px rgba(92, 194, 92, 0.35);
+
+  /* Motion */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 120ms;
+  --dur-screen: 280ms;
+
+  /* Layout */
+  --app-max-width: 440px;
+  --bottom-nav-height: 88px;
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-top: env(safe-area-inset-top, 0px);
+}
+
+/* Explicit appearance is set only by the desktop app. Semantic roles retain
+   their meaning; chart series remain glucose/insulin/carbs/activity colours. */
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --surface-0: #1B2229;
+  --surface-1: #11171D;
+  --surface-2: #29333D;
+  --ink-900: #F0F3F5;
+  --ink-700: #C6CFD7;
+  --ink-600: #B1BEC8;
+  --ink-500: #A4B0BB;
+  --ink-400: #87939F;
+  --ink-300: #65727F;
+  --ink-200: #3A4652;
+  --brand-primary-soft: #213D2A;
+  --accent-info: #91B8E8;
+  --accent-info-hover: #B3D1F4;
+  --accent-info-ink: #A9CBF4;
+  --accent-info-soft: #203448;
+  --glass-neutral-fill: rgba(27, 34, 41, 0.92);
+  --glass-neutral-solid: #1B2229;
+  --glass-neutral-border: rgba(198, 207, 215, 0.20);
+  --glass-green-fill: rgba(45, 89, 52, 0.88);
+  --glass-green-fill-strong: rgba(45, 89, 52, 0.94);
+  --glass-green-fill-pressed: rgba(52, 104, 60, 0.98);
+  --glass-solid: #244C2E;
+  --glass-green-border: rgba(92, 194, 92, 0.42);
+  --glass-highlight: linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0));
+  --glass-shadow: 0 6px 20px rgba(0, 0, 0, 0.18);
+  --glass-focus-ring: #D2E8D2;
+  --hour-less: #65452D;
+  --hour-less-mark: #BE8A5C;
+  --hour-less-dot: #EDA75F;
+}

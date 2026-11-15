@@ -1,0 +1,96 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+/* Horizontal axis is locked app-wide. The app is a fixed-width phone column;
+   any sideways movement is either a layout overflow or WKWebView rubber-band,
+   and both read as the whole UI drifting left/right under your thumb.
+   `overflow-x: clip` (not `hidden`) contains overflow without turning these
+   into scroll containers — `hidden` on html/body would make `position: sticky`
+   headers stop sticking. */
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
+  overscroll-behavior-x: none;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  /* Vertical panning + pinch only: kills the horizontal pan gesture that
+     produces the drift in the first place. */
+  touch-action: pan-y pinch-zoom;
+}
+
+img,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Focus. `button { border: 0 }` above strips the affordance browsers rely on,
+   so the app needs its own visible ring rather than inheriting whatever the UA
+   draws. `:focus-visible` (not `:focus`) so the ring appears for keyboard and
+   switch-control users without flashing on every touch. */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+  border-radius: var(--radius-input);
+}
+
+/* Reduced motion. Every transition in the app is feedback on a state change,
+   never information in itself, so all of them can collapse to ~instant without
+   anything becoming unreadable. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}

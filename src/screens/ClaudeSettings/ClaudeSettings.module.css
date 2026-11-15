@@ -1,0 +1,39 @@
+.support {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin-top: var(--space-2);
+}
+
+.error {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--range-very-low);
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.actions button {
+  min-height: var(--tap-target-min);
+}
+
+.danger {
+  color: var(--range-very-low);
+}
+
+.list {
+  padding-left: var(--space-5);
+  list-style: disc;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+.list li + li {
+  margin-top: var(--space-2);
+}

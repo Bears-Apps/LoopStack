@@ -1,0 +1,137 @@
+/* One weekday, hour by hour. The strip is the control; the chart is the answer. */
+
+.strip {
+  display: flex;
+  gap: 6px;
+  margin: var(--space-3) 0;
+}
+
+.day {
+  flex: 1;
+  min-height: 44px;
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  background: var(--surface-0);
+  color: var(--ink-500);
+  font-size: var(--text-small);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dayActive {
+  border-color: var(--brand-primary);
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+}
+
+/* Today is marked even when another day is selected — otherwise picking
+   Thursday on a Tuesday loses track of where you actually are. */
+.dayToday::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin: 2px auto 0;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.signals {
+  list-style: none;
+  margin: 0 0 var(--space-3);
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.signal {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-900);
+  padding: var(--space-3);
+  border-radius: var(--radius-input);
+  background: var(--surface-1);
+  border-left: 3px solid var(--ink-200);
+}
+
+.signal_low { border-left-color: var(--range-low); }
+.signal_high { border-left-color: var(--range-high); }
+.signal_climb,
+.signal_fall { border-left-color: var(--ink-400, var(--ink-500)); }
+
+.building {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: var(--space-3) 0;
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 120px;
+}
+
+.col {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 2px 2px 0 0;
+  min-height: 2px;
+}
+
+/* An hour without enough weeks is drawn, but drawn as unreliable — an empty
+   gap would read as "no data ever", which is a different claim. */
+.barFaint {
+  opacity: 0.28;
+}
+
+.move {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--brand-primary);
+  font-size: 12px;
+  line-height: 1;
+}
+
+.axis {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: var(--text-label);
+  color: var(--ink-500);
+}
+
+.scaleNote {
+  margin: var(--space-2) 0 0;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+.hoursLink {
+  display: flex;
+  align-items: center;
+  min-height: var(--tap-target-min);
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--accent-info-ink);
+  text-decoration: none;
+}

@@ -1,0 +1,68 @@
+.nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--app-max-width);
+  background: var(--surface-0);
+  border-top: 1px solid var(--ink-200);
+  /* Flex with equal-weight children rather than a fixed grid: the grid still
+     carried the empty centre column the capture button used to sit in, which
+     left a gap down the middle and pushed the four tabs into uneven halves. */
+  display: flex;
+  align-items: center;
+  /* The icon row stays 88px tall; the home-indicator gutter is reserved as
+     padding INSIDE the white panel so the panel itself extends flush to the
+     physical bottom edge. Prior layout left a transparent strip below the
+     panel that scrolling content showed through. */
+  min-height: var(--bottom-nav-height);
+  /* No horizontal padding: each tab takes an equal share of the width, so
+     the tap targets run edge to edge while the icons stay centred in their
+     own share. */
+  padding: 0 0 var(--safe-bottom);
+  pointer-events: auto;
+  position: relative;
+}
+
+.tab {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--ink-500);
+  padding: var(--space-2) var(--space-2);
+  transition: color var(--dur-fast) var(--ease);
+  font-weight: 500;
+}
+
+.tab:hover {
+  color: var(--ink-700);
+}
+
+.active {
+  color: var(--ink-900);
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 22px;
+}
+
+.label {
+  font-size: 11px;
+  line-height: 14px;
+  letter-spacing: -0.01em;
+}

@@ -1,0 +1,274 @@
+{
+  "item_name": "DIY versus commercial systems and the regulated path",
+  "research_date": "2026-11-13",
+  "issue_summary": "Now that commercial and FDA-cleared AID systems exist, people on open-source AID and their clinicians keep facing the same decision: stay DIY; move to a commercial system (Omnipod 5, Tandem Control-IQ / Control-IQ+, MiniMed 780G, Beta Bionics iLet); move to the FDA-cleared descendant of Loop (Tidepool Loop, which in practice ships only inside Sequel's twiist pump as 'twiist Loop'); or move between open-source apps (Loop to Trio, iAPS to Trio, AAPS to Trio). People originally chose DIY mainly because no commercial system was available or because commercial systems did not fit their needs. In the OPEN survey (2018-2019), 70.8% and 63.5% of adults gave these reasons. They stay for lower glucose targets (Loop correction range down to 87 mg/dL, against commercial floors of 112.5 for Control-IQ, 110 for Omnipod 5 until a 100 mg/dL option rolled out in June 2026, and 100 for 780G), unlimited overrides, automatic boluses / SMB and unannounced-meal handling (Trio, iAPS, AAPS), remote control for caregivers, free choice of pump and CGM, and cost. They leave for simpler setup, fewer settings, manufacturer training and a support line, insurance coverage and warranty, hardware supply (Eros pods end-of-life, out-of-warranty Medtronic pumps, DASH '203' faults on new iPhones), fewer lows (in the CODIAC switch study, time below 70 mg/dL was 2.2% on commercial systems versus 3.8% on AAPS), pregnancy, or clinic preference. The regulated path has reached few people so far. Tidepool Loop was cleared on 23 January 2023, but no pump could run it until twiist, which was cleared in March 2024, had a limited launch in July 2025 and became nationally available in early 2026. twiist runs an older Loop with extra guardrails: correction boluses only with user confirmation (no automatic bolus), FreeStyle Libre 3 Plus and Eversense 365 only, a pharmacy channel limited to commercial insurance, and an analyst estimate of 2,000-5,000 users at the end of 2025. Sequel has since signed Diabeloop's DBLG2 algorithm, aimed at less-engaged users. Meanwhile open-source Loop (v3.14.7) and Trio (v1.0) added Omnipod 5 pod support on 15 September 2026, which removed one hardware reason to leave DIY. No study measures whether having a cleared option changed how willing clinics are to support DIY users. Professional guidance (the 2022 international consensus, ADA Standards 2025-2026) moved toward supporting open-source users either way. Every switch, in either direction or between open-source apps, breaks the settings and data history the clinic sees, and translating settings across algorithms is left to the user and the clinician.",
+  "who_is_affected": "Adults on open-source AID weighing a commercial or cleared system. Parents of children, who value remote control and lower targets in DIY but are the group UK clinicians think should be steered to licensed systems. People moving between open-source apps (iAPS to Trio, Loop to Trio). New AID starters choosing among systems. On the clinical side: endocrinologists and pediatric endocrinologists who prescribe pumps, pods and commercial systems; diabetes educators/CDCES and manufacturer trainers who onboard commercial systems; obstetric teams; pharmacists and insurers on the pharmacy benefit. Primary care is rarely involved.",
+  "system_specificity": "All open-source AID, but most direct for Loop: Tidepool Loop and twiist Loop are cleared descendants of Loop, and Loop now runs Omnipod 5 pods. Trio and iAPS: the post-2024 split and Trio's 2026 v0.7 to v1.0 rewrite drive migration, and history does not transfer. AndroidAPS: the CODIAC switch studies, and Omnipod 5 support only in an open beta. Commercial comparators: Omnipod 5, Control-IQ / Control-IQ+ (t:slim X2, Mobi), MiniMed 780G, iLet, twiist (Tidepool Loop now, Diabeloop DBLG2 planned).",
+  "care_setting": "Routine endocrinology and diabetes clinic visits where system choice and prescriptions are discussed. Pump-start and educator visits (manufacturer trainers for commercial systems, clinic or peer support for DIY). Pediatric clinics. Obstetric and preconception care (pregnancy often prompts a system switch). Pharmacy and insurer prior authorization. Clinic-run open-source programs (BCDiabetes, Canada) that also manage Omnipod 5 users. Primary care rarely.",
+  "trigger_moment": "Pump warranty expiry or renewal. Device end-of-life: Omnipod Eros pods ended 30 June 2026 in Canada (28 February 2026 in France), and Medtronic x22/x23 pumps are out of warranty. A commercial launch or feature release: Omnipod 5's 100 mg/dL target (US rollout 3 June 2026), twiist's launch (July 2025, national 2026), Control-IQ+, Omnipod 5 in Canada (April 2025). Open-source releases: Omnipod 5 pods in Loop 3.14.7 and Trio 1.0 (15 September 2026), Trio 0.7 to 1.0, the iAPS/Trio split after iAPS 3.0.0. Hardware failures (DASH '203' faults with iPhone 16/17e). Insurance or formulary changes (DASH or Omnipod 5 pod coverage). Pregnancy. Persistent poor control or settings fatigue. Rebuild and Apple developer-account burden. A clinician suggesting a licensed system.",
+  "key_sources": [
+    {
+      "title": "Why #WeAreNotWaiting: Motivations and Self-Reported Outcomes Among Users of Open-source Automated Insulin Delivery Systems (Braune et al., J Med Internet Res 23(6):e25409; OPEN project)",
+      "url": "https://www.jmir.org/2021/6/e25409",
+      "year": 2021,
+      "country": "Multinational (35 countries); survey Nov 2018 - Mar 2019",
+      "sample_size": "897 (722 adults, 175 caregivers)",
+      "relevance": "Main source on why people chose DIY over commercial. Lack of commercially available AID: 70.8% of adults, 80% of caregivers. Commercial systems did not suit individual needs: 63.5% and 47%. Out-of-pocket cost of commercial systems: 33.5% and 31%. Lack of adequate medical support: 21.0% and 30%. Users cited customizable targets, smartwatch bolus and caregiver remote control as DIY-only features. The authors predicted that wider commercial availability and funding might change this cohort's choices."
+    },
+    {
+      "title": "Comparison of Control-IQ and open-source AndroidAPS AID systems in adults with type 1 diabetes: the CODIAC study (Do et al., Diabetes Obes Metab 26(1):78-84)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37743832/",
+      "year": 2024,
+      "country": "Czech Republic",
+      "sample_size": "25 adults (AAPS 3 months, then Control-IQ 3 months)",
+      "relevance": "First prospective switch study. TIR was similar (85.7% on Control-IQ vs 84.2% on AAPS) and time below range was lower on Control-IQ. Participants were mostly satisfied with Control-IQ (63.6% mostly agreed, 9.1% strongly agreed) but did not plan to switch. This is direct evidence that satisfaction with a commercial system does not lead experienced DIY users to move."
+    },
+    {
+      "title": "Switch of Open-Source AID System AndroidAPS to Commercially Available AID Systems: the Extension of the CODIAC Study (Do et al., Diabetes Technol Ther)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40931793/",
+      "year": 2025,
+      "country": "Czech Republic (NCT06709729)",
+      "sample_size": "41 adults (Control-IQ n=25, MiniMed 780G n=16), AAPS -> commercial -> AAPS",
+      "relevance": "TIR was comparable (84.2% commercial vs 85.0% AAPS). Time in tight range was higher on AAPS (66.4% vs 63.4%). Time below 70 mg/dL was lower on commercial systems (2.2% vs 3.8%). The pattern held after switching back. This is the trade-off clinicians and users argue about: tighter control versus fewer lows."
+    },
+    {
+      "title": "Open-Source Versus Commercial AID System for Type 1 Diabetes Management: A Prospective Observational Comparative Study from Canada (Wu et al., Diabetes Technol Ther)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40100927/",
+      "year": 2025,
+      "country": "Canada (Montreal)",
+      "sample_size": "78 adults (26 OS-AID, 52 commercial)",
+      "relevance": "OS-AID was non-inferior on 24-h TIR (78.3% vs 71.2%), with more time below 3.9 mmol/L (3.9% vs 1.8%). OS-AID users reported less fear of hypoglycemia. There was no severe hypoglycemia or DKA, and technical issues were similar. The authors conclude that both can be considered for T1D management."
+    },
+    {
+      "title": "Comparison of Glucose Management Between Open-Source Loop and Tandem Control-IQ in Adults With Type 1 Diabetes (Wu et al., Diabetes Obes Metab 28(6))",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13146174/",
+      "year": 2026,
+      "country": "Canada (data 2021-2022)",
+      "sample_size": "50 (24 Loop, 22 of them on Omnipod Eros; 26 Control-IQ)",
+      "relevance": "TIR 78.0% (Loop) vs 75.7% (Control-IQ), not significant. Median TBR <3.9 mmol/L was 3.1% vs 2.3%. Most Loop users set targets below 6 mmol/L, which Control-IQ cannot do, and 71% used autobolus. Household income above CA$100,000: 73.9% of Loop users vs 45.8%. The paper notes the comparison is timely because Tidepool Loop is being marketed."
+    },
+    {
+      "title": "A real-world study of user characteristics, safety and efficacy of open-source closed-loop systems and Medtronic 670G (Jeyaventhan, Gallen, Choudhary, Hussain; Diabetes Obes Metab)",
+      "url": "https://doi.org/10.1111/dom.14439",
+      "year": 2021,
+      "country": "UK (King's College Hospital, NHS)",
+      "sample_size": "68 adults (30 OS-AID, 38 MiniMed 670G)",
+      "relevance": "OS-AID users were younger, more often male and more educated. They had a better HbA1c change (-0.9% vs -0.1%) and TIR (78.5% vs 68.2%), with high use of out-of-warranty pumps. This shows the selection differences that confound DIY-vs-commercial comparisons."
+    },
+    {
+      "title": "Open-source AID shows comparable glycemic outcomes to a commercial hybrid closed-loop system in real-world pediatric care: a retrospective cohort from British Columbia (Hejla, Hawke, Borovoi, Elliott, Panagiotopoulos; Pediatric Diabetes)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13599425/",
+      "year": 2026,
+      "country": "Canada (British Columbia)",
+      "sample_size": "198 youth (143 OS-AID: Loop/iAPS/AAPS; 55 Tandem t:slim)",
+      "relevance": "Over 18 months HbA1c fell from 7.40% to 6.96% (OS-AID) versus 7.35% to 7.28% (commercial). Adjusted TIR and GMI were not different. One severe hypoglycemia event per group and no DKA. Supports clinic-supported OS-AID as a non-inferior pediatric option."
+    },
+    {
+      "title": "Bridging the Digital Divide: Real-World Efficacy of Commercial and Open-Source AID Systems in a Diverse, Low-Resource Pediatric Population (Dreifuss et al., J Diabetes Sci Technol)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13506969/",
+      "year": 2026,
+      "country": "Israel (Shaare Zedek)",
+      "sample_size": "61 children (31 AndroidAPS, 30 MiniMed 780G)",
+      "relevance": "Both improved TIR from about 57% to about 69% with no significant between-group difference and no severe hypoglycemia or DKA, including low-SES families. The authors support patient autonomy in choosing a system."
+    },
+    {
+      "title": "Tidepool Announces FDA Clearance of Tidepool Loop (press release) and 510(k) K203689",
+      "url": "https://www.businesswire.com/news/home/20230124006085/en/Tidepool-Announces-FDA-Clearance-of-Tidepool-Loop",
+      "year": 2023,
+      "country": "USA",
+      "sample_size": "Not applicable (regulatory clearance; supported by Loop Observational Study real-world evidence, n=558 analyzed)",
+      "relevance": "First FDA-cleared interoperable automated glycemic controller (product code QJI) built from a patient-made algorithm. Submitted December 2020, cleared 23 January 2023, for T1D age 6+. It is a predicate for future iAGC submissions."
+    },
+    {
+      "title": "The First Regulatory Clearance of an Open-Source AID Algorithm (Braune, Hussain, Lal; J Diabetes Sci Technol)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10563523/",
+      "year": 2023,
+      "country": "International / USA",
+      "sample_size": "Not applicable (commentary)",
+      "relevance": "Timeline: Tidepool Loop initiative 2018, FDA submission end of 2020, clearance 23 January 2023. Frames the clearance as a challenge to proprietary 'trade secret' commercial algorithms."
+    },
+    {
+      "title": "Tidepool Loop, a patient-driven diabetes app (MedTech Dive)",
+      "url": "https://www.medtechdive.com/news/tidepool-loop-clearance-diy-diabetes-device/646413/",
+      "year": 2023,
+      "country": "USA",
+      "sample_size": "Not applicable (news)",
+      "relevance": "A physician must prescribe Tidepool Loop and can set personalized starting parameters. No pump was cleared to work with it: Medtronic stopped work on a compatible pump and Insulet focused on Omnipod 5. Tidepool's CEO expected the DIY community to continue."
+    },
+    {
+      "title": "A European regulatory pathway for Tidepool Loop following clearance in the United States? (Downey, O'Donnell, Melvin, Quigley; Diabetic Medicine)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7619393/",
+      "year": 2024,
+      "country": "EU / UK / USA",
+      "sample_size": "Not applicable (regulatory analysis)",
+      "relevance": "Without an ACE pump partner, launch had to wait. Commercial manufacturers had not adopted algorithm transparency or unconditional data access. The complexity of the EU and UK pathways may discourage open-source developers from seeking approval, so a cleared option is unlikely outside the US soon."
+    },
+    {
+      "title": "twiist AID System for healthcare professionals, Loop algorithm page and FAQ (Sequel Med Tech)",
+      "url": "https://twiisthcp.com/",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "Company-reported real-world mean TIR 76.9% in T1D (sample not stated on page); T2 pivotal trial 307 adults",
+      "relevance": "Prescription required, ordered through the EMR and picked up at a pharmacy. Clinicians use an Initiation & Settings Guide. Correction range 87-180 mg/dL, Workout preset 87-250, Premeal preset. Correction boluses only with user confirmation. The system 'does not learn with time'. CGMs: Libre 3 Plus and Eversense 365. Data go to Tidepool. FAQ (https://twiist.com/faq): twiist uses a modified Tidepool Loop and not newer open-source Loop releases, so 'some features may be missing', and the app cannot be self-built. Pharmacy channel: $0 first month and up to $50 a month with eligible commercial insurance; Medicare and Medicaid still being pursued."
+    },
+    {
+      "title": "A 'twiist' of Fate: Why Sequel is Moving Beyond Tidepool to Embrace Diabeloop (Diabettech)",
+      "url": "https://www.diabettech.com/a-twiist-of-fate-why-sequel-is-moving-beyond-tidepool-to-embrace-diabeloop/",
+      "year": 2026,
+      "country": "USA / France",
+      "sample_size": "Waitlist of 4,000 at launch; analyst estimate of 2,000-5,000 active users Dec 2025 (speculative)",
+      "relevance": "twiist launched in July 2025. Sequel and Diabeloop announced that the DBLG2 algorithm (FDA 510(k) and CE-MDR, August 2025; needs only weight and TDD; tolerates undeclared meals) will be integrated, with readiness end of 2026 and a full US launch in 2027. Tidepool Loop is characterized as the 'manual transmission' for high-engagement users."
+    },
+    {
+      "title": "FDA clears Sequel's insulin delivery system in type 2 diabetes (MedTech Dive)",
+      "url": "https://www.medtechdive.com/news/fda-clears-sequels-insulin-delivery-system-in-type-2-diabetes/833317/",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "307 adults with insulin-treated T2D, 30 US sites",
+      "relevance": "The T2D clearance came in October 2026. The T1D clearance (to DEKA) was in March 2024, with a national T1D launch about two years later. TIR rose from 57% to 73% over 13 weeks. The Loop-derived algorithm now reaches a T2D population that DIY Loop rarely served."
+    },
+    {
+      "title": "Diabetes Dialogue: Tech updates on twiist, MiniMed Go and more (HCPLive)",
+      "url": "https://www.hcplive.com/view/diabetes-dialogue-tech-updates-on-twiist-minimed-go-and-more",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "Not applicable (clinician podcast, 16 Jan 2026)",
+      "relevance": "Clinician hosts call twiist fully commercially available after a limited launch. Tidepool Loop suits experienced users who want control and Diabeloop suits people seeking simplicity. They question how users would switch algorithms safely."
+    },
+    {
+      "title": "Hybrid Closed Loop working group, July 25, 2025 (T1D Exchange Quality Improvement Collaborative; speaker Dr Rayhan Lal, Stanford)",
+      "url": "https://t1dx-qi.t1dexchange.org/working-group/hybrid-closed-loop/july-25-2025",
+      "year": 2025,
+      "country": "USA",
+      "sample_size": "Not applicable (clinic QI meeting minutes)",
+      "relevance": "Clinician framing of the market. Medtronic: most advanced algorithm, weakest usability. Omnipod 5: most usable, weakest algorithm. Tandem: in between. Open-source systems fill the gap. Loop suits people who never miss a bolus; Trio/iAPS suit people who do not always bolus. Cites Omnipod 5 data in which only 28.3% of children and 44.3% of adults met both glucose targets (source study not named)."
+    },
+    {
+      "title": "Omnipod 5 vs Loop (BCDiabetes, Dr Tom Elliott, dated 2026-Jun-26) and Omnipod 5 launches in Canada (2025-Jul-01)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Omnipod-5-vs-Loop.pdf",
+      "year": 2026,
+      "country": "Canada (British Columbia)",
+      "sample_size": "3,200+ clinic Loop installs; 1,442 clients with published outcomes; 10 Omnipod 5 users managed as of July 2025",
+      "relevance": "The clinic recommends existing Loopers move to Omnipod 5 only if they have not achieved their goals or find Loop's settings too complex. It cites Omnipod 5's target limit (6.1-8.3 vs Loop 4.8-10.1 mmol/L), lack of true microbolus and limited overrides, against its pod-resident algorithm and adaptive basal. Loop users sign a consent and waiver. An Investigational Testing Authorization application to Health Canada was submitted 11 May 2026, and a Loop vs Omnipod 5 RCT was planned from July 2026. In July 2025 (https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Omnipod-5-launches-in-Canada.pdf), 3 of the 10 Omnipod 5 users it managed were US users converting to Loop, and it had recommended Omnipod 5 to 5 local patients. Estimate of '>100,000' Loop installs worldwide is the author's own, unverified."
+    },
+    {
+      "title": "Omnipod 5 support in Loop, Trio and AndroidAPS (Nightscout Foundation, last updated 22 Oct 2026); LoopWorkspace and Trio release notes",
+      "url": "https://nightscout.github.io/omnipod-five/",
+      "year": 2026,
+      "country": "International (open-source projects)",
+      "sample_size": "Not applicable",
+      "relevance": "Omnipod 5 pods are supported in Loop v3.14.7+ and Trio v1.0+ (released 15 September 2026), and in an AAPS open beta. Omnipod 5 was prioritized over Tandem Mobi because of a rise in 203 errors with DASH Atlas pods and iPhone 16/17e connection issues. Loop and Trio are iPhone-only. Release notes: https://github.com/LoopKit/LoopWorkspace/releases and https://github.com/nightscout/Trio/releases. Trio v1.0 rewrote the dosing algorithm from JavaScript to Swift and removed MiniMed Enlite support. Trio v0.7.0 replaced the legacy 0.2.x codebase, and upgrades are one-way."
+    },
+    {
+      "title": "Trio documentation: Transition from other closed-loop solutions (community docs, readthedocs dev branch) and Loop and Learn news, 20 Dec 2025",
+      "url": "https://oiaps-tmhastings.readthedocs.io/en/dev/Configuration/transition-qa.html",
+      "year": 2025,
+      "country": "International",
+      "sample_size": "Not applicable",
+      "relevance": "Trio came from a split after iAPS 3.0.0 over 'differing views on development, open source, and peer review'. iAPS history does not transfer. Settings can be imported via Nightscout, and users should wait about 7 days before enabling dynamic settings. Loop users must change how they handle carbs because Trio ignores future carbs. Advice: do not switch from a system that works well. Loop and Learn (https://loopandlearn.github.io/news/edition/2025-12-20) published migration guides from Loop, AAPS and iAPS to Trio, and reported that the OS-AID-friendly healthcare provider list reached 400 entries."
+    },
+    {
+      "title": "Insulet U.S. rollout of enhanced Omnipod 5 algorithm (100 mg/dL target) and FDA clearance coverage (Healio)",
+      "url": "https://www.healio.com/news/endocrinology/20260120/fda-clears-updated-algorithm-with-lower-target-glucose-setting-for-omnipod-5",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "Company real-world analyses (adults moving from 150 to 110 mg/dL: median TIR +11.8%)",
+      "relevance": "The FDA cleared targets of 100-150 mg/dL in 10 mg/dL steps in December 2025, and the US rollout followed on 3 June 2026. It also keeps users in Automated Mode during prolonged highs. This narrows one of the main reasons DIY users gave for staying (target floor), though Loop and twiist still go to 87 mg/dL."
+    },
+    {
+      "title": "Fully closed-loop systems: can people with type 1 diabetes just do it? Insights from open-source systems (Lal, Braune, Lewis, Petruzelkova, de Bock, ... Hussain; Diabetologia 69:557-567)",
+      "url": "https://link.springer.com/article/10.1007/s00125-025-06644-8",
+      "year": 2026,
+      "country": "International",
+      "sample_size": "Not applicable (review)",
+      "relevance": "Calls commercial AID 'one-size-fits-all' and says OS-AID currently offers the only real-world access to AID without meal announcements. HCP training is mostly industry-driven and does not cover OS-AID, and there is no dedicated support line. Calls the Tidepool Loop clearance a milestone in the recognition of user-developed technology."
+    },
+    {
+      "title": "Point-Counterpoint: The Need for DIY Open Source AID Systems in Type 1 Diabetes Management (Forlenza, Tabatabai, Lewis; Diabetes Technol Ther)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38669472/",
+      "year": 2024,
+      "country": "USA",
+      "sample_size": "Not applicable (debate article)",
+      "relevance": "Notes that tens of thousands still choose OS-AID despite commercial options. Gives point and counterpoint on safety, regulation and support, user choice and flexibility, access and affordability, and provider education from three perspectives: an OS-AID developer, a commercial-trial physician, and an endocrinologist with T1D who uses both."
+    },
+    {
+      "title": "Survey of UK Healthcare Professional Attitudes Towards Open-Source AID (Crabtree et al., ABCD/DTN-UK/ACDC; Diabetes Therapy 13:341-353)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": 2022,
+      "country": "UK (survey Feb-Apr 2019)",
+      "sample_size": "317 HCPs",
+      "relevance": "91% would not start OS-AID discussions. Reasons: not regulated (67%), own lack of knowledge (63%), indemnity worries (31.8%). One respondent's free text suggested the Medtronic 670G as an alternative. The authors note many feel HCPs should now encourage families to use licensed systems, and that how families would feel about being offered a switch is unknown."
+    },
+    {
+      "title": "Canadian Healthcare Providers' Attitudes Towards Automated Insulin Delivery Systems (Morrison, Farnsworth, Witteman, Lam, Senior; medRxiv preprint)",
+      "url": "https://www.medrxiv.org/content/10.1101/2022.06.02.22275169v1.full-text",
+      "year": 2022,
+      "country": "Canada (survey Jun-Jul 2021)",
+      "sample_size": "204 HCPs",
+      "relevance": "Respondents reported significantly more barriers to DIY than to commercial AID (p=0.001), mainly unfamiliarity and medico-legal risk. 60.2% would probably or definitely support a patient's decision to use DIY."
+    },
+    {
+      "title": "Automated Insulin Delivery in Real Life (AID-IRL): Real-World User Perspectives on Commercial AID (Lewis; J Diabetes Sci Technol)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8861778/",
+      "year": 2022,
+      "country": "International (qualitative interviews)",
+      "sample_size": "Not stated in abstract (interview series)",
+      "relevance": "Users switching to commercial AID found the learning curve easy and saw fewer lows. They wanted better target flexibility, better post-meal performance and fewer manual interventions, which are the gaps that keep some on DIY."
+    },
+    {
+      "title": "Position paper: Open-source technology in the treatment of people living with diabetes, an Austrian perspective (Kietaibl et al., Wien Klin Wochenschr)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11358222/",
+      "year": 2024,
+      "country": "Austria",
+      "sample_size": "Not applicable (professional position)",
+      "relevance": "OS-AID is a necessary alternative where approved systems are inaccessible or poorly adapted. Lack of expertise and legal concerns sometimes lead HCPs to refuse care. Care must continue regardless of the chosen technology."
+    },
+    {
+      "title": "Survey about do-it-yourself closed loop systems in the treatment of diabetes in Germany (Herzog et al., PLoS One)",
+      "url": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0243465",
+      "year": 2020,
+      "country": "Germany",
+      "sample_size": "1,054 people with diabetes",
+      "relevance": "9.7% used DIY closed loop, and more than 85% said they would use a commercial closed loop if available. This suggests broad preference for regulated systems among non-DIY users, though the paper's phrasing of this figure varies."
+    },
+    {
+      "title": "Your Guide to the 2025 ADA Standards of Care (diaTribe summary of Standards of Care in Diabetes 2025, Section 7)",
+      "url": "https://diatribe.org/diabetes-management/your-guide-2025-ada-standards-care",
+      "year": 2025,
+      "country": "USA",
+      "sample_size": "Not applicable (guideline summary)",
+      "relevance": "The 2025 Standards support open-source AID, ask HCPs to learn how these systems work so they can help optimize settings, and prefer the term 'open-source' over DIY. The 2026 Standards make AID the preferred insulin delivery for T1D. Loop and Learn quotes the 2026 text as saying Loop and OpenAPS algorithms 'offer direct management of algorithm aggressiveness through conventional pump settings' (primary text not retrieved)."
+    },
+    {
+      "title": "Insulet's Omnipod Discover platform sees full market release in US (Fierce Biotech)",
+      "url": "https://www.fiercebiotech.com/medtech/insulets-omnipod-discover-platform-sees-full-market-release-us",
+      "year": 2026,
+      "country": "USA",
+      "sample_size": "15,000 Omnipod 5 users and 1,800 HCPs in the initial rollout",
+      "relevance": "Full US release of Insulet's own data platform for Omnipod 5 came in October 2026. A user who moves from Loop (Nightscout/Tidepool) to Omnipod 5 moves into a different, manufacturer-owned data ecosystem."
+    }
+  ],
+  "evidence_strength": "Mixed. Peer-reviewed comparisons: one prospective switch study (CODIAC, n=25, and its extension, n=41); observational real-world comparisons (Wu 2025, n=78; Wu 2026, n=50; Jeyaventhan 2021, n=68; Hejla 2026, n=198; Dreifuss 2026, n=61); one large motivation survey (Braune 2021, n=897); HCP surveys (UK n=317, Canada n=204). Professional guidance and reviews: 2022 consensus, ADA 2025-2026, Austrian 2024 position, Diabetologia 2026 review. Regulatory facts come from FDA and company documents. Market and adoption figures (twiist users, Loop installs) are analyst or clinic estimates. Why individuals leave DIY for commercial systems, and the effect of a cleared option on clinic acceptance, rest mostly on community anecdote and clinic commentary. No study measures them directly.",
+  "prevalence_or_magnitude": "Scale: 'tens of thousands' still choose OS-AID despite commercial options (Forlenza, Tabatabai, Lewis 2024). One clinic director estimates more than 100,000 Loop installs worldwide [uncertain] (BCDiabetes, 2026, unverified). At BCDiabetes, app use was about 78% Loop, 13% AAPS and 9% iAPS/Trio among clinic users from 2020 to 2025 [uncertain] (clinic presentation, not peer-reviewed). Original motivations (OPEN, 2018-2019): no commercial system available, 70.8% of adults and 80% of caregivers; commercial systems not suited to needs, 63.5% and 47%; cost of commercial systems, 33.5% and 31%. Stickiness: in CODIAC, users satisfied with Control-IQ (72.7% agreed or strongly agreed) still did not plan to switch. Outcomes trade-off across studies: TIR similar or higher on OS-AID (78-85%), with more time below range (OS-AID about 3.1-3.9% vs 1.8-2.3% commercial in Wu 2025/2026; 3.8% vs 2.2% in the CODIAC extension). Regulated path reach: twiist had a 4,000-person waitlist at its July 2025 launch and an analyst estimate of 2,000-5,000 active users in December 2025 [uncertain], against roughly 15,000 Omnipod Discover users in one platform's initial rollout alone. Direction of switching: no population data. In Wong 2022, 'I decided to try something else' was the top reason among 45 surveyed Loop discontinuers (27.8%), but the paper does not say how many moved to commercial systems [uncertain]. BCDiabetes saw switches in both directions (3 US Omnipod 5 users converting to Loop; 5 locals advised to move to Omnipod 5, as of July 2025). The 2022 CREATE coverage noted there were no data on people moving from DIY to commercial.",
+  "data_quality_caveats": "OS-AID cohorts are self-selected, highly educated, high-income and mostly white (Wu 2026: 73.9% of Loop users had income above CA$100,000 vs 45.8% on Control-IQ; Jeyaventhan: OS users younger and more educated). Comparisons are non-randomized, with different device durations, insulins and targets. CODIAC is open-label, single-arm and small, with a fixed order. The OPEN motivation survey (2018-2019) predates most commercial systems, and the authors expected answers to change. Manufacturer data (Omnipod 5 target analyses, twiist real-world TIR) are company-sponsored. twiist user counts are speculative. The BCDiabetes material is written by a pro-Loop clinic. HCP surveys date from 2019 (UK) and 2021 (Canada), before most cleared options. ADA 2026 wording on OS-AID was taken from a secondary quote. Sources give different twiist launch dates (limited launch July 2025; national availability described as late 2025, January 2026 or about March 2026). The Cleal 2025 JMIR paper had a published correction (affiliations).",
+  "clinician_perspective": "Many clinicians are more comfortable with regulated systems. In the UK survey (2019, n=317), 91% would not start an OS-AID conversation, citing lack of regulation (67%), lack of knowledge (63%) and indemnity (31.8%). Some respondents simply suggested a commercial alternative (670G), and the authors report a view that clinicians 'should perhaps now be encouraging families' toward licensed systems, especially for children. Canadian HCPs (2021, n=204) reported significantly more barriers to DIY than to commercial AID, mainly unfamiliarity and medico-legal risk, yet 60.2% would support a patient's choice. Austrian specialists (2024) say legal fears sometimes end in refusal of care and that care must continue regardless of the system. Commercial systems come with manufacturer training, trainers and a support line, which clinicians value. Lal et al. (2026) note HCP training is industry-driven and OS-AID has no support line. At the same time, outcome data cut both ways: CODIAC found fewer lows on Control-IQ/780G, while Wu (Canada) and the BC and Israeli pediatric cohorts found OS-AID non-inferior. That leads authors to support system choice and patient autonomy. Clinician-researchers describe the market as a trade-off between usability and algorithm strength (Lal, T1D Exchange QI, July 2025). Pro-OS-AID clinics such as BCDiabetes recommend moving established Loopers to Omnipod 5 only if they miss targets or find settings too complex, and are pursuing a Health Canada authorization to put Loop on a regulated footing. Clinicians commenting on twiist see Tidepool Loop as a fit for experienced users who want control and Diabeloop as a fit for simplicity, and worry about safeguards when switching algorithms. Guidance has moved toward support whatever the system: the 2022 international consensus, ADA 2025 (learn the systems, help optimize settings), ADA 2026 (AID preferred for T1D), and ADCES DANAtech 2025 ('clinicians don't prescribe' OS-AID but support safe, informed use). What clinicians need: a neutral way to compare systems for a given patient, a way to document an informed choice, and continuity of data and settings when patients switch.",
+  "effect_on_relationship": "System choice is where the user's priorities (lower targets, overrides, unannounced meals, remote control, device freedom) and the clinic's (regulatory status, manufacturer support, liability, familiar dashboards) collide most openly. Before commercial AID, DIY was often the only AID option (Braune 2021). Once commercial systems exist, the clinic question can shift from 'why DIY?' to 'why not switch?'. Users who chose DIY for customization may hear that as dismissing their autonomy. One OPEN respondent described commercial targets as hard-wired and 'more concerned with legal liability'. CODIAC shows experienced DIY users who are satisfied with a commercial system still do not want to move, so pushing a switch risks friction without changing behavior. The UK survey authors warned that refusing to support OS-AID users risks alienating them from services. When a user does move to a commercial system or twiist, the relationship often normalizes. The clinician becomes the prescriber again, manufacturer trainers take onboarding, data arrive in familiar platforms (Glooko, Omnipod Discover, Tandem Source, CareLink, Tidepool+ for twiist), settings sit inside known guardrails, and liability anxiety drops. twiist was meant to be a bridge: same Loop lineage, prescribed, and data in Tidepool. In practice its reach is small: older Loop code, no automatic bolus, Libre 3 Plus/Eversense only, commercial insurance only, and Sequel is adding Diabeloop. Its effect on clinic acceptance of DIY Loop is therefore unmeasured and probably modest [uncertain]. Moves between open-source apps (iAPS to Trio, Loop to Trio, Trio 0.2 to 1.0) add new terms clinicians must learn (SMB, UAM, dynamic ISF, autosens) and reset the in-app history the clinic might review. Since September 2026 Loop and Trio can run Omnipod 5 pods, so a prescription for Omnipod 5 pods no longer tells the clinic which algorithm is dosing. That could widen the gap between what the clinic prescribes and what the patient runs [uncertain]. Clinics that handle switching well (BCDiabetes follows users of all AID systems, and referral lists of OS-AID-friendly providers reached 400 entries in December 2025) keep the relationship intact across system churn.",
+  "decision_ownership": "Choosing DIY versus commercial is the user's (or parent's) decision, as the 2022 consensus and ADA 2025 frame it. The clinician still gatekeeps hardware: prescriptions for pods (DASH or Omnipod 5), pumps, CGMs, insulin, and any commercial or cleared system. For twiist and Tidepool Loop, the clinician prescribes the app and sets starting parameters, and the user adjusts within guardrails. Insurers and pharmacy benefits decide what is affordable: twiist and Omnipod run through the pharmacy channel, and Canadian provincial coverage varies. Manufacturers own commercial training and support, and peers and volunteer developers own open-source support and migration guides. Liability: with OS-AID the user knowingly uses an unapproved system and takes on the risk. Clinics document discussions and some use signed consent and waiver forms (BCDiabetes). Clinicians remain responsible for the advice they give, and indemnity worries persist (31.8% of UK HCPs). With FDA-cleared systems, the clinician is a conventional prescriber and the manufacturer carries device responsibility. Moving to a cleared system is the clearest way to shift liability off the clinician, which partly explains clinician preference.",
+  "disclosure_risk": "Moderate. Users who expect to be pushed toward a commercial system, or refused care, may underplay or hide DIY use. That is easier now that Omnipod 5 pods can run Loop, Trio and iAPS, because the prescription no longer reveals the algorithm [uncertain]. Switches between open-source apps are rarely reported to clinics. The existence of cleared and commercial options also lowers the stakes of disclosure: clinicians have a familiar fallback to offer, and professional guidance now tells them to support users.",
+  "regulatory_status_dependency": "Yes, central to this item, but the effect so far is narrow. FDA clearance of Tidepool Loop (January 2023) and twiist (March 2024 T1D; October 2026 adult T2D) creates a prescribable, guardrailed, Tidepool-connected version of the Loop algorithm. That removes the clinician's liability and 'unapproved' objections for those who switch. It does not change the status of DIY Loop, Trio, iAPS or AAPS, which stay unapproved and user-built. The cleared version lags open-source features (no automatic bolus, older code, limited CGMs). No study shows the clearance increased clinic support for DIY users [uncertain]. Professional bodies moved toward support independently (2022 consensus, ADA 2025-2026). Outside the US there is still no cleared Loop: an EU/UK pathway is judged complex (Downey 2024), and BCDiabetes applied for a Health Canada ITA in May 2026.",
+  "workarounds": "Users: trial a commercial system while keeping DIY hardware (Insulet's 90-day money-back guarantee in Canada; twiist allows a trial while another pump is still under warranty and has no contract). Keep spare or out-of-warranty pumps. Switch pod type (DASH to Omnipod 5 in Loop/Trio) rather than system. Use Nightscout as the continuous record across app changes. Import settings into Trio from Nightscout and wait about 7 days before dynamic ISF. Follow Loop and Learn and Trio migration guides. Ask peers for settings translation. Bring screenshots of settings to the clinic. Some run commercial systems at certain times (pregnancy, travel, insurance gaps) and DIY at others. Clinicians: refer to OS-AID-friendly providers (a list of about 400 by December 2025) or clinic-run programs (BCDiabetes builds and maintains Loop for clients at no cost and follows users of all AID systems). Offer commercial systems mainly to those not reaching goals or overwhelmed by settings. Use manufacturer trainers for commercial starts. Use comparison documents (BCDiabetes 'Omnipod 5 vs Loop', the ADCES AID comparison chart July 2026, DiabetesWise device finder). Document informed choice and consent.",
+  "existing_tools": "Data: Nightscout (Loop, Trio, iAPS, AAPS). Tidepool (Loop 3+ and Trio 0.8+ therapy-settings upload; twiist via Tidepool+). Glooko (Omnipod 5, many pumps). Omnipod Discover (Omnipod 5 only, full US release October 2026). Tandem Source (Control-IQ). CareLink (780G). Dexcom Clarity (CGM only). Decision support: DiabetesWise device finder (includes DIY Loop vs Omnipod 5 / Tidepool Loop comparisons). ADCES DANAtech comparison pages and AID comparison chart. BCDiabetes comparison PDFs. Manufacturer prescribing and settings guides (twiist Initiation & Settings Guide, MiniMed 780G HCP Rx guide). Migration: Trio migration guides and Nightscout settings import. Loop and Learn news. OS-AID-friendly provider list.",
+  "existing_tool_coverage_gap": "No tool spans both the DIY and commercial ecosystems, so a switch moves the patient's data into a different, often manufacturer-owned platform (Omnipod Discover, Tandem Source, CareLink) and breaks longitudinal review. Nothing translates settings between algorithms: Loop ISF, CR and basal to Omnipod 5 adaptive basal and TDD, to Control-IQ's fixed targets, to iLet's weight-only setup, to Trio's dynamic ISF and SMB. Nothing records which algorithm and version was dosing on which days, which matters now that the same pods run Omnipod 5 firmware, Loop, Trio or iAPS. Device finders compare features but do not hold a patient's own before-and-after outcomes or priorities. No tool documents an informed choice of an unapproved system in a form both sides keep. History does not carry over between open-source apps (iAPS to Trio).",
+  "data_artifacts_involved": "Therapy settings snapshot at the switch date (basal, ISF, CR, correction range and targets, max basal and bolus, insulin model). Algorithm, app and version identifiers (Loop 3.14.x, Trio 1.0, iAPS, AAPS, Omnipod 5 firmware, twiist Loop). Pump and pod type (Eros, DASH, Omnipod 5, t:slim, Mobi, 780G, twiist) and CGM type. AGP, TIR, TBR, time in tight range and GMI before and after the switch. Override and preset definitions (Loop overrides, twiist Premeal/Workout presets, Omnipod 5 Activity, Control-IQ Exercise/Sleep). TDD and weight (inputs for Omnipod 5 adaptive basal, iLet, DBLG2). Prescriptions and insurance authorizations. Consent or waiver documents. Nightscout profile history and Tidepool device-settings history.",
+  "unmet_need": "A neutral, system-agnostic record that survives switching. It would carry the patient's settings, outcomes and reasons across DIY, cleared and commercial systems, and between open-source apps, so the clinician and user can decide together whether to stay, switch or switch back, and can see what happened when they did. Today the choice is argued from feature lists, clinic comfort and peer opinion. When a switch happens, history and settings are lost or must be translated by hand, and nobody records which algorithm was dosing. The clinic also has no structured way to record an informed choice to stay on an unapproved system, which is a big part of its liability worry. Professional guidance asks clinicians to support any system, but nothing gives them a common view across systems to do it.",
+  "implication_for_collaboration_tool": "1) Be system-agnostic from day one. Ingest Nightscout and Tidepool (which covers Loop, Trio and twiist), and accept exports or uploads from Glooko, Omnipod Discover, Tandem Source, CareLink and Clarity where APIs allow, so one patient timeline persists across systems. 2) Label every day with the dosing algorithm and version and the pump/pod and CGM, and capture switch events explicitly. Flag when pods or pumps are shared across algorithms (Omnipod 5 pods in Loop/Trio). 3) A 'switch dossier': settings snapshot at the switch, before/after comparison windows (TIR, TBR, time in tight range, CV, AGP), and a first-4-weeks safety watch (CODIAC and Wu show the TIR-versus-TBR trade-off; Trio needs about 7 days before dynamic ISF). 4) A settings-translation worksheet that maps a Loop or Trio profile to the inputs the destination system needs (TDD and weight for Omnipod 5, iLet and DBLG2; targets within each system's limits), clearly labeled as a starting point for clinician review, not dosing advice. 5) A shared decision aid: the user ranks priorities (target floor, overrides, unannounced meals, remote control for children, phone platform, CGM, cost and coverage), the clinician adds concerns (hypoglycemia, support, liability, pregnancy), and the tool shows which systems meet both and records the decision. 6) An informed-choice record for staying on OS-AID (date, what was discussed, consent) that matches 2022 consensus advice and eases clinician indemnity worries. 7) Treat twiist and Tidepool Loop as first-class: same vocabulary as DIY Loop, but marked as prescribed and cleared. 8) Stay neutral. Do not frame commercial or cleared systems as the 'correct' endpoint, because experienced users who are satisfied with commercial systems still prefer DIY (CODIAC) and pushing risks disengagement.",
+  "severity_rank": "Medium. System choice and switching are the moments where autonomy and clinician comfort collide and where history is lost, but they are episodic. Between visits, settings and data visibility shape the relationship more.",
+  "safety_criticality": "Medium. Transitions carry risk from mismatched settings, loss of overrides or presets, an unfamiliar algorithm and changed carb handling (Loop to Trio), and from hardware gaps (Eros end-of-life, out-of-warranty pumps, DASH 203 faults). OS-AID shows more time below range than commercial systems in several comparisons (CODIAC extension 3.8% vs 2.2%; Wu 2025 3.9% vs 1.8%), while severe hypoglycemia and DKA were rare in all of them. Pregnancy adds risk when a system is not suited or approved.",
+  "equity_impact": "The cleared Loop option (twiist) is US-only, needs commercial insurance through the pharmacy (Medicare and Medicaid pending), and supports only Libre 3 Plus and Eversense. Loop and Trio need an iPhone, while Android users depend on AAPS, whose Omnipod 5 support is still in beta. Commercial AID coverage varies by province (Canada) and the NHS rollout is phased (UK). OS-AID users skew high-income and highly educated, so a clinic preference for commercial systems may protect less-resourced patients but also limit choice. Israeli and BC pediatric cohorts show clinic-supported OS-AID can work for low-SES families. Children and caregivers lose remote-control features when moving to some commercial systems. Documentation and migration guides are mostly English, and older adults are more likely to discontinue Loop.",
+  "uncertain": [
+    "prevalence_or_magnitude",
+    "effect_on_relationship",
+    "disclosure_risk",
+    "regulatory_status_dependency"
+  ]
+}

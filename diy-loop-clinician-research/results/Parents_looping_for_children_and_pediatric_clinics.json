@@ -1,0 +1,264 @@
+{
+  "item_name": "Parents looping for children and pediatric clinics",
+  "issue_summary": "About one in five open-source AID users is a child, and for them a parent or guardian builds, tunes and often doses the system. That changes the clinical relationship in four ways. (1) The decision-maker is the caregiver, not the patient. Pediatric teams must weigh consent, the child's assent and, in the UK, safeguarding, on top of the regulatory and liability worries adult clinicians have. (2) Remote control is a main reason parents choose DIY. Loop (through Nightscout plus the LoopCaregiver app, or LoopFollow), Trio (LoopFollow) and AndroidAPS (SMS commands, AAPSClient) let a parent send boluses, carbs and overrides from another phone. Commercial systems mostly allow remote viewing only: Tandem's caregiver bolus works only from the single phone paired to the pump and close to it, and the twiist caregiver app is view-only. Remote dosing adds new failure modes: commands that fail silently, duplicate carbs or boluses, two caregivers dosing the same child, and remote doses that the clinic never sees attributed to anyone. (3) School is where DIY meets institutional refusal. Washington State guidance (2023) says districts cannot accept requests or orders for DIY systems at school. BC's Nursing Support Services will not write delegated-care plans for DIY looping (Ministry bulletin, Aug 2023), so a looping child must manage alone at school. BCDiabetes reports that many school boards across Canada refuse, and tells parents either to switch Loop to open loop during school hours or to have one parent bolus remotely. (4) Pediatric endocrinology attitudes range from supportive centres to refusal. Some centres run OS-AID themselves (BC Children's with BCDiabetes, Prague, Israel, Turkey, China, Denmark, the NZ CREATE trial). Others decline, and some families hide looping from the team. The British Columbia pediatric cohort (Hejla et al., Pediatr Diabetes, Sept 2026; n=198 youth aged 19 or under, 143 on clinic-built Loop, iAPS or AAPS vs 55 on Tandem t:slim) found OS-AID non-inferior. HbA1c was 0.51 points lower at 12 months (adjusted), but the difference was not significant at 18 months, and TIR and GMI were the same. There was one severe hypoglycemia event per group and no DKA. The cohort says almost nothing about caregivers, remote dosing or school.",
+  "who_is_affected": "Parents and guardians who build and run the system, the most of any group for children under about 13. Children and adolescents with T1D, including the youngest (BCDiabetes' youngest Looper is 18 months old). Pediatric endocrinologists, pediatric diabetes nurses, educators and dietitians. School nurses, teachers and daycare staff. Second caregivers: other parent, grandparents, babysitters. Adult clinics at transition. Primary care is rarely involved.",
+  "system_specificity": "All systems, but remote control differs by system. Loop: remote bolus, carbs and overrides through Nightscout plus LoopCaregiver (iOS 16+, Loop 3+, Nightscout 14.2.6+, one-time password), through LoopFollow over direct Apple push, or through the Nightscout careportal, which is the only route for Android caregivers. Trio: remote control through LoopFollow (LoopFollow 4.0+ and Trio 0.6+). AndroidAPS: SMS commands with TOTP plus PIN, a 15-minute default gap between remote boluses, and AAPSClient for non-bolus changes. iAPS: [uncertain] remote features were not verified. BCDiabetes uses Loop exclusively for children under 14. Pediatric outcome studies cover Loop (LOS; Turkey), AndroidAPS (Czech, Israel, China, CREATE) and mixed Loop/iAPS/AAPS (BC).",
+  "care_setting": "Pediatric endocrinology clinics (tertiary children's hospitals) and clinic-supported OS-AID programs (BCDiabetes for BC Children's patients). Also schools, daycare and preschool, and the home overnight. Transition to adult clinics. Inpatient and perioperative pediatric care: the 2025 Australasian periprocedural template lists DIY as a pump-regimen option.",
+  "trigger_moment": "Deciding to start: consent and assent for a minor, asking the pediatric team for a loopable pump or pod prescription, signing a waiver. Start of the school year or a new daycare: health plan, 504 or DMMP, delegated-care request, phone-ban exemption. First remote bolus, or a failed or duplicated one. Adding a second caregiver. Quarterly pediatric visits. Night-time hypoglycemia. Adolescence and transfer to adult care. A commercial AID becoming funded (for example BC Pharmacare covering Omnipod 5 and mylife Loop from April 2026).",
+  "key_sources": [
+    {
+      "title": "Hejla D, Hawke K, Borovoi L, Elliott T, Panagiotopoulos C. Open-source automated insulin delivery shows comparable glycemic outcomes to a commercial hybrid closed-loop system in real-world type 1 pediatric diabetes care: a retrospective cohort study from British Columbia, Canada. Pediatr Diabetes 2026:e009 (PMID 42812142)",
+      "url": "https://www.maxapress.com/article/doi/10.48130/pedi-0026-0008",
+      "year": "2026 (online 8 Sep 2026; enrolment Jan 2015-Jun 2024)",
+      "country": "Canada (BC Children's Hospital and BCDiabetes, Vancouver)",
+      "sample_size": "198 youth aged 19 or under (143 OS-AID: Loop, iAPS, AAPS; 55 Tandem t:slim)",
+      "relevance": "The BC pediatric cohort named in the outline. OS-AID was 'built and supported by BC Diabetes'. HbA1c went from 7.40% to 6.96% (OS-AID) vs 7.35% to 7.28% (t:slim). The adjusted difference was -0.51% at 12 months (p=0.010) and -0.34% at 18 months (p=0.150, not significant). TIR at 18 months was 62.1% vs 61.9%, with the same GMI. There was 1 severe hypoglycemia event per group and no DKA. Limits: retrospective, with no blinded adjudication. Only 14 OS-AID patients had 18-month HbA1c. Deprivation data were missing for 33% of OS-AID vs 0% of t:slim patients. The population was 'tech-savvy' and well controlled. The abstract (6.96%) and Table 2 (7.0%) disagree. The paper does not describe caregiver roles, remote dosing, school or the clinic workflow."
+    },
+    {
+      "title": "BCDiabetes (Elliott T). Kids & Looping at School (clinic handout, 10 Aug 2026)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Kids--Looping-at-school.pdf",
+      "year": "2026",
+      "country": "Canada (BC)",
+      "sample_size": "Clinic report: more than 500 children under 13 on Loop",
+      "relevance": "States that many school boards in BC and across Canada refuse to support children on OS-AID, and expects this to change only with Health Canada approval or RCT evidence. It gives parents two options: (1) switch Loop to open loop during school hours; (2) let one parent (not both) use Loop Caregiver to bolus remotely, give a meal announcement, or wait for a rise. Commands sent at the moment of a CGM update are ignored, so the clinic's build delays caregiver boluses by 60 s after a CGM value. It also says BCDiabetes does not routinely offer Loop Caregiver to parents of elementary-age children and decides case by case. A template letter for school officials is provided."
+    },
+    {
+      "title": "BCDiabetes. Looping at BCDiabetes: DIY-Automated Insulin Delivery made easy (clinic web document, 4 Nov 2026)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Looping-at-BCDiabetes.pdf",
+      "year": "2026",
+      "country": "Canada",
+      "sample_size": "3,694 SOS-AID installs; 34% pediatric, 12% under 10, youngest 18 months; 347 children whose parents run Loop Caregiver",
+      "relevance": "The largest clinic-run pediatric OS-AID service found. Loop is the exclusive choice under age 14. Separate consent and waiver documents exist for minors. Loop Caregiver is offered to parents for remote carbs, boluses and overrides. Families keep their regular endocrinologist for non-looping care, a split-care model, and are told that not all endocrinologists support Loop. Separate guides cover Looping at elementary school and in hospital. [uncertain] The Loop Caregiver figure (347 children) sits awkwardly with the school handout's 'not routinely offered to elementary-age' policy. Clinic figures for worldwide Loop users vary between documents (30,000 vs 100,000)."
+    },
+    {
+      "title": "BCDiabetes. Loop Caregiver Study: Remote Bolusing Managed by Caregivers for Individuals with T1D Using AID (study information sheet; PI T. Elliott)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Loop-Caregiver-study.pdf",
+      "year": "2026 [uncertain: date not printed; recruiting]",
+      "country": "Canada (BC)",
+      "sample_size": "Not yet reported (pre/post survey, baseline and 3 months)",
+      "relevance": "The first identified study of remote-bolus caregiver outcomes. It measures caregiver burden, stress, confidence and quality of life before and 3 months after starting LoopCaregiver. It notes that the app's effect on caregivers has not been studied. Eligibility requires Loop 3.3+, iOS 16+ and Nightscout 14.2.6+. No results yet."
+    },
+    {
+      "title": "BC Ministry of Education and Child Care, Deputy Minister's Bulletin: Type 1 diabetes care and Do-It-Yourself (DIY) looping (11 Aug 2023); School District 8 Kootenay Lake Policy 6.03 Diabetes Care (19 Mar 2024)",
+      "url": "https://blog.gov.bc.ca/ecc-dm-bulletin/article/type-1-diabetes-care-and-do-it-yourself-diy-looping/",
+      "year": "2023-2024",
+      "country": "Canada (BC)",
+      "sample_size": "Policy",
+      "relevance": "DIY looping is not Health Canada approved and is not supported by Nursing Support Services. A student who loops during school hours gets no NSS delegated-care plan and must be fully independent in their own diabetes care. SD8 policy repeats this (https://www.sd8.bc.ca/sites/default/files/documents/2024-03/6.03%20Diabetes%20Care.pdf). This is the BC school context for the Hejla cohort."
+    },
+    {
+      "title": "Washington OSPI. Guidelines for Care of Students with Diabetes (2023 edition, posted April 2024)",
+      "url": "https://ospi.k12.wa.us/sites/default/files/2024-04/guidelinesforstudentswithdiabetes24-0006.pdf",
+      "year": "2023",
+      "country": "USA (Washington State)",
+      "sample_size": "State guidance",
+      "relevance": "Because DIY AID is not FDA approved, school districts cannot accept requests or orders for its use at school or school-sponsored events. Requests go to the school nurse, who consults the provider and family. The guidance also says school personnel lack capacity for frequent glucose-pattern management. The pediatric clinician is therefore pulled in as the person the school consults about a system the school will not support."
+    },
+    {
+      "title": "March CA, Oyetoro R, Adams J, Rodriguez H, Albanese-O'Neill A. School Nurse Perspectives on Do-It-Yourself Automated Pancreas Systems in the School Setting. Diabetes Technol Ther 2021;23(10):705-709",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33900843/",
+      "year": "2021",
+      "country": "USA",
+      "sample_size": "National school nurse survey [uncertain: n not in abstract; about 104 per a 2022 review]",
+      "relevance": "23% of school nurses had DIY APS experience at school and 46% had no prior knowledge of the technology. 82% said children should be allowed to use them, but there was less agreement on nurse responsibilities. Nurses cited fear of liability and a need for guidelines and training. It is the only school-specific DIY study found."
+    },
+    {
+      "title": "Braune K, et al. Real-World Use of DIY Artificial Pancreas Systems in Children and Adolescents With T1D: Online Survey and Analysis of Self-Reported Clinical Outcomes. JMIR Mhealth Uhealth 2019;7(7):e14087",
+      "url": "https://mhealth.jmir.org/2019/7/e14087/",
+      "year": "2019",
+      "country": "International, 21 countries (about 74% Europe)",
+      "sample_size": "209 caregivers (children median age 10, range 3-20)",
+      "relevance": "Systems were AndroidAPS 48%, OpenAPS 28.4% and Loop 28.4%. Self-reported HbA1c fell from 6.91% to 6.27% and TIR rose from 64.2% to 80.7%, across age groups. Recruitment was through the Looped and AndroidAPS Facebook groups, in English and German only. Caregivers were highly educated. Hypoglycemia was not assessed. The authors note that few diabetes specialists know these systems, and that caregivers deciding independently of doctors is contested."
+    },
+    {
+      "title": "Braune K, Krug N, Knoll C, et al. Emotional and Physical Health Impact in Children and Adolescents and Their Caregivers Using Open-source AID: Qualitative Analysis of Lived Experiences. J Med Internet Res 2022;24(7):e37120",
+      "url": "https://www.jmir.org/2022/7/e37120",
+      "year": "2022",
+      "country": "International, 16 countries",
+      "sample_size": "60 families",
+      "relevance": "Remote following and control through Nightscout was named as a reason to choose OS-AID. It cut parents' worry about night-time lows and about the child being away from home, and gave children more independence (sleepovers, sport, university). HCP attitudes in children's care ranged from proactive support to refusal. One German family hid looping from its diabetes team and described isolation and disappointment. One caregiver felt they knew more than the centre's doctors. The community, not the clinic, was the main support. Fine-tuning settings took considerable time. About 20% of OS-AID users are children, whose caregivers build and maintain the systems."
+    },
+    {
+      "title": "Braune K, et al. Why #WeAreNotWaiting: Motivations and Self-Reported Outcomes Among Users of Open-source AID Systems. J Med Internet Res 2021;23(6):e25409",
+      "url": "https://www.jmir.org/2021/6/e25409",
+      "year": "2021 (survey 2018-19)",
+      "country": "International, 35 countries",
+      "sample_size": "897 respondents including 175 caregivers (motivation items about 100 caregivers)",
+      "relevance": "The caregivers' strongest motivation was their own sleep (94%). Next came the child's glycemia (95% glycemic control, 96% fewer acute complications) and the possibility of remote control via the internet. Remote management was the main extra motivation that only OS-AID offered. 87.4% of caregivers had a university degree."
+    },
+    {
+      "title": "Huhndt A, Chen Y, O'Donnell S, et al. Barriers to Uptake of Open-Source AID Systems: Caregivers of Children and Adolescents With T1D From the OPEN Survey. Front Clin Diabetes Healthc 2022;3:876511",
+      "url": "https://www.frontiersin.org/articles/10.3389/fcdhc.2022.876511/full",
+      "year": "2022 (survey Sep-Nov 2020)",
+      "country": "13 countries",
+      "sample_size": "56 caregivers of non-using children (item n=24-28)",
+      "relevance": "Lack of support from medical professionals was a major barrier (39%). 44.4% had no team support because of the team's limited technical expertise. 39.3% feared losing HCP support and 25% said their team discourages building. 88.9% would be motivated if their HCP recommended OS-AID. For parents, the pediatric clinician's endorsement is the strongest lever found."
+    },
+    {
+      "title": "Knoll C, Schipp J, O'Donnell S, et al. Quality of life and psychological well-being among children and adolescents with diabetes and their caregivers using open-source AID systems. Diabetes Res Clin Pract 2023;196:110153",
+      "url": "https://doi.org/10.1016/j.diabres.2022.110153",
+      "year": "2023",
+      "country": "International, 27 countries",
+      "sample_size": "168 caregivers (119 OS-AID users, 49 non-users)",
+      "relevance": "Caregivers of OS-AID users reported better well-being (WHO-5), sleep (PSQI) and diabetes-related QoL (PedsQL) after covariate adjustment. PAID did not differ. The study was cross-sectional and self-selected."
+    },
+    {
+      "title": "Lum JW, et al. A Real-World Prospective Study of the Safety and Effectiveness of the Loop Open Source AID System. Diabetes Technol Ther 2021;23(5):367-375; with Wong JJ, et al. Psychosocial Effects of the Loop System. J Diabetes Sci Technol 2023;17(6):1440-1447; and Wong JJ, et al. Discontinued Use of the Loop Insulin Dosing System. Diabetes Technol Ther 2022;24(4):241-248",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906/",
+      "year": "2021-2023 (enrolment 2019)",
+      "country": "USA",
+      "sample_size": "558 analysed (67 aged under 7, 169 aged 7-13, 87 aged 14-24); psychosocial: 243 parents, 115 children; discontinuation: 46 of 874",
+      "relevance": "42% of the LOS cohort were under 14, and TIR improved in children as in adults. ISPAD 2024 cites the under-7 subgroup (TIR 67% to 73%). Parents' sleep and fear of hypoglycemia improved (Wong 2023). One discontinuing parent cited worry about how the endocrinologist would respond (Wong 2022, https://pmc.ncbi.nlm.nih.gov/articles/PMC9057870/). Participants were 80% White among under-7s and 92% among 7-13-year-olds."
+    },
+    {
+      "title": "Fagerberg AR, Borch L, Kristensen K, Hjelle JS. Prevalence, Safety, and Metabolic Control Among Danish Children and Adolescents With T1D Using Open-Source AID Systems. Diabetes Technol Ther 2024;26(5):287-297",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11058411/",
+      "year": "2024 (enrolment Dec 2021 onward)",
+      "country": "Denmark",
+      "sample_size": "56 users of 2,950 children with T1D (1.89%); 31 included",
+      "relevance": "This is the only national pediatric prevalence estimate, and all Danish pediatric clinics counted their OS-AID patients. TIR rose from 62% to 70%, with no safety signal. Parents' PSQI improved from 8.64 to 3.68. Families were of above-average socioeconomic status. Under the 2019 Steno guideline, clinicians may not advise on installation but can advise on diabetes treatment. This shows a public system where clinics know who loops."
+    },
+    {
+      "title": "Petruzelkova L, et al. Pre-school and school-aged children benefit from the switch from a sensor-augmented pump to an AndroidAPS hybrid closed loop. Pediatr Diabetes 2021;22(4):594-604",
+      "url": "https://doi.org/10.1111/pedi.13190",
+      "year": "2021",
+      "country": "Czech Republic (Motol, Prague)",
+      "sample_size": "36 children (18 aged 3-7, 18 aged 8-14)",
+      "relevance": "A pediatric centre's own retrospective AAPS cohort. TIR rose in preschoolers (70.8% to 78.6%) and school-age children (77.2% to 82.9%), with no severe hypoglycemia or DKA. Time at 3.0-3.8 mmol/L rose slightly in school-age children. This is an early example of a pediatric endocrinology team owning OS-AID."
+    },
+    {
+      "title": "Nir J, et al. OS-AIDs in a pediatric population with T1D in a real-life setting: the AWeSoMe study group experience. Endocrine 2023;81(2):262-269; and Dreifuss K, et al. Bridging the Digital Divide: commercial and open-source AID in a diverse, low-resource pediatric population. J Diabetes Sci Technol 2026",
+      "url": "https://doi.org/10.1007/s12020-023-03398-4",
+      "year": "2023; 2026",
+      "country": "Israel",
+      "sample_size": "52 youth aged 3.3-20.7 (AWeSoMe); 61 children (31 AndroidAPS, 30 MiniMed 780G) in the low-resource cohort",
+      "relevance": "In a multicentre pediatric cohort, TIR rose from 69.0% to 75.5% and HbA1c fell from 6.9% to 6.4%, with no severe hypoglycemia or DKA. Families started mainly to reduce burden and improve sleep. The 2026 clinic-supported, low-resource cohort improved similarly (TIR 56.6% to 69.3%), suggesting clinic support can extend OS-AID beyond affluent, tech-savvy families (https://pubmed.ncbi.nlm.nih.gov/42642831/)."
+    },
+    {
+      "title": "Ugur Kaval A, et al. Use of the Loop Open-Source AID System in Children with T1D: Six-Month Results from a Single Center. Horm Res Paediatr 2026",
+      "url": "https://doi.org/10.1159/000550674",
+      "year": "2026 (initiations May 2023-May 2024)",
+      "country": "Turkey",
+      "sample_size": "50 children aged 2-18",
+      "relevance": "A pediatric centre started Loop in 50 children. TIR went from 68.3% to 72.7% and HbA1c from 7.0% to 6.6% (limited HbA1c data). TBR was stable, with no rise in hypoglycemia or DKA. The basal share of insulin fell from 40% to 20% because Loop gives automatic correction boluses, a change pediatric teams need to recognise when they read pump reports."
+    },
+    {
+      "title": "Li X, Ye X, Tang J, et al. Glycaemic Control During School Days and Holidays in Children and Adolescents With T1D Using Open-Source Android APS: A Real-World Study. Diabetes Obes Metab 2026",
+      "url": "https://doi.org/10.1111/dom.70970",
+      "year": "2026",
+      "country": "China",
+      "sample_size": "55 youth aged 6-19 on AAPS for more than 3 months",
+      "relevance": "This is the only study found that compares school days with holidays on OS-AID. CGM metrics (TIR, TITR, TBR, GMI, CV) did not differ between school days and holidays. Longer night-time sleep on school days predicted reaching TIR and TITR targets. The paper does not say who managed dosing at school."
+    },
+    {
+      "title": "Crabtree TSJ, Choudhary P, Lumb A, et al. ABCD, DTN-UK and ACDC Survey of UK Healthcare Professional Attitudes Towards Open-Source AID. Diabetes Ther 2022;13(2):341-353",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": "2022 (survey Feb-Apr 2019)",
+      "country": "UK",
+      "sample_size": "317 HCPs (85 paediatric, 22 joint)",
+      "relevance": "Paediatric and adult respondents did not differ significantly in confidence describing OS-AID setup, risks or benefits. 91% overall were uncomfortable starting the conversation. The authors report paediatric-specific concerns: safeguarding (no safety data, insurance) and consent, since carers decide on the child's behalf. Some argued families should use licensed closed loops instead. Free-text answers describe a common stance: supply pumps and standard diabetes care, but no help with the rig itself."
+    },
+    {
+      "title": "Palmer W, Greeley SAW, Letourneau-Freiberg LR, Naylor RN. Using a Do-It-Yourself Artificial Pancreas: Perspectives from Patients and Diabetes Providers. J Diabetes Sci Technol 2020;14(5):860-867",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7753849/",
+      "year": "2020 (surveys Feb-May 2019)",
+      "country": "USA",
+      "sample_size": "152 providers (via AADE newsletter and Pediatric Endocrine Society list); 101 patients",
+      "relevance": "27% of providers rated DIYAPS safe or very safe, against 89% of patients. Providers' main challenges were lack of experience and inability to troubleshoot. This is the main US source that includes pediatric endocrinologists, though it does not report a pediatric subgroup."
+    },
+    {
+      "title": "Morrison AE, Farnsworth K, Witteman HO, Lam A, Senior PA. Canadian Healthcare Providers' Attitudes Towards Automated Insulin Delivery Systems (medRxiv preprint)",
+      "url": "https://doi.org/10.1101/2022.06.02.22275169",
+      "year": "2022",
+      "country": "Canada",
+      "sample_size": "204 HCPs (23% caring for children)",
+      "relevance": "72.7% were comfortable supporting commercial AID but only 21.6% DIY AID. Barriers were unfamiliarity and medico-legal risk, and comfort tracked experience. [uncertain] This is a preprint, and no pediatric subgroup was reported in the abstract."
+    },
+    {
+      "title": "Biester T, Berget C, Boughton C, et al. ISPAD Clinical Practice Consensus Guidelines 2024: Diabetes Technologies - Insulin Delivery. Horm Res Paediatr 2024;97(6):636-662",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11854989/",
+      "year": "2024",
+      "country": "International",
+      "sample_size": "Guideline",
+      "relevance": "The pediatric guideline says support from care providers is encouraged if families choose open-source AID (evidence grade E). It also says HCPs should be cautious about recommending these systems over commercial ones, that the care team remains essential for core education, and that clinicians should learn key system characteristics to help optimise settings. Parents of very young children value access to insulin data as well as glucose data."
+    },
+    {
+      "title": "Johnston C. Good enough? Parental decisions to use DIY looping technology to manage type 1 diabetes in children. Monash Bioeth Rev 2021",
+      "url": "https://doi.org/10.1007/s40592-021-00133-5",
+      "year": "2021",
+      "country": "Australia",
+      "sample_size": "Ethics analysis drawing on the 'Personalised Closed Loop Systems for Childhood Diabetes' stakeholder study",
+      "relevance": "Concludes that a parent's choice of DIY looping can be in the child's best interests and falls within the zone of parental discretion, so intervention is not justified. Clinicians who support such parents may still have professional concerns. Clinicians keep an ongoing duty of care to looping children."
+    },
+    {
+      "title": "Lawton J, Hart RI, Kimbell B, et al. Data Sharing While Using a Closed-Loop System: Qualitative Study of Adolescents' and Parents' Experiences and Views. Diabetes Technol Ther 2021; and Hart RI, et al. Parents' experiences of using remote monitoring technology in very young children during a clinical trial. Diabet Med 2022;39(7):e14828",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8252900/",
+      "year": "2021-2022",
+      "country": "UK and Europe (commercial CamAPS trials; used here as a proxy)",
+      "sample_size": "18 adolescents and 19 parents; parents of 30 children aged 1-7",
+      "relevance": "Parents of 11-13-year-olds remote-managed in real time. Parents of 14-16-year-olds watched and waited, using retrospective data. Some 17+ adolescents withdrew parental access. Families asked for clear ground rules. Remote monitoring let parents be 'present while absent' with other carers, but some lacked respite. These studies are not OS-AID specific, but the developmental pattern applies to looping families."
+    },
+    {
+      "title": "LoopDocs remote commands and Loop FAQ; LoopKit/LoopCaregiver issue #38 (Apr 2024); LoopKit/Loop issues #2168 (May 2024), #2171 (Jun 2024), #2292 (Mar 2025); nightscout/Trio issues #620 (Jun 2025), #1348 and #1349 (Jul 2026)",
+      "url": "https://loopkit.github.io/loopdocs/nightscout/remote-overview",
+      "year": "2024-2026",
+      "country": "International (open-source projects)",
+      "sample_size": "Documentation and single-family reports (anecdotal)",
+      "relevance": "Docs: remote bolus and carbs need a one-time password and an Apple push key from the developer who built Loop. If a command does not appear, assume it was delivered; send the bolus before the carbs. LoopCaregiver #38 (https://github.com/LoopKit/LoopCaregiver/issues/38): the parent of a 9-year-old could not tell whether commands were received or executed. One bolus was silently blocked by max bolus and one was lost to OTP reuse, and the error showed only on the child's phone. Loop #2168: a carb entry saved while the bolus failed, a re-entry doubled the recommendation, and daycare staff phoned the parent for help. Loop #2171 and #2292: remote commands silently fail, and the advice is to wait 5 minutes before retrying. Trio #620: the history cannot show who gave a remote bolus, so a second caregiver or the child may double-dose; maintainers say fixing it needs LoopKit changes. Trio #1348/#1349: a parent testing remote meals for a daughter found that rejected commands still stored carbs or delivered the bolus (fixes submitted in PRs #1346/#1347; issues closed)."
+    },
+    {
+      "title": "AndroidAPS documentation: SMS Commands (Children section)",
+      "url": "https://androidaps.readthedocs.io/en/latest/Children/SMS-Commands.html",
+      "year": "Undated (current docs, accessed Nov 2026)",
+      "country": "International",
+      "sample_size": "Documentation",
+      "relevance": "Remote bolus by SMS needs TOTP plus PIN. Remote boluses must be at least 15 minutes apart by default, and shortening the gap needs two authorised phones. Carbs must go in a separate message, insulin first. An authenticated bolus cannot be cancelled remotely. AAPSClient can mirror the app but cannot bolus. Docs suggest a second authorised number to disable SMS control if a phone is lost."
+    },
+    {
+      "title": "Tandem Diabetes Care support: Caregiver Access to Bolus Delivery via Mobile App; Sequel twiist FAQ (twiist insiight app)",
+      "url": "https://www.tandemdiabetes.com/support-center/software-and-apps/tandem-mobi-mobile-app/article/caregiver-access-bolus-delivery-via-mobile-app",
+      "year": "2026 (pages undated)",
+      "country": "USA",
+      "sample_size": "Manufacturer documentation",
+      "relevance": "A Tandem caregiver can bolus only from the one smartphone paired to the pump, held near the pump. Tandem Source cannot deliver boluses. The twiist insiight caregiver app (https://twiist.com/faq) is for viewing data and is not meant to inform dosing. [uncertain] No caregiver remote-bolus feature was found for Omnipod 5 or twiist. This explains why parents value DIY remote control even when cleared systems exist."
+    },
+    {
+      "title": "Irace C, et al. Efficacy, safety, and legal considerations of DIY artificial pancreas systems: a position statement from Italian diabetes societies (AMD, SID, SIEDP pediatric society, Diabete Italia). Acta Diabetol 2026",
+      "url": "https://doi.org/10.1007/s00592-025-02559-3",
+      "year": "2026 (online 2025)",
+      "country": "Italy",
+      "sample_size": "Position statement",
+      "relevance": "Endorsed by the Italian pediatric endocrinology and diabetes society, the statement stresses HCPs' ethical responsibility to support DIY-APS users, acknowledges the legal complexity, and calls for HCP education and a regulatory pathway. It is a recent pediatric professional-body position."
+    }
+  ],
+  "evidence_strength": "Mixed. Pediatric glycemic outcomes rest on peer-reviewed evidence: one RCT with 48 children (CREATE), a large prospective cohort with 236 under-14s (LOS), and several retrospective pediatric clinic cohorts (n=31-198). Caregiver motivations and quality of life come from self-selected online surveys (n=56-209) and a qualitative study (60 families). Pediatric clinician attitudes come from HCP surveys fielded mostly in 2019-2022 that mix adult and pediatric staff. School evidence is one national nurse survey (2021) plus state, provincial and district policy documents. Remote-dosing safety and caregiver burden rest only on documentation, clinic handouts and GitHub anecdotes. The first caregiver study (BCDiabetes LoopCaregiver) has not reported.",
+  "prevalence_or_magnitude": "Share of users: about 20% of OS-AID users worldwide are children (Braune 2022, consensus estimate); 19.5% of OPEN respondents were caregivers (175 of 897); 42% of the US LOS cohort were under 14 (236 of 558, including 67 under 7); 34% of 3,694 BCDiabetes installs are pediatric and 12% are under 10 (Nov 2026). Population prevalence: 1.89% of Danish children with T1D (56 of 2,950, 2021-23). Remote dosing: 347 BCDiabetes children have a parent running LoopCaregiver. Remote control was the main OS-AID-only motivation for caregivers, and 94% of caregivers cited their own sleep (OPEN). School: 23% of US school nurses had met a DIY system and 46% had never heard of one (2021). Washington State and BC Nursing Support Services refuse DIY support, and BCDiabetes reports that many Canadian school boards refuse. Clinicians: in the US, 27% of providers rated DIY safe vs 89% of patients (2019); in the UK, 91% of HCPs were uncomfortable starting the conversation, with no adult-pediatric difference (2019); in Canada, 21.6% were comfortable supporting DIY vs 72.7% for commercial AID (2022). Caregivers not yet looping: 39% named lack of medical support as a barrier and 88.9% would start if their HCP recommended it. Outcomes: pediatric TIR rose 5-20 points across cohorts. BC OS-AID HbA1c was -0.51 vs t:slim at 12 months but no different at 18 months. Severe hypoglycemia and DKA were rare (BC 1/143 and 0; Denmark, Czech, Israel, Turkey and China 0 DKA). Parent PSQI fell from 8.6 to 3.7 (Denmark). [uncertain] There are no data on how often remote commands fail or duplicate, how many families hide looping from a pediatric team, or how many children open-loop at school.",
+  "data_quality_caveats": "Self-selected, highly educated caregivers: 87% (OPEN) and 63% (2022 qualitative) held university degrees. Surveys were English or German only. Danish and BC families were of above-average SES, and BC deprivation data were missing for 33% of the OS-AID group. Pediatric clinic cohorts are retrospective with sparse HbA1c follow-up (14 OS-AID children at 18 months in BC), and BC's abstract and table figures disagree. BC studies are authored by the clinic that runs the program, and the clinic's web figures vary across documents. Remote-monitoring and teen data-sharing evidence (Hart 2022, Lawton 2021) comes from commercial-system trials used as proxies. HCP surveys mostly predate the 2022 consensus and the 2023 Tidepool Loop clearance. GitHub reports are single-family anecdotes. [uncertain] The March 2021 nurse-survey sample size was not verified.",
+  "clinician_perspective": "(1) Pediatric clinicians share adult clinicians' hesitancy, plus concerns specific to children. In the UK survey (317 HCPs, 107 pediatric or joint), pediatric staff were no more confident than adult staff. Authors report pediatric concerns about safeguarding (no safety data, insurance) and about consent, because carers decide for the child. Some felt families should be steered to licensed closed loops. Among US providers reached through the Pediatric Endocrine Society and AADE, 27% thought DIY was safe. Their main problems were inexperience and being unable to troubleshoot. In Canada, 21.6% of HCPs (23% pediatric) were comfortable supporting DIY, against 72.7% for commercial AID, citing medico-legal risk. (2) Professional guidance now leans toward support with caveats. ISPAD 2024 encourages providers to support families who choose open-source AID (evidence grade E). It also urges caution about recommending it over commercial systems, says the care team remains essential, and says clinicians should learn the systems well enough to help optimise settings. The 2022 international consensus asks HCPs to consider the child's welfare and assent and not to breach local law or institutional policy. Italy's 2026 statement, co-signed by the pediatric society SIEDP, calls support an ethical responsibility. Denmark's Steno guideline lets clinicians advise on treatment but not on installation. (3) Ethicists and lawyers conclude that the parental choice falls within the zone of parental discretion, so clinicians keep a duty of care (Johnston 2021). Parental discretion in this context is legally untested (Dickson 2022). (4) Some pediatric centres have taken ownership. Examples are Prague (AAPS in preschoolers), Israel's AWeSoMe group, a Turkish centre initiating Loop, Chinese centres, Danish clinics that track every user, the NZ CREATE team, and BC Children's Hospital co-publishing with BCDiabetes, which builds and supports the apps. Their papers stress non-inferiority to commercial AID and note new patterns clinicians must learn, such as basal share halving under Loop. (5) School nurses: 46% had no knowledge of DIY systems, 82% would allow them, and many feared liability and wanted guidelines. Washington State guidance tells nurses to consult the provider but not to accept DIY orders. What pediatric clinicians appear to need: clear minor consent and assent documentation, a defensible position for school orders, a view of what parents (not the algorithm) did between visits, and pediatric-specific evidence summaries (now available: BC 2026, Turkey 2026, China 2026). [uncertain] No pediatric-only clinician attitude survey after 2022 was found.",
+  "effect_on_relationship": "The family, not the child, becomes the operator, and the pediatric team risks being reduced to prescriptions and quarterly HbA1c. Families describe responses from pediatric teams ranging from proactive support to refusal (Braune 2022). Some parents feel they know more than their centre's doctors. One German family hid looping from its diabetes team: the team kept saying the family only wanted the DANA pump to loop. The family described isolation and said the arrangement could not last. A US parent stopped Loop partly from worry about the endocrinologist's reaction (Wong 2022). Among caregivers not yet looping, 39% feared losing HCP support and 25% said their team discourages building (Huhndt 2022). Endorsement has outsized weight for parents: 88.9% would start if their clinician recommended it. Remote monitoring widens the information gap. Parents see every glucose value, dose and override around the clock and often dose remotely at school. The clinic sees an aggregate download that cannot show which adult gave which dose. School adds a fourth party. Schools in Washington State and BC refuse DIY orders, so the clinician is asked to write or co-sign school plans for a system the school will not support. Parents then fall back on remote dosing or open-loop school days, choices the clinic may never hear about. Split care appears in BC: BCDiabetes handles looping while families keep their pediatric endocrinologist for everything else, and the clinic suggests sharing a document with an unsupportive endocrinologist to change their mind. Two teams can produce conflicting advice unless data are shared. Adolescence renegotiates the relationship again. Parents of young teens remote-manage, middle teens get watchful waiting, and some older teens cut parental access (Lawton 2021), so the clinic must rebuild a direct relationship with the young person before transfer to adult care. Where clinics engage, as in Denmark (clinics know of 1.89% looping) and BC, families disclose and outcomes are reported jointly. [uncertain] This is a synthesis of qualitative and policy sources; no study measured parent-clinician trust before and after looping.",
+  "decision_ownership": "Parents and guardians decide to start, build or obtain the app, set and tune settings, and, uniquely in pediatrics, dose remotely. The child gives assent. The pediatric clinician controls prescriptions for pumps, pods and CGM, and school-order paperwork. Clinicians only rarely tune settings, except in supported programs such as BCDiabetes, CREATE and Prague. Schools decide whether staff will act, and often refuse, which moves school-hours dosing back to the parent remotely or to open loop. Liability: BCDiabetes requires signed consent and a waiver from the guardian, with a separate minor version. School nurses cite fear of liability. Legal commentators treat the parental choice as within parental discretion but untested. Operational responsibility among several caregivers is undefined: BCDiabetes limits remote bolus rights to one parent, but the apps record no who-did-what.",
+  "disclosure_risk": "Moderate to high where the pediatric team or school is unsupportive. Documented cases: a family hiding looping from its team (Braune 2022), a parent stopping over endocrinologist disapproval (Wong 2022), and 39% of non-users fearing loss of HCP support (Huhndt 2022). Disclosure to the school is also fraught, because disclosing can mean losing delegated care (BC NSS) or school acceptance (Washington). Lower in supportive public systems (Denmark). [uncertain] No study measured how many families hide looping from pediatric teams or schools.",
+  "regulatory_status_dependency": "High for school and institutional acceptance. Washington, BC NSS and BCDiabetes all tie school support to FDA or Health Canada approval, and Tidepool Loop's 2023 FDA clearance (ages 6+) gives US clinicians and schools a cleared reference. However, the cleared commercial path appears to lose the feature parents value most. Tandem caregiver bolus works only from the paired phone near the pump, and the twiist caregiver app is view-only. [uncertain] No caregiver remote bolus was found for Omnipod 5 or twiist. BC Pharmacare coverage of Omnipod 5 and mylife Loop (Apr 2026) may shift funded pediatric choices. No study tested whether pediatric clinic or school acceptance actually changed after clearance.",
+  "workarounds": "School: switch Loop to open loop during school hours (BCDiabetes option 1), or have one designated parent bolus remotely, enter a meal announcement, or wait for the CGM to rise (option 2). Other school workarounds: a template letter to school officials; treating the child as independent in self-care (BC NSS rule); a nurse consulting provider and family (Washington); medical exemptions from school phone bans ([uncertain] per an NCSL summary, 36 states plus DC enacted school phone laws from 2023, most with health exemptions); daycare staff phoning parents. Remote safety habits: assume an unconfirmed command was delivered; wait 5 minutes before resending; bolus before carbs; add a minute to identical carb times; BC's build waits 60 s after a CGM update before sending; AAPS uses a 15-minute minimum gap and two authorised phones; limit remote rights to one parent; parents screenshot settings changes. Clinic: seek a supportive clinic (BCDiabetes accepts virtual referrals across Canada), share evidence documents with unsupportive endocrinologists, run split care, sign consent and waiver forms, and receive clinic-built apps through TestFlight. Pediatric centres publish their own cohorts. Danish clinics keep counts of OS-AID users. Teens: families negotiate data-sharing ground rules (Lawton 2021).",
+  "existing_tools": "Nightscout, started by parents of children with T1D, gives remote following, the careportal, and the remote-command relay with an Apple push key. LoopCaregiver gives remote bolus, carbs and overrides, multiple Loopers and built-in OTP. A 'dev' branch feature shows failed deliveries. LoopFollow gives multi-Looper monitoring and alarms, plus direct-push remote control for Loop and Trio. AndroidAPS has the SMS Communicator and AAPSClient. Other followers: xDrip+ followers, Dexcom Follow/Share, LibreLinkUp. Data and clinic tools: Tidepool (clinic workspace, Loop uploads via Apple Health), Dexcom Clarity clinic, and Glooko. Commercial caregiver apps: Tandem mobile bolus (paired phone only), twiist insiight (view only) and CamAPS Companion (monitoring). School documents: the ADA Diabetes Medical Management Plan (revised 2025), 504 plans and IEPs, and BC NSS delegated-care plans. Clinic paperwork: BCDiabetes minor consent and waiver, school letter and hospital letter. BC Children's is piloting a pediatric clinician dashboard (Haibu Diabetes, 2026 protocol). [uncertain] It is not confirmed that Haibu ingests OS-AID or Nightscout data.",
+  "existing_tool_coverage_gap": "No tool shows the clinic which adult (parent 1, parent 2, the child, school staff) sent each bolus, carb entry or override. Trio maintainers say that attribution needs upstream LoopKit changes, and Nightscout shows treatments without reliable author identity. Remote-command outcomes (sent, received, authenticated, executed, rejected and why) are only partly visible to the sender. They are invisible to the clinic, and nothing flags likely duplicates. Clarity, Glooko and Tidepool aggregate insulin without separating algorithm, on-device and remote doses, and without school-hours vs home views (Li 2026 needed a bespoke analysis). School templates (DMMP, NSS, Washington guidance) assume regulated devices and have no field for an OS-AID plan, open-loop school days or parent remote dosing. No shared record holds minor consent and assent, which caregivers hold remote rights, or the adolescent's data-sharing preferences. Nothing lets a split-care pair, such as a pediatric endocrinologist and an OS-AID clinic, see the same timeline. Commercial caregiver apps lack remote bolus altogether.",
+  "data_artifacts_involved": "Remote command log (sender, time, OTP status, accepted, rejected or executed, rejection reason). Bolus history by source (automatic, on-device manual, remote, watch). Carb entries with author. Override and temp-target history. Nightscout treatments and devicestatus. Settings snapshot and change history. School-day vs home CGM and insulin split. Open-loop periods. Alarm and follower lists. Minor consent, assent and waiver. DMMP, 504 or school plan. Caregiver roster and remote permissions.",
+  "unmet_need": "Pediatric looping needs a shared, auditable record of who did what to a child's insulin, which a pediatric team can review and a school can rely on. Nothing provides it today. (1) Dose attribution across caregivers: algorithm, child, parent on-device, parent remote, or second caregiver. Without it, duplicate doses and conflicting decisions are invisible, and the clinic cannot tell whether a pattern reflects settings or the adults' behaviour. (2) Remote-command reliability: closing the loop on whether a command was executed, and surfacing failures and duplicates as safety events instead of leaving them in GitHub threads. (3) A school-ready plan for an OS-AID child that a clinician can sign off. It would state regulatory status plainly, describe the school-day mode (open loop, parent remote dosing or child self-management) and spell out who is responsible, so schools facing 'cannot accept DIY orders' policies have something concrete to evaluate. (4) Role and consent records: guardian consent, child assent, which adult holds remote rights. (5) Graded, adolescent-controlled sharing that supports the hand-over from parent to teen to adult clinic. (6) A way for unsupportive or unsure pediatric teams to stay in the loop without taking on the build, which addresses the hiding and fear of disapproval seen in the studies. (7) Evidence of what remote parental dosing does to burden and safety: the first study is only now recruiting.",
+  "implication_for_collaboration_tool": "1) Build a caregiver-aware timeline. Ingest Nightscout treatments and devicestatus plus LoopCaregiver, LoopFollow and AAPS SMS events. Label each insulin and carb event by source (automatic, on-device, remote) and, where possible, by named caregiver. Where attribution is impossible, say so rather than guess. 2) Reconcile remote commands. Show sent vs executed, flag likely duplicates (same carbs within minutes, remote plus on-device bolus within 15-30 minutes) and rejected commands. Roll these into a 'remote dosing safety' panel for the pediatric visit. 3) Produce a pediatric visit summary: school hours vs evenings vs overnight, weekday vs weekend, open-loop periods, overrides by caregiver, alarms, and basal vs bolus share (Loop halves basal share, per Turkey 2026). Format it in AGP-style layouts that pediatric teams already read. 4) Generate a school plan with clinician sign-off. Choose a mode (open loop at school, a single designated remote-dosing parent, or self-managing teen); list who to call, hypo treatment and phone-exemption wording; and state regulatory status honestly. Export it as an annex to the DMMP or 504 plan. Do not imply school staff should touch an unregulated app. 5) Keep a roles and consent registry: guardian consent and waiver, child assent, caregivers with view vs remote-dose rights (supporting BC's one-parent rule), and audit of rights changes. 6) Support transition with adolescent-controlled sharing tiers (real-time, daily summary, visit-only), a parent-to-teen hand-over checklist, and an adult-clinic referral packet. 7) Support split care: a shared view for the pediatric endocrinologist and the OS-AID clinic (BC Children's plus BCDiabetes), with messages tied to timeline events. 8) Give unsure clinics a low-commitment, view-only mode and a pediatric evidence brief (BC 2026, LOS pediatric, CREATE children, Denmark, Prague, ISPAD 2024 wording). 9) Stay read-only: do not send doses. Sending them would likely make the product a regulated dosing accessory and would duplicate LoopCaregiver and LoopFollow. 10) Collect optional caregiver burden and sleep check-ins (PSQI item, HFS-P short form) so the family's main goal, sleep, becomes visible to the clinic. [uncertain] How far caregiver attribution can go depends on what each app writes to Nightscout ('enteredBy' fields are inconsistent across apps).",
+  "severity_rank": "High. In pediatrics the clinic is structurally unavoidable (prescriptions, school orders, minor consent), the decision-maker is not the patient, and remote multi-caregiver dosing is unseen by the clinic, so relationship breakdown has direct consequences.",
+  "safety_criticality": "Medium to high. Studied cohorts show low severe hypoglycemia and DKA (BC 1/143 and 0), but young children cannot self-report lows. Remote commands can fail silently or duplicate, and a rejected remote meal still delivered its bolus (Trio #1349, closed with a fix submitted in 2026). Two caregivers can double-dose. Schools may have no trained responder for a DIY system.",
+  "equity_impact": "Children are the group affected by definition. Families hit hardest: those without iPhones for both child and parent (Loop is the only option under 14 at BCDiabetes, LoopCaregiver is iOS-only, and Android caregivers use the careportal or SMS); those paying for hosted Nightscout with remote commands or an Apple developer account; single-parent and shift-working households who cannot remote-dose during school; non-English or non-German speakers; and lower-SES families (studies skew to university-educated, above-average SES families; LOS pediatric bands were 80-92% White). Also families whose school refuses DIY, whose children then lose AID during school hours. Clinic-supported, low-resource cohorts (Israel 2026) suggest support can narrow the gap.",
+  "uncertain": [
+    "system_specificity",
+    "key_sources",
+    "prevalence_or_magnitude",
+    "data_quality_caveats",
+    "clinician_perspective",
+    "effect_on_relationship",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "existing_tools",
+    "implication_for_collaboration_tool",
+    "workarounds"
+  ]
+}

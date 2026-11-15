@@ -1,0 +1,139 @@
+{
+  "_note": "Loop and Learn's customizations (loopandlearn/customization), read 2026-11-13. dosing: LoopStack's reading of whether the patch changes what Loop doses or is told; those need a second confirmation (PRODUCT.md SAFE-3). offered:false is never committed (no_auth removes a safety feature). Shared by the main process (library.cjs) and the page (loopCustomizations.ts).",
+  "source": "loopandlearn/customization",
+  "items": [
+    {
+      "id": "future_carbs_4h",
+      "name": "Future carbs up to 4 hours",
+      "what": "Carb entries can be dated up to 4 hours ahead instead of 1.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "low_carb_limit",
+      "name": "Lower carb entry limits",
+      "what": "Warns at 49 g and blocks over 99 g per entry.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "high_carb_limit",
+      "name": "Higher carb entry limits",
+      "what": "Warns at 201 g and allows up to 300 g per entry.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "override_sens",
+      "name": "Finer override insulin needs",
+      "what": "Override insulin needs from 50% to 200% in 5% steps.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "2hlollipop",
+      "name": "Two-hour lollipop",
+      "what": "The lollipop absorption choice becomes 2 hours.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "profiles",
+      "name": "Therapy profiles",
+      "what": "Save and load sets of therapy settings.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "basal_lock",
+      "name": "Basal lock",
+      "what": "Holds basal delivery at the scheduled rate when glucose is high.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "negative_insulin",
+      "name": "Negative insulin damper",
+      "what": "Limits how much negative active insulin counts.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "remote_window",
+      "name": "Longer remote window",
+      "what": "Remote commands stay valid for 10 minutes.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "remote_carb_edit",
+      "name": "Remote carb edits",
+      "what": "A caregiver can edit or delete carbs from LoopFollow.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "xdrip_cgm",
+      "name": "xDrip4iOS as a CGM",
+      "what": "Use xDrip4iOS as Loop’s glucose source.",
+      "dosing": true,
+      "offered": true
+    },
+    {
+      "id": "now_line",
+      "name": "Now line",
+      "what": "A line marking now on Loop’s charts.",
+      "dosing": false,
+      "offered": true
+    },
+    {
+      "id": "watch_title",
+      "name": "Watch app title",
+      "what": "Changes the watch app’s title.",
+      "dosing": false,
+      "offered": true
+    },
+    {
+      "id": "lnl_icon",
+      "name": "Loop and Learn icon",
+      "what": "The Loop and Learn app icon.",
+      "dosing": false,
+      "offered": true
+    },
+    {
+      "id": "meal_days",
+      "name": "Meal history, days",
+      "what": "Shows more days of meal history.",
+      "dosing": false,
+      "offered": true
+    },
+    {
+      "id": "meal_week",
+      "name": "Meal history, a week",
+      "what": "Shows a week of meal history.",
+      "dosing": false,
+      "offered": true
+    },
+    {
+      "id": "cgm_sensor_notes",
+      "name": "CGM sensor notes",
+      "what": "Adds sensor start and change notes to Nightscout.",
+      "dosing": false,
+      "offered": true
+    },
+    {
+      "id": "no_auth",
+      "name": "No Face ID for bolus",
+      "what": "Removes Face ID or passcode before a bolus or settings change.",
+      "dosing": true,
+      "offered": false
+    },
+    {
+      "id": "loopstack_favorites",
+      "name": "LoopStack favorites",
+      "what": "Adds the meals you chose in LoopStack to Loop’s favorites, once each. Manage them from the Meal response tile.",
+      "dosing": true,
+      "offered": false
+    }
+  ]
+}

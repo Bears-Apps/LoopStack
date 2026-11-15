@@ -1,0 +1,97 @@
+{
+  "_comment": "What the system has taken on, and at what size. review_change reports a component the registry doesn't list; a person adds it with its size and where it is documented. Screens are not listed; the catalog finds them.",
+  "components": {
+    "LayoutControls": {
+      "size": "playground",
+      "documented": "references/core-ui-elements/patterns/saved-layouts.md"
+    },
+    "ActivityStrip": {
+      "size": "production",
+      "documented": null
+    },
+    "AppHeader": {
+      "size": "production",
+      "documented": "docs/components.md"
+    },
+    "AppShell": {
+      "size": "production",
+      "documented": null
+    },
+    "BottomNav": {
+      "size": "production",
+      "documented": "docs/components.md"
+    },
+    "Button": {
+      "size": "production",
+      "documented": "docs/components.md"
+    },
+    "CardSelect": {
+      "size": "production",
+      "documented": null
+    },
+    "ChangeHandoff": {
+      "size": "production",
+      "documented": null
+    },
+    "ConfidenceRing": {
+      "size": "production",
+      "documented": null
+    },
+    "ErrorBoundary": {
+      "size": "production",
+      "documented": null
+    },
+    "EvidenceCard": {
+      "size": "production",
+      "documented": null
+    },
+    "HomeTabs": {
+      "size": "production",
+      "documented": null
+    },
+    "InsulinLedgerCard": {
+      "size": "production",
+      "documented": null
+    },
+    "MetricTile": {
+      "size": "production",
+      "documented": null
+    },
+    "RiskWindowList": {
+      "size": "production",
+      "documented": null
+    },
+    "SampleScopePicker": {
+      "size": "production",
+      "documented": null
+    },
+    "SampleTag": {
+      "size": "production",
+      "documented": null
+    },
+    "Section": {
+      "size": "production",
+      "documented": null
+    },
+    "TimeInRangeBar": {
+      "size": "production",
+      "documented": null
+    },
+    "TimeRangeSelector": {
+      "size": "production",
+      "documented": null
+    },
+    "WeekRhythm": {
+      "size": "production",
+      "documented": null
+    },
+    "Wordmark": {
+      "size": "production",
+      "documented": null
+    },
+    "WeekdayHours": {
+      "size": "production",
+      "documented": "DESIGN.md (Data visuals) \u00b7 src/screens/WeekdayHours"
+    }
+  }
+}

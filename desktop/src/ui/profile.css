@@ -1,0 +1,37 @@
+/* The sidebar's profile row (ui/ProfileBar.tsx). Kept in its own file. */
+.profile { margin-top: auto; position: relative; display: flex; flex-direction: column; gap: 10px; }
+.profile-menu-foot { margin: 0; padding: 8px 12px 4px; border-top: 1px solid var(--ink-200); color: var(--ink-600); font-size: 11px; line-height: 15px; }
+.profile-row { display: flex; align-items: center; gap: 4px; border-top: 1px solid var(--ink-200); padding-top: var(--space-3); }
+.profile-btn {
+  flex: 1; min-width: 0; min-height: 48px; display: flex; align-items: center; gap: 10px;
+  padding: 6px 8px; border: 0; border-radius: 12px; background: transparent; color: var(--ink-900); font: inherit; text-align: left; cursor: pointer;
+}
+.profile-btn:hover, .profile-btn[aria-expanded='true'] { background: var(--surface-2); }
+.profile-btn:focus-visible, .profile-gear:focus-visible { outline: 2px solid var(--brand-primary); outline-offset: 1px; }
+.profile-avatar {
+  flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center;
+  background: var(--brand-primary-soft); color: var(--ink-900); font-size: 12px; font-weight: 600; letter-spacing: 0.02em;
+}
+.profile-name { flex: none; max-width: 60%; font-size: 15px; line-height: 20px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.profile-sub { flex: 0 1 auto; min-width: 0; font-size: 14px; line-height: 20px; color: var(--ink-700); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.profile-chev { flex: none; color: var(--ink-700); margin-left: 2px; }
+.profile-gear { flex: none; min-width: 44px; min-height: 44px; border-radius: 12px; color: var(--ink-900); }
+.profile-menu {
+  position: absolute; left: 0; right: 0; bottom: 66px;
+  z-index: 40; border-radius: 16px; padding: 6px; display: flex; flex-direction: column;
+}
+.profile-menu-head { display: flex; flex-direction: column; gap: 2px; padding: 8px 12px 10px; border-bottom: 1px solid var(--ink-200); margin-bottom: 4px; }
+.profile-menu [role='menuitem'] {
+  min-height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 0 12px;
+  border: 0; border-radius: 10px; background: transparent; font: inherit; font-size: 14px; font-weight: 500; color: var(--ink-900); text-align: left; cursor: pointer;
+}
+.profile-menu [role='menuitem']:hover, .profile-menu [role='menuitem']:focus-visible { background: var(--surface-0); outline: none; }
+.profile-menu-sep { height: 1px; background: var(--ink-200); margin: 4px 6px; }
+/* Icon-only sidebar: avatar over gear, the menu opens beside the sidebar. */
+@media (max-width: 1279px) {
+  .profile-name, .profile-sub, .profile-chev { display: none; }
+  .profile-row { flex-direction: column; gap: 6px; }
+  .profile-btn { flex: none; justify-content: center; padding: 6px; }
+  /* The icon sidebar scrolls, so the menu leaves it rather than being clipped. */
+  .profile-menu { position: fixed; left: 84px; /* 76px icon sidebar + 8px */ right: auto; bottom: 16px; width: 260px; }
+}

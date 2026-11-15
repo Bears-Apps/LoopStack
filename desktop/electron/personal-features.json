@@ -1,0 +1,130 @@
+{
+  "_note": "The person's own patches in their LoopWorkspace patches/ folder, by file name without its number (\"08-meal-patterns-and-tools.patch\" is meal-patterns-and-tools). rank orders the cards (lowest first); the build still applies files in file-name order. dosing: LoopStack's reading of whether it changes what Loop doses or is told (PRODUCT.md SAFE-3). canTurnOn:false is never turned on by LoopStack (SAFE-6: it removes a safety check). A file not listed here is named from its file name and treated as dosing. Shared by the main process (personal.cjs) and the page (loopCustomizations.ts).",
+  "items": [
+    {
+      "id": "meal-patterns-and-tools",
+      "name": "Delayed metabolic response",
+      "what": "The 🥜 absorption pattern picker for meals that land late: high fat, protein or fibre. Each carb entry and favorite can carry the pattern, and Loop models that entry on the delayed curve.",
+      "bundle": [
+        "350 g carb entries (warning above 200 g unchanged)",
+        "Favorites export and import as CSV",
+        "Recurring preset reminders (a notification only)",
+        "🍲 for the 6-hour quick pick",
+        "48 hours of retained insulin counteraction effects"
+      ],
+      "icon": "peanut",
+      "dosing": true,
+      "canTurnOn": true,
+      "source": "Yours",
+      "rank": 0,
+      "note": "The delayed curve itself is in your LoopKit fork (Rdeboer180/LoopKit_absorption), which your build uses as its LoopKit. Turning this off removes the picker and the tools below; LoopStack doesn’t change the fork."
+    },
+    {
+      "id": "nightscout-absorption-pattern",
+      "name": "Absorption pattern in Nightscout",
+      "what": "Writes each entry's absorption pattern into the Nightscout note, so LoopStack can tell which meals used the delayed curve.",
+      "icon": "cloud",
+      "dosing": false,
+      "canTurnOn": true,
+      "source": "Yours, for LoopStack",
+      "rank": 1
+    },
+    {
+      "id": "past-meal-favorites",
+      "name": "Past meals to favorites",
+      "what": "Save a meal you already ate as a favorite, optionally with the carbs Loop observed absorbing.",
+      "icon": "star",
+      "dosing": true,
+      "canTurnOn": true,
+      "source": "Yours",
+      "rank": 2
+    },
+    {
+      "id": "carb-history-24h",
+      "name": "24-hour carb history",
+      "what": "A rolling 24 hours of carb entries below the active ones, including meals that have fully absorbed.",
+      "icon": "history",
+      "dosing": false,
+      "canTurnOn": true,
+      "source": "Yours",
+      "rank": 3
+    },
+    {
+      "id": "carb-entry-layout",
+      "name": "Carb entry order",
+      "what": "The carb entry screen in the order you use it: favorite, food type, pattern, then time.",
+      "icon": "layout",
+      "dosing": false,
+      "canTurnOn": true,
+      "source": "Yours",
+      "rank": 4
+    },
+    {
+      "id": "premeal-blue-and-favorites-replace",
+      "name": "Pre-meal in blue, replace favorites",
+      "what": "The pre-meal button uses the workout blue so it doesn’t read as a second carb button, and favorites import can replace the whole list.",
+      "icon": "premeal",
+      "dosing": false,
+      "canTurnOn": true,
+      "source": "Yours",
+      "rank": 5
+    },
+    {
+      "id": "extend-carb-absorption-time-12h",
+      "name": "Absorption times up to 12 hours",
+      "what": "The longest absorption time goes from 8 to 12 hours, and carbs can be dated up to 4 hours ahead.",
+      "icon": "clock",
+      "dosing": true,
+      "canTurnOn": true,
+      "source": "Yours, with Loop and Learn’s future_carbs_4h folded in",
+      "rank": 6
+    },
+    {
+      "id": "fast-carb-absorption-2.5h",
+      "name": "Absorption quick picks 2.5, 4 and 6 hours",
+      "what": "The fast quick pick goes from 1.5 to 2.5 hours; medium and slow are 4 and 6 hours.",
+      "icon": "bolt",
+      "dosing": true,
+      "canTurnOn": true,
+      "source": "Yours, with the community absorption-times change folded in",
+      "rank": 7
+    },
+    {
+      "id": "carb-warning-200g",
+      "name": "Carb warning at 200 g",
+      "what": "Loop warns above 200 g in one entry instead of 99 g.",
+      "icon": "scale",
+      "dosing": true,
+      "canTurnOn": true,
+      "source": "Yours",
+      "rank": 8
+    },
+    {
+      "id": "profiles-pinned",
+      "name": "Therapy profiles",
+      "what": "Save and load sets of therapy settings, pinned to the version that fits your Loop.",
+      "icon": "profiles",
+      "dosing": true,
+      "canTurnOn": true,
+      "source": "Loop and Learn’s profiles, pinned in your patches",
+      "rank": 9
+    },
+    {
+      "id": "disable-loop-authentication",
+      "name": "No Face ID for bolus",
+      "what": "Removes the Face ID or passcode check before a bolus. LoopStack can turn it off, which brings the check back, but never turns it on.",
+      "icon": "unlock",
+      "dosing": false,
+      "canTurnOn": false,
+      "source": "Loop and Learn’s no_auth, in your patches",
+      "rank": 10
+    }
+  ],
+  "workflowIcons": {
+    "basal_lock": "basal-lock",
+    "negative_insulin": "damper",
+    "profiles": "profiles",
+    "future_carbs_4h": "clock",
+    "no_auth": "unlock"
+  }
+}

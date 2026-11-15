@@ -1,0 +1,72 @@
+{
+  "_comment": "One source for the loopstack-system MCP server (scripts/system/mcp.mjs) and the review gate (scripts/system/review.mjs): the three sizes, the tools agents call, the gates work passes on the way out, and the files the checks skip. Edit here and both change.",
+  "sizes": [
+    {
+      "id": "sketch",
+      "label": "Sketch",
+      "who": "A canvas board, mockup or spike",
+      "fixed": "Tokens and the clinical-safety rules (SAFE-1 to SAFE-5)",
+      "loose": "Layout, copy, states",
+      "checks": [
+        "Colours come from the tokens (check_source flags anything raw)",
+        "Copy passes check_copy: no dosing instructions, no device-writing, no causal overclaims"
+      ]
+    },
+    {
+      "id": "playground",
+      "label": "Playground",
+      "who": "In the app on a branch or a TestFlight build",
+      "fixed": "Tokens, type, real components, safety and data-visual rules",
+      "loose": "Composition and content",
+      "checks": [
+        "Colours come from the tokens; weights stop at 600",
+        "Reuse first: get_component names the nearest existing component",
+        "Copy passes check_copy",
+        "Charts follow the data-visual rules (get_rules \"Data visuals\"): locked scale, no dual axes, sample shown, missing drawn as missing",
+        "Run system:review before committing"
+      ]
+    },
+    {
+      "id": "production",
+      "label": "Production",
+      "who": "What ships to the App Store or to a clinician",
+      "fixed": "Everything in DESIGN.md and PRODUCT.md",
+      "loose": "Nothing without a reason written down",
+      "checks": [
+        "Colours from the tokens, weights 400 to 600, grey text passes 4.5:1",
+        "Reuse first, and the component is in the registry with where it is documented",
+        "Copy passes check_copy and uses Loop's and clinicians' vocabulary",
+        "Every chart passes the data-visual rules and has a glance and a detail face",
+        "Images and meaningful SVG have text alternatives; real buttons and links; no positive tabIndex",
+        "States drawn: empty, not enough data yet, loading, error, long",
+        "Dynamic Type, reduced motion, 44px tap targets",
+        "npm test passes and system:review is clean"
+      ]
+    }
+  ],
+  "tools": [
+    { "name": "search_system", "summary": "Search rules, tokens, components and research at once.", "description": "Search the LoopStack system: named rules and sections of DESIGN.md and PRODUCT.md, colour tokens from src/styles/tokens.css, components in src/components and src/screens, and the research findings. Use it before building anything, to find what already exists and which rules apply." },
+    { "name": "get_rules", "summary": "Read a section of DESIGN.md or PRODUCT.md, or one named rule.", "description": "Return a section of DESIGN.md or PRODUCT.md by heading (e.g. \"Data visuals\", \"Clinical safety\", \"Colors\") or a named rule by id (e.g. \"VIS-3\", \"SAFE-1\"). With no topic, lists every section and rule id." },
+    { "name": "find_tokens", "summary": "List colour tokens, or match a raw colour to the nearest token.", "description": "List the colour tokens from src/styles/tokens.css, or, given a raw hex, return the nearest token and how far it is. Use it instead of writing a hex." },
+    { "name": "get_component", "summary": "Find a component and its registry entry.", "description": "Look up a component by name in src/components and src/screens: its files, its registry size and where it is documented, and the nearest similar components. Use it before adding a component." },
+    { "name": "get_checklist", "summary": "The checks for a sketch, playground or production change.", "description": "Return what is fixed, what is loose and what to check for work at a given size: sketch, playground or production." },
+    { "name": "check_source", "summary": "Check TSX, TS or CSS against the system.", "description": "Check code for drift: raw colours (COL-1), 700+ weights (TYPE-1), too-light grey text (COL-4), images without alt, positive tabIndex, click handlers on non-interactive elements, and the clinical-safety and vocabulary rules in any copy it contains." },
+    { "name": "check_copy", "summary": "Check copy against the safety and brand rules.", "description": "Check user-facing copy (plain text, markdown or TSX) for dosing instructions (SAFE-1), unmeasured outcome claims (SAFE-2), device-writing language (SAFE-3), causal overclaims (SAFE-4), bolus/basal ratio (DATA-1), clinician vocabulary (DATA-2), product names (BRAND-1) and implied affiliation (BRAND-2)." },
+    { "name": "get_research", "summary": "Findings, unmet needs and sources from the 16 research topics.", "description": "Search the DIY Loop and clinician research (diy-loop-clinician-research/results): returns each matching topic's severity, safety rating, unmet need and implication for LoopStack, with its top sources. With no query, lists the topics." },
+    { "name": "get_decisions", "summary": "Open decisions waiting on the owner.", "description": "Return the open decisions: DECISIONS-PENDING.md, and the open decisions in the research report." },
+    { "name": "audit_drift", "summary": "Count existing drift across the whole tree.", "description": "Run check_source over every file in src (except the exempt files) and return counts by finding code and by file. Drift that predates a change is reported here, not by review_change." },
+    { "name": "review_change", "summary": "Run the review gate on the working tree before committing.", "description": "Check the lines this branch adds compared with a git ref (default HEAD, so uncommitted work): blocking findings stop the change, the rest are reported. Same as npm run system:review." }
+  ],
+  "gates": [
+    { "stage": "While building", "check": "check_source, check_copy and get_rules over MCP", "kind": "advisory", "status": "live" },
+    { "stage": "Before commit", "check": "system:review on added lines: clinical-safety findings (SAFE-1, SAFE-3, SAFE-5), raw colours with a token, images without alt, positive tabIndex", "kind": "blocking", "status": "live" },
+    { "stage": "Before commit", "check": "system:review on added lines: other copy, vocabulary, weight, contrast and accessibility findings; components missing from the registry", "kind": "advisory", "status": "live" },
+    { "stage": "Before TestFlight", "check": "npm test and npm run build", "kind": "blocking", "status": "live" },
+    { "stage": "Pull request", "check": "The same review in CI", "kind": "blocking", "status": "not built (no remote yet)" }
+  ],
+  "exempt": [
+    "src/styles/tokens.css",
+    "src/lib/report/clinicReportHtml.ts",
+    "src/lib/report/clinicReportPdf.ts"
+  ]
+}

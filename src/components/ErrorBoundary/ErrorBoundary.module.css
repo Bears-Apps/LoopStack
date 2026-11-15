@@ -1,0 +1,114 @@
+.screen {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-5);
+  background: var(--surface-1);
+}
+
+.card {
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.kicker {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  font-weight: 500;
+  color: var(--ink-500);
+}
+
+.title {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+  margin: 0;
+}
+
+.body {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding-top: var(--space-1);
+}
+
+.primary,
+.secondary {
+  height: 52px;
+  border-radius: var(--radius-pill);
+  font-size: var(--text-button);
+  line-height: var(--text-button-lh);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: var(--ink-900);
+  border: 1px solid var(--ink-900);
+  color: var(--surface-0);
+}
+
+.secondary {
+  background: var(--surface-0);
+  border: 1.5px solid var(--ink-200);
+  color: var(--ink-900);
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.hint {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+.details {
+  border-top: 1px solid var(--ink-200);
+  padding-top: var(--space-3);
+}
+
+.summary {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  cursor: pointer;
+}
+
+.pre {
+  margin: var(--space-2) 0 0;
+  padding: var(--space-3);
+  background: var(--surface-1);
+  border-radius: var(--radius-input);
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--ink-700);
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 180px;
+  overflow: auto;
+}

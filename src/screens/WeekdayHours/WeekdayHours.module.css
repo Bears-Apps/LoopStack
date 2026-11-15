@@ -1,0 +1,291 @@
+/* One weekday's average hours, Loop-style: stacked charts on one time axis,
+   one cursor through all of them, a readout above. */
+
+.strip {
+  display: flex;
+  gap: 6px;
+}
+
+.day {
+  flex: 1;
+  min-height: var(--tap-target-min);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  background: var(--surface-0);
+  color: var(--ink-500);
+  font-size: var(--text-small);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.dayActive {
+  border-color: var(--brand-primary);
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+}
+
+.dayToday::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin: 2px auto 0;
+  border-radius: 2px;
+  background: currentColor;
+}
+
+.note {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+/* ── readout ── */
+
+.readout {
+  background: var(--surface-1);
+  border-radius: var(--radius-input);
+  padding: var(--space-3) var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.readoutHead {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.readoutHour {
+  font-size: var(--text-h3);
+  line-height: var(--text-h3-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.readoutWeeks {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+.stats {
+  display: grid;
+  /* Two by two on a phone: four across leaves "136 mg/dL" running into the
+     insulin figure at 375px. Reads in chart order either way. */
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+@media (min-width: 600px) {
+  .stats { grid-template-columns: repeat(4, 1fr); }
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.statLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.statValue {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.statValue small {
+  font-size: var(--text-small);
+  font-weight: 500;
+  color: var(--ink-500);
+}
+
+.insulin { color: var(--graph-insulin); }
+.carbs { color: var(--graph-carb); }
+.exercise { color: var(--graph-activity); }
+
+.readoutLine {
+  margin: 0;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+/* ── charts ── */
+
+.charts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  /* Horizontal drags scrub; vertical ones still scroll the page. */
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: crosshair;
+  padding-bottom: var(--space-5);
+  border-radius: var(--radius-input);
+}
+
+.charts:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.chartLabel {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-2);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.chartUnit {
+  font-weight: 500;
+  color: var(--ink-400);
+}
+
+.chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.targetBand { fill: var(--range-in-soft); }
+.gridLine { stroke: var(--ink-200); stroke-width: 1; }
+.tick { fill: var(--ink-400); font-size: 9px; font-variant-numeric: tabular-nums; }
+
+.stretch { fill: var(--accent-info-soft); }
+.cursor { stroke: var(--ink-500); stroke-width: 1; stroke-dasharray: 2 2; }
+
+.spread { fill: var(--surface-2); opacity: 0.9; }
+.glucoseLine { fill: none; stroke: var(--ink-400); stroke-width: 1.5; stroke-linejoin: round; }
+.dotActive { stroke: var(--surface-0); stroke-width: 2; }
+
+.insulinArea { fill: var(--graph-insulin-soft); }
+.insulinLine { fill: none; stroke: var(--graph-insulin); stroke-width: 1.75; stroke-linejoin: round; }
+.insulinDot { fill: var(--graph-insulin); stroke: var(--surface-0); stroke-width: 2; }
+
+.carbArea { fill: var(--graph-carb-soft); }
+.carbLine { fill: none; stroke: var(--graph-carb); stroke-width: 1.75; stroke-linejoin: round; }
+.carbDot { fill: var(--graph-carb); stroke: var(--surface-0); stroke-width: 2; }
+
+.exerciseBar { fill: var(--graph-activity-soft); }
+.exerciseBarActive { fill: var(--graph-activity); }
+/* Fewer than three weeks behind the hour: drawn, but visibly provisional. */
+.exerciseBarThin { opacity: 0.45; }
+
+.axis {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--space-4);
+}
+
+.axis span {
+  position: absolute;
+  transform: translateX(-50%);
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  white-space: nowrap;
+}
+
+/* ── at a glance ── */
+
+.jumps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jump {
+  width: 100%;
+  min-height: var(--tap-target-min);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: var(--space-3);
+  border: none;
+  border-left: 3px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  background: var(--surface-1);
+  color: var(--ink-900);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.jumpLow { border-left-color: var(--range-low); }
+.jumpHigh { border-left-color: var(--range-high); }
+
+.jumpMeta {
+  font-weight: 400;
+  color: var(--ink-500);
+}
+
+.glance {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+.glanceItem {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-height: var(--tap-target-min);
+  padding: var(--space-2) var(--space-3);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  background: var(--surface-0);
+  text-align: left;
+  font: inherit;
+  color: inherit;
+}
+
+button.glanceItem { cursor: pointer; }
+
+.glanceLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+.glanceValue {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.footnote {
+  margin: 0;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}

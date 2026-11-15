@@ -1,0 +1,276 @@
+{
+  "item_name": "Clinic-supported looping and shared-care models",
+  "issue_summary": "Most open-source AID users build, tune and troubleshoot with peer help, and clinics mostly react to that: they ignore it, tolerate it or refuse it. A small number of positive models show what clinic involvement can look like, and they share a common anatomy. (1) Clinic-run installation. BCDiabetes in Vancouver has installed open-source AID in-house since 1 Aug 2020 and calls the service SOS-AID (supported open-source AID). By 4 Nov 2026 it had done 3,694 installs (Loop, iAPS, Trio, AndroidAPS); 34% were children. The clinic builds the apps itself and hands iPhone users a TestFlight link and Android users an APK. It pre-loads each client's starting basal, carb ratio, ISF, max bolus and total daily dose into a clinic-hosted Nightscout, and Loop imports them at onboarding. Default follow-up is at 1 day, 1 week, 1 month and 6 months, then yearly, with a staff-moderated peer group behind it. Affiliate clinics (Saskatoon, Montreal, Winnipeg, and a Saskatchewan provincial pediatric group) get the apps, consent forms and caregiver app free of charge. In return they complete training and report outcomes. The 'LoopCaregiver fork' on BCDiabetes' GitHub changes no dosing code. Its only change is a build setting that lets the clinic hand the caregiver app to parents through TestFlight; 347 children's parents use it. Its AndroidAPS fork, by contrast, switches off the app's built-in learning objectives, so clinic training replaces the app's own competency gate. (2) Supported trials and audits. The CREATE trial (New Zealand) paired clinic teams with open-source experts on Slack. The UK ABCD audit collects clinician-entered outcomes from NHS services. Centres in Poland, Czechia, Israel and Spain run AndroidAPS under clinic follow-up. (3) Supportive individual clinicians. Loop and Learn's crowd-sourced list had 412 'DIY-supportive' providers in 29 countries by Nov 2026. (4) Professional guidance has converged on 'support, do not refuse': ADCES ('DIY doesn't mean do-it-alone'), the 2022 international consensus, Diabetes Canada 2023, the Austrian Diabetes Association 2024, and ADA Standards of Care 2026 recommendation 7.27 (Grade B). The guidance splits on one point: should clinics build and install the app (BCDiabetes; Diabetes Canada says HCPs should be able to help with set-up), or should users do it themselves (Austria)? Good collaboration in all these models rests on the same few things. Someone in the clinic owns the AID part. Data is shared live. Consent and documentation follow a routine. Onboarding and follow-up are structured. There is a link into the peer community. Components keep being prescribed. And there is an agreed split of who handles tech, settings and general diabetes care. None of the models has a shared record of who changed which setting and why. The hand-off between the looping clinic, the regular endocrinologist, primary care and hospital teams still runs on letters and a Nightscout link.",
+  "who_is_affected": "Adults and children on open-source AID, and the parents who run caregiver apps. Endocrinologists, diabetes nurses and educators, physician assistants and 'technology fellows' who run or support looping services. Referring endocrinologists and primary care, who keep 'non-looping' care in split-care models. Hospital, anaesthesia, intensive-care and school staff who receive clinic letters. Clinics deciding whether to become affiliates or to refer out. Paid educator services and third-party installers.",
+  "system_specificity": "All systems, with differences. BCDiabetes: Loop is preferred, and is the only option offered under age 14 and over 75. In the 1,442-client poster (figures from the earlier review in this project), 78% of starts were Loop, 13% AAPS and 9% iAPS/Trio, with no glucose differences between them. The clinic also installs iAPS, Trio and AndroidAPS, all on Omnipod Dash and Dexcom G6/G7. Libre 3+ works only on Android, via Juggluco; Libre on iOS is expected in Q1 2027. LoopCaregiver works with Loop only (needs Loop 3.3+, iOS 16+ and Nightscout 14.2.6+); LoopFollow covers Loop and Trio. AndroidAPS has built-in 'objectives' that hold new users in open loop until they finish tasks. Diabetes Canada treats this as a safety feature a clinician can use; BCDiabetes' public AndroidAPS fork marks every objective as complete. [uncertain] It was not verified that this fork is the exact build BCDiabetes ships. Most supported cohorts elsewhere use AndroidAPS: CREATE (New Zealand), Poznan (Poland), Motol (Czechia), Shaare Zedek (Israel) and Seville (Spain). The regulated Loop derivative (Tidepool Loop, twiist) follows the usual prescribed-device path in the US.",
+  "care_setting": "Specialist endocrinology clinics (adult and pediatric), with installs and follow-up mostly virtual. A privately run, publicly funded clinic acts as hub, with affiliate clinics. Also research trials, and split care with the regular endocrinologist and primary care. Inpatient and perioperative care: BCDiabetes gives clients a letter for hospital staff with a Nightscout link. Pregnancy: an expedited-install route and a published pregnancy cohort. School: letters to school boards.",
+  "trigger_moment": "Asking for a looping referral. Onboarding (two appointments, or 'one and done' for low-risk 14-65-year-olds). The first weeks of fine-tuning. App renewal: TestFlight builds expire after 90 days, and BCDiabetes renews every 75-80 days and pushes monthly updates. Adding a caregiver app. Annual follow-up, which BCDiabetes requires to keep free Nightscout hosting. Hospital admission or surgery. Pregnancy. A new school year. An affiliate's outcome reporting. Switching to commercial AID, for example after BC Pharmacare began covering Omnipod 5 and mylife Loop on 1 Apr 2026.",
+  "key_sources": [
+    {
+      "title": "BCDiabetes (Elliott T). Looping at BCDiabetes: DIY-Automated Insulin Delivery made easy (clinic program document, dated 2026-Nov-4)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Looping-at-BCDiabetes.pdf",
+      "year": "2026",
+      "country": "Canada (British Columbia, serving all provinces virtually)",
+      "sample_size": "3,694 SOS-AID installs to date (2,946 Loop); 34% pediatric, 12% under 10, 3% over 70; 347 children with Loop Caregiver",
+      "relevance": "The fullest description of a clinic-run model. Requires a physician or nurse-practitioner referral; appointments within 2 weeks; provincial plans pay, except Quebec ($1,500). Appointment 1 sets up Nightscout. At appointment 2 (60-90 min) the client installs Loop from BCDiabetes' TestFlight, or AAPS from the clinic's own cloud. Nightscout comes 'pre-configured' with the starting basal, ICR, ISF, max bolus and TDD, so Loop runs immediately with fewer data-entry errors. A 'one and done' single visit is offered to low-risk clients aged 14-65. Follow-up at 1 day, 1 week, 1 month and 6 months, then yearly. Email support 09:00-16:00 on weekdays, plus a clinic Facebook group. Clients must keep seeing their regular endocrinologist for non-looping care. The document notes that not all endocrinologists support Loop. Poor carb counters are no longer excluded. [uncertain] The same document gives 1,200 and >2,400 members for the peer group, and clinic documents give 32,000, 35,000 and 100,000 worldwide Loop users."
+    },
+    {
+      "title": "BCDiabetes Loop Affiliate Program (clinic document; affiliate status as of 2026-Jan-31)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/BCDiabetes-Loop-Affiliate-Program.pdf",
+      "year": "2025-2026",
+      "country": "Canada",
+      "sample_size": "Affiliates: Saskatoon (100+ installs), Montreal (10+), two in Winnipeg (early days); pediatric and adult sites",
+      "relevance": "A franchise-like route for other clinics. Steps: foundational training on loop.bcdiabetes.ca, a recommended 2-day visit to Vancouver, mandatory free Diabetotech 'DIY Loop' coursework, a quiz and certificate, then a privacy and sharing agreement. The agreement requires affiliates to send anonymized data on every Loop start: demographics, pre- and post-TIR, GMI and diabetes emergencies. Affiliates get the BCDiabetes Loop and Loop Caregiver apps for all consented clients. Nightscout is strongly recommended and is a prerequisite for Loop Caregiver. BCDiabetes may sell blocks of Nightscout accounts to affiliates at $60 per user per year. It says that with Tidepool, clients must upload manually at each appointment. [uncertain] This conflicts with Loop's built-in Tidepool service."
+    },
+    {
+      "title": "BCDiabetes. Looping with BCDiabetes: Informed Consent and Waiver for Adults (version 2025-07-24)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Adult-Looping-Waiver--Consent-2025-07-24-for-online-registration.pdf",
+      "year": "2025",
+      "country": "Canada",
+      "sample_size": "Install counts as of 2025-07-24: 2,479 (Loop 2,022; iAPS 73; Trio 22; AAPS 362)",
+      "relevance": "Shows how one program handles liability. The client takes on full responsibility for running the system and releases BCDiabetes from all claims. The client confirms they had otherwise planned to self-install. They agree not to copy or share the apps without written consent. They accept that the iOS apps live on BCDiabetes' TestFlight account with a 90-day life, renewed every 75-80 days subject to Apple approval, and could stop without notice. If so, they must revert to the PDM, MDI, or a self-build. Conflict of interest is disclosed: the owner and staff are paid for assessment, installation, configuration, fine-tuning and maintenance. Data clause: data stored in a Google Canada cloud and, with consent, added to the clinic EMR. Coded data may go to the DIY community or Health Canada. Safety in the first 1,442 installs: no deaths, 4 DKA, 14 patient-reported severe hypoglycemia events; TIR 60% to 73%."
+    },
+    {
+      "title": "BCDiabetes. Clinician FAQ (loop.bcdiabetes.ca/clinicians) and Loop site introduction",
+      "url": "https://loop.bcdiabetes.ca/clinicians",
+      "year": "2023 (site copyright); accessed Nov 2026",
+      "country": "Canada",
+      "sample_size": "n/a",
+      "relevance": "Defines the split-care contract. In the 'BCDiabetes only does the Looping' model, BCDiabetes does installation, looping support and algorithm updates, and the primary team manages general diabetes care. Referring clinicians are told they do not need to configure or troubleshoot Loop; patient questions go to BCDiabetes staff. Clinicians are invited to learn settings from the Configuration section and to visit. Patients are screened by questionnaire (tech savviness, insulin-adjustment knowledge, history, anxiety). Stopping is a simple pod change back to the Omnipod PDM. An older site page mentions a BCDiabetes Loop Slack channel of about 130 members, moderated by a non-physician."
+    },
+    {
+      "title": "BCDiabetes Nightscout documents: Nightscout Help; Nightscout subscription services; Loop plugin settings for BCD Nightscout; Glimp configuration (undated clinic handouts)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/BCDiabetes-Nightscout-Help.pdf ; https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Nightscout-subscription-services.pdf ; https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Loop-settings-for-BCD-Nightscout.pdf",
+      "year": "2021-2026 (undated; references accounts created 2021)",
+      "country": "Canada",
+      "sample_size": "n/a",
+      "relevance": "The 'clinic Nightscout' set-up. BCDiabetes hosts each client's Nightscout on a cgm.bcdiabetes.ca subdomain, free while the client is seen at least yearly. Dormant sites are switched off. The clinic issues the API secret and recommends Nightscout plugin settings for Loop. It prefers 12-hour views and the Day-to-Day, Distribution and Percentile reports. Staff use the client's Nightscout URL to follow their numbers and make suggestions. The clinic calls Nightscout the best tool for diabetologists and their staff who want to help clients with settings. For non-clients it lists paid hosts: T1Pal (CAD$210/yr), opensource.clinic (CAD$89/yr, run by a Dutch family physician) and nightscoutpro.com (CAD$70/yr)."
+    },
+    {
+      "title": "BCDiabetes (Elliott T). 'Looping' in hospital: letter to hospital medical staff (2026-Jul-13)",
+      "url": "https://bit.ly/Loophospital",
+      "year": "2026",
+      "country": "Canada",
+      "sample_size": "States about 3,500 people looping via BCDiabetes",
+      "relevance": "A shared-care tool for inpatient teams. It tells hospital staff that BCDiabetes staff installed, configured and maintain the client's system. The client can share a custom Nightscout URL showing live glucose, TIR, GMI and settings. The letter recommends that looping patients keep full control of glucose management while fully conscious, at the discretion of the most responsible physician. Anaesthesia or ICU teams may run the AID or switch to an insulin infusion or MDI. A direct phone number is given."
+    },
+    {
+      "title": "BCDiabetes GitHub forks (LoopWorkspace, LoopCaregiver, LoopFollow, iAPS, Trio, AndroidAPS): commit history compared with upstream",
+      "url": "https://github.com/bcdiabetes",
+      "year": "2019-2026 (commits checked 13 Nov 2026)",
+      "country": "Canada",
+      "sample_size": "n/a",
+      "relevance": "The 'LoopCaregiver fork' and its siblings. The LoopCaregiver, LoopFollow, iAPS and Trio forks differ from upstream only in fastlane build settings: external TestFlight distribution, 'Monthly Update' changelog. The LoopWorkspace fork applies Loop and Learn's 'Profile Save & Load' customization at build time. On 2026-09-23 it added a TestFlight group named 'Saskatchewan Provincial Pediatric Endocrinology', which is how an affiliate's patients get the clinic build. The AndroidAPS fork (commits Jan and Nov 2026) makes every AAPS objective report as accomplished. It sets the required 20 manual enacts and the 5-day, 7-day and other minimum durations to zero, disables simple mode and bolus beeps, and defaults to mmol/L. [uncertain] These are public code facts. Whether these exact builds reach patients was not confirmed."
+    },
+    {
+      "title": "LoopDocs: Loop 3 onboarding (importing Therapy Settings from a Nightscout profile)",
+      "url": "https://loopkit.github.io/loopdocs/loop-3/onboarding",
+      "year": "Living documentation (Loop 3.x)",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "The mechanism behind clinic-pre-configured Nightscout. In onboarding, Loop can download the Nightscout profile and override presets, and every imported Therapy Setting is shown for review. This lets a clinic stage starting settings before the install visit. The same mechanism restores settings on a new phone."
+    },
+    {
+      "title": "Samuel P, Khan N, Klein G, ... Hawke K, Weissinger A, Elliott T. Open-source Artificial Pancreas Systems Are Safe and Effective When Supported In-clinic: Outcomes in 248 Consecutive Type 1 Diabetes Clients. Can J Diabetes 2024;48(1):59-65",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37802366/",
+      "year": "2024 (online Oct 2023)",
+      "country": "Canada (British Columbia)",
+      "sample_size": "248 (Loop 108, iAPS 114, Android APS 24); mean age 36; 17-month follow-up",
+      "relevance": "The core peer-reviewed evidence for clinic-supported looping. Clinic staff installed and maintained the systems at no cost to clients. TIR rose from 64% to 80% and A1C fell from 7.2% to 6.7%. There were 3 severe hypoglycemia events, no DKA, and QoL improved. Offered only to moderately tech-savvy clients who could pay for hardware and signed a waiver. Retrospective and single-centre, by the program's own staff. The senior author disclosed Dexcom and Abbott honoraria."
+    },
+    {
+      "title": "Alqahtani A, Khan N, Hawke K, Klein G, Elliott T. Improved Glycemia and Quality of Life With Open-Source AID: Real-World Data From 1840 Patient-Years (ADA 85th Scientific Sessions poster, June 2025)",
+      "url": "https://docs.google.com/presentation/d/1n_yWSlbS9yapJd4JsOT6eVDzxXSDPnifpBmtD_3YYBU/htmlpresent",
+      "year": "2025",
+      "country": "Canada (British Columbia)",
+      "sample_size": "1,442 clients (1,013 adults, 429 pediatric)",
+      "relevance": "Scale-up results. TIR rose from 60% to 73% overall, with 4 DKA, 14 patient-reported severe hypoglycemia events and no deaths (figures as quoted in the BCDiabetes waiver). [uncertain] Poster, not peer-reviewed. Subgroup figures (adult TIR 58% to 70% at 12 months; pediatric 52% to 62%) are taken from the earlier review in this project, not re-checked here."
+    },
+    {
+      "title": "Hawke K, Kabootari M, Elliott T. Supported Open-Source Automated Insulin Delivery for Management of Type 1 Diabetes in Pregnancy. J Diabetes Sci Technol 2026;20(1):31-37",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40380800/",
+      "year": "2026 (online May 2025; pregnancies Jan 2023-Oct 2024)",
+      "country": "Canada",
+      "sample_size": "10 pregnancies",
+      "relevance": "Clinic-supported looping in a high-stakes setting. 7 of 10 started SOSAID during pregnancy, and median 14-day TIR (63-140 mg/dL) rose from 52% to 71%. No DKA or severe hypoglycemia, no perinatal deaths. Neonatal hypoglycemia in 4 of 10. BCDiabetes offers expedited installs within 5-10 business days for pregnancy. Very small, single-centre study."
+    },
+    {
+      "title": "Hejla D, Hawke K, Borovoi L, Elliott T, Panagiotopoulos C. Open-source AID shows comparable glycemic outcomes to a commercial hybrid closed-loop system in real-world type 1 pediatric diabetes care: retrospective cohort from British Columbia. Pediatr Diabetes 2026",
+      "url": "https://www.maxapress.com/article/doi/10.48130/pedi-0026-0008",
+      "year": "2026",
+      "country": "Canada (BC Children's Hospital with BCDiabetes)",
+      "sample_size": "198 youth (143 OS-AID, 55 Tandem t:slim)",
+      "relevance": "A shared-care example: a public children's hospital team co-authoring outcomes of systems that BCDiabetes built and supported. HbA1c fell from 7.40% to 6.96% on OS-AID and from 7.35% to 7.28% on t:slim. The groups did not differ at 18 months. Each group had 1 severe hypoglycemia event; neither had DKA."
+    },
+    {
+      "title": "BCDiabetes. Loop Caregiver Study: Remote Bolusing Managed by Caregivers (study information sheet; PI T. Elliott)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Loop-Caregiver-study.pdf",
+      "year": "2025-2026 (ongoing)",
+      "country": "Canada",
+      "sample_size": "Target not stated; surveys at baseline and 3 months",
+      "relevance": "The first planned evaluation of clinic-distributed caregiver remote dosing. Measures caregiver burden, stress, confidence and QoL. Eligibility requires Loop 3.3 or later, iOS 16 or later and Nightscout 14.2.6 or later. Results not yet reported."
+    },
+    {
+      "title": "Crocket H, Lewis DM, Burnside M, ... de Bock M. Learning challenges of healthcare professionals supporting open-source automated insulin delivery. Diabet Med 2022;39(5):e14750",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34826158/",
+      "year": "2022 (online Dec 2021)",
+      "country": "New Zealand (CREATE trial sites)",
+      "sample_size": "254 Slack conversations among the multidisciplinary trial team in the first 4 months",
+      "relevance": "Shows what a supported multidisciplinary model needs. There were 5.2 posts per conversation on average. 24% of conversations were about DANA-i pump and cannula problems rather than the algorithm. Open-source AID experts (including an OpenAPS co-founder) took part in 83.3% of conversations. Algorithm-specific problems were more likely to need expert input. The authors present it as the first report of a multidisciplinary team supporting open-source AID in a structured way."
+    },
+    {
+      "title": "Braune K, Lal RA, Petruzelkova L, et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10:58-74",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": "2022 (online Nov 2021)",
+      "country": "International (OPEN HCP network; endorsed by ABCD-DTN)",
+      "sample_size": "n/a (consensus)",
+      "relevance": "The baseline description of good clinic support. Panel 3 sets out four areas. Discussing: include approved options and explain that open-source systems are unregulated. Supporting: respect the choice; keep providing regulated pumps and CGM; review CGM and dosing; give settings guidance if experienced or refer. Documenting: record discussions and disclaimers. Reporting: report adverse events. Clinicians who are unfamiliar, lack resources or face legal concerns should cooperate with, or refer to, clinicians who can help. Notes that help with the build (from a friend, experienced user or physician) can greatly reduce burden, and that health-care institutions often face data-protection barriers."
+    },
+    {
+      "title": "American Diabetes Association Professional Practice Committee. 7. Diabetes Technology: Standards of Care in Diabetes-2026. Diabetes Care 2026;49(Suppl 1)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12690173/",
+      "year": "2026",
+      "country": "USA",
+      "sample_size": "n/a (guideline)",
+      "relevance": "Recommendation 7.27 (Grade B): support and give diabetes management advice to people who choose an open-source AID system. The text says health-care professionals should understand and offer support in tuning Loop and OpenAPS settings, advises a backup insulin plan, and prefers the term 'OS-AID' to 'DIY'."
+    },
+    {
+      "title": "ADCES danatech. How to Help Patients Start and Succeed with Open-Source AID (Supporting Patients Using DIY and Open-Source AID Systems)",
+      "url": "https://www.adces.org/education/danatech/insulin-pumps/diy-looping-open-source/supporting-patients-using-diy-and-open-source-aid-systems",
+      "year": "Living page, accessed 2026",
+      "country": "USA",
+      "sample_size": "n/a (professional education)",
+      "relevance": "Source of the 'DIY doesn't mean do-it-alone' framing. Users build and maintain the system, but HCP support is essential. Clinicians do not prescribe these systems but can support safe, informed use: help configure ISF, carb ratio and basal; encourage backup dosing plans; refer to a familiar professional if uncomfortable. [uncertain] The page returned HTTP 403 to automated fetch; content is from search excerpts."
+    },
+    {
+      "title": "Diabetes Canada Clinical Practice Guidelines Expert Working Group. Do-It-Yourself Automated Insulin Delivery: A Position Statement; and A Health-care Practitioner User's Guide. Can J Diabetes 2023;47(5):381-397 (summary by the BETTER project, 10 Oct 2023)",
+      "url": "https://type1better.com/en/canadian-experts-speak-out-on-diy-artificial-pancreases/",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "Draws on a survey of 204 Canadian HCPs",
+      "relevance": "DIY should be presented as an option. HCPs should be able to help patients set up their DIY systems and should not stop caring for users. Warns users may stop seeing their team if unsupported. Only 22% of surveyed HCPs felt comfortable supporting DIY users, against 73% for commercial AID. The user's guide applies the CARES framework and notes that AndroidAPS forces users to start in open loop, giving HCPs a window to check settings. Full text: https://pubmed.ncbi.nlm.nih.gov/37532366/"
+    },
+    {
+      "title": "Kietaibl AT, Schütz-Fuhrmann I, ... Mader JK (Technology Committee, Austrian Diabetes Association). Position paper: Open-source technology in the treatment of people living with diabetes mellitus - an Austrian perspective. Wien Klin Wochenschr 2024;136(Suppl 9):S467-S477",
+      "url": "https://oedg.at/pdf/2024-08-Positionspapier-Open-source-Technologie.pdf",
+      "year": "2024",
+      "country": "Austria",
+      "sample_size": "n/a (position paper); estimates about 95 adult OS-AID users in Austria",
+      "relevance": "Says care must continue regardless of technology, preferably by multidisciplinary teams with expertise. Teams should keep prescribing approved components, document awareness of non-approval, report adverse events, and refer to experienced centres. Calls for mutual learning as care 'at eye level'. Unlike BCDiabetes, it says programming and installation should be done by the user or caregiver, not HCPs, who are not responsible for it. It also says OS-AID should not be recommended over approved AID."
+    },
+    {
+      "title": "Raimond LH, O'Donnell S, Bøggild-Damkvist T, Filges T, Lomborg K. Open-source automated insulin delivery systems and formal healthcare: a qualitative study of challenges in the interaction between service-users with type 1 diabetes and healthcare professionals. Chronic Illn 2023;19(4):836-847",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36437583/",
+      "year": "2023 (online Nov 2022)",
+      "country": "Denmark",
+      "sample_size": "5 adult users, 6 HCPs",
+      "relevance": "Names what blocks good collaboration. Users are reluctant to disclose, and HCPs' ethical responsibility is unclear. Users want access to technology and attention to psychosocial issues; HCPs fear the burden of rising technical expectations. Recommends transparency, HCP knowledge, an open-minded stance toward user-driven initiatives, and a psychosocial focus."
+    },
+    {
+      "title": "Loop and Learn. Recommended DIY-supportive healthcare providers (crowd-sourced list and published spreadsheet)",
+      "url": "https://www.loopnlearn.org/hcp-recommendations/",
+      "year": "Accessed 13 Nov 2026",
+      "country": "International",
+      "sample_size": "412 entries in 29 countries (US 266, Canada 31, Germany 18, Australia 14, UK 19 across two labels, Netherlands 8)",
+      "relevance": "Users' own definition of a good clinician, via preset checkboxes. 318 of 412 entries (77%) say 'They respect my/our knowledge'. 240 say 'understand how Loop works' and 229 'actively engage to learn more about Looping'. 75 'live with T1D themselves' and 42 'use Loop for their own treatment'. Titles: 209 endocrinologists, 70 pediatric endocrinologists, 42 nurse practitioners, 28 diabetologists. Unvetted, user-submitted, may be out of date; counts are from this review's tally of the published sheet. Trio's documentation points users to this list and to paid support."
+    },
+    {
+      "title": "Trio documentation, Resources: Healthcare Providers (Paid Support); Integrated Diabetes Services, DIY services support",
+      "url": "https://integrateddiabetes.com/diy-services-support/",
+      "year": "Accessed Nov 2026",
+      "country": "USA (virtual and Wynnewood, PA)",
+      "sample_size": "n/a",
+      "relevance": "The US paid-support alternative to clinic-run installs. Packages: 'Build Assist & Optimize' (prep visit, up to 3-hour build coaching, onboarding, up to 9 follow-ups) and 'Optimize' (4 visits about 3 weeks apart), covering Loop, Trio and AAPS. Clients can send questions and data between visits. No coordination with the patient's own endocrinologist is described. Trio docs (https://github.com/nightscout/trio-docs/blob/main/docs/resources/citations.md) list this service, the Loop and Learn list and BCDiabetes (Canadian residents only)."
+    },
+    {
+      "title": "Gawrecki A, Zozulinska-Ziolkiewicz D, ... Araszkiewicz A. Safety and glycemic outcomes of do-it-yourself AndroidAPS hybrid closed-loop system in adults with type 1 diabetes. PLoS One 2021;16(4):e0248965",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33819289/",
+      "year": "2021",
+      "country": "Poland (Poznan)",
+      "sample_size": "12 adults; 12 weeks",
+      "relevance": "A university diabetology team with 'Nightscout Poland' as co-author. TIR rose from 68.0% to 79.3%, with no severe hypoglycemia or DKA. The authors note that glycemic control improved as patients and the medical team gained experience together. Highly selected, closely monitored."
+    },
+    {
+      "title": "Dreifuss K, Levy-Khademi F, Avnon Ziv C, Auerbach A. Bridging the Digital Divide: Real-World Efficacy of Commercial and Open-Source AID Systems in a Diverse, Low-Resource Pediatric Population. J Diabetes Sci Technol 2026 (online 25 Aug 2026)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13506969/",
+      "year": "2026",
+      "country": "Israel (Shaare Zedek, Jerusalem)",
+      "sample_size": "61 children (31 AndroidAPS, 30 MiniMed 780G)",
+      "relevance": "A clinic following OS-AID children in a low-SES, largely ultra-Orthodox population. TIR rose from 56.6% to 69.3%, with no group differences and no severe hypoglycemia or DKA. It shows the alternative when the clinic does not install: many families paid third parties to set up the system, often with no follow-up support. OS-AID families had fewer clinic visits (2.13 vs 2.72)."
+    },
+    {
+      "title": "Amuedo S, Antequera-González M, Azriel S. Glycemic Outcomes with an Open-Source Automated Insulin Delivery System in Adults with Type 1 Diabetes: A 1-Year Real-World Observational Study. Diabetes Technol Ther 2026;28(7):739-745",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41566695/",
+      "year": "2026",
+      "country": "Spain (Seville)",
+      "sample_size": "27 adults; 12 months",
+      "relevance": "A hospital endocrinology unit following AAPS users in routine practice. TIR rose from 67.8% to 79.9% at 12 months and HbA1c fell from 6.6% to 6.0%, with no severe hypoglycemia or DKA. [uncertain] The abstract does not say whether the clinic installed the system or only followed users."
+    },
+    {
+      "title": "Liarakos AL, Crabtree TSJ, Hussain S, ... Wilmot EG. Long-Term Improvements in Glycemia and User-Reported Outcomes Associated with OS-AID in Adults with T1D in the UK. Diabetes Technol Ther 2025;27(4):283-291 (ABCD DIY APS audit)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/39866104/",
+      "year": "2025 (data Dec 2019-Nov 2023)",
+      "country": "UK (NHS diabetes services)",
+      "sample_size": "81 adults",
+      "relevance": "A clinician-entered national audit: the registry model of clinic engagement. Users improved without more hospital admissions, DKA or severe hypoglycemia. [uncertain] HbA1c 7.3% to 6.5% and the 12-centre count come from the earlier review in this project, not re-checked here."
+    },
+    {
+      "title": "Morrison AE. Automated Insulin Delivery System Use in Canada: Incorporating Perspectives of Both Users and Healthcare Providers (MSc thesis, University of Alberta, 2022)",
+      "url": "https://doi.org/10.7939/r3-yre5-ms28",
+      "year": "2022",
+      "country": "Canada",
+      "sample_size": "204 HCPs",
+      "relevance": "Measures how far clinics are from shared care. 21.6% were comfortable supporting DIY users and 33.5% were actively involved (data review, settings changes). 14.4% would refer the patient elsewhere. The top barrier was lack of access to staff trained on the system (85.3%); 93.9% of endocrinologists wanted medico-legal guidance. [uncertain] Figures from the earlier review in this project, not re-checked here."
+    },
+    {
+      "title": "Healio/Endocrine Today: For DIY loopers, diabetes educators play important role (AADE 2018, Kirk and Weedman); Educator support facilitates safe use of do-it-yourself artificial pancreas (ADCES 2020, Nally)",
+      "url": "https://www.healio.com/news/endocrinology/20200916/educator-support-facilitates-safe-use-of-doityourself-artificial-pancreas",
+      "year": "2018; 2020",
+      "country": "USA",
+      "sample_size": "n/a (conference talks by clinicians who loop themselves)",
+      "relevance": "The educator view of good support. Stay open rather than say 'no', since patients who are refused often change provider. Help set targets, max basal, suspend threshold and override presets. Change one or two settings at a time and wait a few days. Build a pump or sensor failure plan. Name a clinic 'champion'. Educators need not be technology experts to add value. The editorial comment notes that adults get far less clinical support than children."
+    },
+    {
+      "title": "Nightscout documentation for clinicians",
+      "url": "https://nightscout.readthedocs.io/en/latest/clinicians/home.html",
+      "year": "Living documentation, accessed Nov 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "How clinic access is meant to work: the patient shares a read-only URL with a token, and never the API_SECRET. It warns that hospital IT or cybersecurity teams may block hosting domains, a practical barrier to clinic Nightscout use."
+    },
+    {
+      "title": "Apple App Store Connect Help: TestFlight overview (external testers and build expiry)",
+      "url": "https://developer.apple.com/help/app-store-connect/test-a-beta-version/testflight-overview",
+      "year": "Accessed Nov 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "The distribution rails the clinic-run model rests on. Up to 10,000 external testers per app; builds expire after 90 days; external builds need Beta App Review. [uncertain] (inference) One clinic TestFlight account per app cannot scale to BCDiabetes' stated goal of 200,000 Canadians without more apps or accounts."
+    }
+  ],
+  "evidence_strength": "Mixed and mostly descriptive. Peer-reviewed evidence: single-centre retrospective cohorts from the main clinic-run program (BCDiabetes n=248; 10 pregnancies; 198 youth with BC Children's), one RCT with built-in clinic support (CREATE) plus an analysis of the trial team's 254 Slack conversations, small clinic-followed AndroidAPS cohorts (Poland n=12, Spain n=27, Israel n=61), a UK clinician-entered audit (n=81), and one qualitative study of the user-HCP encounter (5 users, 6 HCPs). Professional guidance: international consensus 2022, Diabetes Canada 2023, Austria 2024, ADCES, ADA 2026 Rec 7.27 (Grade B). How the programs actually run comes from clinic web documents, consent forms and GitHub code, not studies. No study compares clinic-supported with self-built open-source AID, and none evaluates split-care communication or caregiver-app outcomes; the BCDiabetes caregiver study has not reported.",
+  "prevalence_or_magnitude": "Clinic-run installation is rare but growing fast where it exists. BCDiabetes went from 248 starts (Jul 2020-Nov 2022) to about 380 clients (2023 site), 2,250 (Jun 2025), 2,479 (Jul 2025: Loop 2,022, iAPS 73, Trio 22, AAPS 362) and 3,694 (Nov 2026; Loop 2,946). That is 34% pediatric, 12% under 10, 3% over 70, with 347 children's parents on Loop Caregiver. Affiliates as of Jan 2026: Saskatoon 100+, Montreal 10+, two in Winnipeg; a Saskatchewan provincial pediatric endocrinology TestFlight group was added Sep 2026. No other clinic-run install program of comparable scale was found. [uncertain] Absence of evidence, not a confirmed absence. Supportive individual clinicians: 412 crowd-sourced entries in 29 countries (Loop and Learn, Nov 2026). Clinician readiness is low. In Canada, 21.6% of HCPs were comfortable supporting DIY, 33.5% were actively involved and 14.4% would refer elsewhere. In the UK in 2019, 59% were not comfortable. Austria estimated only about 95 adult users in 2024. Outcomes when supported: TIR 64% to 80%, 3 severe hypoglycemia events, 0 DKA (n=248, 17 months); TIR 60% to 73%, 4 DKA, 14 severe hypoglycemia (n=1,442); pregnancy TIR 68-70% in trimesters 2-3 (n=10); CREATE, Poland, Israel and Spain reported no severe hypoglycemia or DKA. Support load: in CREATE, experts joined 83.3% of 254 HCP conversations in 4 months, and 24% of conversations were pump or cannula problems.",
+  "data_quality_caveats": "Most clinic-run outcome data come from the program itself. The owner discloses that he profits from DIY APS support and has received Dexcom and Abbott honoraria. The data are retrospective and have no self-built comparator. The early cohort was selected (moderately tech-savvy, able to pay for hardware, signed a waiver). The 1,442-client results are a poster. Clinic web documents change often and contradict each other (peer group 1,200 vs >2,400; worldwide Loop 32,000 / 35,000 / 100,000; 1,442 vs 1,445 vs 1,664 vs 2,074 'first' installs). The HCP list is user-submitted, unvetted and uses preset checkboxes. HCP surveys (2019-2022) predate most guidance. GitHub forks show what can be built, not necessarily what is shipped. Several numbers were carried over from earlier reviews in this project and are flagged.",
+  "clinician_perspective": "Guidance now tells clinicians to engage. The 2022 consensus says: respect the choice, keep prescribing regulated pumps and CGM, review CGM and dosing data, advise on settings if experienced or cooperate with or refer to someone who is, document discussions and disclaimers, and report adverse events. ADA 2026 Rec 7.27 (Grade B) asks clinicians to support and advise OS-AID users and to understand and help tune Loop and OpenAPS settings. ADCES frames this as \"DIY doesn't mean do-it-alone\": clinicians do not prescribe the apps but help with ISF, carb ratio, basal and backup plans, or refer. Diabetes Canada goes furthest among guidelines: HCPs should be able to help with set-up, should present DIY as an option, and should not drop users. The Austrian society draws a line at installation, which should be done by users or caregivers, not HCPs, who carry no responsibility for it. Clinicians who run the BC model see AID as the standard of care and Loop as the cheapest route. They treat installation as a funded clinical service, keep it separate from general diabetes care, and tell referring endocrinologists they need not troubleshoot. What clinicians fear and need: Danish HCPs fear the burden of rising technical expectations and unclear ethical responsibility (Raimond 2023). Canadian HCPs cite lack of access to trained staff (85.3%), and 93.9% of endocrinologists want medico-legal guidance [uncertain]. [uncertain] (paraphrase) Diabetes Canada's lead author put the boundary as being the patient's doctor, not their tech support. In CREATE, most clinic questions were about pumps and cannulas, while algorithm questions needed outside experts (experts joined 83.3% of conversations). Educators say they need not be technology experts. They recommend a clinic champion, one or two setting changes at a time, and a written failure plan.",
+  "effect_on_relationship": "Where the clinic owns the looping, the usual disclosure and trust problems largely fall away. The system is in the chart and staff watch the same Nightscout the user does. The clinic writes letters to hospitals and schools on the user's behalf, and follow-up is scheduled rather than avoided. The relationship shifts from gatekeeper to provider, with three effects. First, a new dependence: users rely on the clinic for app renewals every 75-80 days and updates, accept that the apps may stop without notice, and agree not to share them. Second, a three-way relationship: the looping clinic, the regular endocrinologist and primary care. The looping clinic tells users that not all endocrinologists support Loop and gives them a document to try to change their mind. Third, liability is formally pushed onto the user by waiver even as the clinic configures the system. Users' own definition of a good clinician centres on respect and engagement, not technical mastery. In 412 crowd-sourced entries, 77% were tagged 'respect my/our knowledge', 58% 'understand how Loop works' and 56% 'actively engage to learn'; only 10% were Loop users themselves. Supported models also remove a known reason people never start: fear of losing provider support. Where clinics do not engage, users turn to peers or to paid installers who often give no follow-up support (Israel 2026), and see the clinic less often. Poland's team describes patients and staff gaining experience together. The Austrian paper calls for learning from each other 'at eye level'.",
+  "decision_ownership": "BC model: the clinic chooses or limits the system (Loop only under 14 and over 75), builds and configures it, sets starting settings via Nightscout, and fine-tunes in follow-up until the client can adjust alone. Then the user adjusts. Parents with the caregiver app make remote dosing decisions. The regular endocrinologist and primary care own non-looping care. Liability on paper sits with the user, who takes on full responsibility and releases the clinic, which in turn discloses that it is paid for installation and support. Consensus and Austrian model: the user installs and decides; clinicians advise, document disclaimers and keep prescribing components. Trials (CREATE): the research team with OS-AID experts. US regulated path (Tidepool Loop, twiist): the clinician prescribes and owns settings like any pump. In practice decisions are shared, but no model records who decided each change.",
+  "disclosure_risk": "Low inside clinic-run programs, because the clinic installs the app and sees the data. It persists with the second clinic in split care and with non-supporting endocrinologists, and fear of losing provider support remains a barrier to starting elsewhere. [uncertain] (inference) The undertaking not to copy or share the clinic's apps may make users reluctant to explain to other clinics or peers how their app was obtained.",
+  "regulatory_status_dependency": "High. Clinic-run installation has grown where no regulator-cleared Loop exists. In Canada, unapproved apps are distributed via TestFlight under consent and waiver. BCDiabetes expects schools to support OS-AID only after Health Canada approval or RCT evidence, and is planning the OLIVER RCT (Loop vs Omnipod 5, 12 weeks) [uncertain] (not found on ClinicalTrials.gov). In the US, FDA clearance of Tidepool Loop (Jan 2023) and the twiist system make the clinic the prescriber and settings owner, and no US clinic-run DIY install program was found. Commercial coverage shifts demand: BC Pharmacare covered Omnipod 5 and mylife Loop from 1 Apr 2026, although the clinic says Loop remains cheapest. ADA 7.27, Diabetes Canada and the consensus call for support regardless of regulation. Separately, the model depends on Apple: builds expire after 90 days, need Beta App Review, and are capped at 10,000 external testers per app.",
+  "workarounds": "Clinic side: build and distribute apps via TestFlight or APK; pre-load settings into clinic-hosted Nightscout; offer a one-visit install for low-risk clients; fixed follow-up schedule; weekday email support; a staff-moderated Facebook group (and earlier Slack); letters for hospital staff and schools; a free TIR-prediction calculator; loaner CGM readers; an affiliate pathway (2-day visit, free Diabetotech course, quiz, data-sharing agreement); free Nightscout for active clients, or $60/user/year for affiliates. Elsewhere: a named clinic champion; the CREATE-style chat channel with open-source experts; referral to experienced centres (consensus, Austria); national audit participation (ABCD). User side: find a supportive clinician through Loop and Learn's list; pay educator services (Integrated Diabetes Services) or third-party installers; rely on peer groups; share a read-only Nightscout link.",
+  "existing_tools": "Nightscout: clinic-hosted subdomains, read-only token links, Day-to-Day, Distribution and Percentile reports, and the Loop plugin. Loop 3 onboarding imports Therapy Settings and override presets from a Nightscout profile. Loop and Learn's 'Profile Save & Load' build customization (used in the BCDiabetes build). LoopCaregiver (remote bolus, carbs and overrides through Nightscout) and LoopFollow, both distributed by BCDiabetes via TestFlight. GitHub Actions and fastlane build pipelines with TestFlight external groups per affiliate. AndroidAPS objectives, which clinics can use or bypass. Tidepool and Tidepool+ clinic workspaces (Loop uploads; twiist settings for the regulated path). Training: Diabetotech Diabetes Technology Expert program (DIY Loop module), BCDiabetes Looping 101/102 lectures and configuration pages, ADCES danatech, Diabetes Canada CARES-based user's guide. ABCD DIY APS audit tool. Loop and Learn's HCP list. Peer support: Facebook, Slack, Zulip, Discord.",
+  "existing_tool_coverage_gap": "Nightscout is one URL per patient, with no multi-patient clinic worklist and no notion of care-team roles. Sharing beyond read-only often means handing out the API secret. No tool attributes settings changes to the user, the looping clinic, a caregiver or another clinician, or records why a change was made. Nothing produces a structured hand-off for the regular endocrinologist, primary care or hospital, so letters and links fill the gap. Affiliate outcome reporting (pre/post TIR, GMI, emergencies) is manual. No record links consent or waiver status, app version and TestFlight expiry to each patient. Bypassing AndroidAPS objectives removes the app's own evidence of user competency, and nothing records the clinic training that replaces it. Caregiver remote commands are not clearly attributed in clinic views. Hospital IT may block Nightscout domains, and institutions face data-protection barriers (consensus). Sources disagree on Tidepool: BCDiabetes says it needs manual upload at each visit, while Loop has a built-in Tidepool service [uncertain].",
+  "data_artifacts_involved": "Clinic-staged Nightscout profile (initial basal, ICR, ISF, max bolus, TDD) and override presets. Saved named profiles. Therapy settings snapshots and change history. Treatments (boluses, carbs, temp basals) and caregiver remote-command logs. CGM metrics (TIR, GMI, AGP). App, version, build source and expiry date. Consent and waiver records, onboarding checklist and QoL surveys. Affiliate outcome dataset (demographics, pre/post TIR, GMI, emergencies). Hospital and school letters.",
+  "unmet_need": "A shared, role-aware record that lets two or three parties co-manage one person's open-source AID. It should hold the starting settings the clinic set, every change since with who made it and why, the current app and version with its expiry, and the glucose and safety outcomes after each change. Each party needs a view it can use without Nightscout expertise: the looping clinic, the regular endocrinologist, primary care, educators, hospital teams and caregivers. Two further needs follow. First, a safe way for clinics that will not install to still support users, as the consensus 'cooperate or refer' implies, for example by inviting an experienced clinic or educator to co-review. Second, a lightweight outcomes registry, so supported programs and affiliates can report TIR, GMI and emergencies without spreadsheets. Today these jobs are done by letters, links, Facebook groups and manual data sharing.",
+  "implication_for_collaboration_tool": "Model the care team explicitly. Roles should include user, caregiver, looping clinic, regular endocrinologist, primary care, educator and hospital, each with scoped, revocable read access. Users should never share the Nightscout API secret. Capture an onboarding baseline by importing the Nightscout profile at start and labelling it 'clinic-set'. Then keep an attributed settings-change log: who (user, clinic, caregiver), what (diff against the baseline), when, why (free-text rationale), and what happened to TIR and lows afterwards. This is the single feature none of the current models has. Generate hand-off documents from live data rather than static letters: a one-page 'Loop summary' for the regular endocrinologist or primary care, and an inpatient sheet. Each should cover current settings, recent changes, TIR, GMI and safety events, how to suspend or revert to manual, and the backup plan. Support clinic routines: a review cadence (day 1, week 1, month 1, month 6, annual) as tasks, and a population view of a clinic's loopers flagged by TIR drop, missing data, app or build nearing expiry, or recent caregiver remote doses. Store consensus-style documentation: options discussed, unregulated status acknowledged, disclaimers, and adverse-event reports. Offer an opt-in registry export for affiliates and audits (pre/post TIR, GMI, emergencies). Show the source of every treatment, so caregiver remote commands are visible. Let a non-expert clinic invite an expert clinic or educator into a shared review (the CREATE model). Stay a data and collaboration layer. Do not build, sign or distribute dosing apps, and do not set doses. Normalize vocabulary across Loop, Trio, iAPS and AAPS, and read from both Nightscout and Tidepool. Keep the user in control of sharing, and design for respect: user notes and rationale should appear alongside clinician notes.",
+  "severity_rank": "High. The positive models prove a clinic relationship can be rebuilt around open-source AID, but they run on manual, program-specific glue (letters, links, waivers, spreadsheets). The tool's core opportunity sits exactly in that gap.",
+  "safety_criticality": "Medium. Supported cohorts report low event rates: 3 severe hypoglycemia events and 0 DKA in 248 people over 17 months; 4 DKA and 14 severe hypoglycemia events in 1,442; none in CREATE, Poland, Israel or Spain. The models add their own risks. Onboarding is faster, and AndroidAPS objectives are bypassed in at least one public clinic fork. Caregivers dose remotely. Users are cut off if a TestFlight renewal fails. And in split care or hospital, one party can change settings without the other knowing.",
+  "equity_impact": "Clinic-run installs remove the Mac, Xcode, developer-account and build-skill barriers. They are publicly funded in Canada (Quebec residents pay $1,500) and include Android users, children from 18 months and adults up to 86, and the clinic no longer excludes poor carb counters. But access is concentrated in one BC clinic and a handful of affiliates. It needs an iPhone 13 or newer or an Android phone, a Dexcom, and an Omnipod Dash. Care is English-language and virtual, and non-Canadians are generally excluded. The US has no equivalent, which leaves paid educator services. Low-SES families in Israel relied on paid installers, often without follow-up. The early BC cohort was limited to tech-savvy clients who could pay for hardware. In the BC pediatric cohort, deprivation data were missing for 33% of OS-AID youth, against 0% of the commercial group.",
+  "uncertain": [
+    "system_specificity",
+    "key_sources",
+    "prevalence_or_magnitude",
+    "clinician_perspective",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "existing_tool_coverage_gap"
+  ]
+}

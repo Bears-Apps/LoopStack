@@ -1,0 +1,66 @@
+.wrap {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.ringBox {
+  position: relative;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ring {
+  transition: stroke-dasharray var(--dur-screen) var(--ease);
+  display: block;
+}
+
+.percent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.percentSign {
+  font-size: 0.6em;
+  font-weight: 500;
+  margin-left: 1px;
+  opacity: 0.8;
+  transform: translateY(-0.1em);
+}
+
+.microLabel {
+  font-size: 10px;
+  line-height: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.tier_learning {
+  color: var(--confidence-learning, #c65a2c);
+}
+
+.tier_building {
+  color: var(--confidence-building, #d98628);
+}
+
+.tier_actionable {
+  color: var(--confidence-actionable, #7a9420);
+}
+
+.tier_ready {
+  color: var(--brand-primary-hover);
+}

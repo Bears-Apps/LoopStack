@@ -1,0 +1,86 @@
+field_categories:
+  - category: Basic Info
+    fields:
+      - name: issue_summary
+        description: What the issue is, in plain language.
+        detail_level: moderate
+      - name: who_is_affected
+        description: Which users and clinicians it touches (adults, parents, endos, educators, primary care).
+        detail_level: brief
+      - name: system_specificity
+        description: Which systems it applies to (Loop, Trio, iAPS, AAPS, OpenAPS, or all).
+        detail_level: brief
+      - name: care_setting
+        description: Where it surfaces (routine endo visit, primary care, educator, pediatric, inpatient / ED, obstetric, school).
+        detail_level: brief
+      - name: trigger_moment
+        description: When it surfaces (supply refill, appointment, hypo or DKA event, settings change, app expiry, pregnancy, hospital stay, system switch).
+        detail_level: brief
+
+  - category: Evidence
+    fields:
+      - name: key_sources
+        description: The main sources, each with URL, year, country and sample size where one exists.
+        detail_level: detailed
+      - name: evidence_strength
+        description: Peer-reviewed study, survey, professional guidance, or community anecdote.
+        detail_level: brief
+      - name: prevalence_or_magnitude
+        description: How common or how large the issue is, with numbers where available.
+        detail_level: moderate
+      - name: data_quality_caveats
+        description: Self-selection, survivorship bias, self-report, small samples, published corrections.
+        detail_level: brief
+
+  - category: Clinician Angle
+    fields:
+      - name: clinician_perspective
+        description: What clinicians say, fear or need on this issue.
+        detail_level: detailed
+      - name: effect_on_relationship
+        description: How the issue changes trust, disclosure and the working relationship.
+        detail_level: detailed
+      - name: decision_ownership
+        description: Who decides today (user, peer, clinician, shared) and who carries liability.
+        detail_level: moderate
+      - name: disclosure_risk
+        description: Whether the issue makes a user less likely to tell the clinic, and why.
+        detail_level: brief
+      - name: regulatory_status_dependency
+        description: Whether the issue changes when the system is FDA-cleared (Tidepool Loop, twiist).
+        detail_level: brief
+
+  - category: Current State
+    fields:
+      - name: workarounds
+        description: What users and clinicians do today to cope.
+        detail_level: moderate
+      - name: existing_tools
+        description: Tools that touch the issue (Tidepool, Nightscout, Clarity, Glooko, LoopFollow and others).
+        detail_level: moderate
+      - name: existing_tool_coverage_gap
+        description: What those tools leave uncovered for this issue.
+        detail_level: moderate
+      - name: data_artifacts_involved
+        description: Data objects involved (settings snapshot, temp-basal log, treatments report, effective-insulin curves, override history, change history).
+        detail_level: brief
+
+  - category: Product Implication
+    fields:
+      - name: unmet_need
+        description: The need nothing currently meets.
+        detail_level: detailed
+      - name: implication_for_collaboration_tool
+        description: What a patient-clinician collaboration tool for Loop users should do about it.
+        detail_level: detailed
+      - name: severity_rank
+        description: High, medium or low importance for the patient-clinician relationship, with one line of reasoning.
+        detail_level: brief
+      - name: safety_criticality
+        description: Potential for harm (severe hypoglycemia, DKA, overdose), separate from severity_rank.
+        detail_level: brief
+      - name: equity_impact
+        description: Groups hit hardest (low income, Android-only, non-English speakers, children, older adults).
+        detail_level: brief
+
+uncertain: []

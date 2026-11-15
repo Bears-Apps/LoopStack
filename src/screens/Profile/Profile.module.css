@@ -1,0 +1,900 @@
+.profileHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) 0 var(--space-1);
+}
+
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.headerText {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.name {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--ink-900);
+}
+
+.meta {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+/* Health connection tag */
+.connTag {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--ink-500);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+}
+
+.connOn {
+  color: var(--brand-primary-hover);
+  background: var(--brand-primary-soft);
+}
+
+/* Fitness callout */
+.fitnessCallout {
+  background: var(--brand-primary-soft);
+  border-radius: var(--radius-input);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.fitnessHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fitnessBadge {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--brand-primary-hover);
+  background: var(--surface-0);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  font-variant-numeric: tabular-nums;
+}
+
+.fitnessSummary {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.fitnessStat {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-top: var(--space-2);
+  border-top: 1px solid rgba(92, 194, 92, 0.2);
+}
+
+/* Loop upload tiles */
+.uploadGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.uploadTile {
+  aspect-ratio: 3 / 4;
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-2);
+  text-align: left;
+  transition: all var(--dur-fast) var(--ease);
+  overflow: hidden;
+  position: relative;
+}
+
+.uploadTile:hover {
+  border-color: var(--ink-300);
+}
+
+.uploadTileKind {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-500);
+  font-weight: 500;
+}
+
+.uploadTilePreview {
+  width: 100%;
+  flex: 1;
+  border-radius: 8px;
+  background: repeating-linear-gradient(
+    135deg,
+    var(--surface-2),
+    var(--surface-2) 6px,
+    var(--surface-1) 6px,
+    var(--surface-1) 12px
+  );
+}
+
+.uploadTileDate {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.uploadTileAdd {
+  border: 1.5px dashed var(--ink-300);
+  background: var(--surface-0);
+  align-items: center;
+  justify-content: center;
+  color: var(--brand-primary-hover);
+  gap: var(--space-1);
+}
+
+.uploadTileAdd:hover {
+  border-color: var(--brand-primary);
+  background: var(--brand-primary-soft);
+}
+
+.uploadTileAddIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-primary);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadTileAddLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  color: var(--ink-900);
+  text-align: center;
+  width: 100%;
+}
+
+/* Disabled add tile — capture pipeline not wired yet. */
+.uploadTileAdd:disabled {
+  cursor: default;
+  opacity: 0.55;
+}
+
+.uploadTileAdd:disabled:hover {
+  border-color: var(--ink-300);
+  background: var(--surface-0);
+}
+
+.uploadTileSoon {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  font-weight: 500;
+  color: var(--ink-500);
+  background: var(--surface-2);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* Gating progress bar */
+.gate {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) 0 0;
+}
+
+.gateHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.gateLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+.gateCount {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.gateTrack {
+  height: 6px;
+  background: var(--ink-200);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.gateFill {
+  height: 100%;
+  background: var(--brand-primary);
+  border-radius: var(--radius-pill);
+  transition: width var(--dur-screen) var(--ease);
+}
+
+/* Suggestion row */
+.suggestion {
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  position: relative;
+}
+
+.suggestionGated {
+  opacity: 0.58;
+}
+
+.suggestionHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.suggestionKind {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--brand-primary-hover);
+}
+
+.suggestionTitle {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: -0.005em;
+}
+
+.suggestionBody {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+.suggestionMeta {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.suggestionActions {
+  display: flex;
+  gap: var(--space-2);
+  padding-top: var(--space-2);
+}
+
+.suggestionBtn {
+  padding: 8px 14px;
+  border-radius: var(--radius-button);
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  color: var(--ink-900);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+}
+
+.suggestionBtnPrimary {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #fff;
+}
+
+.gatedBadge {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--ink-500);
+  background: var(--surface-2);
+  padding: 4px 8px;
+  border-radius: var(--radius-pill);
+}
+
+/* Observed ISF block with trend + confidence */
+.observedBlock {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--brand-primary-soft);
+  border-radius: var(--radius-input);
+}
+
+.observedHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.observedLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.observedLabelText {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 500;
+  color: var(--ink-900);
+}
+
+.observedHint {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  color: var(--brand-primary-hover);
+}
+
+.observedValue {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+  font-variant-numeric: tabular-nums;
+}
+
+.observedRight {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.observedMeta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--ink-500);
+}
+
+.trendPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-0);
+  color: var(--brand-primary-hover);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.trend_up {
+  color: var(--brand-primary-hover);
+}
+
+.trend_down {
+  color: var(--ink-700);
+}
+
+.trend_steady {
+  color: var(--ink-500);
+}
+
+.metaDot {
+  color: var(--ink-300);
+}
+
+.metaFacet {
+  color: var(--ink-700);
+}
+
+/* Learned-profile (read-only) confirm affordance */
+.learnedActions {
+  display: flex;
+  gap: var(--space-2);
+  padding-top: var(--space-1);
+}
+
+.learnedConfirm {
+  padding: 8px 16px;
+  border-radius: var(--radius-button);
+  background: var(--brand-primary-soft);
+  border: 1px solid transparent;
+  color: var(--brand-primary-hover);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.learnedAdjust {
+  padding: 8px 16px;
+  border-radius: var(--radius-button);
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  color: var(--ink-700);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* Selected feedback state — reads as a committed toggle, not a new action. */
+.learnedActive {
+  border: 1px solid var(--brand-primary);
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+  font-weight: 600;
+}
+
+.learnedAck {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+/* Food-mix field */
+.foodRow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3) 0;
+  border-top: 1px solid var(--ink-200);
+}
+
+.foodRow:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.foodRowLabel {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 500;
+  color: var(--ink-900);
+}
+
+.foodRowHint {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+/* Multi-select pill group (weekend shifts) */
+.pillGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pill {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ink-200);
+  background: var(--surface-0);
+  color: var(--ink-700);
+  cursor: pointer;
+  transition: all var(--dur-fast) var(--ease);
+}
+
+.pill:hover {
+  border-color: var(--ink-300);
+}
+
+.pillActive {
+  background: var(--ink-900);
+  border-color: var(--ink-900);
+  color: var(--surface-0);
+}
+
+.pillActive:hover {
+  border-color: var(--ink-900);
+}
+
+/* Suggestion drivers */
+.drivers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+  padding-top: var(--space-1);
+}
+
+.driversLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--ink-500);
+  font-weight: 500;
+  margin-right: 2px;
+}
+
+.driverPill {
+  font-size: 11px;
+  line-height: 14px;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--ink-700);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.driverDietary {
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+}
+
+.driverClinical {
+  background: var(--surface-2);
+  color: var(--ink-700);
+}
+
+.driverFitness {
+  background: rgba(92, 194, 92, 0.12);
+  color: var(--brand-primary-hover);
+}
+
+.driverPatterns {
+  background: var(--ink-200);
+  color: var(--ink-900);
+}
+
+/* ---- Editable therapy values ---- */
+
+.therapyGroup {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.therapyGroupLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.therapyRangeRow {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+}
+
+.therapyRangeRow .therapyField {
+  flex: 1;
+  min-width: 0;
+}
+
+.therapyRangeDash {
+  color: var(--ink-300);
+  font-weight: 600;
+  /* Sits on the input row, not the label above it. */
+  padding-top: 34px;
+}
+
+.therapyField {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.therapyLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  color: var(--ink-700);
+}
+
+.therapyInputRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.therapyInput {
+  flex: 1;
+  min-width: 0;
+  padding: 12px 14px;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--ink-200);
+  background: var(--surface-0);
+  color: var(--ink-900);
+  font-size: var(--text-body);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.therapyInput:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+.therapyInputError,
+.therapyInputError:focus {
+  border-color: var(--range-low);
+}
+
+.therapyUnit {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  white-space: nowrap;
+}
+
+.therapyError {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--range-low);
+}
+
+.therapyReset {
+  align-self: flex-start;
+  padding: 8px 4px;
+  background: none;
+  border: none;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  color: var(--brand-primary-hover);
+  cursor: pointer;
+}
+
+.therapyReset:hover {
+  text-decoration: underline;
+}
+
+/* ---- Loop favorite foods ---- */
+
+.favoriteFoodList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.favoriteFoodRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--ink-200);
+  min-width: 0;
+}
+
+.favoriteFoodRow:last-child {
+  border-bottom: none;
+}
+
+.favoriteFoodIcon {
+  font-size: 20px;
+  line-height: 1;
+  flex: 0 0 auto;
+}
+
+.favoriteFoodName {
+  flex: 1;
+  min-width: 0;
+  font-size: var(--text-body);
+  font-weight: 500;
+  color: var(--ink-900);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.favoriteFoodMeta {
+  flex: 0 0 auto;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.favoriteFoodEmpty {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.favoriteFoodImport {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.favoriteFoodTextarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--ink-200);
+  background: var(--surface-0);
+  color: var(--ink-900);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.favoriteFoodTextarea:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+}
+
+.favoriteFoodActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.favoriteFoodPrimary {
+  padding: 12px 20px;
+  border-radius: var(--radius-button);
+  border: none;
+  background: var(--brand-primary);
+  color: #fff;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.favoriteFoodPrimary:hover:not(:disabled) {
+  background: var(--brand-primary-hover);
+}
+
+.favoriteFoodPrimary:disabled {
+  background: var(--ink-300);
+  cursor: default;
+}
+
+.favoriteFoodGhost {
+  padding: 12px 8px;
+  background: none;
+  border: none;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  color: var(--ink-500);
+  cursor: pointer;
+}
+
+.favoriteFoodGhost:hover {
+  color: var(--ink-900);
+  text-decoration: underline;
+}
+
+/* Explanatory line under a therapy field */
+.therapyHint {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+/* ── read-only therapy display ──────────────────────────────────────────── */
+
+.editToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: none;
+  padding: 6px var(--space-3);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-button);
+  background: var(--surface-1);
+  color: var(--ink-700);
+  font-size: var(--text-label);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.editToggle:hover {
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.editToggle[aria-pressed='true'] {
+  background: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: var(--surface-0);
+}
+
+.therapyReadRow,
+.therapyBandRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 8px 0;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.therapyReadRow:last-child,
+.therapyBandRow:last-child {
+  border-bottom: none;
+}
+
+.therapyReadLabel,
+.therapyBandLabel {
+  font-size: var(--text-small);
+  color: var(--ink-500);
+}
+
+.therapyReadValue,
+.therapyBandValue {
+  font-variant-numeric: tabular-nums;
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--ink-900);
+}

@@ -1,0 +1,26 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  font-weight: 500;
+  color: var(--ink-500);
+  background: var(--surface-2);
+  border: 1px dashed var(--ink-300);
+  padding: 3px 9px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex: none;
+}
+
+.note {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  margin: 0;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}

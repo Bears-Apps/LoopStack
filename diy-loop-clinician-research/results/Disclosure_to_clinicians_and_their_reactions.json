@@ -1,0 +1,214 @@
+{
+  "item_name": "Disclosure to clinicians and their reactions",
+  "issue_summary": "Anyone who starts Loop, Trio, iAPS, AndroidAPS or OpenAPS has to decide whether to tell their endocrinologist, diabetes educator, primary care doctor and pharmacist, and how much to tell them. Many disclose only partly, only when they need a prescription, or not at all. They fear that the clinician will disapprove, refuse to prescribe the loopable pump, pods, CGM or insulin the system depends on, stop engaging with their care, or drop them. The published evidence describes a mixed picture rather than a mostly hostile one. In surveys most clinicians say they would keep caring for users, and few say they would withhold supplies. But most will not raise the topic themselves, say they could not support the technology, and worry about regulation and liability. The reaction users describe most often is ambivalence rather than hostility: the clinician is pleased with the CGM results, keeps prescribing, and says it is 'at your own risk', but will not touch settings. Outright refusals also happen and are documented: pump prescriptions withheld, providers who would not keep seeing a looper, and a pharmacist who refused to fill insulin and reported the patient to the clinic. These stories circulate in peer groups and shape what others disclose. The result is a 'don't ask, don't tell' standoff. Clinicians do not ask, users do not volunteer, and the medical record does not show that an algorithm is dosing insulin.",
+  "who_is_affected": "Adults with type 1 diabetes using open-source AID, and parents or caregivers looping for children. Would-be users are affected too, because fear of losing provider support is a named barrier to starting. On the clinical side: endocrinologists, diabetes specialist nurses and CDCES, dietitians and pediatric diabetes teams. Primary care doctors and community pharmacists who prescribe or dispense insulin and supplies. Inpatient, emergency, surgical and obstetric teams who need to know that an algorithm is running.",
+  "system_specificity": "All open-source AID systems. The published evidence comes mainly from Loop users in the US (Palmer 2020, Suttiratana 2022, Wong 2022) and from AndroidAPS, Loop and OpenAPS users mostly in Europe (Cleal 2025: AndroidAPS 57.9%, Loop 26%, OpenAPS 15.4% of system mentions). [uncertain] No study was found on disclosure among Trio or iAPS users specifically; the same dynamics are assumed to apply. The FDA-cleared Tidepool Loop / twiist removes the 'unapproved device' framing for that one product only.",
+  "care_setting": "Routine endocrinology and diabetes clinic visits (adult and pediatric); diabetes educator and pump-team appointments; primary care and community pharmacy when insulin or supplies are prescribed or filled; insurer and public pump-program approval steps; inpatient admission, ED and surgery; antenatal and obstetric care in pregnancy.",
+  "trigger_moment": "Asking for a prescription for a loopable pump, Omnipod pods, CGM or insulin (the usual first Loop conversation, per LoopTips). The first visit after starting, when the pump or PDM download comes back empty. Settings questions that need a clinician (suspend threshold, max basal). A hypo, DKA or hospital stay. Pregnancy planning. Switching or stopping systems. Public safety alerts such as the FDA's May 2019 warning against unauthorized devices, after which some clinicians warned patients off.",
+  "key_sources": [
+    {
+      "title": "Raimond LH, O'Donnell S, Boggild-Damkvist T, Filges T, Lomborg K. Open-source automated insulin delivery systems and formal healthcare: a qualitative study of challenges in the interaction between service-users with type 1 diabetes and healthcare professionals. Chronic Illness 2023;19(4):836-847 (epub 27 Nov 2022)",
+      "url": "https://doi.org/10.1177/17423953221142341",
+      "year": "2023",
+      "country": "Denmark (Steno Diabetes Center Copenhagen) [uncertain: participants' country is not stated in the abstract]",
+      "sample_size": "5 adult service-users and 6 healthcare professionals (semi-structured interviews, thematic analysis)",
+      "relevance": "The only study designed around the user-clinician encounter. Three challenges: (1) little exchange of experience, because service-users are reticent about disclosing their use to HCPs; (2) unclear ethical responsibility: users accept their own responsibility, and guidelines can ease HCPs' legal responsibility, but HCPs' ethical responsibility stays ambiguous and gets in the way of meaningful clinical interaction; (3) mismatched expectations: users want better access to technology and attention to psychosocial issues, while HCPs fear the burden of rising technical expectations. Calls for transparency, openness and better HCP knowledge."
+    },
+    {
+      "title": "Cleal B, Chen Y, Waldchen M, et al. (incl. Lewis D, Braune K). Examining the Emotional and Physical Health Impact in Users of Open-Source Automated Insulin Delivery and Sources of Support: Qualitative Analysis of Patient Narratives. J Med Internet Res 2025;27:e48406",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11747533/",
+      "year": "2025 (survey data Nov 2018 - Mar 2019); correction published 24 Mar 2025 (https://www.jmir.org/2025/1/e72519, author affiliations)",
+      "country": "Multinational, 29 countries (Europe 73.6%, North America 18%, Western Pacific 6%)",
+      "sample_size": "383 participants (open-ended answers from the OPEN/DIWHY web survey; 53% men; mean age 43; 40.6% with a doctorate or graduate degree)",
+      "relevance": "Found that the #WeAreNotWaiting community, not clinicians, was the main source of practical and emotional support. Clinician support was described as mostly informal and emotional rather than practical. Examples: two diabetologists enthusiastic about a user's glucose but unable to support her for legal reasons; a German user who said support from doctors and the diabetologist's office was completely lost; providers who at first would not prescribe a loopable pump, and insurers who denied it. Some users first heard about DIY from their own doctor. Reports no counts of disclosure or of supportive versus unsupportive reactions, and no theme on fear of discharge."
+    },
+    {
+      "title": "Suttiratana SC, Wong JJ, Lanning MS, et al. Qualitative Study of User Experiences with Loop, an Open-Source Automated Insulin Delivery System. Diabetes Technol Ther 2022;24(6):416-423",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": "2022",
+      "country": "USA (Loop Observational Study subsample)",
+      "sample_size": "72 new and existing Loop users in focus groups (95% white, 94% privately insured, 73% household income >= $100K)",
+      "relevance": "'Providers while using Loop' was one of six themes. The range of provider attitudes and knowledge complicated users' clinical experiences and their decisions to disclose. Ambivalent or disinterested providers were the most common; few actively discouraged Loop. Some approved of the results but worried about the lack of FDA approval. Some participants changed providers after one seemed to refuse ongoing care. One user's third endocrinologist would prescribe strips and supplies but would not adjust settings. One endo, seeing the flattest overnight trace they had seen, helped write a prescription for a compatible pump."
+    },
+    {
+      "title": "Wong JJ, Suttiratana SC, Lal RA, et al. Discontinued Use of the Loop Insulin Dosing System: A Mixed-Methods Investigation. Diabetes Technol Ther 2022;24(4):241-248",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9057870/",
+      "year": "2022",
+      "country": "USA",
+      "sample_size": "874 Loop Observational Study participants; 46 (5.3%) discontinued; 45 surveyed, 19 interviewed",
+      "relevance": "Fear of a diabetes provider's disapproval appears as a qualitative reason for stopping Loop. One parent stopped partly over how the endocrinologist would respond, and to avoid a clinic visit where the device download would show nothing. The survey had no item on provider disapproval, so prevalence is unknown."
+    },
+    {
+      "title": "Crabtree TSJ, Choudhary P, Lumb A, et al. ABCD, DTN-UK and ACDC Survey of UK Healthcare Professional Attitudes Towards Open-Source Automated Insulin Delivery Systems. Diabetes Ther 2022 (data 2019); plus ABCD Dec 2020 poster",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": "2022 (survey Feb-May 2019)",
+      "country": "UK",
+      "sample_size": "317 diabetes MDT members (consultants, DSNs, dietitians, registrars; adult and paediatric)",
+      "relevance": "91% were uncomfortable starting a conversation about OS-AID: because it is unregulated (67%), their own limited knowledge (63%), professional indemnity (31.8%) or pump warranty (28%). Free text included 'I will discuss it if the patient brings it up'. 59% were not comfortable giving ongoing support, and 63.1% knew of fewer than two users in their service. Most were willing to help. Per the poster (https://abcd.care/sites/default/files/site_uploads/Posters/Posters_ABCDDecember2020/Poster_Crabtree_103.pdf), when asked about OS-AID: 29% would help in any way they could, 18% would refer to someone who can, 8% would warn against it, 7% would supply kit but not support, and 13% (41/317) would not supply kit for this purpose. 10.7% had been unable to provide consumables, mostly for access reasons, and one did so deliberately. Some said they would manage consumables differently for patients they saw as higher risk. Paediatric HCPs raised safeguarding and consent concerns. 47% would use OS-AID themselves."
+    },
+    {
+      "title": "Palmer W, Greeley SAW, Letourneau-Freiberg LR, Naylor RN. Using a Do-It-Yourself Artificial Pancreas: Perspectives from Patients and Diabetes Providers. J Diabetes Sci Technol 2020",
+      "url": "https://doi.org/10.1177/1932296820942258",
+      "year": "2020 (surveys Feb-May 2019)",
+      "country": "USA",
+      "sample_size": "101 patients (Facebook/Twitter) and 152 providers (AADE newsletter and Pediatric Endocrine Society list)",
+      "relevance": "89% of patients rated DIYAPS safe or very safe, compared with 27% of providers. Most patients felt their diabetes provider encouraged them to keep using it, but few described providers as knowledgeable. Providers named lack of experience and inability to troubleshoot as their biggest challenges. In short, patient trust is running ahead of provider trust."
+    },
+    {
+      "title": "Morrison AE, Farnsworth K, Witteman HO, Lam A, Senior PA. Canadian Healthcare Providers' Attitudes Towards Automated Insulin Delivery Systems (medRxiv preprint)",
+      "url": "https://www.medrxiv.org/content/10.1101/2022.06.02.22275169v1",
+      "year": "2022 (survey 25 Jun - 30 Jul 2021)",
+      "country": "Canada",
+      "sample_size": "204 HCPs (mostly dietitians, nurses, endocrinologists)",
+      "relevance": "72.7% were comfortable supporting commercial AID versus 21.6% for DIY AID. Unfamiliarity and medico-legal risk were the main barriers for DIY, and comfort rose with experience. This informed the Diabetes Canada 2023 position statement. [uncertain] The peer-reviewed version was not located."
+    },
+    {
+      "title": "O'Donnell S, Cooper D, Chen Y, et al. Barriers to uptake of open-source automated insulin delivery systems: socioeconomic factors and perceived challenges of adults with type 1 diabetes from the OPEN survey. Diabetes Res Clin Pract 2023;197:110235",
+      "url": "https://doi.org/10.1016/j.diabres.2022.110235",
+      "year": "2023",
+      "country": "Multinational, 31 countries",
+      "sample_size": "129 adult non-users",
+      "relevance": "Fear of losing healthcare provider support was one of the major barriers to starting OS-AID, along with sourcing components, confidence with technology and time. [uncertain] The exact percentage was not retrieved."
+    },
+    {
+      "title": "Huhndt A, Chen Y, O'Donnell S, et al. Barriers to Uptake of Open-Source AID Systems: Caregivers of Children and Adolescents With Type 1 Diabetes From the OPEN Survey. Front Clin Diabetes Healthc 2022",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10012142/",
+      "year": "2022",
+      "country": "Multinational",
+      "sample_size": "56 caregivers of non-using children",
+      "relevance": "Lack of support from medical professionals was a major perceived barrier (39%), after limited technical skills (50%) and fear of being unable to maintain the system (43%)."
+    },
+    {
+      "title": "Elezzabi YA. Balancing continuity of care and liability concerns: one community pharmacy experience of a person with type 1 diabetes using a DIY AID system. Can Pharm J 2025;158(6):344-346",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12571788/",
+      "year": "2025",
+      "country": "Canada (Alberta)",
+      "sample_size": "Single patient case (interview-based)",
+      "relevance": "A clear example of disclosure going wrong. The patient's endocrinologist supported DIY AID, and the patient voluntarily told their long-time pharmacist they would be looping. The pharmacist refused to fill insulin, citing liability, flagged the file and contacted the diabetes clinic. The patient ran low on insulin (DKA risk), got a new prescription from their GP, told the pharmacy they would not loop, and now no longer discloses to pharmacists. The author argues that chastising patients leads to non-disclosure and incomplete records."
+    },
+    {
+      "title": "Crabtree T, et al. Interim analysis of a UK survey of DIY APS users at build sessions (ATTD 2021 conference abstract)",
+      "url": "https://cslide.ctimeetingtech.com/attd2021/attendee/person/299",
+      "year": "2021",
+      "country": "UK",
+      "sample_size": "27 attendees of two build sessions",
+      "relevance": "[uncertain: figures taken from a search-engine summary of the abstract; the abstract itself was not read] 5/27 (18.5%) were at least somewhat worried about a negative healthcare-team response and reduced NHS support before starting. Worries about safety (7.4%) or lack of regulation were less common."
+    },
+    {
+      "title": "Braune K, Lal RA, Petruzelkova L, et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74; Healio coverage 29 Nov 2021",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": "2021/2022",
+      "country": "International (44 HCPs and 4 legal experts; endorsed by IDF, ISPAD, ABCD/DTN-UK and others)",
+      "sample_size": "Consensus statement (no sample)",
+      "relevance": "Clinicians should support people who choose open-source AID and respect autonomy. Clinicians who are unfamiliar, or face legal or regulatory concerns, should refer or cooperate with others rather than turn people away (Healio: https://www.healio.com/news/endocrinology/20211129/consensus-group-providers-policies-must-support-diy-artificial-pancreas-use). It does not recommend breaking local law or organizational rules, and calls for clearer regional policy."
+    },
+    {
+      "title": "Diabetes Australia. People with type 1 diabetes and Do It Yourself (DIY) technology solutions (position statement)",
+      "url": "https://www.diabetesaustralia.com.au/wp-content/uploads/DIY-solution-position-statement.pdf",
+      "year": "2018",
+      "country": "Australia",
+      "sample_size": "Position statement",
+      "relevance": "Does not endorse DIY, and says users act at their own risk. But anyone who builds a DIY system must continue to receive support and care from their diabetes healthcare professional and the health system. Acknowledges HCPs' medico-legal and registration concerns, and that HCPs cannot recommend unapproved devices."
+    },
+    {
+      "title": "Diabetes Canada Clinical Practice Guidelines Expert Working Group (Halperin IJ, et al.). Do-It-Yourself Automated Insulin Delivery: A Position Statement. Can J Diabetes 2023;47:381-388, with a companion HCP user's guide",
+      "url": "https://doi.org/10.1016/j.jcjd.2023.05.006",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "Position statement",
+      "relevance": "Key message: clinicians should support people with T1D and their caregivers in whichever insulin delivery method they choose, and should discuss DIY AID among the options. The statement warns that users may stop seeing their medical team if clinicians do not support their choice. It notes limited HCP knowledge and hesitancy. Summary: https://type1better.com/en/canadian-experts-speak-out-on-diy-artificial-pancreases/ (Oct 2023)."
+    },
+    {
+      "title": "Marshall DC, Holloway M, Korer M, Woodman J, Brackenridge A, Hussain S. DIY Artificial Pancreas Systems in Type 1 Diabetes: Perspectives of Two Adult Users, a Caregiver and Three Physicians. Diabetes Ther 2019;10:1553-1564",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6778569/",
+      "year": "2019",
+      "country": "UK",
+      "sample_size": "Case perspectives (2 adult users, 1 parent, 3 physicians)",
+      "relevance": "Shows what successful disclosure looks like. One user told the team why she wanted to loop and that she was not asking them to take responsibility for an unlicensed system; after some negotiation the team was respectful and later supported a looped pregnancy. Another user's consultant noted he was using an out-of-warranty pump at his own risk, then changed the consumables order to fit looping. The physicians recommend weighing risks and benefits individually and documenting the risk discussion."
+    },
+    {
+      "title": "LoopTips: Endocrinologist and Loop (community documentation)",
+      "url": "https://loopkit.github.io/looptips/how-to/endo",
+      "year": "Living document, accessed Nov 2026",
+      "country": "International (US-led Loop community)",
+      "sample_size": "n/a",
+      "relevance": "Notes that clinicians range from comfortable to distrusting, and that honesty with the provider matters most. The first conversation often comes with a request for Medtronic or Omnipod supplies. Advises bringing objective information (LoopDocs, data reports), asking whether the clinic has other Loop patients, and discussing suspend threshold and max basal with the endo. Says nothing about what to do if the endo is unsupportive."
+    },
+    {
+      "title": "Healio / Endocrine Today: Educator support facilitates safe use of do-it-yourself artificial pancreas (ADCES 2020 talk by L. Nally, with commentary by S. Edelman)",
+      "url": "https://www.healio.com/news/endocrinology/20200916/educator-support-facilitates-safe-use-of-doityourself-artificial-pancreas",
+      "year": "2020",
+      "country": "USA",
+      "sample_size": "Expert opinion",
+      "relevance": "A pediatric endocrinologist who loops herself says patients are much less likely to reach out for help if they feel they are not listened to. She urges clinicians to be open about how much they know and to help set safety settings. Edelman notes that adults usually lack professional support and that he had never met a CDCES who knew about these systems."
+    },
+    {
+      "title": "KFF Health News: DIY tech gives people more freedom in managing diabetes",
+      "url": "https://kffhealthnews.org/republish/news/diy-tech-gives-people-more-freedom-in-managing-diabetes/",
+      "year": "2019",
+      "country": "USA",
+      "sample_size": "Journalism",
+      "relevance": "A typical supportive-but-distanced endocrinologist stance (Irl Hirsch, UW Medicine): his looping patients have done very well, but they take the risk themselves and he cannot be held responsible if there is a problem."
+    },
+    {
+      "title": "Murray JA, Clayton MF, Litchman ML. Health Care Provider Knowledge and Perceptions of FDA-Approved and Do-It-Yourself Automated Insulin Delivery. J Diabetes Sci Technol 2020",
+      "url": "https://doi.org/10.1177/1932296819895567",
+      "year": "2020",
+      "country": "USA",
+      "sample_size": "[uncertain] HCP survey; sample size not stated in the abstract",
+      "relevance": "Few HCPs had negative attitudes toward DIY AID. 74.4% saw their own lack of knowledge as the biggest barrier to answering patient questions, and 64.5% would use a fact sheet."
+    },
+    {
+      "title": "Irace C, Assaloni R, Avogaro A, et al. Efficacy, safety, and legal considerations of do-it-yourself artificial pancreas systems: a position statement from Italian diabetes societies. Acta Diabetol 2026",
+      "url": "https://doi.org/10.1007/s00592-025-02559-3",
+      "year": "2026",
+      "country": "Italy",
+      "sample_size": "Position statement (AMD, SID, SIEDP, Diabete Italia)",
+      "relevance": "Stresses HCPs' ethical responsibility to support patients using DIY-APS while acknowledging the legal complications of unregulated use. Recommends education and a clearer regulatory pathway."
+    },
+    {
+      "title": "Fagerberg AR, Borch L, Kristensen K, Hjelle JS. Prevalence, Safety, and Metabolic Control Among Danish Children and Adolescents Using Open-Source AID Systems. Diabetes Technol Ther 2024",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11058411/",
+      "year": "2024",
+      "country": "Denmark",
+      "sample_size": "56 OS-AID users identified among 2,950 children through all Danish pediatric clinics (31 included)",
+      "relevance": "Pediatric clinics knew of 56 OS-AID users (1.89% prevalence). This shows that in a public system with supportive guidance, clinics can be aware of most pediatric looping. It is a contrast case for disclosure."
+    },
+    {
+      "title": "AJMC: DIY automated insulin delivery systems bring unique challenges to HCPs",
+      "url": "https://www.ajmc.com/view/diy-automated-insulin-delivery-systems-bring-unique-challenges-to-hcps",
+      "year": "2022",
+      "country": "Canada/UK (commentary on Morrison et al. 2022)",
+      "sample_size": "Commentary",
+      "relevance": "Describes the standoff: most UK providers discuss DIY AID only if the patient raises it, and patients may hesitate to raise it because they are unsure of the provider's knowledge or opinion."
+    }
+  ],
+  "evidence_strength": "Mixed, mostly low to moderate. The evidence consists of: peer-reviewed qualitative studies with small or self-selected samples (Raimond 2023, 5 users and 6 HCPs; Suttiratana 2022, n=72; Wong 2022, 19 interviews; Cleal 2025, 383 written narratives); cross-sectional clinician surveys (UK n=317; US n=152; Canada n=204, preprint); user and non-user surveys (n=101, n=129, n=56, and an n=27 conference abstract); one pharmacy case report; professional guidance (2022 international consensus, Diabetes Australia 2018, Diabetes Canada 2023, Italian societies 2026); and community documentation and journalism. No study directly measures what share of open-source AID users have told their care team, or how often clinicians refuse care.",
+  "prevalence_or_magnitude": "No published disclosure rate was found. The available proxies:\n(1) Clinicians rarely raise it. In the UK (2019, n=317), 91% were uncomfortable starting the conversation and 63.1% knew of fewer than two users in their service. A 2022 commentary notes that most providers discuss it only if the patient brings it up.\n(2) Hostile reactions are a minority but real. Asked how they would respond (UK poster), 8% would warn against use and 13% would not supply kit for this purpose. 10.7% had actually been unable to provide consumables, mostly for access reasons, and one by deliberate choice. 29% would help in any way they could.\n(3) Being unable to support is the majority position. In the UK, 59% were uncomfortable giving ongoing support. In Canada (2021, n=204), 21.6% were comfortable supporting DIY versus 72.7% for commercial AID. In the US (2019), 27% of providers rated DIY safe versus 89% of patients.\n(4) Users describe mostly ambivalent providers and few who actively discourage. Some switched providers, and some providers would prescribe but not advise (Suttiratana 2022, n=72). Clinician support was mostly emotional rather than practical (Cleal 2025, n=383), but most US patients felt encouraged by their provider to continue (Palmer 2020, n=101).\n(5) Fear stops people starting and continuing. Fear of losing provider support was a major barrier among 129 non-users. 39% of 56 caregivers cited lack of medical support. [uncertain] 18.5% (5/27) of UK users at build sessions worried about a negative team response. Fear of provider disapproval was one qualitative reason for stopping Loop (46/874 stopped; percentage not measured).\n(6) A contrast case: Danish pediatric clinics identified 56 users (1.89% of 2,950 children), suggesting high clinic awareness where guidance is supportive.",
+  "data_quality_caveats": "Samples come from Facebook groups (Looped, AndroidAPS users), Twitter and build sessions, so they over-represent engaged, educated, well-resourced users: 40.6% held a doctorate or graduate degree in Cleal; in Suttiratana, 95% were white, 94% privately insured and 73% had income of $100K or more. People who hide their use, or who stopped after a bad clinical encounter, are the least likely to be reached. Much of the data predates the 2022 consensus and the Tidepool Loop (2023) and twiist (2024-25) clearances: Cleal's survey ran Nov 2018 - Mar 2019, the UK HCP survey Feb-May 2019, and Palmer's surveys early 2019. Clinician surveys record stated intentions, not observed behaviour. Raimond's sample is very small and from one country. Cleal 2025 has a published correction (affiliations only). The n=27 UK user figure is an interim conference abstract read only through a search summary. No count of discharges or refused-care events exists; such accounts are anecdotal, and no verified reports were found of child-protection referrals over parental looping.",
+  "clinician_perspective": "Clinicians are mostly not hostile, but most feel unable to support DIY AID, and they worry most about responsibility.\n(1) Regulation and liability. The UK's 317 HCPs cited lack of regulation (67%), professional indemnity (31.8%) and pump warranty (28%). Canadian HCPs named medico-legal risk. Diabetes Australia notes concerns about registration and practice. Individual endocrinologists say patients loop at their own risk and that the clinician cannot be held responsible (Hirsch 2019). Raimond 2023 found that even when guidelines settle legal responsibility, ethical responsibility stays unclear.\n(2) Knowledge. 63% (UK) and 74.4% (US, Murray 2020) named their own lack of knowledge as the main barrier. US providers named inability to troubleshoot. Canadian comfort rose with experience. 96% of UK HCPs want to learn more.\n(3) Safety framing. 43% in the UK called OS-AID 'risky in the wrong hands', and only 2% called it dangerous. Several said they would manage consumables differently for patients they saw as higher risk, and paediatric teams raised safeguarding and consent concerns.\n(4) Workload. Raimond found HCPs fear the burden of rising technical expectations.\n(5) Mixed personal views. 47% of UK HCPs would use OS-AID themselves, and some endocrinologists loop.\nProfessional bodies have moved toward explicit support: the 2022 international consensus (do not turn people away; refer or cooperate if unable to help), Diabetes Australia 2018 (users must continue to receive care), Diabetes Canada 2023 (support whichever method; warns users may disengage from care otherwise), the Italian societies 2026 (ethical responsibility to support), and [uncertain] ADA Standards of Care 2024-2026 Section 7, which recognizes open-source AID as a safe and effective option with education and oversight (exact wording not verified). Clinicians say they need training, clarity on who is responsible for what, and a way to see what the system is doing.",
+  "effect_on_relationship": "Disclosure sets the shape of the whole clinical relationship.\n(1) Withheld or delayed disclosure means experience is never exchanged: the clinician cannot learn, and the user gets no clinical safety net (Raimond 2023). Users who meet ambivalence or refusal adjust what they share. The Alberta patient who was refused insulin now tells pharmacists they are not looping. Some US Loop users changed providers or went through several endocrinologists to find one who would prescribe (Suttiratana 2022). One Loop parent stopped looping partly to avoid the endocrinologist conversation (Wong 2022).\n(2) After disclosure the most common outcome is 'tolerated but unsupported'. The clinician praises the CGM numbers and keeps prescribing but stays out of settings, so the relationship narrows to gatekeeping prescriptions while the peer community becomes the real source of advice (Cleal 2025; Suttiratana 2022). Some users describe this as losing clinical support altogether.\n(3) The knowledge gap reverses: the patient often knows the system better than the clinician, which unsettles traditional authority. Cleal argues that the professional/layperson split is outdated.\n(4) Where clinicians are curious, the relationship deepens. An endocrinologist impressed by overnight data helped get a loopable pump. A UK consultant changed the consumables order. A pregnancy team used a looping patient to teach students (Marshall 2019). In a clinic-run AndroidAPS study in China, users described close collaboration with doctors and relied on them for troubleshooting (Huang 2025).\n(5) The overall pattern is 'don't ask, don't tell'. Clinicians rarely start the conversation (91% uncomfortable in the UK), and users are unsure of the clinician's stance (AJMC 2022). Silence becomes the default, which erodes trust on both sides. Diabetes Canada warns that unsupported users may stop attending care.",
+  "decision_ownership": "Today the user (or parent) decides to build and run the system and usually owns settings decisions, with peers as the main advisors. The clinician decides whether to prescribe the components and how far to engage, and pharmacists and insurers can block access at their step. Guidance puts the build and its technical running on the user: Diabetes Australia says users act at their own risk, and Diabetes Canada says users keep responsibility for the technical side. The same guidance says clinicians keep a duty to provide diabetes care. Liability for clinical advice on an unapproved system's settings is unresolved. Clinicians manage it with 'own risk' statements, by documenting risk discussions (Marshall 2019), by referring on, or by prescribing without advising. Raimond 2023 found that ethical responsibility remains ambiguous even where legal responsibility is addressed. No shared, written allocation of roles is standard practice.",
+  "disclosure_risk": "High. This item is about disclosure itself. Users weigh the benefits of telling (advice, data review, a safety net, a record of the system in the chart) against the risks of losing prescriptions for pumps, pods, CGM or insulin, being lectured or labelled non-compliant, or being dropped. Because the stakes are so uneven (life-sustaining supplies against a clinician's comfort), many users disclose partially, late, only when asking for supplies, or not at all, especially after one bad encounter or a peer's story. Fear of losing provider support also stops would-be users from starting. Families may additionally fear safeguarding scrutiny. [uncertain] Only HCP-side safeguarding concerns are documented (Crabtree 2022); no verified cases were found.",
+  "regulatory_status_dependency": "Partly. Clinician hesitancy comes mainly from the systems being unregulated: 67% in the UK cited lack of regulation, and Canadian HCPs cited medico-legal risk. A cleared option gives clinicians something they can prescribe and support without off-label worries. Tidepool Loop was cleared in January 2023, and the twiist AID system powered by Tidepool was cleared in March 2024, with US availability reported from July 2025. But this does not help users who stay on DIY Loop, Trio, iAPS or AndroidAPS, who switch systems because of features clearance does not cover, or who live where no cleared option exists. [uncertain] No study yet shows whether clearance changed disclosure rates or clinician reactions to DIY users. Professional-body support (consensus 2022; Diabetes Canada 2023; ADA Standards 2024-2026; Italian societies 2026) increasingly applies whatever the regulatory status.",
+  "workarounds": "Users:\n- disclose in stages, often starting with a supply request (LoopTips);\n- tell the clinic up front that they are not asking it to take responsibility for an unlicensed system (Marshall 2019);\n- lead with CGM outcomes, and bring LoopDocs or LoopTips pages and the consensus statement;\n- keep a backup pump and an active long-acting insulin prescription;\n- get prescriptions from a GP or another pharmacy if one refuses, or tell a pharmacist they are not looping (Elezzabi 2025);\n- switch to a clinician known to be supportive, often found by word of mouth in Looped and AAPS groups ([uncertain] no formal directories found);\n- rely on peer groups for settings, keeping the clinic for prescriptions and labs.\nClinicians:\n- 'support but do not advise': prescribe, review CGM and decline settings;\n- warn about risk but keep providing care (UK free text);\n- refer to colleagues with OS-AID expertise;\n- document informed discussion and the 'own risk' understanding;\n- use the consensus statement, the Diabetes Canada user's guide, ADCES DANAtech and the Lewis & Hussain 2022 conversational framework.\nSome services: run supported looping clinics (BCDiabetes; BC pediatric cohort, n=198 including 143 OS-AID users, 2026; supported OS-AID in pregnancy, Hawke 2026).",
+  "existing_tools": "Data platforms that make the system visible once a user has chosen to disclose:\n- Nightscout (read-only token links, reports)\n- Tidepool (clinic workspace; Loop 3.2+ uploads dosing and settings history)\n- Dexcom Clarity (CGM only, no sign of the algorithm)\n- Glooko/Diasend\n- LoopFollow and Nightscout Reporter PDFs\nGuidance that frames the conversation:\n- 2022 international consensus statement\n- Diabetes Canada 2023 position statement and HCP user's guide\n- Diabetes Australia position statement\n- ADCES DANAtech modules on supporting DIY / open-source AID users\n- Lewis & Hussain 2022 practical guide (Diabetes Ther)\n- LoopTips 'Endocrinologist and Loop' page\n- ABCD/DTN-UK education\nClinic-level documents:\n- [uncertain] Some clinics reportedly use their own informed-discussion or 'own risk' documentation, but no standard template was found in published sources.",
+  "existing_tool_coverage_gap": "None of these tools handles disclosure itself.\n- Data platforms assume the user has already told the clinic, and they show data rather than the agreement around it. Clarity hides the algorithm entirely, and Tidepool labels Trio and others as 'DIY Loop' with no context for an unfamiliar clinician.\n- Guidance documents are written for clinicians to read on their own time, not as a shared artifact used in the visit, and they do not reach pharmacists, primary care, inpatient or obstetric teams in a form the patient can carry.\n- No tool records who agreed to do what: what the user owns, what the clinician will review or advise on, and when to escalate. So every new prescriber, pharmacist or hospital team starts the negotiation again.\n- No tool lets clinicians choose a graded level of involvement short of full co-management.\n- No tool helps a hesitant user prepare the first conversation, or lets a user share partially (CGM only) and move to fuller sharing over time.\n- No tool captures how clinicians react, so the field has no data on disclosure.",
+  "data_artifacts_involved": "System identity and version (Loop, Trio, iAPS, AndroidAPS, OpenAPS; build or app expiry date); hardware list (pump or pods, CGM, RileyLink-type bridge, phone); settings snapshot with safety limits (suspend threshold / low glucose suspend, max basal, max bolus, targets, ISF, carb ratio) and its change history; CGM summary (TIR, time below range, GMI, AGP); temp-basal and automatic-bolus logs; backup plan (backup pump, long-acting insulin prescription, manual-mode instructions); prescription and supply list; a documented informed-discussion or roles-and-responsibilities agreement; sharing links and permissions (Nightscout token, Tidepool share).",
+  "unmet_need": "A safe, low-stakes way for a looper to tell the care team, and for the clinician to respond without taking on open-ended liability.\n(1) A shared, written understanding of roles that both parties sign up to and revisit. The user owns building, updating and technical troubleshooting. The clinician commits to a chosen level: aware only; prescribe and review outcomes; advise on targets and safety limits; or co-manage settings. It also states what neither will do and when to escalate. This answers the liability and ethical-ambiguity concerns behind clinician hesitancy (Raimond 2023; Crabtree 2022).\n(2) Disclosure that arrives with evidence. A credible, plain-language account of what the system is, its safety limits, the backup plan and the outcomes since starting, so the first conversation is about safety and results rather than a bare request for supplies.\n(3) Portability across gatekeepers. A user who has disclosed to the endocrinologist should not have to re-argue with each GP, pharmacist, hospital or obstetric team.\n(4) Room for graded, reversible clinician engagement, instead of the current choice between full support and 'at your own risk'.\n(5) Psychological safety for hesitant users. Private use first, partial sharing, then full sharing, with nothing sent without consent.\nNo existing product structures the first disclosure conversation or keeps a record of the agreement that comes out of it.",
+  "implication_for_collaboration_tool": "1. Make disclosure a guided first step, not an assumption. Generate a one-page 'what I use and how it is set up' brief:\n- system and version, and hardware;\n- safety limits (suspend threshold, max basal, max bolus) with conventional-pump equivalents where they exist;\n- the backup plan;\n- outcomes since starting (TIR, time below range, GMI, AGP), shown first, because these are what clinicians trust;\n- links to the consensus statement and position statement for the clinician's country (2022 consensus, Diabetes Canada, Diabetes Australia, ADA Standards).\n2. Offer explicit clinician engagement levels: Aware, Prescribe & review, Advise on safety settings, Co-manage, Refer. Produce a short roles-and-responsibilities agreement that can go into the chart as a documented informed discussion. This targets the liability and ethics concerns behind clinicians who feel unable to support DIY users (59% in the UK, about 78% in Canada).\n3. Produce portable letters or summaries for primary care, pharmacies, hospital admission and obstetric teams stating that the diabetes team is aware and what the user manages. This prevents the pharmacy-refusal failure.\n4. Respect users who are not ready:\n- private mode;\n- partial sharing (CGM only);\n- staged sharing with clear previews of what the clinician will see;\n- revocable access;\n- never auto-share.\n5. Work the same for Loop, Trio, iAPS, AndroidAPS and Tidepool Loop/twiist, so a system switch does not reset the conversation.\n6. On the clinician side:\n- a five-minute orientation;\n- 'what to ask' prompts;\n- a clear list of what is reasonable to advise on;\n- a way to record their comfort level, so the tool fits what they can offer rather than asking for full endorsement.\n7. With consent, log disclosure status and clinician engagement over time. This would create the first real data on disclosure and on clinician reactions.\n8. Avoid language that makes the tool look like a way to get clinicians to endorse an unapproved device. Frame it as supporting safe care of a patient's chosen therapy, which is what current professional guidance asks for.",
+  "severity_rank": "High: disclosure is the gate to every other form of collaboration. If the user does not tell, or the clinician reacts badly, no data review or shared settings decisions can happen, and fear of losing provider support also stops people from starting or continuing.",
+  "safety_criticality": "Medium-high, through indirect paths. Non-disclosure does not dose insulin, but it removes the safety net: safety limits are chosen without clinical input, no backup plan is on record, and hospital, surgical or obstetric teams may not know an algorithm is running. Refusals after disclosure can interrupt supplies; the Alberta pharmacy case left a patient short of insulin with DKA risk. Hidden problems (recurrent hypos, failed sites) are less likely to be raised with the clinic.",
+  "equity_impact": "Hardest hit:\n- People without a choice of clinic (rural areas, single-provider regions, public systems with waiting lists).\n- People who depend on public insurance or pump programs, where a single clinician or pharmacist is the gatekeeper.\n- Children and families, given paediatric safeguarding and consent concerns; 39% of caregivers cited lack of medical support.\n- Non-English and non-German speakers, since most guidance and peer support is in English or German.\n- People with less education, health literacy or confidence to argue their case. Current users are highly educated and well-off (Cleal; Suttiratana), so those who would gain most from clinic support are the least represented.\n- [uncertain] Regional differences: US iOS Loop users and European AndroidAPS users face different regulatory and clinic cultures; the Danish data suggest disclosure is easier in public systems with supportive guidance.",
+  "uncertain": [
+    "system_specificity",
+    "key_sources",
+    "prevalence_or_magnitude",
+    "clinician_perspective",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "workarounds",
+    "existing_tools",
+    "equity_impact"
+  ]
+}

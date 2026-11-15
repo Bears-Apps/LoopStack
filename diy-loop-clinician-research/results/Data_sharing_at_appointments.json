@@ -1,0 +1,207 @@
+{
+  "item_name": "Data sharing at appointments",
+  "issue_summary": "Starting Loop (or Trio, iAPS, AndroidAPS, OpenAPS) breaks the clinic's usual data pipeline. Most clinics get diabetes data by having staff download the pump, meter or CGM at check-in, or through manufacturer portals (CareLink, Glooko/Diasend, Tandem, Dexcom Clarity). With Loop on Omnipod Eros/DASH there is no PDM record of dosing. On older Medtronic pumps the memory fills with Loop's temp-basal commands, so a clinic can pull only about 7 days. Dexcom Clarity shows CGM only, with no insulin or carbs. LoopDocs tells users their endo 'will have nothing to download' at the next visit. Loop data reaches the clinic only if the patient sets up and shares it. The main routes are: (1) Nightscout, a patient-hosted, real-time site shared as a read-only token URL, which hospital IT may block; (2) Tidepool, uploaded directly by Loop 3.2+, by AAPS with roughly a 3-hour delay, and by Trio and iAPS through the LoopKit TidepoolService; (3) home-made printouts, such as Nightscout reports saved as PDF, Nightscout Reporter PDFs or screenshots. So clinicians often see a CGM summary plus a static settings list, but not what the algorithm did: temp basals, automatic boluses/SMBs, overrides, or settings changed between visits. They see it in short visits where, in a US survey, only 45% of clinicians said they had enough time to get and interpret standard CGM data. Community docs tell users to ask the clinic ahead of time what it wants and to bring Nightscout or Tidepool reports. No professional body or project defines a standard report for DIY AID.",
+  "who_is_affected": "Adults who loop and parents who loop for children; endocrinologists, NPs/PAs and diabetes educators (CDCES) who review data at visits; clinic front-desk and medical-assistant staff who normally run device downloads; pediatric diabetes teams; primary care clinicians, who rarely have any diabetes data platform; and clinic IT/privacy staff who decide whether patient-hosted sites can be opened.",
+  "system_specificity": "All open-source AID systems, with different data routes. Loop: Apple Health, Tidepool service (Loop 3.2+, settings history from March 2023 onward) and Nightscout. Trio: Nightscout native; Tidepool upload since 2024, with therapy-settings upload merged May 2026, but Trio appears in Tidepool as 'DIY Loop' and its overrides are not shown in Tidepool's web UI. iAPS: Nightscout, and its code includes the TidepoolService module. AndroidAPS: Nightscout recommended; Tidepool is 'reporting only' with about a 3-hour delay. OpenAPS: Nightscout. The FDA-cleared Tidepool Loop / twiist sends data to Tidepool by design.",
+  "care_setting": "Routine endocrinology/diabetes clinic visits (in person and telehealth); diabetes educator follow-ups; pediatric diabetes clinics; primary care visits, often for supply prescriptions; and remote review between visits (for example BCDiabetes' short virtual fine-tuning visits run off Nightscout).",
+  "trigger_moment": "The first appointment after starting to loop, when the usual pump download comes back empty or holds only a few days. After that: every routine visit (typically every 3-6 months), telehealth visits, any discussion of settings changes, switching between systems (Loop to Trio, DIY to commercial), which changes the data platform, and supply-refill visits where data is requested.",
+  "key_sources": [
+    {
+      "title": "LoopTips: Endocrinologist and Loop (community documentation)",
+      "url": "https://loopkit.github.io/looptips/how-to/endo",
+      "year": "living document, accessed 2026",
+      "country": "International (US-led Loop community)",
+      "sample_size": "n/a",
+      "relevance": "Tells users to plan in advance how Loop data will reach the clinic and to ask the endo what they want reviewed, so reports are ready at each visit. Says the usual Medtronic or Omnipod PDM download 'will not be sufficient for many clinics' and points to Nightscout or Tidepool. Flags suspend threshold and max basal as settings with no conventional-pump equivalent."
+    },
+    {
+      "title": "LoopDocs: Loop data (Apple Health, Tidepool, Nightscout)",
+      "url": "https://loopkit.github.io/loopdocs/build/loop-data",
+      "year": "living document, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "States that with some pumps 'your endo will have nothing to download at your next visit'. Calls Apple Health 'not so great for showing your endo'. Says some endo offices will view Tidepool data on invitation, and Loop 3.2+ uploads directly to Tidepool."
+    },
+    {
+      "title": "LoopTips: Data overview and Tidepool pages",
+      "url": "https://loopkit.github.io/looptips/data/overview",
+      "year": "living document, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Names Tidepool as the tool for endo appointments and professional reports, and Nightscout for remote monitoring and detailed Loop data. Notes there is no clinic-readable PDM for Omnipod Eros/DASH and that Medtronic pump memory fills with Loop commands. The Tidepool page (https://loopkit.github.io/looptips/data/tidepool) lists what clinicians see: automatic vs manual temp basals, bolus recommendations, and settings history only from March 2023 with Loop 3+. CGM upload is off by default. The desktop view works only in Chrome or Edge. Overrides are not listed as viewable."
+    },
+    {
+      "title": "Braune K, et al. Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74 (online 13 Nov 2021)",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8720075/",
+      "year": "2021/2022",
+      "country": "International (OPEN HCP network, 48 authors)",
+      "sample_size": "Consensus statement (no sample)",
+      "relevance": "Nightscout makes data available to clinicians 'almost immediately'. Loop data can go to Tidepool. 'Barriers often exist for health-care institutions' around data protection. Recommends reviewing at least 2 weeks of data, supporting reviews of CGM data and dosing adjustments, and clearly documenting discussions."
+    },
+    {
+      "title": "Kompala T, Wong JC, Neinstein AB. Diabetes specialists value CGM despite challenges in prescribing and data review process. J Diabetes Sci Technol 2022/2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10563522",
+      "year": "2022 (survey fielded Mar-Apr 2020)",
+      "country": "USA",
+      "sample_size": "195 completed, 182 analyzed (70.6% endocrinologists)",
+      "relevance": "97.7% review CGM data at every visit, but only 45.1% have enough time and 56.1% have an efficient in-visit process. 85% rely on clinic staff downloading data during the visit. Only 11% often or always get a report brought by the patient. Only 15.4% have direct EHR integration, and 14.1% review data outside visits without prompting. This baseline workflow is built for commercial devices, not DIY."
+    },
+    {
+      "title": "Healio (2017): Diabetes data hold hidden clues, but time, costs complicate clinic downloads (interview with Jenise Wong, UCSF)",
+      "url": "https://cm.healio.com/news/endocrinology/20170911/diabetes-data-hold-hidden-clues-but-time-costs-complicate-clinic-downloads",
+      "year": "2017",
+      "country": "USA",
+      "sample_size": "n/a (clinician interview)",
+      "relevance": "In a pediatric visit of about half an hour, 10-15 minutes can go just to downloading data before review starts. Each device company uses its own download method. Article text was read through search excerpts only (paywalled)."
+    },
+    {
+      "title": "Wong JC, et al. Pilot study of a novel application for data visualization in type 1 diabetes (Tidepool). Diabetes Technol Ther 2018 (doi 10.1089/dia.2018.0251)",
+      "url": "https://escholarship.org/uc/item/1fp8m9rt",
+      "year": "2018",
+      "country": "USA",
+      "sample_size": "15 health care providers over 6 months",
+      "relevance": "A device-agnostic platform did not change upload time or visit length. It raised how often providers referred to device data with patients, from 2.8 to 6.1 times per visit."
+    },
+    {
+      "title": "Kong YW, et al. Upload and Review of Insulin Pump and Glucose Sensor Data by Adults with Type 1 Diabetes: A Clinic Audit. Diabetes Technol Ther 2022;24(7):531-534",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35167376/",
+      "year": "2022",
+      "country": "Australia",
+      "sample_size": "138 adults (100% participation)",
+      "relevance": "79% uploaded their device data before clinic appointments, but only 32% reviewed it themselves. People who reviewed their data had lower HbA1c (association only). Commercial-device users, not DIY."
+    },
+    {
+      "title": "Mullen DM, Bergenstal RM, et al. AGP Reports for Glucose and Insulin Devices Qualitative Study: What Patients and Clinicians Want. Sci Diabetes Self Manag Care 2025;51(3):333-344",
+      "url": "https://scholarlycommons.henryford.com/endocrinology_articles/179",
+      "year": "2025",
+      "country": "USA",
+      "sample_size": "139 patients/parents, 17 clinicians, 21 follow-up interviews",
+      "relevance": "Patients and clinicians preferred a single-page standardized AGP report to device-specific reports. Adding insulin data made the report harder to read: only 38% interpreted the CGM+pump report accurately. This matters for any report showing automated insulin."
+    },
+    {
+      "title": "Suttiratana SC, et al. Qualitative Study of User Experiences with Loop, an Open-Source Automated Insulin Delivery System. Diabetes Technol Ther 2022;24(6):416-423",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9208860/",
+      "year": "2022",
+      "country": "USA (Loop Observational Study)",
+      "sample_size": "72 focus-group participants (adults and parents)",
+      "relevance": "Providers were often ambivalent or poorly informed about Loop. One prescribed supplies but refused to touch settings. One reviewed a Clarity report three weeks after the patient started Loop. Several users changed providers. Users tuned settings themselves with the community. Tidepool and Nightscout were not discussed."
+    },
+    {
+      "title": "Raimond L, et al. Open-source automated insulin delivery systems and formal healthcare: challenges in interactions between users and healthcare professionals. Chronic Illness 2023;19(4):836-847",
+      "url": "https://www.pubmed.gov/36437583/",
+      "year": "2023",
+      "country": "Europe (country not confirmed) [uncertain]",
+      "sample_size": "5 adult users and 6 HCPs (interviews)",
+      "relevance": "Users are reticent about disclosing OS-AID use. HCPs fear the burden of rising technical expectations and see their ethical responsibility as unclear. Read through the abstract only."
+    },
+    {
+      "title": "BCDiabetes Loop Affiliate Program (clinic document)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/BCDiabetes-Loop-Affiliate-Program.pdf",
+      "year": "2025-2026 (affiliate counts as of 31 Jan 2026)",
+      "country": "Canada",
+      "sample_size": "Affiliate sites: Saskatoon 100+ installations, Montreal 10+, Winnipeg (early)",
+      "relevance": "Nightscout 'provides the best real-time access' to Loop data. With Tidepool, clients 'must manually upload data to Tidepool at each clinic appointment'. BCDiabetes gives direct clients free Nightscout accounts and offers blocks to affiliates at $60 per user per year."
+    },
+    {
+      "title": "BCDiabetes: Loop study at BCDiabetes (manuscript submitted to Lancet Diabetes, 23 Jan 2023; retrospective chart review)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Loop-study-at-BCDiabetessubmitted-to-Lancet-Diabetes-2023-Jan-23.pdf",
+      "year": "2023 (unpublished manuscript)",
+      "country": "Canada",
+      "sample_size": "248 open-source AID users (Loop 108, iAPS 114, AAPS 26); clinic T1D cohort 1,130",
+      "relevance": "The clinic runs a cloud Nightscout linked to its own EMR, so it sees real-time CGM inside the record. After setup it offers daily virtual fine-tuning visits of 5-10 minutes (mode 3 visits, maximum 10). TIR is calculated from Nightscout at 3 weeks and 3 months. TIR rose from 64% to 81%. A model of clinic-owned data access."
+    },
+    {
+      "title": "Nightscout documentation for clinicians (home and reports pages)",
+      "url": "https://nightscout.readthedocs.io/en/latest/clinicians/home.html",
+      "year": "living document, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Patients share a URL, ideally a read-only token link. Local IT safety rules may block patient Nightscout domains, so clinicians are asked to get IT to allow them. Report types are Day to day, Distribution (TIR and estimated A1c), Hourly stats, Percentiles and Profiles. Long date ranges load slowly. No clinic account or multi-patient view."
+    },
+    {
+      "title": "AndroidAPS documentation: Setting up the reporting server",
+      "url": "https://androidaps.readthedocs.io/en/latest/SettingUpAaps/SettingUpTheReportingServer.html",
+      "year": "living document, accessed 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Recommends Nightscout. Tidepool 'can be a great solution for sharing reports with a patient's endocrinologist if Nightscout is not an accepted solution', but is reporting-only with about a 3-hour delay."
+    },
+    {
+      "title": "Trio pull request #975: Add therapy settings upload to Tidepool",
+      "url": "https://github.com/nightscout/Trio/pull/975",
+      "year": "2026 (opened 14 Feb, merged 14 May 2026)",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Adds upload of basal, ISF, CR, targets, suspend threshold, max basal/bolus, insulin model and overrides. Trio has to identify itself as 'DIY Loop' because Tidepool has no Trio mapping. Override data is in the API but not shown in Tidepool's web UI."
+    },
+    {
+      "title": "LoopFollow pull requests #660, #670 and #671: Endocrinologist visit report (PDF export)",
+      "url": "https://github.com/loopandlearn/LoopFollow/pull/671",
+      "year": "2026 (#660 opened 23 May, closed 4 Jun; #671 opened 5 Jun, closed 28 Aug 2026; none merged)",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "The author says DIY users arrive at endo visits without structured data and rely on screenshots and notes. A reviewer warned that bolus, basal and bolus/basal ratios are noisy under SMB/UAM/temp basals and 'can steer appointments in the wrong direction'. Another said an official OS-AID report must be validated as correct before shipping. As of Nov 2026 no endo report is merged."
+    },
+    {
+      "title": "Tidepool+ clinic plans page",
+      "url": "https://www.tidepool.org/providers/tidepoolplus/plans",
+      "year": "accessed Nov 2026",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "The free Base plan covers up to 250 patient accounts, with PDF/AGP reports and a standard HIPAA BAA. EHR integration, the population-health dashboard, SSO and patient upload reminders are on the paid Professional plan."
+    },
+    {
+      "title": "MPO Magazine: Tidepool debuts in Epic Showroom (Tidepool+ Direct Connect)",
+      "url": "https://www.mpo-mag.com/breaking-news/tidepool-debuts-in-epic-showroom/",
+      "year": "2026 (10 Aug; press release dated 27 May 2026)",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "SMART-on-FHIR launch of Tidepool+ from inside Epic, aimed at the 'cumbersome technology and data access processes' of brief visits. Mentions FDA-cleared Tidepool Loop/twiist but not DIY systems. Earlier EHR integration via Redox/Xealth was announced Nov 2023."
+    },
+    {
+      "title": "ADA Meeting News (25 Jul 2023): Session offers in-clinic tips for obtaining, interpreting diabetes device data (Berget, Longo)",
+      "url": "https://www.adameetingnews.org/session-offers-in-clinic-tips-for-obtaining-interpreting-diabetes-device-data/",
+      "year": "2023",
+      "country": "USA",
+      "sample_size": "n/a (cites about 6,400 US endocrinologists vs about 3.45M CGM users in 2022)",
+      "relevance": "Barriers named are downloading from multiple CGM systems, review time and EHR integration. Recommends pre-visit upload appointments and confirming data sharing and logins when a patient starts technology."
+    },
+    {
+      "title": "Diabetes Canada. Do-It-Yourself Automated Insulin Delivery: A Health-care Practitioner User's Guide. Can J Diabetes 2023;47(5):389-397.e8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37532366/",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "Guidance (no sample)",
+      "relevance": "Clinician guide for supporting DIY AID users. The full text was not retrievable here, so its specific data-review recommendations are not verified."
+    }
+  ],
+  "evidence_strength": "Mixed and mostly indirect. Strong peer-reviewed evidence covers general diabetes-device data review (Kompala 2022, n=182; Kong 2022, n=138; Mullen 2025, n=139+17; Wong 2018 pilot). For DIY AID the evidence is professional guidance (2022 international consensus; Diabetes Canada 2023), small qualitative studies (Suttiratana 2022, n=72; Raimond 2023, n=11), one unpublished clinic chart review (BCDiabetes, n=248), and community documentation and GitHub discussion. No peer-reviewed study was found that measures how DIY AID users actually get data to clinics or what clinicians see.",
+  "prevalence_or_magnitude": "Clinic baseline (US, 2020 survey, n=182): 85% of clinicians rely on staff downloading devices during the visit, 11% often get a patient-brought report, 45.1% have enough time and 56.1% an efficient process, 15.4% have direct EHR integration, and 14.1% review data between visits unprompted. Visit time: one pediatric clinician (2017) reported 10-15 minutes of a roughly 30-minute visit going to downloads. Patient preparation (Australia, n=138): 79% upload before visits, only 32% review their own data. Interpretability: only 38% read a combined CGM+insulin AGP report accurately (Mullen 2025). Loop-specific: on older Medtronic pumps clinics can retrieve only about 7 days of data once looping, and Omnipod Eros/DASH users have no PDM record at all, so the default download is empty or near-empty for most DIY users. Scale: an estimated over 10,000 open-source AID users worldwide by 2021 (consensus statement); BCDiabetes alone reported 248 users in its chart review and 100+ installations at its Saskatoon affiliate. [uncertain] No source quantifies what share of DIY users share Nightscout or Tidepool with their clinic, or how often clinicians actually open those links.",
+  "data_quality_caveats": "The general-device surveys predate wide AID adoption (the Kompala survey was fielded in early 2020) and cover commercial-device users, so applying them to DIY users is inference. Clinician samples are academic, US and endocrinology-heavy. DIY-specific studies are small, self-selected and qualitative (focus groups and interviews). The BCDiabetes data come from a single enthusiastic clinic, in an unpublished manuscript. Community docs are living documents and can be out of date (for example older advice against the Loop Tidepool uploader). The 2017 Healio figure is one clinician's estimate. Several sources were read only as abstracts or search excerpts (Raimond 2023, Healio 2017, Diabetes Canada 2023).",
+  "clinician_perspective": "Clinicians value device data but say they lack the time and workflow for it. In the US survey, 97.7% review CGM at every visit, yet fewer than half have enough time, and most depend on staff-run downloads that return nothing useful for Loop users. Specific concerns from the sources: (1) Access and governance. The 2022 consensus notes institutional data-protection barriers and that some patient-chosen platforms may not meet local rules. Nightscout's own clinician guide expects that hospital IT may block patient domains. Clinicians also have to handle tokens and a different URL for each patient, with no clinic login. (2) Interpretability. Standard reports were built for fixed basal rates. Forum users note that with constant temp basals the static settings they hand over 'aren't particularly informative'. LoopFollow maintainers warn that bolus/basal splits are noisy under SMBs and temp basals and can mislead a visit. Mullen 2025 found that adding insulin data reduces correct interpretation even for standardized AGP reports. (3) Burden. Raimond 2023 reports HCPs fear the burden of rising technical expectations. Several systems (Loop, Trio, iAPS, AAPS) with different algorithms and display conventions add to it, and Trio even shows up in Tidepool as 'DIY Loop'. (4) What they need, per the guidance: at least 14 days of data, a standard summary they recognize (AGP-style), clear documentation of what was discussed, and data that arrives before or inside the EHR rather than on a patient's phone. Tidepool and Epic explicitly frame their integration as removing error-prone manual steps from brief visits. Positive counter-example: BCDiabetes treats Nightscout-in-EMR as core infrastructure and runs 5-10 minute virtual fine-tuning visits off it.",
+  "effect_on_relationship": "Data sharing is where Loop use becomes visible and where the clinician either gets a real role or loses one. When the clinic gets readable Loop data (Tidepool share, Nightscout in the EMR at BCDiabetes), the visit can become joint troubleshooting of settings and patterns. That is the shared-care model the consensus statement and Diabetes Canada encourage. When it does not, a common pattern in the qualitative literature is that the clinician falls back to CGM-only data (for example a Clarity report) and a supplies-only role ('I will prescribe your supplies but I am not messing with your settings', Suttiratana 2022), while the user keeps tuning settings with the online community. That weakens the clinician's sense of usefulness and the patient's reason to share more. Friction over formats also adds to it: the patient brings a Nightscout link the clinic cannot open, or screenshots the clinician cannot read quickly. Users read this as disinterest, and some change providers (Suttiratana 2022). [uncertain] The link between data-sharing friction and lower trust is inferred from these qualitative accounts; no study measures it directly. When users do share full Loop data, it can also open the conversation: one provider in Suttiratana 2022 was impressed by a patient's Loop data and helped get a compatible pump prescription.",
+  "decision_ownership": "The patient decides whether and how data is shared. They own the Nightscout site (and its hosting and retention), choose whether to issue a read-only token, and choose whether to invite the clinic's Tidepool account. The consensus statement affirms that users choose how their data is used and shared. The clinic decides which platforms it will accept: its IT team may block Nightscout domains, and only Tidepool offers a clinic workspace with a standard HIPAA BAA (free up to 250 patients; EHR integration is paid). Liability: clinicians who review DIY data and suggest changes carry the usual duty of care. The consensus advises documenting discussions and reporting adverse events, and some clinicians limit themselves to reviewing data and advising on safety without configuring the system. Data on patient-hosted Nightscout sits outside the clinic's privacy agreements. [uncertain] How liability attaches when a clinician acts on data from a non-validated, patient-hosted report has not been clarified by any professional body found.",
+  "disclosure_risk": "Moderate to high. Sharing full data reveals DIY use: Tidepool labels Loop and Trio uploads as 'DIY Loop', and Nightscout shows Loop/OpenAPS status. Users who have not told the clinic, or who fear losing prescriptions, can share only Clarity or AGP CGM summaries, which hide the automation and lead clinicians to judge basal and ratio settings without the right context. Users are documented as reticent to disclose (Raimond 2023), and some switched providers over Loop (Suttiratana 2022). [uncertain] That users selectively share CGM-only data to avoid disclosure is inferred, not measured.",
+  "regulatory_status_dependency": "Largely yes. FDA-cleared Tidepool Loop (as in the twiist AID System) sends data to Tidepool by design, and Tidepool+ now feeds EHRs (Redox/Xealth since Nov 2023; Epic Showroom Direct Connect in 2026). A cleared Loop therefore fits the same clinic workflow as other commercial AID systems with manufacturer portals. DIY systems rely on the patient setting up Nightscout or Tidepool, and no manufacturer support or clinic portal exists for them. The interpretation gap (temp-basal behaviour, overrides, settings changes) remains for cleared systems too. [uncertain] Whether clinics actually accept Tidepool Loop/twiist data more readily than DIY Loop data in Tidepool has not been measured, and the Epic integration materials do not mention DIY systems.",
+  "workarounds": "Users: set up the Loop Tidepool service (Loop 3.2+) and invite the clinic's Tidepool account or use its share code. Turn off Tidepool Mobile's Apple Health read to avoid duplicates, and turn on CGM upload, which is off by default. Email a read-only Nightscout token URL before the visit. Print Nightscout reports to PDF (landscape) or use Nightscout Reporter PDFs, which needs CORS enabled. Share Dexcom Clarity for CGM. Bring screenshots of Loop or LoopFollow statistics and the settings screens. Show the phone in the visit. Ask the clinic ahead of time which reports it wants (LoopTips advice). Point the clinician to LoopDocs/LoopTips. AAPS users fall back to Tidepool when the clinic will not accept Nightscout. Clinicians: ask IT to allowlist patient Nightscout domains. Set up a Tidepool clinic workspace. Schedule a pre-visit upload or teaching appointment and confirm logins when the patient starts technology (ADA 2023 session advice). Encourage uploads to Nightscout or Tidepool (ADCES DANAtech). In the most developed model, BCDiabetes hosts Nightscout for clients and links it to its EMR, with short virtual fine-tuning visits.",
+  "existing_tools": "Tidepool (free for patients; clinic Base plan free up to 250 patients, Professional paid with EHR/Epic integration). Shows CGM, automatic vs manual temp basals relative to schedule, bolus recommendations, and Loop 3+ settings history from March 2023 onward. Nightscout (patient-hosted or paid hosting such as T1Pal, Nightscout Pro or ns10be; about $0-12/month). Real-time view, Profiles, Day to day, Distribution, Hourly and Percentile reports. Nightscout Reporter (nightrep.zreptil.de), third-party PDF generator for Nightscout. Dexcom Clarity, CGM only, with a clinic sharing invitation. Apple Health, on-device only. LoopFollow, remote monitoring app; a clinic PDF report was proposed in 2026 but not merged. Perceptus, algorithm-performance analysis. Gluroo, partial DIY Loop support. Glooko/Diasend, CareLink and Tandem portals serve commercial systems. [uncertain] No confirmation was found that Glooko imports DIY Loop insulin data.",
+  "existing_tool_coverage_gap": "No tool produces a standard, validated, clinic-ready DIY AID visit report. Nightscout has no clinic account or multi-patient view. Access depends on per-patient token URLs and on IT not blocking the domain. Its reports are not standard AGP and load slowly over long ranges. Tidepool needs the patient to set it up and turn on CGM upload. It works only in Chrome or Edge, has settings history only from March 2023, does not display overrides (Trio's override uploads are not shown), labels Trio as 'DIY Loop', and lags about 3 hours for AAPS. Its EHR integration is on the paid tier. Clarity has no insulin data. Glooko, CareLink and Tandem do not cover DIY. None of the tools gives a 'since your last visit' summary of settings changes and who made them. None explains DIY-specific settings (suspend threshold, max basal/bolus, SMB, overrides) to a clinician. None avoids misleading AID metrics such as bolus/basal ratio, offers a structured way to send agreed changes back to the patient, or records the discussion as the consensus statement advises. The community's own attempt (LoopFollow endo PDF, 2026) stalled over whether its numbers could be trusted.",
+  "data_artifacts_involved": "CGM trace and AGP; TIR/TBR/TAR, GMI and CV; temp-basal log relative to scheduled basal; automatic boluses/SMBs vs manual boluses (with recommended vs delivered amounts); carb entries; total daily dose and scheduled basal; therapy settings snapshot and change history (basal, ISF, CR, targets, suspend threshold, max basal/bolus, insulin model); override and temp-target history; loop-not-running periods; device and system labels; notes.",
+  "unmet_need": "A patient-controlled, platform-agnostic pre-visit packet for DIY AID. It should reach the clinic before the appointment without the clinician having to log into a patient-hosted site, and a clinician should be able to read it in a few minutes in a standard AGP-style format. Beyond glucose outcomes, it should show what the algorithm did (scheduled vs delivered insulin, automatic vs manual dosing, overrides, time not looping) and what changed since the last visit (settings diffs, dates, and whether the user, a peer or the clinic made each change). It should also give a structured way to record the changes agreed in the visit. Today each clinic and patient improvises this from Nightscout links, Tidepool shares, screenshots and Clarity printouts. Clinic workflows assume staff downloads at check-in, which DIY systems cannot supply.",
+  "implication_for_collaboration_tool": "1) Ingest from both Nightscout and Tidepool, plus Apple Health where possible, so one product covers Loop, Trio, iAPS and AAPS. Never require the clinician to open a patient's Nightscout URL. 2) Deliver as an expiring secure link plus a PDF fallback that works in any browser and on hospital networks. Add EHR/FHIR export later; Tidepool's Epic route shows where clinics are heading. 3) Page one: a standard 14-day AGP summary using consensus targets, kept to one page because Mullen 2025 shows one-page standardized reports are preferred and added insulin data hurts comprehension. 4) Page two, 'What the algorithm did': scheduled vs actual basal, automatic vs manual insulin, total daily dose, override and temp-target use, and loop-not-running time. Deliberately leave out noisy metrics like bolus/basal ratio, as LoopFollow reviewers warned. 5) A 'Since last visit' settings-change log with diffs, dates and source (self, peer or clinic). This fills gaps such as Tidepool history starting only in March 2023 and overrides not being displayed. 6) A short glossary for clinicians that translates system-specific terms (suspend threshold, max basal, SMB, override) across Loop, Trio and AAPS. 7) A pre-visit form where the patient lists questions and the clinic sets its preferred report set, turning the community advice to 'ask what your endo wants' into a product step. 8) A 'decisions from this visit' record both sides can see, which meets the consensus advice to document discussions. 9) Validate the numbers with tests and show where each figure comes from, since the community's own report stalled over correctness. 10) Let the patient control what is shared, but show plainly when a report leaves out automation data, so CGM-only views are not misread. 11) Design for a review of under 5 minutes, matching the 5-10 minute fine-tuning visits at BCDiabetes and the time limits clinicians report. [uncertain] The 5-minute target is a design inference, not a measured requirement.",
+  "severity_rank": "High: this affects every DIY user at every visit and decides whether the clinician can take part in settings decisions at all. Without usable data the clinic's role shrinks to prescribing supplies.",
+  "safety_criticality": "Medium (indirect). No harm reports were found that are tied to data-sharing gaps. But clinicians judging settings from CGM-only or static settings data, with no view of temp basals, overrides or changes made between visits, could make recommendations that interact badly with the algorithm, or miss hypoglycemia patterns and periods when the system was not looping. [uncertain] This is a reasoned estimate, not measured.",
+  "equity_impact": "Hardest hit, by inference: [uncertain] AndroidAPS users (Tidepool is reporting-only with a delay, so they depend on Nightscout); people who cannot pay for Nightscout hosting (about $0-12/month) or lack the technical skill to set it up and secure it; patients at small or under-resourced clinics without a Tidepool workspace, or behind strict IT filtering; parents managing children's data across school and clinic; older adults who struggle with URLs, tokens and PDF exports; and non-English speakers, since community setup docs and clinic-facing guidance are mainly in English.",
+  "uncertain": [
+    "key_sources",
+    "prevalence_or_magnitude",
+    "effect_on_relationship",
+    "decision_ownership",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "existing_tools",
+    "implication_for_collaboration_tool",
+    "safety_criticality",
+    "equity_impact"
+  ]
+}

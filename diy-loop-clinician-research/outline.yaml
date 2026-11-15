@@ -1,0 +1,114 @@
+topic: >
+  Top issues people with type 1 diabetes have with DIY Loop (and other
+  open-source automated insulin delivery: Loop, Trio, iAPS, AndroidAPS,
+  OpenAPS), and how taking management into their own hands affects their
+  relationship with their endocrinologist, primary care doctor and diabetes
+  educator.
+goal: >
+  Identify the biggest unmet need a patient-clinician collaboration tool for
+  Loop users (LoopStack+) should solve. Prefer sources with dates and sample
+  sizes. Flag anything unverified.
+date: 2026-11-13
+time_range: since 2018
+
+items:
+  - name: Settings tuning and who adjusts between visits
+    description: >
+      Basal, ISF, carb ratio and target changes made by the user alone, by
+      peers, or by the clinician. Lack of built-in autotune in Loop. How often
+      settings change between appointments and whether the clinic ever hears.
+  - name: Build, maintenance and hardware burden
+    description: >
+      Xcode and browser builds, Apple developer account, app expiry, updates,
+      RileyLink / Omnipod / Dexcom G7 compatibility, iOS breakages, phone
+      dependency.
+  - name: Meals, absorption and exercise
+    description: >
+      Carb counting, absorption times, fat and protein meals, missed boluses,
+      overrides and exercise handling.
+  - name: Data sharing at appointments
+    description: >
+      How Loop data reaches the clinic (Nightscout, Tidepool, Dexcom Clarity,
+      Glooko, printed reports), what clinicians actually see, visit time
+      limits, which reports users are told to bring.
+  - name: Disclosure to clinicians and their reactions
+    description: >
+      Whether users tell their care team, supportive versus hostile responses,
+      fear of being discharged or losing prescriptions. Include Chronic Illness
+      2023 (5 users, 6 HCPs) and Cleal et al. JMIR 2025 (n=383).
+  - name: Clinician knowledge gap and what clinicians say they need
+    description: >
+      Training, familiarity with open-source AID, confidence advising on
+      settings. Include UK ABCD/DTN/ACDC HCP survey (n=317), Canadian HCP
+      survey (n=204), Diabetes Canada 2023 clinician user's guide, ADCES
+      DANAtech modules, and the burden of several different systems (Loop,
+      Trio, iAPS, AAPS) with different algorithms and terms.
+  - name: Liability, regulation and professional-body positions
+    description: >
+      2022 international consensus statement on open-source AID (Lancet
+      Diabetes & Endocrinology), Diabetes UK, ADA, Diabetes Australia, Diabetes
+      Canada 2023, Breakthrough T1D positions. FDA May 2019 warning and the
+      2019 Medtronic cybersecurity recall as triggers of clinician pushback.
+      Off-label and ethical concerns.
+  - name: Published studies of DIY AID users
+    description: >
+      OPEN project (Braune et al.), Loop Observational Study (Lum et al. 2021),
+      CREATE trial (Burnside et al., NEJM 2022), Cleal et al. 2025, British
+      Columbia OS-AID cohorts 2025-2026. User-reported motivations, outcomes
+      and burdens, with sample sizes and selection-bias caveats.
+  - name: Peer community as substitute care
+    description: >
+      Looped Facebook group, Loop and Learn, LoopDocs / LoopTips, mentors,
+      Reddit, TuDiabetes. Where users go for settings advice instead of the
+      clinic, and what that does to the clinic's role.
+  - name: DIY versus commercial systems and the regulated path
+    description: >
+      Why users stay on or leave DIY (Omnipod 5, Control-IQ, MiniMed 780G,
+      iLet). FDA clearance of Tidepool Loop (2023), Sequel twiist, and the
+      effect of a cleared option on clinic acceptance. Trio / iAPS migration.
+  - name: Existing collaboration tools and their gaps
+    description: >
+      Tidepool clinic workspace, Glooko, Nightscout reports, Nightscout
+      Reporter, Dexcom Clarity, LoopFollow, Autotune tools. What each covers
+      for a Loop user and what none of them do. Also how clinicians actually
+      review data day to day in Dexcom Clarity (clinic view, AGP report),
+      Glooko (population tracker, flags) and Tidepool: what they look at
+      first, which metrics and layouts they rely on, how long a review takes,
+      and what a Loop user's data would have to look like to fit that routine.
+  - name: Parents looping for children and pediatric clinics
+    description: >
+      Caregiver remote monitoring and remote commands, school, pediatric
+      endocrinology attitudes, BC pediatric cohort (n=198).
+  - name: Algorithm-literacy and data-interpretation gap at visits
+    description: >
+      Why a static settings printout says little when Loop constantly sets
+      temp basals. Suspend threshold, max basal and max bolus have no
+      conventional-pump equivalent. What views clinicians would need
+      (effective insulin, temp-basal behaviour, override history).
+  - name: Discontinuation, psychosocial burden and transitions between systems
+    description: >
+      Why people stop looping (Wong et al., Diabetes Technol Ther 2022,
+      PMC9057870: 46 of 874, 5.3%, stopped; Lum et al. 2021 reported 3%
+      confirmed stops), emotional burden, trust in the algorithm, alarm
+      fatigue, fear of provider disapproval, and what happens to settings and
+      care when someone moves to a commercial system.
+  - name: Prescriptions, supplies and insurance as gatekeeping
+    description: >
+      The first Loop conversation is often a request for pump-supply
+      prescriptions. Access to loopable pumps and pods, insurance, and how
+      fear of losing prescriptions shapes disclosure.
+  - name: Clinic-supported looping and shared-care models
+    description: >
+      Positive examples of clinic involvement: BC Diabetes installing and
+      supporting Loop in clinic, clinic Nightscout settings, LoopCaregiver
+      fork, "DIY doesn't mean do-it-alone". What good collaboration looks like
+      and what it needs.
+
+# Topics from the outline check that are captured as fields on every item
+# (care_setting, safety_criticality, equity_impact) instead of as their own
+# items: hospital / ED / surgery, pregnancy, equity and access, older adults.
+
+execution:
+  batch_size: 4
+  items_per_agent: 1
+  output_dir: ./results

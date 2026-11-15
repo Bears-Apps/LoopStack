@@ -1,0 +1,162 @@
+.strip {
+  background: var(--surface-0);
+  border-radius: var(--radius-card);
+  padding: var(--space-4);
+  box-shadow: var(--shadow-card);
+  border-left: 3px solid var(--ink-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+/* State-driven left rail color so a glance distinguishes sensitivity-up vs
+ * watch-out states without reading copy. */
+.state_active_now {
+  border-left-color: var(--range-low);
+  background: linear-gradient(
+    180deg,
+    var(--range-low-soft) 0%,
+    var(--surface-0) 60%
+  );
+}
+
+.state_overnight_low_risk {
+  border-left-color: var(--range-low);
+  background: linear-gradient(
+    180deg,
+    var(--range-low-soft) 0%,
+    var(--surface-0) 60%
+  );
+}
+
+.state_recent_cardio,
+.state_recent_endurance {
+  border-left-color: var(--brand-primary);
+}
+
+.state_recent_hiit {
+  border-left-color: var(--range-high);
+}
+
+.state_recent_strength {
+  border-left-color: var(--ink-300);
+}
+
+.state_suspected_activity {
+  border-left-color: var(--ink-200);
+  opacity: 0.92;
+}
+
+.state_none {
+  /* Effectively unreachable since the component returns null in that case,
+   * but keeping the class for completeness. */
+  border-left-color: var(--ink-200);
+}
+
+.head {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.eyebrow {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--ink-500);
+  font-weight: 600;
+  flex: 1;
+}
+
+.stateLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.state_active_now .stateLabel,
+.state_overnight_low_risk .stateLabel {
+  color: #C7494A;
+}
+
+.confidence {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+  width: 100%;
+  margin-top: -2px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 600;
+}
+
+.state_active_now .chip,
+.state_overnight_low_risk .chip {
+  background: var(--surface-1);
+  color: #C7494A;
+}
+
+.state_recent_hiit .chip {
+  background: var(--range-high-soft);
+  color: #B57612;
+}
+
+.state_recent_strength .chip,
+.state_suspected_activity .chip {
+  background: var(--surface-2);
+  color: var(--ink-700);
+}
+
+.suspectedRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.suspectedChip {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  color: var(--ink-700);
+  font-size: 11px;
+  line-height: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.advisory {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--ink-200);
+}
+
+.state_active_now .advisory,
+.state_overnight_low_risk .advisory {
+  color: var(--ink-900);
+  font-weight: 500;
+}

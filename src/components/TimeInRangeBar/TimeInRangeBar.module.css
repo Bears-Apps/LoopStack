@@ -1,0 +1,142 @@
+.card {
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  box-shadow: var(--shadow-card);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.label {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  color: var(--ink-500);
+}
+
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  padding: 2px 6px;
+  border-radius: var(--radius-pill);
+}
+
+.delta_good { color: var(--brand-primary-hover); background: var(--brand-primary-soft); }
+.delta_bad { color: #8C2424; background: var(--range-low-soft); }
+.delta_neutral { color: var(--ink-500); background: var(--surface-2); }
+
+.headline {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+}
+
+.big {
+  font-size: var(--text-display);
+  line-height: var(--text-display-lh);
+  font-weight: 600;
+  letter-spacing: var(--text-display-tracking);
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.bigUnit {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 500;
+  color: var(--ink-500);
+  margin-left: -4px;
+}
+
+.target {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin-left: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Stacked distribution bar */
+.bar {
+  display: flex;
+  height: 12px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  background: var(--surface-2);
+  gap: 1px;
+}
+
+.segVeryLow { background: var(--range-very-low); }
+.segLow { background: var(--range-low); }
+.segIn { background: var(--range-in); }
+.segHigh { background: var(--range-high); }
+.segVeryHigh { background: var(--range-very-high); }
+
+/* Legend */
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 6px var(--space-4);
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  flex: none;
+}
+
+.legendLabel {
+  color: var(--ink-700);
+}
+
+.legendVal {
+  margin-left: auto;
+  color: var(--ink-900);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Threshold under each legend label. The bands move with the user's target, so
+   the numbers have to be on screen — "Low" alone is not falsifiable. */
+.legendHint {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-300);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* Shown only when the scoring band differs from the 70–180 consensus. Quiet,
+   but present in any crop of the card — the number above it is not comparable
+   to other reports and nothing else on screen says so. */
+.bandNote {
+  margin: 6px 0 0;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}

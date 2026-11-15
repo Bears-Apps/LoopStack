@@ -1,0 +1,26 @@
+/* Sits between the wordmark and the header actions. Pill rather than plain
+   text so it reads as a control before it is tapped. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: var(--tap-target-min);
+  padding: 0 var(--space-3);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-pill);
+  background: var(--surface-0);
+  color: var(--ink-500);
+  cursor: pointer;
+}
+
+.pill:hover {
+  border-color: var(--ink-300);
+}
+
+.label {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  white-space: nowrap;
+}

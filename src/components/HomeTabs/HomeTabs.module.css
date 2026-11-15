@@ -1,0 +1,29 @@
+/* Three tabs fit a phone width with room to spare, so this bar never scrolls —
+   the Insights bar needed an edge fade precisely because six do not. */
+.bar {
+  display: flex;
+  gap: var(--space-1);
+  padding: 3px;
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-pill);
+}
+
+.tab {
+  flex: 1;
+  min-height: var(--tap-target-min);
+  border: none;
+  border-radius: var(--radius-pill);
+  background: none;
+  color: var(--ink-500);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tabActive {
+  background: var(--surface-0);
+  color: var(--ink-900);
+  box-shadow: var(--shadow-card);
+}

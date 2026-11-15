@@ -1,0 +1,55 @@
+/* What Loop did (tiles/WhatLoopDid.tsx). Kept in its own file. */
+.wld { display: flex; flex-direction: column; gap: var(--space-5); max-width: 1180px; }
+.wld-balance { display: flex; flex-direction: column; gap: var(--space-5); }
+.wld-big { margin: 0; font-size: 20px; line-height: 28px; font-weight: 600; color: var(--ink-900); }
+.wld-card { background: var(--surface-0); border: 1px solid var(--ink-200); border-radius: var(--radius-card); padding: var(--space-4) var(--space-5); display: flex; flex-direction: column; gap: 10px; }
+.wld-card.tentative { background: var(--surface-1); }
+.wld-card-main { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: center; }
+.wld-card-text { flex: 1 1 360px; min-width: 0; display: flex; gap: 14px; }
+.wld-card-viz { flex: 1 1 300px; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.wld-rank { flex: none; width: 28px; height: 28px; border-radius: 50%; background: var(--ink-900); color: var(--surface-0); font-size: 13px; font-weight: 600; display: grid; place-items: center; }
+.wld-title { margin: 0; font-size: 17px; line-height: 24px; font-weight: 600; color: var(--ink-900); }
+.wld-what { margin: 0; font-size: 15px; line-height: 22px; color: var(--ink-900); }
+.wld-strip { width: 100%; max-width: 340px; height: auto; display: block; }
+.wld-dots { display: flex; align-items: center; gap: 8px; }
+.wld-dots ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
+.wld .dot, .wld-key .dot { display: inline-block; width: 14px; height: 14px; border-radius: 4px; box-sizing: border-box; }
+.dot.seen { background: var(--graph-insulin); }
+.dot.not { background: var(--surface-0); border: 1.5px solid var(--ink-400); }
+.dot.nodata { background: repeating-linear-gradient(45deg, var(--surface-2) 0 3px, var(--ink-300) 3px 4.5px); }
+.wld-key { display: flex; flex-wrap: wrap; gap: 6px 14px; }
+.wld-key span { display: inline-flex; align-items: center; gap: 6px; }
+.wld-expand { align-self: flex-start; }
+.wld-more { display: flex; flex-direction: column; gap: 12px; border-top: 1px solid var(--ink-200); padding-top: 12px; }
+.wld-window { width: 100%; max-width: 640px; height: auto; display: block; }
+.wld-days, .wld-hours { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 18px; }
+.wld-days th, .wld-days td, .wld-hours th, .wld-hours td { text-align: left; padding: 5px 10px 5px 0; border-bottom: 1px solid var(--ink-200); white-space: nowrap; vertical-align: middle; }
+.wld-days thead th, .wld-hours thead th { font-size: 11px; line-height: 14px; font-weight: 600; color: var(--ink-700); text-transform: uppercase; letter-spacing: 0.04em; }
+.wld-days tr.not th, .wld-days tr.not td { color: var(--ink-700); }
+.wld-days tr.not svg { opacity: 0.55; }
+.wld-days tr.nodata td { color: var(--ink-700); background: repeating-linear-gradient(45deg, transparent 0 6px, var(--surface-1) 6px 12px); }
+.wld-hours td { text-align: right; }
+.wld-hours td:first-of-type, .wld-hours th:first-child { text-align: left; }
+.wld-every { overflow-x: auto; }
+.wld-glance-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.wld-glance-list li { display: flex; flex-direction: column; gap: 1px; }
+
+/* The day strip: 24 hours of net basal on a "scheduled" baseline. The SVG
+   stretches; labels are HTML so type never scales with the tile. */
+.wld-glance { display: flex; flex-direction: column; gap: 14px; }
+.wld-day { margin: 0; display: flex; flex-direction: column; gap: 4px; padding-left: 36px; padding-right: 64px; }
+.wld-day-brackets { position: relative; height: 26px; }
+.wld-bracket { position: absolute; bottom: 0; height: 6px; border: 1.5px solid var(--ink-900); border-bottom: 0; box-sizing: border-box; }
+.wld-bracket-text { position: absolute; bottom: 9px; left: 50%; transform: translateX(-50%); white-space: nowrap; font-size: 12px; line-height: 16px; font-weight: 600; color: var(--ink-900); display: inline-flex; align-items: center; gap: 5px; }
+.wld-bracket-text b { width: 16px; height: 16px; border-radius: 50%; background: var(--ink-900); color: var(--surface-0); font-size: 10px; display: grid; place-items: center; }
+.wld-day-plot { position: relative; height: 88px; }
+.wld-day.tall .wld-day-plot { height: 112px; }
+.wld-day-plot svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.wld-day-dir { position: absolute; left: -36px; font-size: 11px; line-height: 14px; color: var(--ink-700); }
+.wld-day-dir.up { top: 0; }
+.wld-day-dir.down { bottom: 0; }
+.wld-day-base { position: absolute; right: -64px; top: 50%; transform: translateY(-50%); padding-left: 8px; font-size: 11px; line-height: 14px; font-weight: 600; color: var(--ink-900); }
+.wld-day-axis { position: relative; height: 16px; }
+.wld-day-axis span { position: absolute; transform: translateX(-50%); }
+.wld-day-axis span:first-child { transform: none; }
+.wld-day-axis span:last-child { transform: translateX(-100%); }

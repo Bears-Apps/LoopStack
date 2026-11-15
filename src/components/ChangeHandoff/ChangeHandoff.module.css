@@ -1,0 +1,160 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: var(--space-3);
+  margin-top: var(--space-3);
+  border-top: 1px solid var(--ink-200);
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.surface {
+  flex: none;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-button);
+  white-space: nowrap;
+}
+
+.surface_settings {
+  color: var(--brand-primary-hover);
+  background: var(--brand-primary-soft);
+}
+
+.surface_code {
+  color: #4E7FC8;
+  background: rgba(90, 140, 220, 0.14);
+}
+
+.surface_behaviour {
+  color: var(--ink-500);
+  background: var(--surface-2);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.link {
+  position: relative;
+  border: none;
+  background: none;
+  padding: 0;
+  font-size: var(--text-label);
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* "Read more" and "For Claude" are the disclosure for where a change actually
+   gets made — the answer to the one question the Fix Log leaves open. At 14px
+   tall they were the smallest targets in the app. Hit area only: the links
+   keep their inline weight. */
+.link::after {
+  content: '';
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  top: 50%;
+  height: var(--tap-target-min);
+  transform: translateY(-50%);
+}
+
+.link:hover {
+  color: var(--brand-primary);
+}
+
+.blurb {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+/* ── read-more ───────────────────────────────────────────────────────────── */
+
+.readPane {
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-3);
+  background: var(--surface-1);
+  border-radius: var(--radius-input);
+}
+
+.readLine {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.spacer {
+  height: var(--space-2);
+}
+
+/* ── claude prompt ───────────────────────────────────────────────────────── */
+
+.promptPane {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.promptHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.promptLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+.copyBtn {
+  flex: none;
+  padding: 5px var(--space-3);
+  border: 1px solid var(--brand-primary);
+  border-radius: var(--radius-button);
+  background: var(--brand-primary);
+  color: var(--brand-on-primary);
+  font-size: var(--text-label);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.copyBtn:hover {
+  background: var(--brand-primary-hover);
+  border-color: var(--brand-primary-hover);
+}
+
+/* The prompt is long and deliberately not wrapped mid-token — it scrolls in
+   its own box so the card underneath keeps its shape. */
+.pre {
+  margin: 0;
+  padding: var(--space-3);
+  max-height: 260px;
+  overflow: auto;
+  background: var(--surface-2);
+  border-radius: var(--radius-input);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--ink-700);
+  white-space: pre-wrap;
+  word-break: break-word;
+}

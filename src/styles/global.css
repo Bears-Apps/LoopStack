@@ -1,0 +1,77 @@
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  color: var(--ink-900);
+  background: var(--surface-1);
+  font-feature-settings: 'ss01', 'cv11';
+}
+
+/* Numerals used in metrics/graphs should be tabular for legibility */
+.num {
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.app-container {
+  max-width: var(--app-max-width);
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100%;
+  background: var(--surface-1);
+  position: relative;
+  /* Left as `hidden` deliberately. `hidden` on one axis makes the other compute
+     to `auto`, which turns this into a scroll container — that is why the
+     sticky AppHeader does not currently stick. Changing it to `clip` would make
+     every header start sticking, which is a bigger change than this fix. */
+  overflow-x: hidden;
+}
+
+/* Screen-level scroll container — sits under the fixed header and above the nav */
+.screen {
+  padding: var(--space-5) var(--space-5) calc(var(--bottom-nav-height) + var(--space-8) + var(--safe-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  /* A flex item's default min-width is `auto`, so one wide child (a long
+     unbroken string, a chip row, an SVG) can push the column past the viewport
+     and reintroduce sideways drift. Pin every direct child to the column. */
+  min-width: 0;
+  max-width: 100%;
+}
+
+.screen > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.screen-hero {
+  font-size: var(--text-display);
+  line-height: var(--text-display-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: var(--text-display-tracking);
+}
+
+.screen-title {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: var(--text-title-tracking);
+}
+
+.screen-subtitle {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.label {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  color: var(--ink-500);
+  font-weight: 500;
+}

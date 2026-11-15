@@ -1,0 +1,239 @@
+{
+  "item_name": "Algorithm-literacy and data-interpretation gap at visits",
+  "issue_summary": "Clinicians are trained to read a pump's programmed settings (basal schedule, carb ratio, ISF, active insulin time) as the insulin the person actually received. With open-source AID that link breaks. Loop, Trio, iAPS, AndroidAPS and OpenAPS re-plan delivery every 5 minutes. They raise or lower the scheduled basal with short temp basals (zero temps included) and, depending on configuration, add automatic boluses or SMBs. In the Loop Observational Study (n=558), Loop was modulating basal at least 83% of the time (median) and algorithm-modulated basal made up 54% of all insulin delivered. So a static settings printout says little about what the person received, when, or why. Several reasoning steps clinicians use with conventional pumps fail. The scheduled basal is a reference line the algorithm moves away from, not the delivered dose. Active insulin is 'net' of scheduled basal and can be negative. With AndroidAPS Dynamic ISF the profile ISF is ignored except as a fallback, and Trio scales ISF by autosens. Settings can also compensate for each other: the 2022 international consensus notes that users often run more aggressive carb ratios because the algorithm can cut basal, and that one wrong setting can mask another. Loop overrides scale basal, ISF and carb ratio by a percentage for set periods, so the settings in force at a given moment are not the printed ones. A layer of settings also has no conventional-pump equivalent and decides how far the algorithm can go: glucose safety limit / suspend threshold, maximum basal rate (Loop allows up to 6.4x the highest scheduled basal before warning), maximum bolus (which also caps Loop's automatic IOB at 2x), max IOB, SMB and UAM limits, autosens min/max, the Dynamic ISF adjustment factor, the dosing strategy (temp-basal-only versus automatic bolus at 40% per cycle), and Loop 3 algorithm experiments (Glucose Based Partial Application, Integral Retrospective Correction). Each system names these differently, and terms change between versions (Loop 2 'suspend threshold' became Loop 3 'glucose safety limit'). Commercial-AID consensus groups have themselves said the basal/bolus vocabulary is losing meaning under AID. The 2023 Endocrine Reviews consensus proposes 'user-initiated' versus 'algorithm-modulated' insulin instead and calls for a standard AID report. No such report exists for DIY systems. What clinicians would need is a view of what the algorithm actually did: delivered versus scheduled basal by time of day, net IOB patterns, the share of insulin that was algorithm-modulated versus user-initiated, override and temp-target history, how often safety limits were binding, the settings actually in force over time (effective ISF/basal after overrides, autosens or Dynamic ISF), and a change log. Nightscout and Tidepool hold most of the raw data but do not present it this way.",
+  "who_is_affected": "Endocrinologists, NPs/PAs and diabetes educators (CDCES/DSNs) who are asked to review or adjust DIY AID settings. Pediatric diabetes teams and parents, who often run overrides and tighter targets for children. Primary care clinicians, who see DIY users mostly for prescriptions and have the least exposure. Hospital/ED and obstetric teams who must reason about the system in a crisis. Adult users and caregivers who must translate their system for the clinic, and new users who do not yet understand the settings themselves (Wong 2022 found 'adjusting settings' was a main burden among those who stopped Loop).",
+  "system_specificity": "All open-source AID, most acute for the oref-based systems. Loop: temp basal or automatic bolus (40% of the recommendation per cycle, 20-80% with Glucose Based Partial Application), glucose safety limit, max basal, max bolus, overrides that scale basal/ISF/CR. Trio and iAPS (oref1): SMB, UAM, max IOB (default 0 means only below-schedule temps), autosens, Dynamic ISF/CR, autosens min/max as caps. AndroidAPS: same oref1 concepts plus Dynamic ISF, where profile ISF is not used except as fallback, and profile switches and temp targets. OpenAPS: max IOB, max daily and current basal safety multipliers, autosens, autotune. FDA-cleared Tidepool Loop / twiist shares Loop's vocabulary (glucose safety limit, presets, delivery limits), so learning one transfers in part to the other.",
+  "care_setting": "Routine endocrinology/diabetes clinic visits (in person and telehealth), where settings are reviewed. Diabetes educator follow-ups. Pediatric diabetes clinics. Primary care, rarely and mostly around prescriptions. Inpatient and ED, where staff must judge whether to keep the system running and how to read zero temps or high temps [uncertain: no DIY-specific inpatient interpretation study found]. Obstetric care, with tighter targets and frequent setting changes [uncertain]. School nurses reading remote-monitoring data [uncertain].",
+  "trigger_moment": "The first visit after starting to loop, when the clinician sees a basal schedule that does not match delivery. Any visit where settings are reviewed or the clinician proposes basal/ISF/CR changes. After a severe hypo, DKA or unexplained high/low, when the clinician tries to reconstruct what the algorithm did. After an app update that turns on or changes features (automatic bolus, GBPA, Dynamic ISF, SMB). When switching systems (Loop to Trio/iAPS, DIY to commercial or twiist), which changes vocabulary and settings meaning. Pregnancy planning, and hospital admission.",
+  "key_sources": [
+    {
+      "title": "Braune K, Lal RA, Petruzelkova L, Scheiner G, et al. (OPEN International Healthcare Professional Network and OPEN Legal Advisory Group). Open-source automated insulin delivery: international consensus statement and practical guidance for health-care professionals. Lancet Diabetes Endocrinol 2022;10(1):58-74",
+      "url": "https://doi.org/10.1016/S2213-8587(21)00267-9",
+      "year": "2022 (online Nov 2021)",
+      "country": "International (44 HCPs and 4 legal experts, 20+ countries)",
+      "sample_size": "n/a (expert consensus)",
+      "relevance": "Panel 4 is a glossary of open-source AID settings: absorption time, COB, IOB (relative to scheduled basal, so it can be negative), sensitivity ratio, SMB, max IOB, suspend threshold, autosens, autotune. Lists the crucial safety parameters as max temp basal, max IOB (OpenAPS/AAPS), and max bolus plus suspend threshold (Loop). Warns that open-loop settings may not reflect true physiology and that one setting may compensate for another. Notes users often run more aggressive carb ratios because the system can cut basal. On provider knowledge: industry training does not give full algorithm insight, providers may understandably feel uncomfortable with unfamiliar systems, and open-source AID requires active learning across multiple systems and software changes. Names Nightscout as the way to make all data available to HCPs."
+    },
+    {
+      "title": "Phillip M, Nimri R, Bergenstal RM, et al. Consensus Recommendations for the Use of Automated Insulin Delivery Technologies in Clinical Practice. Endocr Rev 2023;44(2):254-280",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9985411/",
+      "year": "2023",
+      "country": "International",
+      "sample_size": "n/a (expert panel consensus)",
+      "relevance": "Proposes a standardized 2-page 'AID Report'. It shows time AID and CGM were active, automated insulin per day and per hour, automated correction boluses as a percentage of TDD, user-initiated food and correction boluses, user overrides per day and insulin, settings under the AGP, and daily plots splitting automated basal from user-initiated bolus. Says the traditional basal and bolus concepts become less useful with AID and suggests the terms user-initiated and algorithm-modulated insulin delivery. Its proposed clinical assessment includes comparing AID basal to open-loop basal, and it calls for clinical AID tools that standardize assessment across systems. Covers commercial systems only; DIY systems are not addressed."
+    },
+    {
+      "title": "Lum JW, Bailey RJ, Barnes-Lomen V, et al. A Real-World Prospective Study of the Safety and Effectiveness of the Loop Open Source Automated Insulin Delivery System. Diabetes Technol Ther 2021;23(5):367-375",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8080906/",
+      "year": "2021",
+      "country": "USA (international online recruitment)",
+      "sample_size": "558 new Loop users (481 with Loop data at 6 months)",
+      "relevance": "Quantifies how far delivery departs from programmed basal. Median time Loop was modulating basal was at least 83% (IQR 73-88%; a lower bound). Algorithm-modulated basal made up 54% of total insulin delivered (mean TDD 0.70 U/kg). Settings were captured only through monthly Loop Issue Reports, which shows how hard it is to get settings history."
+    },
+    {
+      "title": "Ekhlaspour L, Tabatabai I, Buckingham B. A Review of Continuous Glucose Monitoring Data Interpretation in the Age of Automated Insulin Delivery. J Diabetes Sci Technol 2019;13(4)",
+      "url": "https://doi.org/10.1177/1932296819851790",
+      "year": "2019",
+      "country": "USA",
+      "sample_size": "n/a (review)",
+      "relevance": "States that no standard reporting format exists for AID and reports are specific to each system. Reviews MiniMed 670G, Basal-IQ and do-it-yourself system reports. Gives a step-wise review approach: start like CGM review, then AID-specific steps such as daily views that combine CGM, algorithm basal and boluses. Calls for a standard report so providers can interpret these systems."
+    },
+    {
+      "title": "Shah VN, Garg SK. Standardized Hybrid Closed-Loop System Reporting. Diabetes Technol Ther 2021;23(5):323-331",
+      "url": "https://doi.org/10.1089/dia.2020.0622",
+      "year": "2021",
+      "country": "USA",
+      "sample_size": "n/a (proposal/review)",
+      "relevance": "Notes that no published guidance existed on standardized HCL reporting. Proposes a single-page 'AP Dashboard' with seven components (glucose metrics, hypoglycemia, insulin, user experience, hyperglycemia, modal-day profile, insight) so providers can read HCL data like an ECG. A template a DIY view could follow."
+    },
+    {
+      "title": "Lewis DM, Hussain S. Practical Guidance on Open Source and Commercial Automated Insulin Delivery Systems: A Summary of Optimization Strategies for Healthcare Providers and People with Diabetes. Diabetes Ther 2022;13:1683-1699",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9399331/",
+      "year": "2022",
+      "country": "USA / UK",
+      "sample_size": "n/a (practical guidance)",
+      "relevance": "Explains that open-source systems calculate net insulin across basal and bolus, manual and automatic, so it can be above or below zero. Lack of awareness of all the insulin the system delivered can lead to extra manual doses and hypoglycemia. Describes open-source systems as profile-anchored (decisions are made relative to the user-entered basal profile), unlike learning commercial systems. Advises reviewing data periodically and updating settings, especially when moving between systems."
+    },
+    {
+      "title": "Crabtree TSJ, Choudhary P, Lumb A, et al. ABCD, DTN-UK and ACDC Survey of UK Healthcare Professional Attitudes Towards Open-Source Automated Insulin Delivery Systems. Diabetes Ther 2022;13(2):341-353",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8873338/",
+      "year": "2022 (survey fielded 2019)",
+      "country": "UK",
+      "sample_size": "317 HCPs",
+      "relevance": "73.5% rated themselves somewhat confident or less at describing an open-source AID setup (8.8% extremely confident), and 77.9% likewise for describing its risks. 91% would not start discussions, and 63% of those cited their own lack of knowledge. Shows the literacy baseline that data interpretation sits on."
+    },
+    {
+      "title": "Morrison AE, Farnsworth K, Witteman HO, Lam A, Senior PA. Canadian Healthcare Providers' Attitudes Towards Automated Insulin Delivery Systems (medRxiv preprint)",
+      "url": "https://www.medrxiv.org/content/10.1101/2022.06.02.22275169v1",
+      "year": "2022 (survey Jun-Jul 2021)",
+      "country": "Canada",
+      "sample_size": "204 HCPs",
+      "relevance": "72.7% were comfortable supporting commercial AID but only 21.6% were comfortable supporting DIY AID. Comfort correlated with experience (r=0.45 for DIY). Respondents called for structured education. Preprint, with snowball recruitment."
+    },
+    {
+      "title": "Chambers A, Mackay D, Farnsworth K, Morrison AE, Witteman HO, Senior P, Halperin IJ (Diabetes Canada). Do-It-Yourself Automated Insulin Delivery: A Health-care Practitioner User's Guide. Can J Diabetes 2023;47(5):389-397.e8",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37532366/",
+      "year": "2023",
+      "country": "Canada",
+      "sample_size": "n/a (clinical guidance)",
+      "relevance": "Clinician guide for follow-up care of DIY AID users. Points clinicians to LoopDocs, OpenAPS and AndroidAPS documentation and warns that the guide may date quickly because the code keeps changing. Per search snippets, it suggests reviewing at least 2 weeks of data and having the care team review any Autotune-suggested changes before they are applied [uncertain: full text not retrieved]."
+    },
+    {
+      "title": "Messer LH, Forlenza GP, Gonder-Frederick L, et al. Practical Considerations and Implementation of Automated Insulin Delivery Systems. Diabetes Technol Ther 2025",
+      "url": "https://doi.org/10.1089/dia.2025.0132",
+      "year": "2025",
+      "country": "USA / international",
+      "sample_size": "n/a (review)",
+      "relevance": "Uses the CARES framework (Calculate, Adjust, Revert, Educate, Sensor/Share) and says clinicians need to know which levers to pull in each system and must be re-educated as systems update. Notes AID data arrive through more than half a dozen platforms, ranging from summary statistics only to minute-by-minute algorithm actions, and calls for new data solutions."
+    },
+    {
+      "title": "LoopDocs: Loop 3 Therapy Settings; Loop 3 Settings (dosing strategy, algorithm experiments); Algorithm overview",
+      "url": "https://loopkit.github.io/loopdocs/loop-3/therapy-settings",
+      "year": "living document, accessed Nov 2026",
+      "country": "International (Loop community)",
+      "sample_size": "n/a",
+      "relevance": "Defines the glucose safety limit (Loop delivers basal and recommends bolus only if glucose is predicted above it for 3 hours). Guardrails: 67-110 mg/dL, recommended 74-80. Max basal is the ceiling for automatic temp basals; values above 6.4x the highest scheduled basal show a warning. Max bolus also caps automatic IOB at 2x. Advises choosing max basal and correction range with the healthcare provider. The settings and algorithm pages describe automatic bolus at 40% of the recommendation, GBPA (about 20% to 80% by glucose), Integral Retrospective Correction, and IOB counted relative to scheduled basal (can be negative)."
+    },
+    {
+      "title": "LoopTips: Endocrinologist and Loop; Nightscout; Tidepool pages",
+      "url": "https://loopkit.github.io/looptips/how-to/endo",
+      "year": "living document, accessed Nov 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Tells users that suspend threshold and max basal are not part of normal pump therapy and should be discussed with the endo, and that Loop ignores the pump's duration-of-action setting. The Nightscout page explains that the dashed line is scheduled basal and the solid line is actual temp basal. The Tidepool page (https://loopkit.github.io/looptips/data/tidepool) lists what Tidepool shows: automatic vs manual temp basals and boluses on hover, recommended vs delivered bolus, settings history only from March 2023. Overrides are not listed."
+    },
+    {
+      "title": "AndroidAPS documentation: Dynamic ISF; For Clinicians - A General Introduction and Guide to AAPS; OpenAPS clinician guide",
+      "url": "https://androidaps.readthedocs.io/en/latest/DailyLifeWithAaps/DynamicISF.html",
+      "year": "living document, accessed Nov 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "With Dynamic ISF, the ISF entered in the profile is not used except as a fallback when TDD history is missing. Dosing uses a 'future ISF' derived from TDD and predicted glucose, so a printed profile ISF is misleading. The clinician guides (https://androidapsdocs.readthedocs.io/en/latest/Resources/clinician-guide-to-AndroidAPS.html, https://openaps.readthedocs.io/en/dev/docs/Resources/clinician-guide-to-OpenAPS.html) explain temp basals against the underlying basal, zero temps, purple prediction lines in Nightscout, and logs that answer 'why is it doing X'. They recommend reviewing Autotune before manual changes and making one change at a time over 2-3 days."
+    },
+    {
+      "title": "Trio / iAPS community documentation: Autosens, Dynamic ISF/CR and Adjust Basal; OpenAPS main settings (Max IOB)",
+      "url": "https://oiaps-tmhastings.readthedocs.io/en/dev/settings/configuration/concepts/autosens-dynamic.html",
+      "year": "living document, accessed Nov 2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Profile ISF divided by the autosens ratio gives the ISF used in each cycle. Dynamic ISF replaces the autosens formula, and autosens min/max act as safety caps. A suggested Max IOB is average meal bolus plus 3x the highest hourly basal. A default Max IOB of 0 means the system can only lower basal. Community mirror; wording may differ from the canonical Trio docs [uncertain]."
+    },
+    {
+      "title": "BCDiabetes: LOOP app configuration (clinic defaults)",
+      "url": "https://www.bcdiabetes.ca/wp-content/uploads/bcdpdfs/Loop-app-configuration.pdf",
+      "year": "2022 (updated 26 June 2022)",
+      "country": "Canada (British Columbia)",
+      "sample_size": "n/a (clinic protocol)",
+      "relevance": "A clinic that supports Loop had to write its own rules for settings with no pump equivalent. Suspend threshold is set 1.0 mmol/L above the client's 'feel low' value (most common 3.5). Max basal is 3x scheduled basal, or 1.5x with automatic bolus. Max bolus is the largest bolus in the past 2 weeks plus 5 U. The protocol also sets defaults for insulin model and dosing strategy and explains the 40% auto-bolus mechanism. Shows the literacy a clinic needs to hold to advise on these settings."
+    },
+    {
+      "title": "Raimond LH, O'Donnell S, Boggild-Damkvist T, Filges T, Lomborg K. Open-source automated insulin delivery systems and formal healthcare: a qualitative study. Chronic Illness 2023;19(4):836-847",
+      "url": "https://doi.org/10.1177/17423953221142341",
+      "year": "2023",
+      "country": "Denmark",
+      "sample_size": "5 adult users, 6 HCPs (interviews)",
+      "relevance": "HCPs feared the burden of rising technical expectations. Themes included lack of exchange of experience, unclear ethical responsibility and unresolved mutual expectations. Recommends better HCP knowledge of the systems and openness in the interaction."
+    },
+    {
+      "title": "Wong JJ, Suttiratana SC, Lal RA, et al. Discontinued Use of the Loop Insulin Dosing System: A Mixed-Methods Investigation. Diabetes Technol Ther 2022",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9057870/",
+      "year": "2022",
+      "country": "USA",
+      "sample_size": "874 participants; 46 (5.3%) discontinued; 19 interviewed",
+      "relevance": "Prominent themes among people who stopped were mental burden and adjusting settings, plus fear of provider disapproval. Concludes that education specific to setting calculations and expert guidance could sustain use. Settings knowledge is a gap on the user side too."
+    },
+    {
+      "title": "Scholich T, Raj S, Lee J, Newman MW. Augmenting clinicians' analytical workflow through task-based integration of data visualizations and algorithmic insights: a user-centered design study (GlucoGuide). JAMIA 2024",
+      "url": "https://doi.org/10.1093/jamia/ocae183",
+      "year": "2024",
+      "country": "USA",
+      "sample_size": "11 clinicians",
+      "relevance": "Think-aloud review of commercial T1D data platforms found task-level challenges. A task-based mock-up that integrated visualizations with algorithmic insights lowered the clinicians' perceived cognitive burden compared with commercial reports. Evidence that how a view is designed changes interpretation burden. Not DIY-specific."
+    },
+    {
+      "title": "Lawton J, Kyle CJ, Chambers TJG, et al. What training and support do people need to make optimal use of automated insulin delivery systems: Interview study. Diabet Med 2025",
+      "url": "https://doi.org/10.1111/dme.70153",
+      "year": "2025",
+      "country": "UK (Scotland/Northern Ireland)",
+      "sample_size": "22 Control-IQ users",
+      "relevance": "Even with a commercial AID, the top support need was help reviewing data and adjusting the system's settings. For DIY users the gap is larger, because there is no manufacturer training or standard report."
+    },
+    {
+      "title": "Community attempts at endo-visit reports: LoopFollow PR #660 (customizable endocrinology PDF reporting), LoopFollow PR #671 (Endocrinologist Visit Report PDF export), LoopKit/Loop PR #2405 (LoopInsights AI settings advisor)",
+      "url": "https://github.com/loopandlearn/LoopFollow/pull/671",
+      "year": "2026 (PR #2405 Feb-May; #660 May-Jun; #671 Jun-Aug; all closed unmerged)",
+      "country": "International (open-source contributors)",
+      "sample_size": "n/a",
+      "relevance": "PR #671 proposed a clinic-ready PDF with programmed vs actual basal, positive/negative temp-basal adjustments, SMB/auto-correction counts, basal/bolus split, therapy settings and daily rows. It argued that Clarity and Tidepool lack Loop/Trio-specific visibility. PR #2405's author wrote that many Loopers leave settings unchanged for months and that endos do this work in 15-minute visits a few times a year. None were merged, so the demand is visible but no shipped solution exists (status checked via GitHub, Nov 2026)."
+    },
+    {
+      "title": "Trio PR #975: Add therapy settings upload to Tidepool (merged 14 May 2026)",
+      "url": "https://github.com/nightscout/Trio/pull/975",
+      "year": "2026",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Trio now uploads basal, CR, ISF, targets, suspend threshold, insulin model, max basal/bolus, active overrides/temp targets and presets to Tidepool. Trio shows up as 'DIY Loop', and overrides are in the API but not displayed in Tidepool Web. A concrete gap in override-history visibility."
+    },
+    {
+      "title": "Loop and Learn news, 4 Nov 2025 edition",
+      "url": "https://loopandlearn.github.io/news/edition/2025-11-04",
+      "year": "2025",
+      "country": "International",
+      "sample_size": "n/a",
+      "relevance": "Notes that Loop's Pre-Meal override appears in Tidepool but not in Nightscout, and suggests a 'Meal' override preset as a workaround. Override history is incomplete in each platform."
+    },
+    {
+      "title": "twiist AID System Safety Information (Sequel Med Tech; Tidepool Loop algorithm)",
+      "url": "https://www.twiist.com/safety",
+      "year": "accessed Nov 2026",
+      "country": "USA",
+      "sample_size": "n/a",
+      "relevance": "In the FDA-cleared version, users are told not to set the glucose safety limit, correction/pre-meal/workout ranges, delivery limits, ISF or insulin model without direction from their healthcare provider, and to use the system only after training by a Certified twiist Trainer. The Loop-specific settings become prescriber-directed."
+    },
+    {
+      "title": "ADCES DANAtech open-source AID modules: Optimizing Open-Source AID Systems - Translating Data into Decisions; The Clinician's Guide to Understanding Open Source AID Systems; Advanced Features of Open Source AID Apps",
+      "url": "https://www.adces.org/education/danatech/insulin-pumps/diy-looping-open-source/translating-data-into-decisions-for-open-source-aid-systems",
+      "year": "2025 (dated 19 Sep 2025 per search listing)",
+      "country": "USA",
+      "sample_size": "n/a (professional education)",
+      "relevance": "Professional education for diabetes educators on reading Nightscout, Tidepool and in-app reports for Loop, Trio and AAPS. Per search snippets, it advises looking beyond TIR, because frequent overrides, correction boluses or basal changes can signal frustration or poorly tuned settings even when TIR is at goal. It also warns clinicians to expect remote bolusing, overrides and safety features that differ from commercial systems [uncertain: page returned 403; content from search snippets]."
+    },
+    {
+      "title": "Kompala T, Wong JC, Neinstein AB. Diabetes specialists value CGM despite challenges in prescribing and data review process. J Diabetes Sci Technol 2022/2023",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10563522",
+      "year": "2022 (survey fielded Mar-Apr 2020)",
+      "country": "USA",
+      "sample_size": "182 clinicians (70.6% endocrinologists)",
+      "relevance": "Baseline time pressure: only 45.1% said they had enough time to interpret standard CGM data. DIY AID adds a layer of algorithm data on top of this (figure cited from the companion data-sharing item)."
+    }
+  ],
+  "evidence_strength": "Mostly professional guidance and expert consensus (Lancet D&E 2022 open-source consensus; Endocrine Reviews 2023 AID consensus; Diabetes Canada 2023; Diabetes Therapy 2022 practical guidance; ADCES 2025 education), backed by peer-reviewed observational data on how much delivery departs from settings (Lum 2021, n=558). HCP surveys (UK n=317; Canada n=204, preprint) and small qualitative studies (Raimond 2023, 5+6; Wong 2022, 19 interviews; GlucoGuide 2024, 11 clinicians) show low HCP confidence and high interpretation burden. Community documentation (LoopDocs, AAPS and Trio docs) and GitHub PRs set out the mechanics. No study directly measures how accurately clinicians interpret DIY AID data, or harm from misinterpretation.",
+  "prevalence_or_magnitude": "Departure from programmed settings is near-universal. In the Loop Observational Study, median time Loop modulated basal was at least 83% (IQR 73-88%), and algorithm-modulated basal was 54% of all insulin delivered (Lum 2021, n=481 with 6-month data). With automatic bolus (40% per cycle) or oref1 SMB/UAM, an even larger share of correction and meal insulin is algorithm-delivered [uncertain: no published DIY-wide figure found]. AAPS users on Dynamic ISF have a profile ISF that is not used at all. Clinician readiness is low. UK 2019 (n=317): 73.5% somewhat confident or less describing setup, 77.9% likewise for risks, and 63% of those who would not start discussions cited their own lack of knowledge. Canada 2021 (n=204): 21.6% comfortable supporting DIY AID versus 72.7% for commercial AID. Time is short: in a US survey (n=182) only 45.1% had enough time to interpret plain CGM data. At least three community attempts in 2026 to build an endo-visit report (LoopFollow PRs #660 and #671, LoopKit/Loop PR #2405) were closed unmerged. No published estimate exists of how many DIY users get settings advice from their clinic that accounts for algorithm behaviour.",
+  "data_quality_caveats": "HCP surveys were fielded in 2019-2021, before Loop 3 (automatic bolus, glucose safety limit), Trio and widespread Dynamic ISF, and they measured self-rated confidence rather than interpretation accuracy. The Canadian survey is a preprint with snowball recruitment. The Loop Observational Study is a self-selected, highly engaged convenience sample, and its 83% figure is a lower bound because device data could not always tell closed-loop from open-loop. Consensus documents for commercial AID (Endocrine Reviews 2023) do not cover DIY systems. Community documentation is living and changes with each release, and some Trio pages cited are community mirrors. ADCES and Diabetes Canada guide content was partly seen only through search snippets. GitHub PRs show intent, not adoption. Claims about inpatient, obstetric and school settings are inference.",
+  "clinician_perspective": "Clinicians describe the problem as unfamiliarity with how each algorithm reasons, not lack of data. The 2022 consensus says industry training gives familiarity but not full algorithm insight, that providers may feel uncomfortable caring for someone on an unfamiliar system, and that open-source AID requires providers to keep up with software changes across several systems. UK HCPs cited their own lack of knowledge as a main reason not to engage (63%), and fewer than 1 in 10 felt extremely confident describing a setup. Canadian HCPs were roughly a third as likely to feel comfortable with DIY as with commercial AID. Danish HCPs feared the burden of rising technical expectations (Raimond 2023). Specific fears: (1) a settings printout that does not match what is delivered, so the usual basal and ratio titration logic may point the wrong way; (2) DIY-only limits (max basal, glucose safety limit/suspend threshold, max IOB, SMB limits, Dynamic ISF adjustment factor) that clinicians are asked to approve but have no reference ranges for, though Loop's own guardrails and clinic protocols such as BCDiabetes' provide some; (3) hidden compensation between settings (aggressive CR masked by basal cuts), which the 2022 consensus flags; (4) negative or net IOB being misread, causing stacking (Lewis and Hussain 2022); (5) a different vocabulary for each system and version. What clinicians and consensus groups say they need: a standardized AID report (Endocrine Reviews 2023; Shah and Garg 2021; Ekhlaspour 2019), the split between user-initiated and algorithm-modulated insulin, AID basal compared with open-loop basal, override counts, device-use time, and a framework such as CARES to know which levers to pull in each system (Messer 2025). Usability research shows task-based views that integrate algorithmic insight lower clinicians' cognitive burden (GlucoGuide, n=11). Clinics that do support DIY, such as BCDiabetes, write their own default rules for the DIY-only settings.",
+  "effect_on_relationship": "The interpretation gap shifts expertise toward the patient and makes the clinician's settings advice less credible. When a clinician reads the scheduled basal or profile ISF as truth and suggests changes, users who know the algorithm is already compensating, for example running high temps all night, may judge the advice uninformed. They then take settings questions to LoopDocs, Facebook groups or mentors instead (see the peer-community item). Users then tend to present only CGM metrics, and the visit shrinks to TIR review and prescriptions [uncertain: inferred from guidance and community sources, not measured]. Clinicians who cannot interpret the data may feel deskilled or exposed, which feeds the 'risky in the wrong hands' view (43% in the UK survey) and the reluctance to engage (Raimond 2023: unresolved mutual expectations). Where the gap is closed, the relationship becomes collaborative. BCDiabetes publishes defaults for suspend threshold, max basal and max bolus and reviews Loop data in clinic. LoopDocs asks users to choose max basal and correction range with their provider, which gives the clinician a defined role. The commercial-AID consensus suggests reframing basal and bolus as algorithm-modulated and user-initiated, which also gives both sides a shared vocabulary. A shared, legible view of algorithm behaviour lets the clinician add value again, as an interpreter of patterns and checker of safety limits rather than a source of basal-rate arithmetic.",
+  "decision_ownership": "Today the user decides, mostly guided by community documentation and peers. Loop and Trio defaults and guardrails, LoopDocs, AAPS objectives and Trio docs set the starting points for max basal, glucose safety limit, max IOB and SMB settings. Clinicians sometimes co-decide basal/ISF/CR, and occasionally the safety limits when a clinic has a protocol (BCDiabetes). LoopDocs recommends choosing max basal and correction range with the healthcare professional, and the Diabetes Canada guide suggests the care team review Autotune-suggested changes [uncertain]. Liability for an unregulated DIY system rests mainly with the user. Clinicians worry that commenting on algorithm-specific settings makes them responsible for an off-label system (see the liability item). Under the FDA-cleared twiist/Tidepool Loop, the same settings (glucose safety limit, ranges, delivery limits, presets) become prescriber-directed, and users are told not to change them without provider direction, which moves ownership and liability to the clinician.",
+  "disclosure_risk": "Moderate. If a clinician's past suggestions ignored algorithm behaviour, users may share less, for example only Dexcom Clarity, or stop reporting settings and override changes to avoid uninformed changes or disapproval. Wong 2022 found fear of provider disapproval among those who stopped Loop [uncertain: the link from interpretation gaps to non-disclosure is inferred, not measured]. Conversely, data that are hard to read make full disclosure feel pointless to users.",
+  "regulatory_status_dependency": "Partly. FDA-cleared Tidepool Loop / twiist uses the same Loop concepts (glucose safety limit, presets, delivery limits). It comes with prescriber direction of settings, certified trainer onboarding and Tidepool+ reporting (automated vs manual basal, settings view), so clinicians gain training and a supported report, and the algorithm literacy demand moves formally onto them. Tidepool's Devices view for twiist reportedly shows settings at midnight only, with exports needed for exact timing [uncertain: support article not directly retrieved]. For Loop, Trio, iAPS, AAPS and OpenAPS nothing changes: there is no manufacturer HCP training and no standard report, and oref-based features (SMB, Dynamic ISF, autosens) have no cleared counterpart. Commercial AID systems have their own reporting gaps, which is why the consensus groups call for a standard AID report.",
+  "workarounds": "Users: bring Nightscout reports. Useful ones are Day to Day with basal shown (dashed scheduled vs solid actual), Treatments (temp basals, with a netIOB table), Profiles, Hourly stats and Loopalyzer, which overlays IOB, COB and basal by time of day across days. Users also print Nightscout Reporter PDFs, share Tidepool (hover shows 'Automated' temp basals and boluses), screenshot app settings, and explain settings verbally or with LoopDocs/AAPS clinician-guide printouts. oref users run Autotune and bring its output, as the OpenAPS and AAPS clinician guides recommend. Some users make a Loop 'Meal' override because Pre-Meal is not visible in Nightscout. Clinicians: anchor on CGM metrics (TIR/TBR, AGP) and ask the user what the algorithm did. They use heuristics such as consistently negative or positive IOB at a time of day suggesting basal too high or low there (LoopTips), and treat basal/ISF/CR as open-loop settings to check, not as the delivered dose. They adopt clinic defaults for DIY-only limits (BCDiabetes protocol), use the 2022 consensus glossary (Panel 4), the Diabetes Canada guide and ADCES DANAtech modules, and follow the community rule of one change at a time over 2-3 days. Community developers have tried to build endo-visit PDF reports in LoopFollow and an AI settings advisor in Loop, but none were merged as of Nov 2026.",
+  "existing_tools": "Nightscout: real-time graph with scheduled vs actual basal, prediction lines, Loop/OpenAPS status pill, temporary override and temp-target records (not Loop Pre-Meal). Reports include Day to Day, Daily Stats, Distribution, Hourly Stats, Percentile, Treatments (with netIOB table), Profiles and Loopalyzer, plus a clinician section in the Nightscout docs. Nightscout Reporter: PDF reports from Nightscout. Tidepool: for Loop 3.2+, automatic vs manual temp basal and bolus on hover, recommended vs delivered bolus with over/underride, glucose/IOB/ISF context for manual boluses, and settings history from March 2023 ('Copy as Text'). Trio therapy-settings upload was merged May 2026 (shows as 'DIY Loop'). Tidepool+ for twiist adds clinic workflow and EHR links. AAPS in-app statistics (TDD, TIR) and OpenAPS/AAPS decision logs ('reason' strings). Autotune (oref0; run on rig or via Nightscout data). LoopFollow: statistics and remote view. Dexcom Clarity: CGM only. The commercial consensus 'AID Report' template (Endocrine Reviews 2023) and Shah and Garg's AP Dashboard are designs, not DIY implementations. Professional education: ADCES DANAtech open-source modules (2025), Diabetes Canada guide (2023), Lancet consensus glossary.",
+  "existing_tool_coverage_gap": "No tool turns DIY algorithm data into a clinician-ready answer to 'what did the algorithm do, and what does that say about the settings'. Specific gaps: (1) no 14-day summary of delivered vs scheduled basal by hour, time at zero temp, time at max basal, or how often max bolus, max IOB or the glucose safety limit was binding; Loopalyzer is closest but is patient-oriented, Nightscout-only and not printable as a standard report; (2) no split of total insulin into algorithm-modulated (above-schedule temps, auto-boluses/SMBs) vs user-initiated, the core metric of the 2023 AID Report; (3) no effective-settings timeline showing the ISF, basal and CR actually in force after overrides, profile switches, autosens or Dynamic ISF, so printouts show nominal values that AAPS Dynamic ISF does not even use; (4) override history is fragmented: Tidepool Web does not display Trio overrides and LoopTips does not list Loop overrides as viewable, while Nightscout misses Loop Pre-Meal; (5) settings-change history is partial (Tidepool for Loop only from March 2023; Nightscout profile records overwritten or named 'Default'); (6) algorithm configuration (dosing strategy, GBPA, IRC, SMB/UAM flags, autosens limits) is not shown in any report; (7) no glossary that maps Loop, Trio, AAPS and OpenAPS terms to each other and to conventional-pump concepts; (8) nothing flags settings compensation or values outside community or consensus ranges; (9) no workflow to record a proposed change, its rationale and its outcome at the next visit.",
+  "data_artifacts_involved": "Settings snapshot and change history (basal schedule, CR, ISF, correction/target ranges, glucose safety limit/suspend threshold, max basal, max bolus, max IOB, insulin model/DIA, dosing strategy, algorithm experiments, SMB/UAM flags, autosens min/max, Dynamic ISF adjustment factor). Temp-basal log against scheduled basal. Automatic bolus/SMB log. Net IOB including negative IOB. COB. Predicted glucose curves and algorithm decision logs. Override, temp-target and profile-switch history (with % scaling and duration). Effective ISF/CR/basal time series. TDD split into algorithm-modulated and user-initiated insulin. Time in closed loop and CGM use. Autotune output.",
+  "unmet_need": "A shared, plain-language view of what the algorithm actually did and what that implies for the settings, which a clinician can read in about 10 minutes without knowing Loop, Trio or AAPS internals. It needs to (a) show insulin as algorithm-modulated vs user-initiated, with delivered vs scheduled basal by time of day; (b) show the settings actually in force over time, after overrides, temp targets, profile switches, autosens or Dynamic ISF, alongside the nominal settings; (c) surface the DIY-only safety limits and how often each one constrained delivery; (d) list overrides and settings changes since the last visit; and (e) translate each system's terms into one vocabulary, marking settings with no conventional-pump equivalent. Without this, clinicians either give advice that ignores the algorithm or step back from settings altogether, and users carry the whole interpretation burden.",
+  "implication_for_collaboration_tool": "1) Lead with what clinicians already know: a consensus-style front page (TIR/TBR, AGP, device-use time, CGM wear) modelled on the 2023 AID Report, then a DIY layer, so the tool fits a 15-20 minute visit. 2) Make 'scheduled vs delivered' the hero view: an hourly 14-day heatmap of net basal relative to schedule, % time at zero temp and at max basal, and consistent net-IOB sign by hour. Label it as a basal-tuning cue, not a recommendation. 3) Attribute insulin as algorithm-modulated (above-schedule temps, auto-bolus/SMB) versus user-initiated (meal and manual correction), daily and per meal, using the consensus terms. 4) Show an effective-settings timeline: nominal basal/ISF/CR next to the values in force after overrides, presets, temp targets, profile switches, autosens or Dynamic ISF, and state plainly when a nominal value is not used (AAPS Dynamic ISF). 5) Add an override and temp-target ledger with type, % scaling, duration, frequency by time of day, and Pre-Meal use, merging Nightscout and Tidepool records to fill each platform's blind spots. 6) Add a safety-limits panel listing glucose safety limit/suspend threshold, max basal, max bolus, max IOB and SMB limits, how often each was binding, and how each compares with the system's guardrails and published community or clinic defaults (e.g. Loop's 6.4x max-basal warning, the BCDiabetes protocol). Avoid prescribing values. 7) Add a 'what changed since last visit' diff of settings, app version and algorithm features (automatic bolus, GBPA, IRC, SMB/UAM, Dynamic ISF), with who changed what and when. 8) Build in a cross-system glossary with 'no conventional-pump equivalent' badges and one-line explanations (for example, IOB can be negative because it is net of scheduled basal). 9) Flag patterns that suggest settings compensation (e.g. delivered basal persistently well below schedule while carb ratios are aggressive) as discussion prompts. 10) Record proposed changes as a shared decision log in each system's own terms (one change at a time, reviewed at the next visit), so ownership and rationale are visible to both sides. 11) Ingest from Nightscout and Tidepool so Loop, Trio, iAPS and AAPS are covered, and never require the clinician to log into a patient's Nightscout. 12) Keep the tool descriptive and leave dosing changes to the clinician and user, to stay out of autonomous dosing-advice territory [uncertain: regulatory boundary for clinical decision-support features not researched here].",
+  "severity_rank": "High: this decides whether the clinician can take part in settings decisions at all. Without it, visits fall back to CGM summaries and prescriptions, and users turn to peers for settings advice.",
+  "safety_criticality": "Medium-high (indirect). Misreading algorithm data can lead to harmful advice: raising scheduled basal or tightening ratios when the algorithm is already compensating, accepting a max basal or max IOB that is too high or a glucose safety limit that is too low, or extra manual corrections because negative or net IOB was misread (stacking and hypoglycemia, per Lewis and Hussain 2022). Not knowing an override was active can also distort review after a hypo or DKA event. No published harm reports were found that are tied specifically to clinician misinterpretation of DIY AID data [uncertain].",
+  "equity_impact": "Hardest hit, by inference [uncertain]: AndroidAPS users (Android-only, often outside the US) whose systems use the most opaque features (SMB, Dynamic ISF) and whose data reach clinics mostly via Nightscout. Non-English speakers, because clinician guides, consensus glossaries and ADCES modules are mainly in English, although AAPS docs are translated. Children and their parents, where pediatric teams must read caregiver overrides and remote commands. Older adults and people with lower health or tech literacy, who are less able to translate their system for the clinician. People cared for in primary care, rural settings or clinics without DIY experience, where no one can interpret the data.",
+  "uncertain": [
+    "care_setting",
+    "key_sources",
+    "prevalence_or_magnitude",
+    "effect_on_relationship",
+    "decision_ownership",
+    "disclosure_risk",
+    "regulatory_status_dependency",
+    "implication_for_collaboration_tool",
+    "safety_criticality",
+    "equity_impact"
+  ]
+}

@@ -1,0 +1,8 @@
+/* The arrange view's tile chrome (views/Dashboard.tsx). Kept in its own file.
+   Tiles no longer clip: the ⋯ menu opens over neighbours instead of being cut
+   off; the miniature clips itself, inside the tile's rounded corners. */
+.dash.editing .tile.arrange { overflow: visible; }
+.dash.editing .tile.arrange .tile-head { border-radius: var(--radius-card) var(--radius-card) 0 0; }
+.dash.editing .tile.arrange .tile-preview { border-radius: 0 0 var(--radius-card) var(--radius-card); }
+.dash.editing .tile.arrange:focus-within { z-index: 6; }
+.dash.editing .tile.arrange .menu { min-width: 232px; }

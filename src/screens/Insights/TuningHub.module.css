@@ -1,0 +1,370 @@
+.empty {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+.note {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+/* ── confidence pill ─────────────────────────────────────────────────────── */
+
+.pill {
+  flex: none;
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 3px 9px;
+  border-radius: var(--radius-button);
+  white-space: nowrap;
+}
+
+.pill_good {
+  color: var(--brand-primary-hover);
+  background: var(--brand-primary-soft);
+}
+
+.pill_limited {
+  color: #946800;
+  background: #FEF3DC;
+}
+
+.pill_unusable {
+  color: var(--ink-500);
+  background: var(--surface-2);
+}
+
+/* ── sensitivity today ───────────────────────────────────────────────────── */
+
+.ratioRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.ratioMain {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ratioValue {
+  font-size: var(--text-display);
+  line-height: var(--text-display-lh);
+  letter-spacing: var(--text-display-tracking);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-900);
+}
+
+.ratio_sensitive {
+  color: #8C2424;
+}
+
+.ratio_resistant {
+  color: #946800;
+}
+
+.ratio_as_expected {
+  color: var(--brand-primary-hover);
+}
+
+.ratio_building {
+  color: var(--ink-300);
+}
+
+.ratioCaption {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: var(--text-label-tracking);
+  color: var(--ink-500);
+  font-weight: 600;
+}
+
+.ratioMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  text-align: right;
+}
+
+.ratioMeta b {
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── basal by hour ───────────────────────────────────────────────────────── */
+
+.hours {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.hour {
+  display: grid;
+  grid-template-columns: 26px 1fr auto;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.hourMuted {
+  opacity: 0.45;
+}
+
+.hourLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.hourBars {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.hourTrack {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.hourScheduled {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--ink-300);
+}
+
+.hourImplied {
+  height: 100%;
+  border-radius: 3px;
+  background: var(--brand-primary);
+}
+
+.hourUp {
+  background: #E0A11C;
+}
+
+.hourDown {
+  background: #C25454;
+}
+
+.hourValue {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.hourValue b {
+  color: var(--ink-900);
+}
+
+.hourArrow {
+  color: var(--ink-300);
+}
+
+.hourNoData {
+  color: var(--ink-300);
+}
+
+/* ── ISF / carb ratio rows ───────────────────────────────────────────────── */
+
+.param {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.param:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.paramHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.paramName {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.paramValues {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.paramValue {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.paramNumber {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  letter-spacing: var(--text-title-tracking);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-900);
+}
+
+.paramCaption {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+.paramArrow {
+  font-size: var(--text-body);
+  color: var(--ink-300);
+}
+
+/* Sits directly after the second value rather than being pushed to the right
+   edge: with margin-left:auto the unit wrapped to its own line on the wider
+   row and stayed inline on the narrower one, so two rows of the same shape
+   read as two different layouts. */
+.paramUnit {
+  font-size: var(--text-small);
+  color: var(--ink-500);
+}
+
+.paramExtra {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+/* ── suggestions ─────────────────────────────────────────────────────────── */
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin: 0;
+  padding-left: var(--space-4);
+}
+
+.suggestions li {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+/* A reconstruction that disagrees with Loop's own IOB is a missing input, not
+   a footnote — it earns more weight than the surrounding notes. */
+.warnNote {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: #946800;
+  background: #FEF3DC;
+  padding: var(--space-3);
+  border-radius: var(--radius-input);
+  margin: 0;
+}
+
+/* ── the settings roster ─────────────────────────────────────────────────── */
+
+.roster {
+  display: flex;
+  flex-direction: column;
+}
+
+.rosterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.rosterRow:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.rosterHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.rosterName {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.rosterValues {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.rosterCurrent {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.rosterArrow {
+  color: var(--ink-300);
+  font-size: var(--text-small);
+}
+
+.rosterReading {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+}
+
+.rosterNote {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  margin: 0;
+}
+
+.rosterEvidence {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-300);
+}

@@ -1,0 +1,10 @@
+/* Daily glucose tile (tiles/DailyGlucose.tsx). Kept in its own file. */
+.daily-now { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
+.daily-now .num { font-size: 28px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink-900); }
+.daily-table { width: 100%; border-collapse: collapse; font-size: 13px; line-height: 18px; }
+.daily-table th, .daily-table td { text-align: right; padding: 6px 8px; border-bottom: 1px solid var(--ink-200); white-space: nowrap; }
+.daily-table th:first-child, .daily-table td:first-child { text-align: left; }
+.daily-table thead th { font-size: 11px; line-height: 14px; font-weight: 600; color: var(--ink-700); text-transform: uppercase; letter-spacing: 0.04em; }
+.daily-table tbody tr { cursor: default; }
+.daily-table tbody tr[aria-selected='true'] td, .daily-table tbody tr[aria-selected='true'] th { background: var(--brand-primary-soft); }
+.daily-table .muted { color: var(--ink-700); }

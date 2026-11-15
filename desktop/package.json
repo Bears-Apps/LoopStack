@@ -1,0 +1,54 @@
+{
+  "name": "loopstack-desktop",
+  "productName": "LoopStack",
+  "private": true,
+  "version": "0.1.0",
+  "description": "LoopStack for desktop: your customizable dashboard and the care-team review. Synthetic patient data.",
+  "author": "Ryan DeBoer",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "app": "electron .",
+    "dist": "electron-builder --mac dmg --arm64 --publish never"
+  },
+  "devDependencies": {
+    "electron": "41.3.0",
+    "electron-builder": "26.0.12"
+  },
+  "build": {
+    "appId": "app.loopstack.desktop",
+    "productName": "LoopStack",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "!electron/test/**",
+      "package.json"
+    ],
+    "asar": true,
+    "mac": {
+      "category": "public.app-category.medical",
+      "icon": "build/icon.png",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64"
+          ]
+        }
+      ],
+      "identity": null,
+      "hardenedRuntime": false,
+      "gatekeeperAssess": false
+    },
+    "dmg": {
+      "artifactName": "LoopStack-${version}.dmg",
+      "title": "LoopStack ${version}"
+    }
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0"
+  }
+}

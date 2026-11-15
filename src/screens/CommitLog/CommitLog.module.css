@@ -1,0 +1,442 @@
+.intro {
+  padding: var(--space-2) 0 var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.introText {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.fixLogLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  color: var(--ink-900);
+  text-decoration: none;
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.fixLogLink:hover {
+  border-color: var(--ink-300);
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.stat {
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  align-items: flex-start;
+}
+
+.statValue {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-900);
+  letter-spacing: -0.01em;
+}
+
+.statLabel {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.stat_tracking .statValue {
+  color: var(--ink-700);
+}
+
+.stat_positive .statValue {
+  color: var(--brand-primary-hover);
+}
+
+.stat_reverted .statValue {
+  color: var(--ink-500);
+}
+
+.empty {
+  padding: var(--space-4);
+  background: var(--surface-1);
+  border: 1px dashed var(--ink-200);
+  border-radius: var(--radius-input);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.emptyTitle {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 500;
+  color: var(--ink-900);
+}
+
+.emptyBody {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.cardReverted {
+  opacity: 0.68;
+}
+
+.cardHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.hash {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 11px;
+  line-height: 14px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: var(--ink-900);
+  color: var(--surface-0);
+  letter-spacing: 0.02em;
+  font-weight: 500;
+}
+
+.sourceChip {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.metaDot {
+  color: var(--ink-300);
+}
+
+.time {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.outcomeBadge {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+
+.outcome_tracking {
+  background: var(--surface-2);
+  color: var(--ink-700);
+}
+
+.outcome_positive {
+  background: var(--brand-primary-soft);
+  color: var(--brand-primary-hover);
+}
+
+.outcome_neutral {
+  background: var(--surface-2);
+  color: var(--ink-500);
+}
+
+.outcome_negative {
+  background: rgba(198, 90, 44, 0.12);
+  color: var(--confidence-learning, #c65a2c);
+}
+
+.outcome_reverted {
+  background: var(--ink-200);
+  color: var(--ink-700);
+}
+
+.cardTitle {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+
+.change {
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.changeRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.changeLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.changeArrow {
+  color: var(--ink-300);
+  font-weight: 500;
+}
+
+.changeProposed {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+  font-variant-numeric: tabular-nums;
+}
+
+.changeCurrent {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.outcomeBlock {
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.outcomeBlock_positive {
+  background: var(--brand-primary-soft);
+  border-color: rgba(92, 194, 92, 0.3);
+}
+
+.outcomeBlock_tracking {
+  background: var(--surface-0);
+}
+
+.outcomeHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.outcomeTitle {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.outcomeDays {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.trackBar {
+  height: 4px;
+  background: var(--ink-200);
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.trackFill {
+  height: 100%;
+  background: var(--brand-primary);
+  border-radius: var(--radius-pill);
+  transition: width var(--dur-screen) var(--ease);
+}
+
+.metrics {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.metricLabel {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--ink-500);
+}
+
+.metricValue {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+  font-variant-numeric: tabular-nums;
+}
+
+.outcomeSummary {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.whyToggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: transparent;
+  border: none;
+  padding: 2px 0;
+  color: var(--brand-primary-hover);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+/* Same 44pt hit-area overlay as the Fix Log's toggle — see the note there. */
+.whyToggle::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: -8px;
+  top: 50%;
+  height: var(--tap-target-min);
+  transform: translateY(-50%);
+}
+
+.whyToggle:hover {
+  text-decoration: underline;
+}
+
+.whyToggleChevron {
+  font-size: 10px;
+}
+
+.reasoning {
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.explanation {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  margin: 0;
+}
+
+.rationaleList {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.rationaleList li {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+.actions {
+  display: flex;
+  gap: var(--space-2);
+  padding-top: var(--space-1);
+}
+
+.revertBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-target-min);
+  padding: 10px 14px;
+  border-radius: var(--radius-button);
+  background: var(--surface-0);
+  border: 1px solid var(--ink-200);
+  color: var(--ink-900);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color var(--dur-fast) var(--ease);
+}
+
+.revertBtn:hover {
+  border-color: var(--ink-300);
+}

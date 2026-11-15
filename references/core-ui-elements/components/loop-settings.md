@@ -1,0 +1,41 @@
+# Loop settings (schedule-based therapy)
+
+`src/data/loopTherapy.ts` holds a sample schedule-based therapy profile (made-up
+values, not a recommendation). `Insights → Settings` renders them read-only.
+
+## Why schedule-based matters
+
+Loop's carb ratio, ISF, and basal all **change by time of day**. A single flat
+value can be far from the one that applies at a given hour, so any reading is
+measured against the value active at that time. A dose is only correct if it uses the value
+active at the moment the meal is eaten — so the resolvers take a `Date`.
+
+## Resolution priority (used by the dose engine)
+
+1. A manual override the user typed under Profile → Targets (`loadTherapyOverrides`).
+2. Otherwise the real schedule, resolved at `now` via `carbRatioAt` / `isfAt`.
+
+## What moves and what doesn't
+
+| Setting | Source of truth | Editable in-app? |
+|---|---|---|
+| In-range TARGET (dashboard TIR) | `loopTherapyStore` override | Yes — Profile → Targets |
+| Carb ratio, ISF, basal | `loopTherapy.ts` schedule | No — edit in Loop, re-transcribe |
+| Correction range, safety limit, pre-meal, limits | `loopTherapy.ts` | No |
+
+The dashboard **target** and Loop's **correction range** are deliberately
+different things and both are shown; do not conflate them.
+
+## Resolver semantics
+
+`valueAt` is cyclic: a time before the first entry falls under the last entry of
+the day (standard pump behaviour). Loop schedules always start at 00:00 so the
+wrap never fires in practice, but the resolver is correct for any schedule.
+`dailyBasalTotal` integrates the schedule over 24h and matches Loop's own
+14.82 U/day readout — the test that asserts this is the transcription check.
+
+## When these change
+
+Loop settings are re-transcribed by hand from screenshots (there is no Loop
+export API). Update `capturedIso` when you do, and re-verify `dailyBasalTotal`
+against Loop's displayed total as a transcription checksum.

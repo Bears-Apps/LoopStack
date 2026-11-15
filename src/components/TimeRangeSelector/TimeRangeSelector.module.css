@@ -1,0 +1,48 @@
+.track {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-pill);
+}
+
+/* The most-tapped control on the home screen, and it was 34px tall — below the
+   44pt floor the app already defines as --tap-target-min. Six segments across
+   a 375pt phone are narrow enough already; being short as well made them a
+   one-handed miss. Same treatment the Insights tab bar already uses. */
+.seg {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--tap-target-min);
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  min-height: var(--tap-target-min);
+  padding: 8px 4px;
+  min-height: var(--tap-target-min);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  color: var(--ink-500);
+  cursor: pointer;
+  font-variant-numeric: tabular-nums;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+.seg:hover {
+  color: var(--ink-700);
+}
+
+.segActive {
+  background: var(--surface-0);
+  color: var(--ink-900);
+  font-weight: 600;
+  box-shadow: var(--shadow-card);
+}
+
+.segActive:hover {
+  color: var(--ink-900);
+}

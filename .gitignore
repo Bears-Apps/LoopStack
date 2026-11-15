@@ -1,0 +1,20 @@
+node_modules
+dist
+dist-ssr
+.DS_Store
+*.local
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.log
+
+# Agent worktrees and local tooling state. Transient copies of this repo —
+# committing them would nest the project inside itself.
+.claude/worktrees/
+
+# LoopStack desktop: Electron deps, build output and the packaged dmg.
+# dist-web is the static browser demo, rebuilt with `npm run desktop:web`.
+desktop/node_modules/
+desktop/dist/
+desktop/dist-web/
+desktop/release/

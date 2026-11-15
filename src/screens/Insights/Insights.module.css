@@ -1,0 +1,567 @@
+.summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  background: var(--brand-primary-soft);
+  border-radius: var(--radius-input);
+  margin-bottom: var(--space-2);
+}
+
+.summaryStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.summaryNumber {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+}
+
+.summaryLabel {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+/* Context bucket count — muted: background signal, not actionable evidence. */
+.summaryNumberContext {
+  color: var(--ink-500);
+}
+
+.summaryDivider {
+  width: 1px;
+  height: 32px;
+  background: rgba(92, 194, 92, 0.25);
+}
+
+.ctaStack {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.fixLogCta,
+.commitLogCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-0);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background var(--dur-fast) var(--ease);
+}
+
+.fixLogCta {
+  border: 1px solid var(--brand-primary);
+  color: var(--brand-primary-hover);
+}
+
+.commitLogCta {
+  border: 1px solid var(--ink-200);
+  color: var(--ink-900);
+}
+
+.fixLogCta:hover {
+  background: var(--brand-primary-soft);
+}
+
+.commitLogCta:hover {
+  border-color: var(--ink-300);
+}
+
+.fixLogCtaNumber,
+.commitLogCtaNumber {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  min-width: 14px;
+  text-align: center;
+}
+
+.commitLogCtaNumber {
+  color: var(--ink-700);
+}
+
+.fixLogCtaLabel,
+.commitLogCtaLabel {
+  font-size: 10px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.fixLogCtaChevron,
+.commitLogCtaChevron {
+  font-size: 10px;
+  line-height: 1;
+  opacity: 0.75;
+}
+
+/* ---- Stacked meals (evidence quality) ---- */
+
+.stackedEmpty {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+/* 2x2, not 4-across. Four columns inside the 440px app column leaves ~95px a
+   tile, and under 340px the labels ("of 8 meals") wrap to three lines. Two
+   columns keeps every value and its label on one line at 320px. */
+.stackedStats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-2);
+}
+
+@media (min-width: 400px) {
+  .stackedStats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.stackedStat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: var(--space-3) var(--space-2);
+  border-radius: var(--radius-input);
+  background: var(--surface-1);
+  min-width: 0;
+}
+
+.stackedStatValue {
+  font-size: var(--text-body);
+  line-height: var(--text-body-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+}
+
+.stackedStatLabel {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+.stackedList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.stackedItem {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border-radius: var(--radius-input);
+  border: 1px solid var(--ink-200);
+  background: var(--surface-0);
+}
+
+.stackedItemHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-2);
+}
+
+.stackedDate {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+}
+
+.stackedVerdict {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+}
+
+.stackedVerdictClear {
+  background: var(--range-in-soft);
+  color: var(--confidence-ready);
+}
+
+.stackedVerdictSplit {
+  background: var(--range-high-soft);
+  color: var(--confidence-building);
+}
+
+.stackedMembers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.stackedChip {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  padding: 4px 9px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--ink-200);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.stackedChipDominant {
+  border-color: var(--ink-900);
+  background: var(--ink-900);
+  color: var(--surface-0);
+  font-weight: 600;
+}
+
+.stackedNote {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+}
+
+/* ---- Tab bar ---- */
+
+/* Wrapper exists purely to hold the edge fades: they must not scroll with the
+   track, so they cannot live on .tabBar itself. */
+.tabBarWrap {
+  position: relative;
+  min-width: 0;
+}
+
+.tabBarWrap::before,
+.tabBarWrap::after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  bottom: 1px;
+  width: 28px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--dur-fast) var(--ease);
+  border-radius: var(--radius-pill);
+}
+
+.tabBarWrap::before {
+  left: 1px;
+  background: linear-gradient(to right, var(--surface-1), rgba(246, 247, 248, 0));
+}
+
+.tabBarWrap::after {
+  right: 1px;
+  background: linear-gradient(to left, var(--surface-1), rgba(246, 247, 248, 0));
+}
+
+.fadeStart::before,
+.fadeEnd::after {
+  opacity: 1;
+}
+
+.tabBar {
+  padding: 3px;
+  background: var(--surface-1);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius-pill);
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  touch-action: pan-x;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.tabGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+}
+
+/* The tab panel takes over the column spacing `.screen` used to give these
+   sections directly, now that they share a parent. */
+.tabPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  min-width: 0;
+  max-width: 100%;
+}
+
+.tabPanel > * {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.tab {
+  min-width: 0;
+  border: none;
+  background: transparent;
+  border-radius: var(--radius-pill);
+  padding: 9px 6px;
+  min-height: var(--tap-target-min);
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  font-weight: 500;
+  color: var(--ink-500);
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+.tab:hover { color: var(--ink-700); }
+
+.tabActive {
+  background: var(--surface-0);
+  color: var(--ink-900);
+  font-weight: 600;
+  box-shadow: var(--shadow-card);
+}
+
+/* ---- Settings tab ---- */
+
+.settingsIntro {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.settingRow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 10px 0;
+  border-bottom: 1px solid var(--ink-200);
+}
+
+.settingRow:last-child { border-bottom: none; }
+
+.settingLabel {
+  font-size: var(--text-body);
+  color: var(--ink-700);
+}
+
+.settingValue {
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+}
+
+.scheduleRow {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  padding: 9px 8px;
+  border-bottom: 1px solid var(--ink-200);
+  border-radius: var(--radius-input);
+}
+
+.scheduleRow:last-child { border-bottom: none; }
+
+.scheduleRowActive {
+  background: var(--brand-primary-soft);
+  border-bottom-color: transparent;
+}
+
+.scheduleTime {
+  flex: 1;
+  font-size: var(--text-body);
+  color: var(--ink-700);
+  font-variant-numeric: tabular-nums;
+}
+
+.scheduleNow {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--brand-primary-hover);
+  padding: 2px 7px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-0);
+}
+
+.scheduleVal {
+  font-size: var(--text-body);
+  font-weight: 600;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.scheduleUnit {
+  font-weight: 400;
+  color: var(--ink-500);
+  font-size: var(--text-small);
+}
+
+/* ---- Trend tab ---- */
+
+.trendCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  background: var(--surface-0);
+  border-radius: var(--radius-card);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-card);
+  min-width: 0;
+}
+
+.trendHead { display: flex; flex-direction: column; gap: 4px; }
+
+.trendTitle {
+  font-size: var(--text-title);
+  line-height: var(--text-title-lh);
+  font-weight: 600;
+  color: var(--ink-900);
+  letter-spacing: var(--text-title-tracking);
+}
+
+.trendDesc {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.trendEmpty {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-500);
+}
+
+.trendCallout {
+  font-size: var(--text-small);
+  line-height: var(--text-small-lh);
+  color: var(--ink-700);
+  padding: var(--space-3);
+  border-radius: var(--radius-input);
+  background: var(--range-high-soft);
+}
+
+.trendCallout strong { color: var(--ink-900); font-weight: 600; }
+
+.trendScale {
+  font-size: var(--text-label);
+  line-height: var(--text-label-lh);
+  color: var(--ink-500);
+}
+
+/* Rows layout (day of week) */
+.trendRows { display: flex; flex-direction: column; gap: 4px; }
+
+.rowItem {
+  display: grid;
+  grid-template-columns: 40px 1fr 40px 40px;
+  align-items: center;
+  gap: var(--space-2);
+  padding: 6px 4px;
+  border-radius: var(--radius-input);
+}
+
+.rowItemHi { background: var(--surface-1); }
+
+.rowLabel {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--ink-700);
+}
+
+.rowTrack {
+  height: 10px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  overflow: hidden;
+}
+
+.rowFill {
+  display: block;
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width var(--dur-screen) var(--ease);
+}
+
+.rowValue {
+  font-size: var(--text-small);
+  font-weight: 600;
+  color: var(--ink-900);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.rowAvg {
+  font-size: var(--text-label);
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* Columns layout (hourly) */
+.trendColumns {
+  display: grid;
+  grid-template-columns: repeat(24, 1fr);
+  gap: 2px;
+  align-items: end;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.trendColumns::-webkit-scrollbar { display: none; }
+
+.colItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  min-width: 0;
+}
+
+.colTrack {
+  width: 100%;
+  height: 96px;
+  display: flex;
+  align-items: flex-end;
+  background: var(--surface-2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.colFill {
+  width: 100%;
+  border-radius: 3px 3px 0 0;
+  transition: height var(--dur-screen) var(--ease);
+}
+
+.colLabel {
+  font-size: 8px;
+  line-height: 1;
+  color: var(--ink-500);
+  font-variant-numeric: tabular-nums;
+}
+
+.colItemHi .colLabel { color: var(--ink-900); font-weight: 700; }
