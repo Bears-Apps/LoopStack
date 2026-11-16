@@ -9,7 +9,7 @@
 ## What it does
 
 - **Dashboard you arrange yourself.** Glucose now, daily trend heads-ups, a day tracker, what Loop did hour by hour, favorite foods, and more. Move, resize and save layouts.
-- **Favorite foods.** Every time you had each favorite: how it went (stayed 70–180, above 180, below 70), how much of the time after it you were low, and the absorption time you entered against how long glucose actually took to come back.
+- **Favorite foods.** Every time you had each favorite: how far out of 70–180 it went on each side (caution buffer, high or low, dangerously high or low) and whether it trends high or low, and the absorption time you entered against how long glucose actually took to come back.
 - **Care-team review.** A one-page packet in the AGP order clinicians already read, with Trends and your own Notes since the last visit. Save it as a PDF or email it from your own mail app. Pick a report style your clinician already knows.
 - **Suggestions.** When LoopStack's measured readings point at a setting or a food's absorption time, it shows the evidence and its confidence. Track one to watch it build. Nothing reaches Loop without you reviewing it and confirming it in Loop itself.
 - **Your Loop build (optional).** Connect your LoopWorkspace fork on GitHub to see your build, how long it has left, and the community features in it, with on/off switches.

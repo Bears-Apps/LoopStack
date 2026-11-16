@@ -13,7 +13,7 @@ import { foodId } from '../data/suggestions';
 import type { Confidence } from '@/lib/metabolism/autotune';
 import { useTracked } from '../data/tracked';
 import { favoritesBridge } from '../data/favorites';
-import { curveBands, dur, lowDepth, type CurveBand, type MealGroup, type MealOutcome, type MealResponse } from '../data/meals';
+import { BUCKETS, curveBands, dur, excursions, type Bucket, type CurveBand, type MealGroup, type MealOutcome, type MealResponse } from '../data/meals';
 import { Fit, IChevron, IPlus, useAnnounce } from '../ui/kit';
 import { LoopFavorites } from './AddFavorite';
 import type { FaceProps } from './faces';
@@ -21,6 +21,7 @@ import './favoritefoods.css';
 
 const UNNAMED = 'Carbs';
 const OUTCOME_WORD: Record<MealOutcome, string> = { in: 'Stayed 70–180', high: 'Above 180', low: 'Below 70' };
+const TIER_COLOR = ['', 'var(--range-high)', 'var(--ff-t2)', 'var(--range-low)'] as const;
 const OUTCOME_SHORT: Record<MealOutcome, string> = { in: 'in range', high: 'high', low: 'low' };
 
 function useLedger() {
@@ -38,8 +39,17 @@ function split(name: string): [string, string] {
   return m ? [m[1], m[2]] : ['', name];
 }
 
-const outcomeLine = (o: Record<MealOutcome, number>) =>
-  (['in', 'high', 'low'] as const).filter((k) => o[k]).map((k) => `${o[k]} ${OUTCOME_SHORT[k]}`).join(' · ');
+/** "2 in range · 6 high · 1 low"; `long` adds how many went dangerously far: "6 high (1 over 220)". */
+function outcomeLine(g: MealGroup, long = false): string {
+  const o = g.outcomes;
+  const b = g.buckets;
+  const part = (k: MealOutcome, n: number, danger: number, edge: string) => `${n} ${OUTCOME_SHORT[k]}${long && danger ? ` (${danger} ${edge})` : ''}`;
+  return [
+    o.in ? `${o.in} ${OUTCOME_SHORT.in}` : '',
+    o.high ? part('high', o.high, b.high3, 'over 220') : '',
+    o.low ? part('low', o.low, b.low3, 'under 55') : '',
+  ].filter(Boolean).join(' · ');
+}
 
 // ------------------------------------------------------------ marks
 
@@ -48,7 +58,7 @@ function OutcomeStrip({ meals, max = 30 }: { meals: readonly MealResponse[]; max
   const shown = [...meals].sort((a, b) => a.at - b.at).slice(-max);
   return (
     <span className="ff-strip" aria-hidden="true">
-      {shown.map((m) => <i key={m.id} className={`ff-mark ${m.outcome}`} />)}
+      {shown.map((m) => <i key={m.id} className={`ff-mark ${m.outcome} t${m.tier}`} />)}
     </span>
   );
 }
@@ -103,7 +113,7 @@ function Curves({ meals, picked, W, H }: { meals: readonly MealResponse[]; picke
       <rect x={pad.L} y={Y(180)} width={pw} height={Y(70) - Y(180)} style={{ fill: 'var(--range-in-soft)' }} />
       {[70, 180].map((v) => <text key={v} x={pad.L - 6} y={Y(v) + 4} fontSize="10" textAnchor="end" style={{ fill: 'var(--ink-700)' }}>{v}</text>)}
       {meals.filter((m) => m !== on).map((m) => (
-        <path key={m.id} d={line(m)} fill="none" style={{ stroke: m.outcome === 'low' ? 'var(--range-low)' : 'var(--ink-500)' }} strokeWidth="1.2" opacity={on ? 0.28 : 0.5} strokeLinejoin="round" />
+        <path key={m.id} d={line(m)} fill="none" style={{ stroke: m.tier ? TIER_COLOR[m.tier] : 'var(--ink-500)' }} strokeWidth="1.2" opacity={on ? 0.28 : 0.5} strokeLinejoin="round" />
       ))}
       {on && <path d={line(on)} fill="none" style={{ stroke: 'var(--ink-900)' }} strokeWidth="2.4" strokeLinejoin="round" />}
       {[0, 60, 120, 180, 240, 300, 360].map((t) => <text key={t} x={X(t)} y={H - 4} fontSize="10" textAnchor="middle" style={{ fill: 'var(--ink-700)' }}>{t ? `${t / 60}h` : 'meal'}</text>)}
@@ -151,7 +161,7 @@ function Dropdown({ g, scale, go }: { g: MealGroup; scale: number; go: FaceProps
           <div className="ff-dd-stats">
             <span><span className="caption">Rise, median</span><b>+{g.medianRiseMgdl}</b><span className="caption"> mg/dL at {dur(g.medianPeakAfterMin)}</span></span>
             <span><span className="caption">Back near start</span><b>{g.medianObservedMin == null ? 'not back' : dur(g.medianObservedMin)}</b><span className="caption"> {dur(g.medianEnteredMin)} entered</span></span>
-            <span><span className="caption">After {g.n} times</span><b className="ff-dd-out">{outcomeLine(g.outcomes)}</b></span>
+            <span><span className="caption">After {g.n} times</span><b className="ff-dd-out">{outcomeLine(g)}</b></span>
           </div>
           <LowChip meals={meals} long />
           <Fit className="ff-dd-chart">{({ w, h }) => <Spotlight meals={meals} W={w} H={h} />}</Fit>
@@ -209,7 +219,7 @@ export function FavoriteFoodsGlance({ go, w }: FaceProps) {
 function OutcomeKey() {
   return (
     <div className="ff-key caption" aria-hidden="true">
-      <span><i className="ff-sw in" />stayed 70–180</span><span><i className="ff-sw high" />above 180</span><span><i className="ff-sw low" />below 70</span>
+      <span><i className="ff-sw t3" />Dangerously high or low</span><span><i className="ff-sw t2" />High or low</span><span><i className="ff-sw t1" />Caution buffer</span><span><i className="ff-sw in" />In range</span>
     </div>
   );
 }
@@ -220,7 +230,11 @@ function summary(g: MealGroup): string {
   const o = g.outcomes;
   const parts = [`Glucose was back within 20 mg/dL of where it started a median ${dur(g.medianObservedMin)} after; Loop was given ${dur(g.medianEnteredMin)}.`];
   if (g.observedN < g.n) parts.push(`It didn't come back before 6 hours or the next meal ${g.n - g.observedN} ${g.n - g.observedN === 1 ? 'time' : 'times'}.`);
-  parts.push(`It stayed 70–180 after ${o.in} of ${g.n}, went above 180 after ${o.high} and below 70 after ${o.low}.`);
+  const b = g.buckets;
+  parts.push(`It stayed 70–180 after ${o.in} of ${g.n}.`);
+  if (o.high) parts.push(`It went above 180 after ${o.high}${b.high3 ? `, ${b.high3} of them over 220` : ''}.`);
+  if (o.low) parts.push(`It went below 70 after ${o.low}${b.low3 ? `, ${b.low3} of them under 55` : ''}.`);
+  if (o.high + o.low >= g.n / 2 && o.high !== o.low) parts.push(`It tends to run ${o.high > o.low ? 'high' : 'low'} after this food.`);
   return parts.join(' ');
 }
 
@@ -251,24 +265,36 @@ function TrackButton({ g }: { g: MealGroup }) {
   );
 }
 
-/** How low a food went: yellow under 70 but not 60, light red under 60 but not 55, red under 55; the words carry it too (COL-5). */
+const TIER_WORD = ['', 'Caution buffer', 'High or low', 'Dangerously high or low'] as const;
+
+/** How far out a food went, each side on its own: yellow caution buffer, light red high or low, red dangerously high or low. The words carry it too (COL-5). */
 function LowChip({ meals, long = false }: { meals: readonly MealResponse[]; long?: boolean }) {
-  const l = lowDepth(meals);
-  if (l.level === 'none') return <span className="ff-low none caption">{long ? 'Never below 70 in the hours after' : 'Never below 70'}</span>;
-  const floor = l.level === 'severe' ? 55 : l.level === 'low' ? 60 : 70;
-  const times = `${l.times} of ${l.of} ${l.of === 1 ? 'time' : 'times'}`;
+  const e = excursions(meals);
+  const sides = ([['low', e.low, [70, 60, 55]], ['high', e.high, [180, 200, 220]]] as const)
+    .filter(([, x]) => x.tier > 0)
+    .sort((a, b) => b[1].tier - a[1].tier);
+  if (!sides.length) return <span className="ff-low none caption">Always 70–180</span>;
   return (
-    <span className={`ff-low ${l.level}`} title={`Lowest reading ${l.lowest} mg/dL. ${times} reached below ${floor}.`}>
-      <i aria-hidden="true" />{`Below ${floor} · ${times}`}{long ? ` · lowest ${l.lowest}` : ''}
+    <span className="ff-lows">
+      {sides.map(([dir, x]) => {
+        const edge = dir === 'low' ? `under ${[70, 60, 55][x.tier - 1]}` : `over ${[180, 200, 220][x.tier - 1]}`;
+        const times = `${x.times} of ${e.of} ${e.of === 1 ? 'time' : 'times'}`;
+        return (
+          <span key={dir} className={`ff-low t${x.tier}`} title={`${dir === 'low' ? 'Lowest' : 'Highest'} reading ${x.extreme} mg/dL. ${TIER_WORD[x.tier]}: ${times} went ${edge}.`}>
+            <i aria-hidden="true" />{`${dir === 'low' ? 'Low' : 'High'}, ${edge} · ${times}`}{long ? ` · ${dir === 'low' ? 'lowest' : 'highest'} ${x.extreme}` : ''}
+          </span>
+        );
+      })}
     </span>
   );
 }
 
-/** The share of times each outcome happened, as one bar: stayed, above, below. */
-function OutcomeBar({ o, n }: { o: Record<MealOutcome, number>; n: number }) {
+/** The share of times each outcome happened, as one bar from dangerously low to dangerously high. */
+function OutcomeBar({ g }: { g: MealGroup }) {
+  const cls = (b: Bucket) => (b === 'in' ? 'in' : `t${b.slice(-1)}`);
   return (
     <span className="ff-bar" aria-hidden="true">
-      {(['in', 'high', 'low'] as const).map((k) => (o[k] ? <i key={k} className={k} style={{ flexGrow: o[k] / Math.max(1, n) }} /> : null))}
+      {BUCKETS.map((b) => (g.buckets[b] ? <i key={b} className={cls(b)} style={{ flexGrow: g.buckets[b] / Math.max(1, g.n) }} /> : null))}
     </span>
   );
 }
@@ -278,18 +304,18 @@ function FoodCard({ g, open, onToggle, id }: { g: MealGroup; open: boolean; onTo
   const [emoji, label] = split(g.name);
   const { tracked } = useFoodTracking(g);
   const o = g.outcomes;
-  const out = o.in === g.n ? `All ${g.n} stayed in range` : o.in ? `${o.in} of ${g.n} stayed in range` : outcomeLine(o);
+  const out = o.in === g.n ? `All ${g.n} stayed in range` : outcomeLine(g);
   return (
     <li className="ff-cell">
       <button type="button" className={`ff-card${tracked ? ' tracked' : ''}`} aria-expanded={open} id={id} onClick={onToggle}
-        aria-label={`${label}: ${g.n} times, ${outcomeLine(o)}, rise ${g.medianRiseMgdl} mg/dL.${tracked ? ' Tracking.' : ''} ${open ? 'Hide' : 'Show'} details`}>
+        aria-label={`${label}: ${g.n} times, ${outcomeLine(g)}, rise ${g.medianRiseMgdl} mg/dL.${tracked ? ' Tracking.' : ''} ${open ? 'Hide' : 'Show'} details`}>
         <span className="ff-card-top">
           <span className="ff-card-name strong">{emoji && <span aria-hidden="true">{emoji} </span>}{label}</span>
           {tracked && <span className="ff-tracked caption">Tracking</span>}
           <span className="ff-card-chev" aria-hidden="true"><IChevron /></span>
         </span>
         <span className="caption">{g.n} times · {g.medianCarbsG} g · back in {g.medianObservedMin == null ? '—' : dur(g.medianObservedMin)}</span>
-        <OutcomeBar o={o} n={g.n} />
+        <OutcomeBar g={g} />
         <LowChip meals={MEALS.recent.filter((m) => m.name === g.name)} />
         <span className="ff-card-foot"><span className="small strong">{out}</span><span className="caption">+{g.medianRiseMgdl} mg/dL</span></span>
       </button>
@@ -403,7 +429,7 @@ function Breakdown({ g, scale, onClose }: { g: MealGroup; scale: number; onClose
           <div className="stack-12">
             <p className="ff-summary">{summary(g)}</p>
             <Durations entered={g.medianEnteredMin} observed={g.medianObservedMin} scale={scale} />
-            <span className="ff-out"><OutcomeStrip meals={meals} /><span className="small">{outcomeLine(g.outcomes)}</span></span>
+            <span className="ff-out"><OutcomeStrip meals={meals} /><span className="small">{outcomeLine(g)}</span></span>
             <LowChip meals={meals} long />
             {sugg
               ? <p className="caption">Suggestions has a reading for this food: {sugg.evidence}.{tracked ? '' : ' Track it to watch its confidence build.'}</p>
@@ -412,7 +438,7 @@ function Breakdown({ g, scale, onClose }: { g: MealGroup; scale: number; onClose
           <div className="stack-8">
             <h3 className="label">Glucose after each time · up to 6 hours</h3>
             <Fit className="chart-md ff-bd-chart">{({ w, h }) => <Curves meals={meals} picked={rec} W={w} H={h} />}</Fit>
-            <p className="caption">One line per time you had it, 70–180 shaded. Pick a row below to bring its line forward; lines that went below 70 are red.</p>
+            <p className="caption">One line per time you had it, 70–180 shaded. Pick a row below to bring its line forward; lines that went out of range are colored by how far.</p>
           </div>
         </div>
 

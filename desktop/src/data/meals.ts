@@ -30,14 +30,32 @@ export interface MealResponse {
   /** Lowest and highest glucose from entry to 6 hours or the next meal (the same window as observed). */
   lowMgdl: number;
   highMgdl: number;
-  /** How it went over that window: below 70 at any point, else above 180 at any point, else stayed 70-180. */
+  /** Which way it went furthest over that window (a tie goes to low), or stayed 70-180. */
   outcome: MealOutcome;
+  /** How far out it went: 0 in range, 1 caution buffer, 2 high or low, 3 dangerously high or low. */
+  tier: Tier;
   /** Glucose every 10 minutes for up to 6 hours from entry, stopping at the next meal: [minutes, mg/dL]. */
   curve: readonly (readonly [number, number])[];
 }
 
 export type MealOutcome = 'low' | 'high' | 'in';
-export const outcomeOf = (low: number, high: number): MealOutcome => (low < 70 ? 'low' : high > 180 ? 'high' : 'in');
+
+/** 0 in range (70-180); 1 caution buffer (60-69, 181-200); 2 high or low (55-59, 201-220); 3 dangerously high or low (under 55, over 220). */
+export type Tier = 0 | 1 | 2 | 3;
+export const lowTier = (g: number): Tier => (g < 55 ? 3 : g < 60 ? 2 : g < 70 ? 1 : 0);
+export const highTier = (g: number): Tier => (g > 220 ? 3 : g > 200 ? 2 : g > 180 ? 1 : 0);
+
+/** A meal's outcome: the side that went furthest out, and how far. A tie goes to low. */
+export function outcomeOf(low: number, high: number): { outcome: MealOutcome; tier: Tier } {
+  const l = lowTier(low);
+  const h = highTier(high);
+  if (l === 0 && h === 0) return { outcome: 'in', tier: 0 };
+  return l >= h ? { outcome: 'low', tier: l } : { outcome: 'high', tier: h };
+}
+
+/** Meals counted by side and tier, ordered from dangerously low to dangerously high. */
+export type Bucket = 'low3' | 'low2' | 'low1' | 'in' | 'high1' | 'high2' | 'high3';
+export const BUCKETS: readonly Bucket[] = ['low3', 'low2', 'low1', 'in', 'high1', 'high2', 'high3'];
 
 export interface MealGroup {
   name: string;
@@ -51,6 +69,8 @@ export interface MealGroup {
   observedN: number;
   /** How many went low, high, or stayed in range. */
   outcomes: Record<MealOutcome, number>;
+  /** The same, split by how far out each went. */
+  buckets: Record<Bucket, number>;
 }
 
 export interface Meals {
@@ -141,7 +161,7 @@ export function mealResponses(input: MealInputs, from: number, to: number): Meal
       iobPeakU: iobWin.length ? Math.max(...iobWin.map((x) => x.u)) : null,
       lowMgdl,
       highMgdl,
-      outcome: outcomeOf(lowMgdl, highMgdl),
+      ...outcomeOf(lowMgdl, highMgdl),
       curve,
     });
   });
@@ -164,6 +184,7 @@ export function mealResponses(input: MealInputs, from: number, to: number): Meal
         high: ms.filter((m) => m.outcome === 'high').length,
         low: ms.filter((m) => m.outcome === 'low').length,
       },
+      buckets: Object.fromEntries(BUCKETS.map((b) => [b, ms.filter((m) => (m.outcome === 'in' ? 'in' : `${m.outcome}${m.tier}`) === b).length])) as Record<Bucket, number>,
     };
   }).sort((a, b) => b.n - a.n || a.name.localeCompare(b.name));
   return { recent: recent.reverse(), groups, days: Math.round((to - from) / (24 * 60 * MIN)) };
@@ -198,34 +219,22 @@ export function curveBands(meals: readonly Pick<MealResponse, 'curve'>[], minN =
   return out;
 }
 
-/** How deep a food's lows went. Yellow: under 70 but not under 60. Light red: under 60 but not under 55. Red: under 55. */
-export type LowDepth = 'none' | 'watch' | 'low' | 'severe';
-export const LOW_WATCH = 70;
-export const LOW_LOW = 60;
-export const LOW_SEVERE = 55;
-
-export function depthOf(g: number): LowDepth {
-  return g < LOW_SEVERE ? 'severe' : g < LOW_LOW ? 'low' : g < LOW_WATCH ? 'watch' : 'none';
-}
-
-const DEPTH_RANK: Record<LowDepth, number> = { none: 0, watch: 1, low: 2, severe: 3 };
-
-/**
- * How low glucose went after a food, over each entry's window (to 6 hours or the
- * next meal). `level` is the deepest any time reached; `times` is how many of the
- * `of` times reached that depth; `lowest` is the lowest reading seen.
- */
-export function lowDepth(meals: readonly Pick<MealResponse, 'curve'>[]): { level: LowDepth; lowest: number | null; times: number; of: number } {
-  let level: LowDepth = 'none';
-  let lowest: number | null = null;
-  const per = meals.map((m) => {
-    let d: LowDepth = 'none';
-    for (const [, g] of m.curve) {
-      if (lowest === null || g < lowest) lowest = g;
-      if (DEPTH_RANK[depthOf(g)] > DEPTH_RANK[d]) d = depthOf(g);
-    }
-    if (DEPTH_RANK[d] > DEPTH_RANK[level]) level = d;
-    return d;
-  });
-  return { level, lowest, times: per.filter((d) => d === level).length, of: meals.length };
+/** The deepest each side went across every time a food was eaten (10-minute readings), and how many times reached that tier. */
+export interface Excursion { tier: Tier; extreme: number | null; times: number }
+export function excursions(meals: readonly Pick<MealResponse, 'curve'>[]): { low: Excursion; high: Excursion; of: number } {
+  const side = (tierOf: (g: number) => Tier, better: (a: number, b: number) => boolean): Excursion => {
+    let tier: Tier = 0;
+    let extreme: number | null = null;
+    const per = meals.map((m) => {
+      let t: Tier = 0;
+      for (const [, g] of m.curve) {
+        if (extreme === null || better(g, extreme)) extreme = g;
+        if (tierOf(g) > t) t = tierOf(g);
+      }
+      if (t > tier) tier = t;
+      return t;
+    });
+    return { tier, extreme, times: tier === 0 ? 0 : per.filter((t) => t === tier).length };
+  };
+  return { low: side(lowTier, (a, b) => a < b), high: side(highTier, (a, b) => a > b), of: meals.length };
 }

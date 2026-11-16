@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dur, mealResponses, curveBands, lowDepth, depthOf } from './meals';
+import { dur, mealResponses, curveBands, excursions, lowTier, highTier, outcomeOf } from './meals';
 
 const MIN = 60_000;
 const T0 = new Date(2026, 10, 10, 12, 0).getTime();
@@ -36,11 +36,12 @@ describe('meal response', () => {
     expect(meals.groups[0].outcomes).toEqual({ in: 1, high: 0, low: 0 });
   });
 
-  it('a low anywhere in the window outranks a high', async () => {
+  it('the side that went furthest out wins; a tie goes to low', async () => {
     const { outcomeOf } = await import('./meals');
-    expect(outcomeOf(64, 220)).toBe('low');
-    expect(outcomeOf(90, 181)).toBe('high');
-    expect(outcomeOf(70, 180)).toBe('in');
+    expect(outcomeOf(64, 190)).toEqual({ outcome: 'low', tier: 1 });
+    expect(outcomeOf(64, 220)).toEqual({ outcome: 'high', tier: 2 });
+    expect(outcomeOf(90, 181)).toEqual({ outcome: 'high', tier: 1 });
+    expect(outcomeOf(70, 180)).toEqual({ outcome: 'in', tier: 0 });
   });
 
   it('groups repeats by name', () => {
@@ -68,14 +69,23 @@ describe('a food’s median curve', () => {
   });
 });
 
-describe('how low a food went', () => {
+describe('how far out a food went', () => {
   const c = (...gs: number[]) => ({ curve: gs.map((g, i) => [i * 10, g] as const) });
-  it('bands by depth: 70 and 60 and 55 edges', () => {
-    expect(['none', 'watch', 'watch', 'low', 'low', 'severe'].join()).toBe([70, 69, 60, 59, 55, 54].map(depthOf).join());
+  it('tiers lows at 70, 60 and 55, and highs at 180, 200 and 220', () => {
+    expect([70, 69, 60, 59, 55, 54].map(lowTier)).toEqual([0, 1, 1, 2, 2, 3]);
+    expect([180, 181, 200, 201, 220, 221].map(highTier)).toEqual([0, 1, 1, 2, 2, 3]);
   });
-  it('reads the deepest any time reached, and how many times reached it', () => {
-    expect(lowDepth([c(120, 140, 130)])).toMatchObject({ level: 'none', of: 1 });
-    expect(lowDepth([c(120, 66), c(110, 62), c(100, 130)])).toMatchObject({ level: 'watch', lowest: 62, times: 2, of: 3 });
-    expect(lowDepth([c(120, 66), c(110, 57), c(90, 52)])).toMatchObject({ level: 'severe', lowest: 52, times: 1, of: 3 });
+  it('a meal goes by the side that went furthest; a tie goes to low', () => {
+    expect(outcomeOf(100, 150)).toEqual({ outcome: 'in', tier: 0 });
+    expect(outcomeOf(66, 250)).toEqual({ outcome: 'high', tier: 3 });
+    expect(outcomeOf(52, 250)).toEqual({ outcome: 'low', tier: 3 });
+    expect(outcomeOf(100, 190)).toEqual({ outcome: 'high', tier: 1 });
+  });
+  it('reads the deepest each side reached, and how many times reached it', () => {
+    const e = excursions([c(120, 66, 190), c(110, 62), c(100, 130), c(90, 230)]);
+    expect(e.low).toEqual({ tier: 1, extreme: 62, times: 2 });
+    expect(e.high).toEqual({ tier: 3, extreme: 230, times: 1 });
+    expect(e.of).toBe(4);
+    expect(excursions([c(120, 140)]).low).toEqual({ tier: 0, extreme: 120, times: 0 });
   });
 });

@@ -1,3 +1,5 @@
+/* light red for the high-or-low tier, between the caution yellow and the dangerous red */
+:root { --ff-t2: color-mix(in srgb, var(--range-low) 55%, white); }
 /* Favorite foods (tiles/FavoriteFoods.tsx). Kept in its own file. */
 .ff { display: flex; flex-direction: column; gap: var(--space-4); width: 100%; }
 .ff-head { align-items: center; gap: var(--space-2) var(--space-5); }
@@ -31,8 +33,9 @@
 .ff-bar { display: flex; gap: 2px; height: 10px; border-radius: 5px; overflow: hidden; background: var(--surface-2); }
 .ff-bar i { display: block; flex-basis: 0; }
 .ff-bar .in, .ff-sw.in { background: var(--range-in); }
-.ff-bar .high, .ff-sw.high { background: var(--range-high); }
-.ff-bar .low, .ff-sw.low { background: var(--range-low); }
+.ff-bar .t1, .ff-sw.t1 { background: var(--range-high); }
+.ff-bar .t2, .ff-sw.t2 { background: var(--ff-t2); }
+.ff-bar .t3, .ff-sw.t3 { background: var(--range-low); }
 .ff-sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
 
 /* the open food's breakdown: a full-width row under its card's row; everything below moves down */
@@ -66,8 +69,13 @@
 .ff-strip { display: inline-flex; flex-wrap: wrap; gap: 3px; }
 .ff-mark { display: inline-block; flex: none; width: 9px; height: 9px; border-radius: 50%; box-sizing: border-box; }
 .ff-mark.in { background: var(--range-in); }
-.ff-mark.high { background: var(--range-high); border-radius: 2px; }
-.ff-mark.low { width: 0; height: 0; border-radius: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 9px solid var(--range-low); }
+.ff-mark.high { border-radius: 2px; }
+.ff-mark.low { width: 0; height: 0; border-radius: 0; border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 9px solid transparent; }
+.ff-mark.high.t1, .ff-mark.low.t1 { --ff-c: var(--range-high); }
+.ff-mark.high.t2, .ff-mark.low.t2 { --ff-c: var(--ff-t2); }
+.ff-mark.high.t3, .ff-mark.low.t3 { --ff-c: var(--range-low); }
+.ff-mark.high { background: var(--ff-c); }
+.ff-mark.low { border-top-color: var(--ff-c); }
 
 /* entered against observed, one shared scale */
 .ff-dur { display: grid; gap: 4px; min-width: 200px; }
@@ -130,13 +138,14 @@
 }
 .ff-title { display: flex; align-items: center; gap: 10px; }
 
-/* how low a food went: yellow 60-69, light red 55-59, red under 55 */
+/* how far out a food went: yellow caution buffer, light red high or low, red dangerously high or low */
+.ff-lows { display: flex; flex-wrap: wrap; gap: 4px; align-self: flex-start; }
 .ff-low { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: var(--radius-pill); font-size: 12px; line-height: 16px; font-weight: 600; color: var(--ink-900); }
 .ff-low i { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-.ff-low.watch { background: var(--range-high-soft); }
-.ff-low.watch i { background: var(--range-high); }
-.ff-low.low { background: var(--range-low-soft); }
-.ff-low.low i { background: color-mix(in srgb, var(--range-low) 55%, white); }
-.ff-low.severe { background: color-mix(in srgb, var(--range-low) 28%, transparent); }
-.ff-low.severe i { background: var(--range-low); }
+.ff-low.t1 { background: var(--range-high-soft); }
+.ff-low.t1 i { background: var(--range-high); }
+.ff-low.t2 { background: var(--range-low-soft); }
+.ff-low.t2 i { background: var(--ff-t2); }
+.ff-low.t3 { background: color-mix(in srgb, var(--range-low) 28%, transparent); }
+.ff-low.t3 i { background: var(--range-low); }
 .ff-low.none { padding: 0; font-weight: 400; }
