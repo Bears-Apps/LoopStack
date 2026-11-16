@@ -130,11 +130,13 @@
 }
 .ff-title { display: flex; align-items: center; gap: 10px; }
 
-/* time below 70 after a food: yellow under 10%, red at 10% or more */
+/* how low a food went: yellow 60-69, light red 55-59, red under 55 */
 .ff-low { align-self: flex-start; display: inline-flex; align-items: center; gap: 6px; padding: 2px 8px; border-radius: var(--radius-pill); font-size: 12px; line-height: 16px; font-weight: 600; color: var(--ink-900); }
 .ff-low i { width: 8px; height: 8px; border-radius: 50%; flex: none; }
-.ff-low.some { background: var(--range-high-soft); }
-.ff-low.some i { background: var(--range-high); }
-.ff-low.high { background: var(--range-low-soft); }
-.ff-low.high i { background: var(--range-low); }
+.ff-low.watch { background: var(--range-high-soft); }
+.ff-low.watch i { background: var(--range-high); }
+.ff-low.low { background: var(--range-low-soft); }
+.ff-low.low i { background: color-mix(in srgb, var(--range-low) 55%, white); }
+.ff-low.severe { background: color-mix(in srgb, var(--range-low) 28%, transparent); }
+.ff-low.severe i { background: var(--range-low); }
 .ff-low.none { padding: 0; font-weight: 400; }

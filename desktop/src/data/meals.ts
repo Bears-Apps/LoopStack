@@ -198,19 +198,34 @@ export function curveBands(meals: readonly Pick<MealResponse, 'curve'>[], minN =
   return out;
 }
 
-/** Under this share of the time low, a food reads yellow; at or over it, red. */
-export const LOW_SHARE_RED = 0.1;
+/** How deep a food's lows went. Yellow: under 70 but not under 60. Light red: under 60 but not under 55. Red: under 55. */
+export type LowDepth = 'none' | 'watch' | 'low' | 'severe';
+export const LOW_WATCH = 70;
+export const LOW_LOW = 60;
+export const LOW_SEVERE = 55;
+
+export function depthOf(g: number): LowDepth {
+  return g < LOW_SEVERE ? 'severe' : g < LOW_LOW ? 'low' : g < LOW_WATCH ? 'watch' : 'none';
+}
+
+const DEPTH_RANK: Record<LowDepth, number> = { none: 0, watch: 1, low: 2, severe: 3 };
 
 /**
- * How much of the time after a food glucose was below 70: the share of the
- * 10-minute readings from each entry to 6 hours or the next meal, pooled across
- * every time it was eaten. `level` is none (never low), some (under 10%) or
- * high (10% or more).
+ * How low glucose went after a food, over each entry's window (to 6 hours or the
+ * next meal). `level` is the deepest any time reached; `times` is how many of the
+ * `of` times reached that depth; `lowest` is the lowest reading seen.
  */
-export function lowShare(meals: readonly Pick<MealResponse, 'curve'>[]): { share: number; lowMin: number; totalMin: number; level: 'none' | 'some' | 'high' } {
-  let low = 0;
-  let all = 0;
-  for (const m of meals) for (const [, g] of m.curve) { all += 1; if (g < 70) low += 1; }
-  const share = all ? low / all : 0;
-  return { share, lowMin: low * 10, totalMin: all * 10, level: low === 0 ? 'none' : share >= LOW_SHARE_RED ? 'high' : 'some' };
+export function lowDepth(meals: readonly Pick<MealResponse, 'curve'>[]): { level: LowDepth; lowest: number | null; times: number; of: number } {
+  let level: LowDepth = 'none';
+  let lowest: number | null = null;
+  const per = meals.map((m) => {
+    let d: LowDepth = 'none';
+    for (const [, g] of m.curve) {
+      if (lowest === null || g < lowest) lowest = g;
+      if (DEPTH_RANK[depthOf(g)] > DEPTH_RANK[d]) d = depthOf(g);
+    }
+    if (DEPTH_RANK[d] > DEPTH_RANK[level]) level = d;
+    return d;
+  });
+  return { level, lowest, times: per.filter((d) => d === level).length, of: meals.length };
 }

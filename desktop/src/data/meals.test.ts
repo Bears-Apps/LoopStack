@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dur, mealResponses, curveBands, lowShare } from './meals';
+import { dur, mealResponses, curveBands, lowDepth, depthOf } from './meals';
 
 const MIN = 60_000;
 const T0 = new Date(2026, 10, 10, 12, 0).getTime();
@@ -68,12 +68,14 @@ describe('a food’s median curve', () => {
   });
 });
 
-describe('time low after a food', () => {
+describe('how low a food went', () => {
   const c = (...gs: number[]) => ({ curve: gs.map((g, i) => [i * 10, g] as const) });
-  it('reads none, some (under 10%) or high (10% or more)', () => {
-    expect(lowShare([c(120, 140, 130)]).level).toBe('none');
-    const some = lowShare([c(...Array(19).fill(120), 65)]);
-    expect(some).toMatchObject({ level: 'some', lowMin: 10, totalMin: 200 });
-    expect(lowShare([c(...Array(9).fill(120), 65)]).level).toBe('high');
+  it('bands by depth: 70 and 60 and 55 edges', () => {
+    expect(['none', 'watch', 'watch', 'low', 'low', 'severe'].join()).toBe([70, 69, 60, 59, 55, 54].map(depthOf).join());
+  });
+  it('reads the deepest any time reached, and how many times reached it', () => {
+    expect(lowDepth([c(120, 140, 130)])).toMatchObject({ level: 'none', of: 1 });
+    expect(lowDepth([c(120, 66), c(110, 62), c(100, 130)])).toMatchObject({ level: 'watch', lowest: 62, times: 2, of: 3 });
+    expect(lowDepth([c(120, 66), c(110, 57), c(90, 52)])).toMatchObject({ level: 'severe', lowest: 52, times: 1, of: 3 });
   });
 });

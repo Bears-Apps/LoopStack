@@ -39,7 +39,7 @@ Tiles worth knowing:
 Each card is a meal you eat again and again, named in Loop (favorites or food types). Unnamed carb entries are left out.
 
 - **The bar** shows how often each outcome happened afterward: green stayed 70–180, yellow went above 180, red went below 70.
-- **The low chip** shows how much of the time after that food you spent below 70: **yellow** under 10% of the time, **red** 10% or more.
+- **The low chip** shows how low glucose went after that food, and how many times it got that low: **yellow** under 70 but not under 60, **light red** under 60 but not under 55, **red** under 55.
 - **Click a card** to open its details under it: your median glucose curve after that food, and the absorption time you entered against how long glucose took to come back near where it started.
 - **Track** sends the food to Suggestions to watch its readings build.
 - **Show more** lists the rest of your foods. The full screen shows every one, with every time you had it.

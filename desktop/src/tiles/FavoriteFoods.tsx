@@ -13,7 +13,7 @@ import { foodId } from '../data/suggestions';
 import type { Confidence } from '@/lib/metabolism/autotune';
 import { useTracked } from '../data/tracked';
 import { favoritesBridge } from '../data/favorites';
-import { curveBands, dur, lowShare, type CurveBand, type MealGroup, type MealOutcome, type MealResponse } from '../data/meals';
+import { curveBands, dur, lowDepth, type CurveBand, type MealGroup, type MealOutcome, type MealResponse } from '../data/meals';
 import { Fit, IChevron, IPlus, useAnnounce } from '../ui/kit';
 import { LoopFavorites } from './AddFavorite';
 import type { FaceProps } from './faces';
@@ -251,14 +251,15 @@ function TrackButton({ g }: { g: MealGroup }) {
   );
 }
 
-/** Time below 70 after a food: yellow under 10% of the time, red at 10% or more; the words carry it too (COL-5). */
+/** How low a food went: yellow under 70 but not 60, light red under 60 but not 55, red under 55; the words carry it too (COL-5). */
 function LowChip({ meals, long = false }: { meals: readonly MealResponse[]; long?: boolean }) {
-  const l = lowShare(meals);
-  if (l.level === 'none') return <span className="ff-low none caption">{long ? 'Never below 70 in the hours after' : 'No time below 70'}</span>;
-  const pct = Math.max(1, Math.round(l.share * 100));
+  const l = lowDepth(meals);
+  if (l.level === 'none') return <span className="ff-low none caption">{long ? 'Never below 70 in the hours after' : 'Never below 70'}</span>;
+  const floor = l.level === 'severe' ? 55 : l.level === 'low' ? 60 : 70;
+  const times = `${l.times} of ${l.of} ${l.of === 1 ? 'time' : 'times'}`;
   return (
-    <span className={`ff-low ${l.level}`} title={`${l.lowMin} of ${l.totalMin} minutes below 70 mg/dL, across every time`}>
-      <i aria-hidden="true" />{`Below 70 ${pct}% of the time`}{long ? ` · ${dur(l.lowMin)} of ${dur(l.totalMin)}` : ''}
+    <span className={`ff-low ${l.level}`} title={`Lowest reading ${l.lowest} mg/dL. ${times} reached below ${floor}.`}>
+      <i aria-hidden="true" />{`Below ${floor} · ${times}`}{long ? ` · lowest ${l.lowest}` : ''}
     </span>
   );
 }
