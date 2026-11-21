@@ -1,7 +1,9 @@
 name: Repair root npm lockfile
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - chore/repair-root-lockfile
 
 permissions:
   contents: read
