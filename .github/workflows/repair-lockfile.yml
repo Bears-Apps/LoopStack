@@ -34,11 +34,13 @@ jobs:
           from pathlib import Path
           workflow = Path('.github/workflows/build-macos.yml')
           contents = workflow.read_text()
-          old = """          # Temporary workaround: root package-lock.json is out of sync.
-          # Follow up by regenerating and committing the lockfile, then restore npm ci.
-          npm install --no-audit --no-fund"""
-          assert contents.count(old) == 1, 'Expected workaround not found exactly once'
-          workflow.write_text(contents.replace(old, '          npm ci'))
+          lines = contents.splitlines(keepends=True)
+          matches = [i for i, line in enumerate(lines) if line.strip() == 'npm install --no-audit --no-fund']
+          assert len(matches) == 1, f'Expected one npm install workaround, found {len(matches)}'
+          index = matches[0]
+          lines[index] = lines[index].replace('npm install --no-audit --no-fund', 'npm ci')
+          lines = [line for line in lines if not line.lstrip().startswith('# Temporary workaround:') and not line.lstrip().startswith('# Follow up by regenerating')]
+          workflow.write_text(''.join(lines))
           PY
           rm .github/workflows/repair-lockfile.yml
           git config user.name "github-actions[bot]"
