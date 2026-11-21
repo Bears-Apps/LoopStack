@@ -6,7 +6,7 @@ on:
       - chore/repair-root-lockfile
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   repair:
@@ -27,3 +27,23 @@ jobs:
           path: package-lock.json
           if-no-files-found: error
           retention-days: 7
+
+      - name: Apply permanent cleanup to this branch
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          workflow = Path('.github/workflows/build-macos.yml')
+          contents = workflow.read_text()
+          old = """          # Temporary workaround: root package-lock.json is out of sync.
+          # Follow up by regenerating and committing the lockfile, then restore npm ci.
+          npm install --no-audit --no-fund"""
+          assert contents.count(old) == 1, 'Expected workaround not found exactly once'
+          workflow.write_text(contents.replace(old, '          npm ci'))
+          PY
+          rm .github/workflows/repair-lockfile.yml
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add package-lock.json .github/workflows/build-macos.yml .github/workflows/repair-lockfile.yml
+          git diff --cached --check
+          git commit -m "Repair npm lockfile and restore reproducible CI installs"
+          git push origin HEAD:chore/repair-root-lockfile
