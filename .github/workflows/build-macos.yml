@@ -1,0 +1,52 @@
+name: Build LoopStack for macOS
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: macOS ${{ matrix.arch }}
+    runs-on: macos-15
+    strategy:
+      fail-fast: false
+      matrix:
+        arch: [x64, arm64]
+
+    steps:
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm ci --prefix desktop
+
+      - name: Run checks
+        run: |
+          npm run system:review
+          npm run desktop:test
+
+      - name: Build desktop app
+        run: npm run desktop:build
+
+      - name: Package macOS DMG
+        run: npm --prefix desktop run dist -- --${{ matrix.arch }}
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: "false"
+
+      - name: Upload installer
+        uses: actions/upload-artifact@v4
+        with:
+          name: LoopStack-macOS-${{ matrix.arch }}
+          path: desktop/release/*.dmg
+          if-no-files-found: error
+          retention-days: 30
